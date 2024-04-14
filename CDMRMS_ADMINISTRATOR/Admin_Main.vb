@@ -3,7 +3,7 @@
 
 Public Class Admin_Main
 
-
+    ' Database Connection
     Private Shared ConnectionString As String = "server=localhost; port=3306; database=cdmregistrarmanagementsystem; uid=root; password=;"
     Private Shared connection As New MySqlConnection(ConnectionString)
 
@@ -57,20 +57,9 @@ Public Class Admin_Main
             Dim datatable As New DataTable()
             Using adapter As New MySqlDataAdapter(command)
                 adapter.Fill(datatable)
-
-
-                datatable.Columns("firstname").ColumnName = "First Name"
-                datatable.Columns("middlename").ColumnName = "Middle Name"
-                datatable.Columns("lastname").ColumnName = "Last Name"
-                datatable.Columns("instructorid").ColumnName = "Instructor ID"
-
                 InstructorsDataTable.DataSource = datatable
             End Using
 
-            InstructorsDataTable.Columns("First Name").Width = 130
-            InstructorsDataTable.Columns("Middle Name").Width = 130
-            InstructorsDataTable.Columns("Last Name").Width = 130
-            InstructorsDataTable.Columns("instructor ID").Width = 130
 
         Catch ex As Exception
             MessageBox.Show("Error fetching data: " & ex.Message)
@@ -81,11 +70,46 @@ Public Class Admin_Main
 
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim searchTerm As String = InstructorSearchBar.Text.Trim()
+        If searchTerm <> "" Then
+            Try
+                connection.Open()
 
+                Dim query As String = "SELECT * FROM instructors WHERE lastname LIKE @searchTerm"
+                Dim command As New MySqlCommand(query, connection)
+
+                command.Parameters.AddWithValue("@searchTerm", "%" & searchTerm & "%")
+
+                Dim dataTable As New DataTable()
+
+                Dim adapter As New MySqlDataAdapter(command)
+                adapter.Fill(dataTable)
+                InstructorsDataTable.DataSource = dataTable
+            Catch ex As Exception
+                MessageBox.Show("Error searching data: " & ex.Message)
+            Finally
+                connection.Close()
+
+            End Try
+        Else
+            MessageBox.Show("Please enter a search term.")
+        End If
 
     End Sub
 
     Private Sub Instructor_Btn_Click(sender As Object, e As EventArgs) Handles Instructor_Btn.Click
         Instructor_Panel.Show
+    End Sub
+
+    Private Sub InstructorSearchBar_textChanged(sender As Object, e As EventArgs) Handles InstructorSearchBar.TextChanged
+        If String.IsNullOrEmpty(InstructorSearchBar.Text.Trim()) Then
+            InstructorData()
+        End If
+    End Sub
+
+
+
+    Private Sub InstructorsDataTable_SelectionChanged(sender As Object, e As EventArgs) Handles InstructorsDataTable.SelectionChanged
+        InstructorsDataTable.ClearSelection()
     End Sub
 End Class
