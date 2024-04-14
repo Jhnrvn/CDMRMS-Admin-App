@@ -79,32 +79,9 @@ Public Class Admin_Main
         End Try
     End Sub
 
-    Dim DataTable As New DataTable
-
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim search As String = InstructorSearchBar.Text.Trim
 
-        If String.IsNullOrEmpty(search) Then
-            InstructorsDataTable.DataSource = DataTable
-
-        Else
-
-            Dim unused As New DataTable()
-            Dim filteredData As DataTable = DataTable.Clone()
-
-            For Each row As DataRow In DataTable.Rows
-                For Each column As DataColumn In DataTable.Columns
-                    If row(column.ColumnName).ToString().Contains(search) Then
-
-                        filteredData.ImportRow(row)
-                        Exit For
-                    End If
-                Next
-            Next
-
-            InstructorsDataTable.DataSource = filteredData
-        End If
 
     End Sub
 
