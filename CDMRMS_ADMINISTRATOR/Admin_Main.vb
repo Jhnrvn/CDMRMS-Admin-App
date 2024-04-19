@@ -69,7 +69,12 @@ Public Class Admin_Main
     End Sub
 
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
+    Private Sub Instructor_Btn_Click(sender As Object, e As EventArgs) Handles Instructor_Btn.Click
+        Instructor_Panel.Show
+    End Sub
+
+    Private Sub InstructorSearchBar_textChanged(sender As Object, e As EventArgs) Handles InstructorSearchBar.TextChanged
         Dim searchTerm As String = InstructorSearchBar.Text.Trim()
         If searchTerm <> "" Then
             Try
@@ -91,17 +96,8 @@ Public Class Admin_Main
                 connection.Close()
 
             End Try
-        Else
-            MessageBox.Show("Please enter a search term.")
         End If
 
-    End Sub
-
-    Private Sub Instructor_Btn_Click(sender As Object, e As EventArgs) Handles Instructor_Btn.Click
-        Instructor_Panel.Show
-    End Sub
-
-    Private Sub InstructorSearchBar_textChanged(sender As Object, e As EventArgs) Handles InstructorSearchBar.TextChanged
         If String.IsNullOrEmpty(InstructorSearchBar.Text.Trim()) Then
             InstructorData()
         End If
