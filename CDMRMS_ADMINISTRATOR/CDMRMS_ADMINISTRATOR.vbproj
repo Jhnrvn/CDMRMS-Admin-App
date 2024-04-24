@@ -91,6 +91,12 @@
     <Compile Include="Admin_Main.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ChangingGradeRequest.Designer.vb">
+      <DependentUpon>ChangingGradeRequest.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ChangingGradeRequest.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -111,6 +117,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Admin_Main.resx">
       <DependentUpon>Admin_Main.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangingGradeRequest.resx">
+      <DependentUpon>ChangingGradeRequest.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

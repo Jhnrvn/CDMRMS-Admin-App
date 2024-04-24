@@ -104,8 +104,12 @@ Public Class Admin_Main
     End Sub
 
 
-
     Private Sub InstructorsDataTable_SelectionChanged(sender As Object, e As EventArgs) Handles InstructorsDataTable.SelectionChanged
         InstructorsDataTable.ClearSelection()
     End Sub
+
+    Private Sub ChangeGradeReq_Btn_Click(sender As Object, e As EventArgs) Handles ChangeGradeReq_Btn.Click
+        ChangingGradeRequest.Show()
+    End Sub
+
 End Class
