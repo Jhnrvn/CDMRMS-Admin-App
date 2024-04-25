@@ -24,8 +24,8 @@ Partial Class Admin_Main
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Admin_Main))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GreenSide_Panel = New System.Windows.Forms.Panel()
         Me.Dropdown_Panel = New System.Windows.Forms.Panel()
         Me.Student_Btn = New System.Windows.Forms.Button()
@@ -42,6 +42,7 @@ Partial Class Admin_Main
         Me.InstructorInfo_Panel = New System.Windows.Forms.Panel()
         Me.InstructorInfo_Label = New System.Windows.Forms.Label()
         Me.CDMinstructors_Panel = New System.Windows.Forms.Panel()
+        Me.MetroTextBox1 = New MetroFramework.Controls.MetroTextBox()
         Me.SelectInstructor_Btn = New System.Windows.Forms.Button()
         Me.Institute = New System.Windows.Forms.Label()
         Me.InstructorSearchBar = New MetroFramework.Controls.MetroTextBox()
@@ -258,6 +259,7 @@ Partial Class Admin_Main
         '
         Me.CDMinstructors_Panel.BackColor = System.Drawing.SystemColors.Window
         Me.CDMinstructors_Panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.CDMinstructors_Panel.Controls.Add(Me.MetroTextBox1)
         Me.CDMinstructors_Panel.Controls.Add(Me.SelectInstructor_Btn)
         Me.CDMinstructors_Panel.Controls.Add(Me.Institute)
         Me.CDMinstructors_Panel.Controls.Add(Me.InstructorSearchBar)
@@ -267,6 +269,39 @@ Partial Class Admin_Main
         Me.CDMinstructors_Panel.Name = "CDMinstructors_Panel"
         Me.CDMinstructors_Panel.Size = New System.Drawing.Size(641, 509)
         Me.CDMinstructors_Panel.TabIndex = 0
+        '
+        'MetroTextBox1
+        '
+        '
+        '
+        '
+        Me.MetroTextBox1.CustomButton.Image = Nothing
+        Me.MetroTextBox1.CustomButton.Location = New System.Drawing.Point(167, 2)
+        Me.MetroTextBox1.CustomButton.Name = ""
+        Me.MetroTextBox1.CustomButton.Size = New System.Drawing.Size(35, 35)
+        Me.MetroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.MetroTextBox1.CustomButton.TabIndex = 1
+        Me.MetroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.MetroTextBox1.CustomButton.UseSelectable = True
+        Me.MetroTextBox1.CustomButton.Visible = False
+        Me.MetroTextBox1.FontSize = MetroFramework.MetroTextBoxSize.Tall
+        Me.MetroTextBox1.Lines = New String(-1) {}
+        Me.MetroTextBox1.Location = New System.Drawing.Point(321, 367)
+        Me.MetroTextBox1.MaxLength = 100
+        Me.MetroTextBox1.Name = "MetroTextBox1"
+        Me.MetroTextBox1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.MetroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.MetroTextBox1.SelectedText = ""
+        Me.MetroTextBox1.SelectionLength = 0
+        Me.MetroTextBox1.SelectionStart = 0
+        Me.MetroTextBox1.ShortcutsEnabled = True
+        Me.MetroTextBox1.Size = New System.Drawing.Size(205, 40)
+        Me.MetroTextBox1.Style = MetroFramework.MetroColorStyle.Green
+        Me.MetroTextBox1.TabIndex = 55
+        Me.MetroTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.MetroTextBox1.UseSelectable = True
+        Me.MetroTextBox1.WaterMarkColor = System.Drawing.Color.Silver
+        Me.MetroTextBox1.WaterMarkFont = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         '
         'SelectInstructor_Btn
         '
@@ -278,7 +313,7 @@ Partial Class Admin_Main
         Me.SelectInstructor_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.SelectInstructor_Btn.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SelectInstructor_Btn.ForeColor = System.Drawing.Color.Black
-        Me.SelectInstructor_Btn.Location = New System.Drawing.Point(227, 367)
+        Me.SelectInstructor_Btn.Location = New System.Drawing.Point(531, 367)
         Me.SelectInstructor_Btn.Name = "SelectInstructor_Btn"
         Me.SelectInstructor_Btn.Size = New System.Drawing.Size(90, 40)
         Me.SelectInstructor_Btn.TabIndex = 54
@@ -336,22 +371,23 @@ Partial Class Admin_Main
         Me.InstructorsDataTable.AllowUserToResizeColumns = False
         Me.InstructorsDataTable.AllowUserToResizeRows = False
         Me.InstructorsDataTable.BackgroundColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Bernard MT Condensed", 12.0!)
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.InstructorsDataTable.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Bernard MT Condensed", 12.0!)
+        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.InstructorsDataTable.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.InstructorsDataTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.InstructorsDataTable.GridColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(33, Byte), Integer))
         Me.InstructorsDataTable.Location = New System.Drawing.Point(16, 63)
         Me.InstructorsDataTable.Name = "InstructorsDataTable"
         Me.InstructorsDataTable.ReadOnly = True
         Me.InstructorsDataTable.RowHeadersWidth = 51
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.InstructorsDataTable.RowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White
+        Me.InstructorsDataTable.RowsDefaultCellStyle = DataGridViewCellStyle8
         Me.InstructorsDataTable.RowTemplate.Height = 24
         Me.InstructorsDataTable.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.InstructorsDataTable.Size = New System.Drawing.Size(605, 271)
@@ -432,10 +468,11 @@ Partial Class Admin_Main
     Friend WithEvents CDMinstructors_Label As Label
     Friend WithEvents DropdownTimer As Timer
     Friend WithEvents InstructorsDataTable As DataGridView
-    Friend WithEvents InstructorSearchBar As MetroFramework.Controls.MetroTextBox
     Friend WithEvents Institute As Label
     Friend WithEvents SelectInstructor_Btn As Button
     Friend WithEvents ChangeGradeReq_Btn As Button
     Friend WithEvents InstructorSubmittedGrade_Btn As Button
     Friend WithEvents Welcome_BG As PictureBox
+    Friend WithEvents MetroTextBox1 As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents InstructorSearchBar As MetroFramework.Controls.MetroTextBox
 End Class

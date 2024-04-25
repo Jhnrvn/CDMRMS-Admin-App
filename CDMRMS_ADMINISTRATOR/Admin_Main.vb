@@ -71,7 +71,8 @@ Public Class Admin_Main
 
 
     Private Sub Instructor_Btn_Click(sender As Object, e As EventArgs) Handles Instructor_Btn.Click
-        Instructor_Panel.Show
+        Instructor_Panel.Show()
+
     End Sub
 
     Private Sub InstructorSearchBar_textChanged(sender As Object, e As EventArgs) Handles InstructorSearchBar.TextChanged
@@ -112,5 +113,6 @@ Public Class Admin_Main
         ChangingGradeRequest.Show()
         Me.Enabled = False
     End Sub
+
 
 End Class
