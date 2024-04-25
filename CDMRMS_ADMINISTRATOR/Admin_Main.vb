@@ -110,6 +110,7 @@ Public Class Admin_Main
 
     Private Sub ChangeGradeReq_Btn_Click(sender As Object, e As EventArgs) Handles ChangeGradeReq_Btn.Click
         ChangingGradeRequest.Show()
+        Me.Enabled = False
     End Sub
 
 End Class

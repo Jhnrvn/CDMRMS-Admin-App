@@ -24,8 +24,8 @@ Partial Class Admin_Main
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Admin_Main))
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GreenSide_Panel = New System.Windows.Forms.Panel()
         Me.Dropdown_Panel = New System.Windows.Forms.Panel()
         Me.Student_Btn = New System.Windows.Forms.Button()
@@ -36,27 +36,27 @@ Partial Class Admin_Main
         Me.CDM_Logo = New System.Windows.Forms.PictureBox()
         Me.GreenUpper_Panel = New System.Windows.Forms.Panel()
         Me.Instructor_Panel = New System.Windows.Forms.Panel()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.CourseReq_Panel = New System.Windows.Forms.Panel()
-        Me.CourseReq_Label = New System.Windows.Forms.Label()
-        Me.Profile_Panel = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.ReqAndSubmit_Panel = New System.Windows.Forms.Panel()
+        Me.InstructorSubmittedGrade_Btn = New System.Windows.Forms.Button()
+        Me.ChangeGradeReq_Btn = New System.Windows.Forms.Button()
+        Me.InstructorInfo_Panel = New System.Windows.Forms.Panel()
+        Me.InstructorInfo_Label = New System.Windows.Forms.Label()
+        Me.CDMinstructors_Panel = New System.Windows.Forms.Panel()
+        Me.SelectInstructor_Btn = New System.Windows.Forms.Button()
         Me.Institute = New System.Windows.Forms.Label()
         Me.InstructorSearchBar = New MetroFramework.Controls.MetroTextBox()
         Me.InstructorsDataTable = New System.Windows.Forms.DataGridView()
-        Me.Profile_Label = New System.Windows.Forms.Label()
+        Me.CDMinstructors_Label = New System.Windows.Forms.Label()
         Me.DropdownTimer = New System.Windows.Forms.Timer(Me.components)
-        Me.ChangeGradeReq_Btn = New System.Windows.Forms.Button()
-        Me.InstructorSubmittedGrade_Btn = New System.Windows.Forms.Button()
         Me.Welcome_BG = New System.Windows.Forms.PictureBox()
         Me.GreenSide_Panel.SuspendLayout()
         Me.Dropdown_Panel.SuspendLayout()
         CType(Me.CMDRMS_PicBox, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CDM_Logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Instructor_Panel.SuspendLayout()
-        Me.Panel1.SuspendLayout()
-        Me.CourseReq_Panel.SuspendLayout()
-        Me.Profile_Panel.SuspendLayout()
+        Me.ReqAndSubmit_Panel.SuspendLayout()
+        Me.InstructorInfo_Panel.SuspendLayout()
+        Me.CDMinstructors_Panel.SuspendLayout()
         CType(Me.InstructorsDataTable, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Welcome_BG, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -179,161 +179,42 @@ Partial Class Admin_Main
         'Instructor_Panel
         '
         Me.Instructor_Panel.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
-        Me.Instructor_Panel.Controls.Add(Me.Panel1)
-        Me.Instructor_Panel.Controls.Add(Me.CourseReq_Panel)
-        Me.Instructor_Panel.Controls.Add(Me.Profile_Panel)
+        Me.Instructor_Panel.Controls.Add(Me.ReqAndSubmit_Panel)
+        Me.Instructor_Panel.Controls.Add(Me.InstructorInfo_Panel)
+        Me.Instructor_Panel.Controls.Add(Me.CDMinstructors_Panel)
         Me.Instructor_Panel.Location = New System.Drawing.Point(218, 91)
         Me.Instructor_Panel.Name = "Instructor_Panel"
         Me.Instructor_Panel.Size = New System.Drawing.Size(1334, 784)
         Me.Instructor_Panel.TabIndex = 4
         '
-        'Panel1
+        'ReqAndSubmit_Panel
         '
-        Me.Panel1.BackColor = System.Drawing.Color.White
-        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel1.Controls.Add(Me.InstructorSubmittedGrade_Btn)
-        Me.Panel1.Controls.Add(Me.ChangeGradeReq_Btn)
-        Me.Panel1.Location = New System.Drawing.Point(4, 518)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(641, 255)
-        Me.Panel1.TabIndex = 2
+        Me.ReqAndSubmit_Panel.BackColor = System.Drawing.Color.White
+        Me.ReqAndSubmit_Panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.ReqAndSubmit_Panel.Controls.Add(Me.InstructorSubmittedGrade_Btn)
+        Me.ReqAndSubmit_Panel.Controls.Add(Me.ChangeGradeReq_Btn)
+        Me.ReqAndSubmit_Panel.Location = New System.Drawing.Point(4, 518)
+        Me.ReqAndSubmit_Panel.Name = "ReqAndSubmit_Panel"
+        Me.ReqAndSubmit_Panel.Size = New System.Drawing.Size(641, 255)
+        Me.ReqAndSubmit_Panel.TabIndex = 2
         '
-        'CourseReq_Panel
+        'InstructorSubmittedGrade_Btn
         '
-        Me.CourseReq_Panel.BackColor = System.Drawing.Color.White
-        Me.CourseReq_Panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.CourseReq_Panel.Controls.Add(Me.CourseReq_Label)
-        Me.CourseReq_Panel.Location = New System.Drawing.Point(651, 5)
-        Me.CourseReq_Panel.Name = "CourseReq_Panel"
-        Me.CourseReq_Panel.Size = New System.Drawing.Size(675, 768)
-        Me.CourseReq_Panel.TabIndex = 1
-        '
-        'CourseReq_Label
-        '
-        Me.CourseReq_Label.AutoSize = True
-        Me.CourseReq_Label.Font = New System.Drawing.Font("Bernard MT Condensed", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CourseReq_Label.Location = New System.Drawing.Point(13, 9)
-        Me.CourseReq_Label.Name = "CourseReq_Label"
-        Me.CourseReq_Label.Size = New System.Drawing.Size(365, 40)
-        Me.CourseReq_Label.TabIndex = 1
-        Me.CourseReq_Label.Text = "CDM Instructor Information"
-        '
-        'Profile_Panel
-        '
-        Me.Profile_Panel.BackColor = System.Drawing.SystemColors.Window
-        Me.Profile_Panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Profile_Panel.Controls.Add(Me.Button1)
-        Me.Profile_Panel.Controls.Add(Me.Institute)
-        Me.Profile_Panel.Controls.Add(Me.InstructorSearchBar)
-        Me.Profile_Panel.Controls.Add(Me.InstructorsDataTable)
-        Me.Profile_Panel.Controls.Add(Me.Profile_Label)
-        Me.Profile_Panel.Location = New System.Drawing.Point(4, 5)
-        Me.Profile_Panel.Name = "Profile_Panel"
-        Me.Profile_Panel.Size = New System.Drawing.Size(641, 509)
-        Me.Profile_Panel.TabIndex = 0
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(20, Byte), Integer))
-        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(20, Byte), Integer))
-        Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
-        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(20, Byte), Integer))
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.Black
-        Me.Button1.Location = New System.Drawing.Point(240, 367)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(90, 40)
-        Me.Button1.TabIndex = 54
-        Me.Button1.Text = "Select"
-        Me.Button1.UseVisualStyleBackColor = False
-        '
-        'Institute
-        '
-        Me.Institute.AutoSize = True
-        Me.Institute.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Institute.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Institute.Location = New System.Drawing.Point(12, 348)
-        Me.Institute.Name = "Institute"
-        Me.Institute.Size = New System.Drawing.Size(138, 20)
-        Me.Institute.TabIndex = 53
-        Me.Institute.Text = "Search Instructor"
-        '
-        'InstructorSearchBar
-        '
-        '
-        '
-        '
-        Me.InstructorSearchBar.CustomButton.Image = Nothing
-        Me.InstructorSearchBar.CustomButton.Location = New System.Drawing.Point(180, 2)
-        Me.InstructorSearchBar.CustomButton.Name = ""
-        Me.InstructorSearchBar.CustomButton.Size = New System.Drawing.Size(35, 35)
-        Me.InstructorSearchBar.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.InstructorSearchBar.CustomButton.TabIndex = 1
-        Me.InstructorSearchBar.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
-        Me.InstructorSearchBar.CustomButton.UseSelectable = True
-        Me.InstructorSearchBar.CustomButton.Visible = False
-        Me.InstructorSearchBar.FontSize = MetroFramework.MetroTextBoxSize.Tall
-        Me.InstructorSearchBar.Lines = New String(-1) {}
-        Me.InstructorSearchBar.Location = New System.Drawing.Point(16, 367)
-        Me.InstructorSearchBar.MaxLength = 100
-        Me.InstructorSearchBar.Name = "InstructorSearchBar"
-        Me.InstructorSearchBar.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.InstructorSearchBar.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.InstructorSearchBar.SelectedText = ""
-        Me.InstructorSearchBar.SelectionLength = 0
-        Me.InstructorSearchBar.SelectionStart = 0
-        Me.InstructorSearchBar.ShortcutsEnabled = True
-        Me.InstructorSearchBar.Size = New System.Drawing.Size(218, 40)
-        Me.InstructorSearchBar.Style = MetroFramework.MetroColorStyle.Green
-        Me.InstructorSearchBar.TabIndex = 37
-        Me.InstructorSearchBar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.InstructorSearchBar.UseSelectable = True
-        Me.InstructorSearchBar.WaterMarkColor = System.Drawing.Color.Silver
-        Me.InstructorSearchBar.WaterMarkFont = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        '
-        'InstructorsDataTable
-        '
-        Me.InstructorsDataTable.AllowUserToAddRows = False
-        Me.InstructorsDataTable.AllowUserToDeleteRows = False
-        Me.InstructorsDataTable.AllowUserToResizeColumns = False
-        Me.InstructorsDataTable.AllowUserToResizeRows = False
-        Me.InstructorsDataTable.BackgroundColor = System.Drawing.Color.White
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Bernard MT Condensed", 12.0!)
-        DataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.InstructorsDataTable.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle11
-        Me.InstructorsDataTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.InstructorsDataTable.GridColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.InstructorsDataTable.Location = New System.Drawing.Point(16, 63)
-        Me.InstructorsDataTable.Name = "InstructorsDataTable"
-        Me.InstructorsDataTable.ReadOnly = True
-        Me.InstructorsDataTable.RowHeadersWidth = 51
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.InstructorsDataTable.RowsDefaultCellStyle = DataGridViewCellStyle12
-        Me.InstructorsDataTable.RowTemplate.Height = 24
-        Me.InstructorsDataTable.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.InstructorsDataTable.Size = New System.Drawing.Size(605, 271)
-        Me.InstructorsDataTable.TabIndex = 1
-        '
-        'Profile_Label
-        '
-        Me.Profile_Label.AutoSize = True
-        Me.Profile_Label.Font = New System.Drawing.Font("Bernard MT Condensed", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Profile_Label.Location = New System.Drawing.Point(9, 9)
-        Me.Profile_Label.Name = "Profile_Label"
-        Me.Profile_Label.Size = New System.Drawing.Size(214, 40)
-        Me.Profile_Label.TabIndex = 0
-        Me.Profile_Label.Text = "CDM Instructors"
-        '
-        'DropdownTimer
-        '
-        Me.DropdownTimer.Interval = 15
+        Me.InstructorSubmittedGrade_Btn.BackColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(110, Byte), Integer), CType(CType(33, Byte), Integer))
+        Me.InstructorSubmittedGrade_Btn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.InstructorSubmittedGrade_Btn.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.InstructorSubmittedGrade_Btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(110, Byte), Integer), CType(CType(33, Byte), Integer))
+        Me.InstructorSubmittedGrade_Btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(33, Byte), Integer))
+        Me.InstructorSubmittedGrade_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.InstructorSubmittedGrade_Btn.Font = New System.Drawing.Font("Bernard MT Condensed", 31.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.InstructorSubmittedGrade_Btn.ForeColor = System.Drawing.Color.White
+        Me.InstructorSubmittedGrade_Btn.Location = New System.Drawing.Point(321, 3)
+        Me.InstructorSubmittedGrade_Btn.Name = "InstructorSubmittedGrade_Btn"
+        Me.InstructorSubmittedGrade_Btn.Size = New System.Drawing.Size(312, 247)
+        Me.InstructorSubmittedGrade_Btn.TabIndex = 56
+        Me.InstructorSubmittedGrade_Btn.Text = "Instructor Submitted Grade"
+        Me.InstructorSubmittedGrade_Btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.InstructorSubmittedGrade_Btn.UseVisualStyleBackColor = False
         '
         'ChangeGradeReq_Btn
         '
@@ -353,23 +234,142 @@ Partial Class Admin_Main
         Me.ChangeGradeReq_Btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.ChangeGradeReq_Btn.UseVisualStyleBackColor = False
         '
-        'InstructorSubmittedGrade_Btn
+        'InstructorInfo_Panel
         '
-        Me.InstructorSubmittedGrade_Btn.BackColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(110, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.InstructorSubmittedGrade_Btn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.InstructorSubmittedGrade_Btn.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.InstructorSubmittedGrade_Btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(110, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.InstructorSubmittedGrade_Btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.InstructorSubmittedGrade_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.InstructorSubmittedGrade_Btn.Font = New System.Drawing.Font("Bernard MT Condensed", 31.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.InstructorSubmittedGrade_Btn.ForeColor = System.Drawing.Color.White
-        Me.InstructorSubmittedGrade_Btn.Location = New System.Drawing.Point(321, 3)
-        Me.InstructorSubmittedGrade_Btn.Name = "InstructorSubmittedGrade_Btn"
-        Me.InstructorSubmittedGrade_Btn.Size = New System.Drawing.Size(312, 247)
-        Me.InstructorSubmittedGrade_Btn.TabIndex = 56
-        Me.InstructorSubmittedGrade_Btn.Text = "Instructor Submitted Grade"
-        Me.InstructorSubmittedGrade_Btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.InstructorSubmittedGrade_Btn.UseVisualStyleBackColor = False
+        Me.InstructorInfo_Panel.BackColor = System.Drawing.Color.White
+        Me.InstructorInfo_Panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.InstructorInfo_Panel.Controls.Add(Me.InstructorInfo_Label)
+        Me.InstructorInfo_Panel.Location = New System.Drawing.Point(651, 5)
+        Me.InstructorInfo_Panel.Name = "InstructorInfo_Panel"
+        Me.InstructorInfo_Panel.Size = New System.Drawing.Size(675, 768)
+        Me.InstructorInfo_Panel.TabIndex = 1
+        '
+        'InstructorInfo_Label
+        '
+        Me.InstructorInfo_Label.AutoSize = True
+        Me.InstructorInfo_Label.Font = New System.Drawing.Font("Bernard MT Condensed", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.InstructorInfo_Label.Location = New System.Drawing.Point(13, 9)
+        Me.InstructorInfo_Label.Name = "InstructorInfo_Label"
+        Me.InstructorInfo_Label.Size = New System.Drawing.Size(365, 40)
+        Me.InstructorInfo_Label.TabIndex = 1
+        Me.InstructorInfo_Label.Text = "CDM Instructor Information"
+        '
+        'CDMinstructors_Panel
+        '
+        Me.CDMinstructors_Panel.BackColor = System.Drawing.SystemColors.Window
+        Me.CDMinstructors_Panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.CDMinstructors_Panel.Controls.Add(Me.SelectInstructor_Btn)
+        Me.CDMinstructors_Panel.Controls.Add(Me.Institute)
+        Me.CDMinstructors_Panel.Controls.Add(Me.InstructorSearchBar)
+        Me.CDMinstructors_Panel.Controls.Add(Me.InstructorsDataTable)
+        Me.CDMinstructors_Panel.Controls.Add(Me.CDMinstructors_Label)
+        Me.CDMinstructors_Panel.Location = New System.Drawing.Point(4, 5)
+        Me.CDMinstructors_Panel.Name = "CDMinstructors_Panel"
+        Me.CDMinstructors_Panel.Size = New System.Drawing.Size(641, 509)
+        Me.CDMinstructors_Panel.TabIndex = 0
+        '
+        'SelectInstructor_Btn
+        '
+        Me.SelectInstructor_Btn.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(20, Byte), Integer))
+        Me.SelectInstructor_Btn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.SelectInstructor_Btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(20, Byte), Integer))
+        Me.SelectInstructor_Btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.SelectInstructor_Btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(20, Byte), Integer))
+        Me.SelectInstructor_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.SelectInstructor_Btn.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SelectInstructor_Btn.ForeColor = System.Drawing.Color.Black
+        Me.SelectInstructor_Btn.Location = New System.Drawing.Point(227, 367)
+        Me.SelectInstructor_Btn.Name = "SelectInstructor_Btn"
+        Me.SelectInstructor_Btn.Size = New System.Drawing.Size(90, 40)
+        Me.SelectInstructor_Btn.TabIndex = 54
+        Me.SelectInstructor_Btn.Text = "Select"
+        Me.SelectInstructor_Btn.UseVisualStyleBackColor = False
+        '
+        'Institute
+        '
+        Me.Institute.AutoSize = True
+        Me.Institute.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Institute.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Institute.Location = New System.Drawing.Point(12, 348)
+        Me.Institute.Name = "Institute"
+        Me.Institute.Size = New System.Drawing.Size(138, 20)
+        Me.Institute.TabIndex = 53
+        Me.Institute.Text = "Search Instructor"
+        '
+        'InstructorSearchBar
+        '
+        '
+        '
+        '
+        Me.InstructorSearchBar.CustomButton.Image = Nothing
+        Me.InstructorSearchBar.CustomButton.Location = New System.Drawing.Point(167, 2)
+        Me.InstructorSearchBar.CustomButton.Name = ""
+        Me.InstructorSearchBar.CustomButton.Size = New System.Drawing.Size(35, 35)
+        Me.InstructorSearchBar.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.InstructorSearchBar.CustomButton.TabIndex = 1
+        Me.InstructorSearchBar.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.InstructorSearchBar.CustomButton.UseSelectable = True
+        Me.InstructorSearchBar.CustomButton.Visible = False
+        Me.InstructorSearchBar.FontSize = MetroFramework.MetroTextBoxSize.Tall
+        Me.InstructorSearchBar.Lines = New String(-1) {}
+        Me.InstructorSearchBar.Location = New System.Drawing.Point(16, 367)
+        Me.InstructorSearchBar.MaxLength = 100
+        Me.InstructorSearchBar.Name = "InstructorSearchBar"
+        Me.InstructorSearchBar.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.InstructorSearchBar.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.InstructorSearchBar.SelectedText = ""
+        Me.InstructorSearchBar.SelectionLength = 0
+        Me.InstructorSearchBar.SelectionStart = 0
+        Me.InstructorSearchBar.ShortcutsEnabled = True
+        Me.InstructorSearchBar.Size = New System.Drawing.Size(205, 40)
+        Me.InstructorSearchBar.Style = MetroFramework.MetroColorStyle.Green
+        Me.InstructorSearchBar.TabIndex = 37
+        Me.InstructorSearchBar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.InstructorSearchBar.UseSelectable = True
+        Me.InstructorSearchBar.WaterMarkColor = System.Drawing.Color.Silver
+        Me.InstructorSearchBar.WaterMarkFont = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        '
+        'InstructorsDataTable
+        '
+        Me.InstructorsDataTable.AllowUserToAddRows = False
+        Me.InstructorsDataTable.AllowUserToDeleteRows = False
+        Me.InstructorsDataTable.AllowUserToResizeColumns = False
+        Me.InstructorsDataTable.AllowUserToResizeRows = False
+        Me.InstructorsDataTable.BackgroundColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Bernard MT Condensed", 12.0!)
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.InstructorsDataTable.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.InstructorsDataTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.InstructorsDataTable.GridColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(33, Byte), Integer))
+        Me.InstructorsDataTable.Location = New System.Drawing.Point(16, 63)
+        Me.InstructorsDataTable.Name = "InstructorsDataTable"
+        Me.InstructorsDataTable.ReadOnly = True
+        Me.InstructorsDataTable.RowHeadersWidth = 51
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.InstructorsDataTable.RowsDefaultCellStyle = DataGridViewCellStyle2
+        Me.InstructorsDataTable.RowTemplate.Height = 24
+        Me.InstructorsDataTable.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.InstructorsDataTable.Size = New System.Drawing.Size(605, 271)
+        Me.InstructorsDataTable.TabIndex = 1
+        '
+        'CDMinstructors_Label
+        '
+        Me.CDMinstructors_Label.AutoSize = True
+        Me.CDMinstructors_Label.Font = New System.Drawing.Font("Bernard MT Condensed", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CDMinstructors_Label.Location = New System.Drawing.Point(9, 9)
+        Me.CDMinstructors_Label.Name = "CDMinstructors_Label"
+        Me.CDMinstructors_Label.Size = New System.Drawing.Size(214, 40)
+        Me.CDMinstructors_Label.TabIndex = 0
+        Me.CDMinstructors_Label.Text = "CDM Instructors"
+        '
+        'DropdownTimer
+        '
+        Me.DropdownTimer.Interval = 15
         '
         'Welcome_BG
         '
@@ -404,11 +404,11 @@ Partial Class Admin_Main
         CType(Me.CMDRMS_PicBox, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CDM_Logo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Instructor_Panel.ResumeLayout(False)
-        Me.Panel1.ResumeLayout(False)
-        Me.CourseReq_Panel.ResumeLayout(False)
-        Me.CourseReq_Panel.PerformLayout()
-        Me.Profile_Panel.ResumeLayout(False)
-        Me.Profile_Panel.PerformLayout()
+        Me.ReqAndSubmit_Panel.ResumeLayout(False)
+        Me.InstructorInfo_Panel.ResumeLayout(False)
+        Me.InstructorInfo_Panel.PerformLayout()
+        Me.CDMinstructors_Panel.ResumeLayout(False)
+        Me.CDMinstructors_Panel.PerformLayout()
         CType(Me.InstructorsDataTable, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Welcome_BG, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -425,16 +425,16 @@ Partial Class Admin_Main
     Friend WithEvents CDM_Logo As PictureBox
     Friend WithEvents GreenUpper_Panel As Panel
     Friend WithEvents Instructor_Panel As Panel
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents CourseReq_Panel As Panel
-    Friend WithEvents CourseReq_Label As Label
-    Friend WithEvents Profile_Panel As Panel
-    Friend WithEvents Profile_Label As Label
+    Friend WithEvents ReqAndSubmit_Panel As Panel
+    Friend WithEvents InstructorInfo_Panel As Panel
+    Friend WithEvents InstructorInfo_Label As Label
+    Friend WithEvents CDMinstructors_Panel As Panel
+    Friend WithEvents CDMinstructors_Label As Label
     Friend WithEvents DropdownTimer As Timer
     Friend WithEvents InstructorsDataTable As DataGridView
     Friend WithEvents InstructorSearchBar As MetroFramework.Controls.MetroTextBox
     Friend WithEvents Institute As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents SelectInstructor_Btn As Button
     Friend WithEvents ChangeGradeReq_Btn As Button
     Friend WithEvents InstructorSubmittedGrade_Btn As Button
     Friend WithEvents Welcome_BG As PictureBox
