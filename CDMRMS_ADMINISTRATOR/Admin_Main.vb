@@ -8,7 +8,6 @@ Public Class Admin_Main
     Private Shared connection As New MySqlConnection(ConnectionString)
 
 
-
     Private Sub Admin_Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dropdown_Panel.Size = Dropdown_Panel.MinimumSize
         Instructor_Panel.Hide()
@@ -81,7 +80,7 @@ Public Class Admin_Main
             Try
                 connection.Open()
 
-                Dim query As String = "SELECT * FROM instructors WHERE lastname LIKE @searchTerm"
+                Dim query As String = "SELECT * FROM instructors WHERE firstname LIKE @searchTerm OR middlename LIKE @searchTerm OR lastname LIKE @searchTerm OR instructorid LIKE @searchTerm"
                 Dim command As New MySqlCommand(query, connection)
 
                 command.Parameters.AddWithValue("@searchTerm", "%" & searchTerm & "%")
@@ -105,8 +104,63 @@ Public Class Admin_Main
     End Sub
 
 
-    Private Sub InstructorsDataTable_SelectionChanged(sender As Object, e As EventArgs) Handles InstructorsDataTable.SelectionChanged
+    Private Sub InstructorsDataTable_SelectionChanged(sender As Object, e As EventArgs)
         InstructorsDataTable.ClearSelection()
+    End Sub
+
+    Private Sub Clear_Btn_Click(sender As Object, e As EventArgs) Handles Clear_Btn.Click
+        InstructorSearchBar.Clear()
+    End Sub
+
+    Private Sub ViewInstructorInfo_Click(sender As Object, e As EventArgs) Handles ViewInstructorInfo.Click
+        If InstructorsDataTable.SelectedRows.Count > 0 Then
+
+            Dim selectedRow As DataGridViewRow = InstructorsDataTable.SelectedRows(0)
+            Dim instructorid As String
+            instructorid = selectedRow.Cells("instructorid").Value.ToString()
+
+            AdminInstructorsInfo(instructorid)
+        End If
+
+    End Sub
+
+    Private Sub AdminInstructorsInfo(instructorid)
+        Dim query As String = "SELECT * FROM `instructors` WHERE instructorid = @instructorid"
+        Using connection As New MySqlConnection(ConnectionString)
+            Using command As New MySqlCommand(query, connection)
+
+                command.Parameters.AddWithValue("@instructorid", instructorid)
+
+                Try
+
+                    connection.Open()
+
+                    Using reader As MySqlDataReader = command.ExecuteReader
+
+                        If reader.Read Then
+
+                            Dim dateOnly As Date = Convert.ToDateTime(reader("birthday"))
+
+                            InstructorsID_TB.Text = reader("instructorid").ToString()
+                            FN_TB.Text = reader("firstname").ToString()
+                            MN_TB.Text = reader("middlename").ToString()
+                            LN_TB.Text = reader("lastname").ToString()
+                            Sex_TB.Text = reader("gender").ToString()
+                            CN_TB.Text = reader("contact#").ToString()
+                            Birthday_TB.Text = dateOnly.ToString("MM-dd-yyyy")
+                            Email_TB.Text = reader("email").ToString()
+
+
+                        End If
+                    End Using
+
+                Catch ex As Exception
+
+                End Try
+            End Using
+        End Using
+        connection.Close()
+
     End Sub
 
     Private Sub ChangeGradeReq_Btn_Click(sender As Object, e As EventArgs) Handles ChangeGradeReq_Btn.Click
