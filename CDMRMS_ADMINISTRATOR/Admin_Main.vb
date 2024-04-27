@@ -179,5 +179,13 @@ Public Class Admin_Main
         Me.Enabled = False
     End Sub
 
+    Private Sub AssignedCourse_Btn_Click(sender As Object, e As EventArgs) Handles AssignedCourse_Btn.Click
+        AssignedCourse_Section.Show()
+        Me.Enabled = False
+    End Sub
 
+    Private Sub InstructorSubmittedGrade_Btn_Click(sender As Object, e As EventArgs) Handles InstructorSubmittedGrade_Btn.Click
+        InstructorSubmittedGrade.Show()
+        Me.Enabled = False
+    End Sub
 End Class

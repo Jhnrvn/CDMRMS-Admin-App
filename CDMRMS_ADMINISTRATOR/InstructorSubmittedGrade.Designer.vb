@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class ChangingGradeRequest
+Partial Class InstructorSubmittedGrade
     Inherits MetroFramework.Forms.MetroForm
 
     'Form overrides dispose to clean up the component list.
@@ -43,7 +43,7 @@ Partial Class ChangingGradeRequest
         Me.Panel1.Location = New System.Drawing.Point(-1, -2)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(803, 459)
-        Me.Panel1.TabIndex = 0
+        Me.Panel1.TabIndex = 1
         '
         'Close_Btn
         '
@@ -69,9 +69,9 @@ Partial Class ChangingGradeRequest
         Me.Profile_Label.ForeColor = System.Drawing.Color.White
         Me.Profile_Label.Location = New System.Drawing.Point(17, 20)
         Me.Profile_Label.Name = "Profile_Label"
-        Me.Profile_Label.Size = New System.Drawing.Size(235, 40)
+        Me.Profile_Label.Size = New System.Drawing.Size(367, 40)
         Me.Profile_Label.TabIndex = 1
-        Me.Profile_Label.Text = "Pending Request"
+        Me.Profile_Label.Text = "Instructor Submitted Grade"
         '
         'Panel2
         '
@@ -129,16 +129,17 @@ Partial Class ChangingGradeRequest
         Me.Button1.Text = "Approve"
         Me.Button1.UseVisualStyleBackColor = False
         '
-        'ChangingGradeRequest
+        'InstructorSubmittedGrade
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.Panel1)
-        Me.Name = "ChangingGradeRequest"
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
+        Me.Name = "InstructorSubmittedGrade"
         Me.Resizable = False
         Me.ShadowType = MetroFramework.Forms.MetroFormShadowType.None
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Style = MetroFramework.MetroColorStyle.White
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
@@ -149,10 +150,10 @@ Partial Class ChangingGradeRequest
     End Sub
 
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents Close_Btn As Button
     Friend WithEvents Profile_Label As Label
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Close_Btn As Button
-    Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Button2 As Button
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents Button1 As Button
 End Class
