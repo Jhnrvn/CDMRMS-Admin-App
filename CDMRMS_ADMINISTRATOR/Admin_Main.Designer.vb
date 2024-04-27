@@ -72,6 +72,7 @@ Partial Class Admin_Main
         Me.CDMinstructors_Label = New System.Windows.Forms.Label()
         Me.DropdownTimer = New System.Windows.Forms.Timer(Me.components)
         Me.Welcome_BG = New System.Windows.Forms.PictureBox()
+        Me.AdminLogo = New System.Windows.Forms.PictureBox()
         Me.GreenSide_Panel.SuspendLayout()
         Me.Dropdown_Panel.SuspendLayout()
         CType(Me.CMDRMS_PicBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -84,6 +85,7 @@ Partial Class Admin_Main
         Me.CDMinstructors_Panel.SuspendLayout()
         CType(Me.InstructorsDataTable, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Welcome_BG, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AdminLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GreenSide_Panel
@@ -92,6 +94,7 @@ Partial Class Admin_Main
         Me.GreenSide_Panel.Controls.Add(Me.Dropdown_Panel)
         Me.GreenSide_Panel.Controls.Add(Me.CMDRMS_PicBox)
         Me.GreenSide_Panel.Controls.Add(Me.CDM_Logo)
+        Me.GreenSide_Panel.Controls.Add(Me.AdminLogo)
         Me.GreenSide_Panel.Location = New System.Drawing.Point(-1, 31)
         Me.GreenSide_Panel.Name = "GreenSide_Panel"
         Me.GreenSide_Panel.Size = New System.Drawing.Size(220, 842)
@@ -121,9 +124,11 @@ Partial Class Admin_Main
         Me.Student_Btn.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Student_Btn.Location = New System.Drawing.Point(0, 158)
         Me.Student_Btn.Name = "Student_Btn"
+        Me.Student_Btn.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
         Me.Student_Btn.Size = New System.Drawing.Size(216, 50)
         Me.Student_Btn.TabIndex = 4
         Me.Student_Btn.Text = "Student"
+        Me.Student_Btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Student_Btn.UseVisualStyleBackColor = False
         '
         'Instructor_Btn
@@ -136,9 +141,11 @@ Partial Class Admin_Main
         Me.Instructor_Btn.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Instructor_Btn.Location = New System.Drawing.Point(0, 108)
         Me.Instructor_Btn.Name = "Instructor_Btn"
+        Me.Instructor_Btn.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
         Me.Instructor_Btn.Size = New System.Drawing.Size(216, 50)
         Me.Instructor_Btn.TabIndex = 3
         Me.Instructor_Btn.Text = "Instructor"
+        Me.Instructor_Btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Instructor_Btn.UseVisualStyleBackColor = False
         '
         'Dashboard_Btn
@@ -151,9 +158,11 @@ Partial Class Admin_Main
         Me.Dashboard_Btn.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Dashboard_Btn.Location = New System.Drawing.Point(0, 58)
         Me.Dashboard_Btn.Name = "Dashboard_Btn"
+        Me.Dashboard_Btn.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
         Me.Dashboard_Btn.Size = New System.Drawing.Size(216, 50)
         Me.Dashboard_Btn.TabIndex = 2
         Me.Dashboard_Btn.Text = "Dashboard"
+        Me.Dashboard_Btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Dashboard_Btn.UseVisualStyleBackColor = False
         '
         'Menu_Btn
@@ -165,9 +174,12 @@ Partial Class Admin_Main
         Me.Menu_Btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
         Me.Menu_Btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
         Me.Menu_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Menu_Btn.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Menu_Btn.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Menu_Btn.Image = CType(resources.GetObject("Menu_Btn.Image"), System.Drawing.Image)
+        Me.Menu_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Menu_Btn.Location = New System.Drawing.Point(0, 0)
         Me.Menu_Btn.Name = "Menu_Btn"
+        Me.Menu_Btn.Padding = New System.Windows.Forms.Padding(0, 0, 3, 0)
         Me.Menu_Btn.Size = New System.Drawing.Size(216, 58)
         Me.Menu_Btn.TabIndex = 1
         Me.Menu_Btn.Text = "MENU"
@@ -898,6 +910,16 @@ Partial Class Admin_Main
         Me.Welcome_BG.TabIndex = 5
         Me.Welcome_BG.TabStop = False
         '
+        'AdminLogo
+        '
+        Me.AdminLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.AdminLogo.Image = CType(resources.GetObject("AdminLogo.Image"), System.Drawing.Image)
+        Me.AdminLogo.Location = New System.Drawing.Point(28, 82)
+        Me.AdminLogo.Name = "AdminLogo"
+        Me.AdminLogo.Size = New System.Drawing.Size(164, 125)
+        Me.AdminLogo.TabIndex = 54
+        Me.AdminLogo.TabStop = False
+        '
         'Admin_Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -930,6 +952,7 @@ Partial Class Admin_Main
         Me.CDMinstructors_Panel.PerformLayout()
         CType(Me.InstructorsDataTable, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Welcome_BG, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AdminLogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -979,4 +1002,5 @@ Partial Class Admin_Main
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents DataGridView2 As DataGridView
+    Friend WithEvents AdminLogo As PictureBox
 End Class
