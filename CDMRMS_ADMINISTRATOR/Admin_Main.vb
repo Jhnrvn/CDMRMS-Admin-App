@@ -3,18 +3,24 @@
 
 Public Class Admin_Main
 
-    ' Database Connection
-    Private Shared ConnectionString As String = "server=localhost; port=3306; database=cdmregistrarmanagementsystem; uid=root; password=;"
-    Private Shared connection As New MySqlConnection(ConnectionString)
 
-
+    ' FORM LOAD - START
     Private Sub Admin_Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dropdown_Panel.Size = Dropdown_Panel.MinimumSize
         Instructor_Panel.Hide()
         InstructorData()
 
     End Sub
+    ' FORM LOAD - END
 
+
+    ' DATABASE CONNECTION - START
+    Private Shared ConnectionString As String = "server=localhost; port=3306; database=cdmregistrarmanagementsystem; uid=root; password=;"
+    Private Shared connection As New MySqlConnection(ConnectionString)
+    ' DATABASE CONNECTION - END
+
+
+    ' DROP-DOWN MENU ANIMATION - START
     Dim MenuCollapsed As Boolean = True
     Private Sub Dropdown_Timer_Tick(sender As Object, e As EventArgs) Handles DropdownTimer.Tick
         If MenuCollapsed Then
@@ -40,10 +46,13 @@ Public Class Admin_Main
         End If
     End Sub
 
+    ' Drop-down Menu button 
     Private Sub Menu_Btn_Click(sender As Object, e As EventArgs) Handles Menu_Btn.Click
         DropdownTimer.Start()
 
     End Sub
+    ' DROP-DOWN MENU ANIMATION - END
+
 
     Private Sub InstructorData()
         Try
