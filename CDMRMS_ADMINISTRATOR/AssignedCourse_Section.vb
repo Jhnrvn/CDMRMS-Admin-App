@@ -60,6 +60,7 @@ Public Class AssignedCourse_Section
 
     Private Sub Edit_Btn_Click(sender As Object, e As EventArgs) Handles Edit_Btn.Click
         AssignedCourseTable.ReadOnly = False
+        MsgBox("Edit Enabled!", MessageBoxIcon.Information)
     End Sub
 
 
@@ -67,6 +68,5 @@ Public Class AssignedCourse_Section
         Me.Close()
         Admin_Main.Enabled = True
     End Sub
-
 
 End Class

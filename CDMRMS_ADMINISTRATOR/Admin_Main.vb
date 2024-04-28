@@ -131,6 +131,7 @@ Public Class Admin_Main
             instructorid = selectedRow.Cells("instructorid").Value.ToString()
 
             AdminInstructorsInfo(instructorid)
+            AssignedCourseAndSection(instructorid)
         End If
 
     End Sub
@@ -174,6 +175,29 @@ Public Class Admin_Main
 
     End Sub
 
+
+    Private Sub AssignedCourseAndSection(instructorid)
+        Dim query As String = "SELECT `course` FROM `assignedcourse` WHERE instructor_id = @instructorid"
+        Using connection As New MySqlConnection(ConnectionString)
+            connection.Open()
+
+            Using coursecommand As New MySqlCommand(query, connection)
+                coursecommand.Parameters.AddWithValue("@instructorid", instructorid)
+                Dim dataTable As New DataTable()
+                dataTable.Load(coursecommand.ExecuteReader())
+
+                AssignedCourseTable.DataSource = dataTable
+                AssignedCourseTable.Columns("course").Width = 175
+
+            End Using
+
+            Using sectioncommand As New MySqlCommand(query, connection)
+
+            End Using
+
+        End Using
+    End Sub
+
     Private Sub ChangeGradeReq_Btn_Click(sender As Object, e As EventArgs) Handles ChangeGradeReq_Btn.Click
         ChangingGradeRequest.Show()
         Me.Enabled = False
@@ -188,4 +212,6 @@ Public Class Admin_Main
         InstructorSubmittedGrade.Show()
         Me.Enabled = False
     End Sub
+
+
 End Class
