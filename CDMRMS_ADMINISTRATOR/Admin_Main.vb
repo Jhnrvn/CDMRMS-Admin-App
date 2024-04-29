@@ -25,27 +25,44 @@ Public Class Admin_Main
     Private Sub Dropdown_Timer_Tick(sender As Object, e As EventArgs) Handles DropdownTimer.Tick
         If MenuCollapsed Then
 
-            Menu_Btn.Image = Image.FromFile("D:\Development Projects\Visual Basic\CDM Registrar Management System\CDMRMS_ADMINISTRATOR\Assets\Main\Arrow_Down.png")
+            ' Change image of Menu button to Arrow Down
+            Menu_Btn.Image = Image.FromFile("D:\Development Projects\Visual Basic\CDM Registrar Management System\CDMRMS_ADMINISTRATOR\Assets\Main\Arrow Down.png")
             Dropdown_Panel.Height += 10
             If Dropdown_Panel.Size = Dropdown_Panel.MaximumSize Then
 
                 DropdownTimer.Stop()
                 MenuCollapsed = False
+
             End If
-
         Else
-
+            ' Hide Instructor Panel
             Instructor_Panel.Hide()
 
-            Menu_Btn.Image = Image.FromFile("D:\Development Projects\Visual Basic\CDM Registrar Management System\CDMRMS_ADMINISTRATOR\Assets\Main\Arrow_Right.png")
+            ' Clear textbox that display instructors information 
+            InstructorsID_TB.Clear()
+            FN_TB.Clear()
+            MN_TB.Clear()
+            LN_TB.Clear()
+            Sex_TB.Clear()
+            CN_TB.Clear()
+            Birthday_TB.Clear()
+            Email_TB.Clear()
+
+            ' Clear the table for assigned course and section
+            AssignedCourseTable.DataSource = Nothing
+
+            ' Change image of Menu button to arrow right
+            Menu_Btn.Image = Image.FromFile("D:\Development Projects\Visual Basic\CDM Registrar Management System\CDMRMS_ADMINISTRATOR\Assets\Main\Arrow Right.png")
+
             Dropdown_Panel.Height -= 10
             If Dropdown_Panel.Size = Dropdown_Panel.MinimumSize Then
 
                 DropdownTimer.Stop()
                 MenuCollapsed = True
-            End If
 
+            End If
         End If
+
     End Sub
 
     ' Drop-down Menu button 
