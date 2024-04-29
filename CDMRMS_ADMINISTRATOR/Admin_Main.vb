@@ -187,7 +187,8 @@ Public Class Admin_Main
                 dataTable.Load(coursecommand.ExecuteReader())
 
                 AssignedCourseTable.DataSource = dataTable
-                AssignedCourseTable.Columns("course").Width = 175
+                AssignedCourseTable.Columns("course").Width = 218
+
 
             End Using
 
