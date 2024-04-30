@@ -1,7 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 
-
 Public Class Admin_Main
+
 
 
     ' FORM LOAD - START
@@ -14,10 +14,12 @@ Public Class Admin_Main
     ' FORM LOAD - END
 
 
+
     ' DATABASE CONNECTION - START
     Private Shared ConnectionString As String = "server=localhost; port=3306; database=cdmregistrarmanagementsystem; uid=root; password=;"
     Private Shared connection As New MySqlConnection(ConnectionString)
     ' DATABASE CONNECTION - END
+
 
 
     ' DROP-DOWN MENU ANIMATION - START
@@ -73,6 +75,15 @@ Public Class Admin_Main
     ' DROP-DOWN MENU ANIMATION - END
 
 
+
+    ' INSTRUCTOR PANEL - START
+    Private Sub Instructor_Btn_Click(sender As Object, e As EventArgs) Handles Instructor_Btn.Click
+        Instructor_Panel.Show()
+
+    End Sub
+
+
+    ' Query to display Instructor Name and Instructor ID
     Private Sub InstructorData()
         Try
             connection.Open()
@@ -96,12 +107,7 @@ Public Class Admin_Main
     End Sub
 
 
-
-    Private Sub Instructor_Btn_Click(sender As Object, e As EventArgs) Handles Instructor_Btn.Click
-        Instructor_Panel.Show()
-
-    End Sub
-
+    ' Search Function for CDM Instructor Table
     Private Sub InstructorSearchBar_textChanged(sender As Object, e As EventArgs) Handles InstructorSearchBar.TextChanged
         Dim searchTerm As String = InstructorSearchBar.Text.Trim()
         If searchTerm <> "" Then
@@ -132,10 +138,7 @@ Public Class Admin_Main
     End Sub
 
 
-    Private Sub InstructorsDataTable_SelectionChanged(sender As Object, e As EventArgs)
-        InstructorsDataTable.ClearSelection()
-    End Sub
-
+    ' Clear search bar button
     Private Sub Clear_Btn_Click(sender As Object, e As EventArgs) Handles Clear_Btn.Click
         InstructorSearchBar.Clear()
     End Sub
@@ -153,6 +156,8 @@ Public Class Admin_Main
 
     End Sub
 
+
+    ' Display instructor Information when you click the row from CDM instructor table
     Private Sub AdminInstructorsInfo(instructorid)
         Dim query As String = "SELECT * FROM `instructors` WHERE instructorid = @instructorid"
         Using connection As New MySqlConnection(ConnectionString)
@@ -161,7 +166,6 @@ Public Class Admin_Main
                 command.Parameters.AddWithValue("@instructorid", instructorid)
 
                 Try
-
                     connection.Open()
 
                     Using reader As MySqlDataReader = command.ExecuteReader
@@ -179,7 +183,6 @@ Public Class Admin_Main
                             Birthday_TB.Text = dateOnly.ToString("MM-dd-yyyy")
                             Email_TB.Text = reader("email").ToString()
 
-
                         End If
                     End Using
 
@@ -193,7 +196,10 @@ Public Class Admin_Main
     End Sub
 
 
+    ' Assigned Course and Section Table on Instructors Information  
     Private Sub AssignedCourseAndSection(instructorid)
+
+        ' Display Assigned Course
         Dim query As String = "SELECT `course` FROM `assignedcourse` WHERE instructor_id = @instructorid"
         Using connection As New MySqlConnection(ConnectionString)
             connection.Open()
@@ -206,7 +212,6 @@ Public Class Admin_Main
                 AssignedCourseTable.DataSource = dataTable
                 AssignedCourseTable.Columns("course").Width = 218
 
-
             End Using
 
             Using sectioncommand As New MySqlCommand(query, connection)
@@ -214,22 +219,38 @@ Public Class Admin_Main
             End Using
 
         End Using
+
+
+        ' Display Assigned Section 
+
     End Sub
 
+
+    ' Changing Grade Request Button
     Private Sub ChangeGradeReq_Btn_Click(sender As Object, e As EventArgs) Handles ChangeGradeReq_Btn.Click
+
         ChangingGradeRequest.Show()
         Me.Enabled = False
+
     End Sub
 
-    Private Sub AssignedCourse_Btn_Click(sender As Object, e As EventArgs) Handles AssignedCourse_Btn.Click
-        AssignedCourse_Section.Show()
-        Me.Enabled = False
-    End Sub
 
+    ' Instructor Submitted Grade Button
     Private Sub InstructorSubmittedGrade_Btn_Click(sender As Object, e As EventArgs) Handles InstructorSubmittedGrade_Btn.Click
+
         InstructorSubmittedGrade.Show()
         Me.Enabled = False
+
     End Sub
 
+
+    ' Assiged Course and Section Button
+    Private Sub AssignedCourse_Btn_Click(sender As Object, e As EventArgs) Handles AssignedCourse_Btn.Click
+
+        AssignedCourse_Section.Show()
+        Me.Enabled = False
+
+    End Sub
+    ' INSTRUCTOR PANEL - END
 
 End Class
