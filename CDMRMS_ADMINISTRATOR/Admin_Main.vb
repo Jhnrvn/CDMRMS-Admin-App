@@ -261,6 +261,7 @@ Public Class Admin_Main
                     AssignedSectionTable.Rows.Add(reader.GetString("section_9"))
                     AssignedSectionTable.Rows.Add(reader.GetString("section_10"))
 
+
                 End While
                 reader.Close()
 
@@ -276,6 +277,9 @@ Public Class Admin_Main
     End Sub
 
 
+
+
+
     ' Changing Grade Request Button
     Private Sub ChangeGradeReq_Btn_Click(sender As Object, e As EventArgs) Handles ChangeGradeReq_Btn.Click
 
@@ -283,6 +287,7 @@ Public Class Admin_Main
         Me.Enabled = False
 
     End Sub
+
 
 
     ' Instructor Submitted Grade Button

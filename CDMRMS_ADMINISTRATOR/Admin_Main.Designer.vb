@@ -191,7 +191,7 @@ Partial Class Admin_Main
         Me.Menu_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Menu_Btn.Location = New System.Drawing.Point(0, 0)
         Me.Menu_Btn.Name = "Menu_Btn"
-        Me.Menu_Btn.Padding = New System.Windows.Forms.Padding(15, 0, 15, 0)
+        Me.Menu_Btn.Padding = New System.Windows.Forms.Padding(15, 0, 3, 0)
         Me.Menu_Btn.Size = New System.Drawing.Size(216, 58)
         Me.Menu_Btn.TabIndex = 1
         Me.Menu_Btn.Text = "MENU"
@@ -485,6 +485,7 @@ Partial Class Admin_Main
         Me.InstructorsID_TB.BackColor = System.Drawing.Color.White
         Me.InstructorsID_TB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.InstructorsID_TB.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.InstructorsID_TB.ForeColor = System.Drawing.Color.Black
         Me.InstructorsID_TB.Location = New System.Drawing.Point(11, 25)
         Me.InstructorsID_TB.Name = "InstructorsID_TB"
         Me.InstructorsID_TB.ReadOnly = True
@@ -497,6 +498,7 @@ Partial Class Admin_Main
         Me.Birthday_TB.BackColor = System.Drawing.Color.White
         Me.Birthday_TB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Birthday_TB.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Birthday_TB.ForeColor = System.Drawing.Color.Black
         Me.Birthday_TB.Location = New System.Drawing.Point(412, 172)
         Me.Birthday_TB.Name = "Birthday_TB"
         Me.Birthday_TB.ReadOnly = True
@@ -509,6 +511,7 @@ Partial Class Admin_Main
         Me.Email_TB.BackColor = System.Drawing.Color.White
         Me.Email_TB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Email_TB.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Email_TB.ForeColor = System.Drawing.Color.Black
         Me.Email_TB.Location = New System.Drawing.Point(11, 246)
         Me.Email_TB.Name = "Email_TB"
         Me.Email_TB.ReadOnly = True
@@ -521,6 +524,7 @@ Partial Class Admin_Main
         Me.Sex_TB.BackColor = System.Drawing.Color.White
         Me.Sex_TB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Sex_TB.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Sex_TB.ForeColor = System.Drawing.Color.Black
         Me.Sex_TB.Location = New System.Drawing.Point(13, 172)
         Me.Sex_TB.Name = "Sex_TB"
         Me.Sex_TB.ReadOnly = True
@@ -533,6 +537,7 @@ Partial Class Admin_Main
         Me.CN_TB.BackColor = System.Drawing.Color.White
         Me.CN_TB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.CN_TB.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CN_TB.ForeColor = System.Drawing.Color.Black
         Me.CN_TB.Location = New System.Drawing.Point(212, 172)
         Me.CN_TB.Name = "CN_TB"
         Me.CN_TB.ReadOnly = True
@@ -545,6 +550,7 @@ Partial Class Admin_Main
         Me.LN_TB.BackColor = System.Drawing.Color.White
         Me.LN_TB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.LN_TB.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LN_TB.ForeColor = System.Drawing.Color.Black
         Me.LN_TB.Location = New System.Drawing.Point(412, 99)
         Me.LN_TB.Name = "LN_TB"
         Me.LN_TB.ReadOnly = True
@@ -557,6 +563,7 @@ Partial Class Admin_Main
         Me.FN_TB.BackColor = System.Drawing.Color.White
         Me.FN_TB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.FN_TB.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FN_TB.ForeColor = System.Drawing.Color.Black
         Me.FN_TB.Location = New System.Drawing.Point(13, 99)
         Me.FN_TB.Name = "FN_TB"
         Me.FN_TB.ReadOnly = True
@@ -569,6 +576,7 @@ Partial Class Admin_Main
         Me.MN_TB.BackColor = System.Drawing.Color.White
         Me.MN_TB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.MN_TB.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MN_TB.ForeColor = System.Drawing.Color.Black
         Me.MN_TB.Location = New System.Drawing.Point(212, 99)
         Me.MN_TB.Name = "MN_TB"
         Me.MN_TB.ReadOnly = True
@@ -627,7 +635,8 @@ Partial Class Admin_Main
         Me.AssignedSectionTable.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.AssignedSectionTable.RowHeadersVisible = False
         Me.AssignedSectionTable.RowHeadersWidth = 51
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White
         Me.AssignedSectionTable.RowsDefaultCellStyle = DataGridViewCellStyle4
         Me.AssignedSectionTable.RowTemplate.Height = 25
         Me.AssignedSectionTable.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
