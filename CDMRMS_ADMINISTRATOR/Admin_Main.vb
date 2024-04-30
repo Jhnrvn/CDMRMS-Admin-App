@@ -52,6 +52,7 @@ Public Class Admin_Main
 
             ' Clear the table for assigned course and section
             AssignedCourseTable.DataSource = Nothing
+            AssignedSectionTable.Columns.Clear()
 
             ' Change image of Menu button to arrow right
             Menu_Btn.Image = Image.FromFile("D:\Development Projects\Visual Basic\CDM Registrar Management System\CDMRMS_ADMINISTRATOR\Assets\Main\Arrow Right.png")
@@ -200,21 +201,21 @@ Public Class Admin_Main
     Private Sub AssignedCourseAndSection(instructorid)
 
         ' Display Assigned Course
-        Dim query As String = "SELECT `course` FROM `assignedcourse` WHERE instructor_id = @instructorid"
+        Dim CourseQuery As String = "SELECT `course` FROM `assignedcourse` WHERE instructor_id = @instructorid"
         Using connection As New MySqlConnection(ConnectionString)
             connection.Open()
 
-            Using coursecommand As New MySqlCommand(query, connection)
-                coursecommand.Parameters.AddWithValue("@instructorid", instructorid)
+            Using CourseCommand As New MySqlCommand(CourseQuery, connection)
+                CourseCommand.Parameters.AddWithValue("@instructorid", instructorid)
                 Dim dataTable As New DataTable()
-                dataTable.Load(coursecommand.ExecuteReader())
+                dataTable.Load(CourseCommand.ExecuteReader())
 
                 AssignedCourseTable.DataSource = dataTable
                 AssignedCourseTable.Columns("course").Width = 218
 
             End Using
 
-            Using sectioncommand As New MySqlCommand(query, connection)
+            Using sectioncommand As New MySqlCommand(CourseQuery, connection)
 
             End Using
 
@@ -222,6 +223,55 @@ Public Class Admin_Main
 
 
         ' Display Assigned Section 
+        Dim SectionQuery As String = "SELECT `section_1`, `section_2`, `section_3`, `section_4`, `section_5`, `section_6`, `section_7`, `section_8`, `section_9`, `section_10` FROM `assignedcourse` WHERE instructor_id = @instructorid"
+        Using connection As New MySqlConnection(ConnectionString)
+
+            Try
+                connection.Open()
+
+                Dim SectionCommand As New MySqlCommand(SectionQuery, connection)
+                SectionCommand.Parameters.AddWithValue("@instructorid", instructorid)
+
+                Dim reader As MySqlDataReader = SectionCommand.ExecuteReader()
+
+                AssignedSectionTable.Columns.Clear()
+                AssignedSectionTable.Rows.Clear()
+
+                ' Add a new column to the DataGridView
+                Using column As New DataGridViewTextBoxColumn()
+
+                    column.HeaderText = "Sections"
+                    AssignedSectionTable.Columns.Add(column)
+                    column.Width = 218
+
+                End Using
+
+                ' Loop through the rows returned by the query
+                While reader.Read()
+
+                    ' Add each value to a new row in the DataGridView
+                    AssignedSectionTable.Rows.Add(reader.GetString("section_1"))
+                    AssignedSectionTable.Rows.Add(reader.GetString("section_2"))
+                    AssignedSectionTable.Rows.Add(reader.GetString("section_3"))
+                    AssignedSectionTable.Rows.Add(reader.GetString("section_4"))
+                    AssignedSectionTable.Rows.Add(reader.GetString("section_5"))
+                    AssignedSectionTable.Rows.Add(reader.GetString("section_6"))
+                    AssignedSectionTable.Rows.Add(reader.GetString("section_7"))
+                    AssignedSectionTable.Rows.Add(reader.GetString("section_8"))
+                    AssignedSectionTable.Rows.Add(reader.GetString("section_9"))
+                    AssignedSectionTable.Rows.Add(reader.GetString("section_10"))
+
+                End While
+                reader.Close()
+
+            Catch ex As Exception
+                MessageBox.Show("Error: " & ex.Message)
+            Finally
+                connection.Close()
+
+            End Try
+
+        End Using
 
     End Sub
 
