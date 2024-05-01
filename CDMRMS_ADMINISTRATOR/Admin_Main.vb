@@ -1,4 +1,5 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.Drawing.Text
+Imports MySql.Data.MySqlClient
 
 Public Class Admin_Main
 
@@ -211,69 +212,33 @@ Public Class Admin_Main
                 dataTable.Load(CourseCommand.ExecuteReader())
 
                 AssignedCourseTable.DataSource = dataTable
-                AssignedCourseTable.Columns("course").Width = 218
-
-            End Using
-
-            Using sectioncommand As New MySqlCommand(CourseQuery, connection)
+                AssignedCourseTable.Columns("course").Width = 295
 
             End Using
 
         End Using
 
-
-        ' Display Assigned Section 
-        Dim SectionQuery As String = "SELECT `section_1`, `section_2`, `section_3`, `section_4`, `section_5`, `section_6`, `section_7`, `section_8`, `section_9`, `section_10` FROM `assignedcourse` WHERE instructor_id = @instructorid"
-        Using connection As New MySqlConnection(ConnectionString)
-
-            Try
-                connection.Open()
-
-                Dim SectionCommand As New MySqlCommand(SectionQuery, connection)
-                SectionCommand.Parameters.AddWithValue("@instructorid", instructorid)
-
-                Dim reader As MySqlDataReader = SectionCommand.ExecuteReader()
-
-                AssignedSectionTable.Columns.Clear()
-                AssignedSectionTable.Rows.Clear()
-
-                ' Add a new column to the DataGridView
-                Using column As New DataGridViewTextBoxColumn()
-
-                    column.HeaderText = "Sections"
-                    AssignedSectionTable.Columns.Add(column)
-                    column.Width = 218
-
-                End Using
-
-                ' Loop through the rows returned by the query
-                While reader.Read()
-
-                    ' Add each value to a new row in the DataGridView
-                    AssignedSectionTable.Rows.Add(reader.GetString("section_1"))
-                    AssignedSectionTable.Rows.Add(reader.GetString("section_2"))
-                    AssignedSectionTable.Rows.Add(reader.GetString("section_3"))
-                    AssignedSectionTable.Rows.Add(reader.GetString("section_4"))
-                    AssignedSectionTable.Rows.Add(reader.GetString("section_5"))
-                    AssignedSectionTable.Rows.Add(reader.GetString("section_6"))
-                    AssignedSectionTable.Rows.Add(reader.GetString("section_7"))
-                    AssignedSectionTable.Rows.Add(reader.GetString("section_8"))
-                    AssignedSectionTable.Rows.Add(reader.GetString("section_9"))
-                    AssignedSectionTable.Rows.Add(reader.GetString("section_10"))
+    End Sub
 
 
-                End While
-                reader.Close()
+    Private Sub AssignedCourseTable_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles AssignedCourseTable.CellClick
+        If e.RowIndex >= 0 Then
 
-            Catch ex As Exception
-                MessageBox.Show("Error: " & ex.Message)
-            Finally
-                connection.Close()
+            Dim selectedRow As DataGridViewRow = AssignedCourseTable.Rows(e.RowIndex)
+            Dim course As String = selectedRow.Cells("course").Value.ToString()
 
-            End Try
+            Dim sectionQuery As String = "SELECT * FROM assignedcourse WHERE course = @course"
+            Dim sectionAdapter As New MySqlDataAdapter(sectionQuery, connection)
+            sectionAdapter.SelectCommand.Parameters.AddWithValue("@course", course)
+            Dim dataTable As New DataTable()
+            sectionAdapter.Fill(dataTable)
 
-        End Using
-
+            AssignedSectionTable.DataSource = dataTable
+            AssignedSectionTable.Columns("id").Visible = False
+            AssignedSectionTable.Columns("instructor_id").Visible = False
+            AssignedSectionTable.Columns("Instructor").Visible = False
+            AssignedSectionTable.Columns("course").Visible = False
+        End If
     End Sub
 
 
@@ -306,6 +271,13 @@ Public Class Admin_Main
         Me.Enabled = False
 
     End Sub
+
+
+
+
+
+
+
     ' INSTRUCTOR PANEL - END
 
 End Class
