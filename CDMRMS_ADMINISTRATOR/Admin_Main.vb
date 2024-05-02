@@ -153,7 +153,7 @@ Public Class Admin_Main
             instructorid = selectedRow.Cells("instructorid").Value.ToString()
 
             AdminInstructorsInfo(instructorid)
-            AssignedCourseAndSection(instructorid)
+            AssignedCourse(instructorid)
         End If
 
     End Sub
@@ -198,8 +198,8 @@ Public Class Admin_Main
     End Sub
 
 
-    ' Assigned Course and Section Table on Instructors Information  
-    Private Sub AssignedCourseAndSection(instructorid)
+    ' Assigned Course Table on Instructors Information  
+    Private Sub AssignedCourse(instructorid)
 
         ' Display Assigned Course
         Dim CourseQuery As String = "SELECT `course` FROM `assignedcourse` WHERE instructor_id = @instructorid"
@@ -221,6 +221,7 @@ Public Class Admin_Main
     End Sub
 
 
+    ' Will show the section handled by the instructor when you click the course from the course table on the Instructor Information
     Private Sub AssignedCourseTable_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles AssignedCourseTable.CellClick
         If e.RowIndex >= 0 Then
 
@@ -242,9 +243,6 @@ Public Class Admin_Main
     End Sub
 
 
-
-
-
     ' Changing Grade Request Button
     Private Sub ChangeGradeReq_Btn_Click(sender As Object, e As EventArgs) Handles ChangeGradeReq_Btn.Click
 
@@ -252,7 +250,6 @@ Public Class Admin_Main
         Me.Enabled = False
 
     End Sub
-
 
 
     ' Instructor Submitted Grade Button
@@ -271,12 +268,6 @@ Public Class Admin_Main
         Me.Enabled = False
 
     End Sub
-
-
-
-
-
-
 
     ' INSTRUCTOR PANEL - END
 

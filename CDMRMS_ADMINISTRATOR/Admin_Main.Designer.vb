@@ -59,7 +59,7 @@ Partial Class Admin_Main
         Me.MN_Label = New System.Windows.Forms.Label()
         Me.FN_Label = New System.Windows.Forms.Label()
         Me.InstructorInfo_Label = New System.Windows.Forms.Label()
-        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Yellow_Panel1 = New System.Windows.Forms.Panel()
         Me.Email_ = New System.Windows.Forms.Label()
         Me.InstructorsID_TB = New System.Windows.Forms.TextBox()
         Me.Birthday_TB = New System.Windows.Forms.TextBox()
@@ -69,9 +69,7 @@ Partial Class Admin_Main
         Me.LN_TB = New System.Windows.Forms.TextBox()
         Me.FN_TB = New System.Windows.Forms.TextBox()
         Me.MN_TB = New System.Windows.Forms.TextBox()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Yellow_Panel2 = New System.Windows.Forms.Panel()
         Me.AssignedSectionTable = New System.Windows.Forms.DataGridView()
         Me.AssignedCourseTable = New System.Windows.Forms.DataGridView()
         Me.CDMinstructors_Panel = New System.Windows.Forms.Panel()
@@ -83,6 +81,10 @@ Partial Class Admin_Main
         Me.CDMinstructors_Label = New System.Windows.Forms.Label()
         Me.DropdownTimer = New System.Windows.Forms.Timer(Me.components)
         Me.Welcome_BG = New System.Windows.Forms.PictureBox()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.GreenSide_Panel.SuspendLayout()
         Me.Dropdown_Panel.SuspendLayout()
         CType(Me.CMDRMS_PicBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -91,13 +93,15 @@ Partial Class Admin_Main
         Me.Instructor_Panel.SuspendLayout()
         Me.ReqAndSubmit_Panel.SuspendLayout()
         Me.InstructorInfo_Panel.SuspendLayout()
-        Me.Panel1.SuspendLayout()
-        Me.Panel2.SuspendLayout()
+        Me.Yellow_Panel1.SuspendLayout()
+        Me.Yellow_Panel2.SuspendLayout()
         CType(Me.AssignedSectionTable, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AssignedCourseTable, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.CDMinstructors_Panel.SuspendLayout()
         CType(Me.InstructorsDataTable, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Welcome_BG, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'GreenSide_Panel
@@ -128,7 +132,7 @@ Partial Class Admin_Main
         '
         'Student_Btn
         '
-        Me.Student_Btn.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
+        Me.Student_Btn.BackColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(248, Byte), Integer))
         Me.Student_Btn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Student_Btn.Dock = System.Windows.Forms.DockStyle.Top
         Me.Student_Btn.FlatAppearance.BorderSize = 0
@@ -145,7 +149,7 @@ Partial Class Admin_Main
         '
         'Instructor_Btn
         '
-        Me.Instructor_Btn.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
+        Me.Instructor_Btn.BackColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(248, Byte), Integer))
         Me.Instructor_Btn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Instructor_Btn.Dock = System.Windows.Forms.DockStyle.Top
         Me.Instructor_Btn.FlatAppearance.BorderSize = 0
@@ -162,7 +166,7 @@ Partial Class Admin_Main
         '
         'Dashboard_Btn
         '
-        Me.Dashboard_Btn.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
+        Me.Dashboard_Btn.BackColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(248, Byte), Integer))
         Me.Dashboard_Btn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Dashboard_Btn.Dock = System.Windows.Forms.DockStyle.Top
         Me.Dashboard_Btn.FlatAppearance.BorderSize = 0
@@ -238,7 +242,7 @@ Partial Class Admin_Main
         '
         'Instructor_Panel
         '
-        Me.Instructor_Panel.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
+        Me.Instructor_Panel.BackColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(248, Byte), Integer))
         Me.Instructor_Panel.Controls.Add(Me.ReqAndSubmit_Panel)
         Me.Instructor_Panel.Controls.Add(Me.InstructorInfo_Panel)
         Me.Instructor_Panel.Controls.Add(Me.CDMinstructors_Panel)
@@ -327,8 +331,8 @@ Partial Class Admin_Main
         Me.InstructorInfo_Panel.Controls.Add(Me.MN_Label)
         Me.InstructorInfo_Panel.Controls.Add(Me.FN_Label)
         Me.InstructorInfo_Panel.Controls.Add(Me.InstructorInfo_Label)
-        Me.InstructorInfo_Panel.Controls.Add(Me.Panel1)
-        Me.InstructorInfo_Panel.Controls.Add(Me.Panel2)
+        Me.InstructorInfo_Panel.Controls.Add(Me.Yellow_Panel1)
+        Me.InstructorInfo_Panel.Controls.Add(Me.Yellow_Panel2)
         Me.InstructorInfo_Panel.Location = New System.Drawing.Point(641, 5)
         Me.InstructorInfo_Panel.Name = "InstructorInfo_Panel"
         Me.InstructorInfo_Panel.Size = New System.Drawing.Size(685, 583)
@@ -428,23 +432,23 @@ Partial Class Admin_Main
         Me.InstructorInfo_Label.TabIndex = 1
         Me.InstructorInfo_Label.Text = "Instructor Information and Assigned Course" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
-        'Panel1
+        'Yellow_Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.Yellow
-        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel1.Controls.Add(Me.Email_)
-        Me.Panel1.Controls.Add(Me.InstructorsID_TB)
-        Me.Panel1.Controls.Add(Me.Birthday_TB)
-        Me.Panel1.Controls.Add(Me.Email_TB)
-        Me.Panel1.Controls.Add(Me.Sex_TB)
-        Me.Panel1.Controls.Add(Me.CN_TB)
-        Me.Panel1.Controls.Add(Me.LN_TB)
-        Me.Panel1.Controls.Add(Me.FN_TB)
-        Me.Panel1.Controls.Add(Me.MN_TB)
-        Me.Panel1.Location = New System.Drawing.Point(30, 62)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(620, 298)
-        Me.Panel1.TabIndex = 74
+        Me.Yellow_Panel1.BackColor = System.Drawing.Color.Yellow
+        Me.Yellow_Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Yellow_Panel1.Controls.Add(Me.Email_)
+        Me.Yellow_Panel1.Controls.Add(Me.InstructorsID_TB)
+        Me.Yellow_Panel1.Controls.Add(Me.Birthday_TB)
+        Me.Yellow_Panel1.Controls.Add(Me.Email_TB)
+        Me.Yellow_Panel1.Controls.Add(Me.Sex_TB)
+        Me.Yellow_Panel1.Controls.Add(Me.CN_TB)
+        Me.Yellow_Panel1.Controls.Add(Me.LN_TB)
+        Me.Yellow_Panel1.Controls.Add(Me.FN_TB)
+        Me.Yellow_Panel1.Controls.Add(Me.MN_TB)
+        Me.Yellow_Panel1.Location = New System.Drawing.Point(30, 62)
+        Me.Yellow_Panel1.Name = "Yellow_Panel1"
+        Me.Yellow_Panel1.Size = New System.Drawing.Size(620, 298)
+        Me.Yellow_Panel1.TabIndex = 74
         '
         'Email_
         '
@@ -562,58 +566,18 @@ Partial Class Admin_Main
         Me.MN_TB.TabIndex = 61
         Me.MN_TB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Panel2
+        'Yellow_Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.Color.Yellow
-        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel2.Controls.Add(Me.Button2)
-        Me.Panel2.Controls.Add(Me.Button1)
-        Me.Panel2.Controls.Add(Me.AssignedSectionTable)
-        Me.Panel2.Controls.Add(Me.AssignedCourseTable)
-        Me.Panel2.Location = New System.Drawing.Point(30, 377)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(620, 190)
-        Me.Panel2.TabIndex = 75
-        '
-        'Button2
-        '
-        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
-        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button2.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.Button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
-        Me.Button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Bernard MT Condensed", 19.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.Black
-        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.Button2.Location = New System.Drawing.Point(13, 119)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
-        Me.Button2.Size = New System.Drawing.Size(193, 55)
-        Me.Button2.TabIndex = 74
-        Me.Button2.Text = "Sections:"
-        Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button2.UseVisualStyleBackColor = False
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
-        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
-        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Bernard MT Condensed", 19.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.Black
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.Button1.Location = New System.Drawing.Point(13, 14)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
-        Me.Button1.Size = New System.Drawing.Size(193, 95)
-        Me.Button1.TabIndex = 58
-        Me.Button1.Text = "Courses:"
-        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.Yellow_Panel2.BackColor = System.Drawing.Color.Yellow
+        Me.Yellow_Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Yellow_Panel2.Controls.Add(Me.Panel2)
+        Me.Yellow_Panel2.Controls.Add(Me.Panel1)
+        Me.Yellow_Panel2.Controls.Add(Me.AssignedSectionTable)
+        Me.Yellow_Panel2.Controls.Add(Me.AssignedCourseTable)
+        Me.Yellow_Panel2.Location = New System.Drawing.Point(30, 377)
+        Me.Yellow_Panel2.Name = "Yellow_Panel2"
+        Me.Yellow_Panel2.Size = New System.Drawing.Size(620, 190)
+        Me.Yellow_Panel2.TabIndex = 75
         '
         'AssignedSectionTable
         '
@@ -875,6 +839,46 @@ Partial Class Admin_Main
         Me.Welcome_BG.TabIndex = 5
         Me.Welcome_BG.TabStop = False
         '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(248, Byte), Integer))
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Location = New System.Drawing.Point(13, 14)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(193, 95)
+        Me.Panel1.TabIndex = 75
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Bernard MT Condensed", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(29, 29)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(110, 40)
+        Me.Label1.TabIndex = 76
+        Me.Label1.Text = "Course:"
+        '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(248, Byte), Integer))
+        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel2.Controls.Add(Me.Label2)
+        Me.Panel2.Location = New System.Drawing.Point(13, 119)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(193, 55)
+        Me.Panel2.TabIndex = 77
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Bernard MT Condensed", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(29, 8)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(116, 40)
+        Me.Label2.TabIndex = 76
+        Me.Label2.Text = "Section:"
+        '
         'Admin_Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -902,15 +906,19 @@ Partial Class Admin_Main
         Me.ReqAndSubmit_Panel.ResumeLayout(False)
         Me.InstructorInfo_Panel.ResumeLayout(False)
         Me.InstructorInfo_Panel.PerformLayout()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
-        Me.Panel2.ResumeLayout(False)
+        Me.Yellow_Panel1.ResumeLayout(False)
+        Me.Yellow_Panel1.PerformLayout()
+        Me.Yellow_Panel2.ResumeLayout(False)
         CType(Me.AssignedSectionTable, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AssignedCourseTable, System.ComponentModel.ISupportInitialize).EndInit()
         Me.CDMinstructors_Panel.ResumeLayout(False)
         Me.CDMinstructors_Panel.PerformLayout()
         CType(Me.InstructorsDataTable, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Welcome_BG, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -949,8 +957,8 @@ Partial Class Admin_Main
     Friend WithEvents FN_Label As Label
     Friend WithEvents AdminLogo As PictureBox
     Friend WithEvents AssignedCourseTable As DataGridView
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Yellow_Panel1 As Panel
+    Friend WithEvents Yellow_Panel2 As Panel
     Friend WithEvents AssignedSectionTable As DataGridView
     Friend WithEvents FN_TB As TextBox
     Friend WithEvents LN_TB As TextBox
@@ -961,6 +969,8 @@ Partial Class Admin_Main
     Friend WithEvents Email_TB As TextBox
     Friend WithEvents InstructorsID_TB As TextBox
     Friend WithEvents Clear_Btn As Button
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Label1 As Label
 End Class
