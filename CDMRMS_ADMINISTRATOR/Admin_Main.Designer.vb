@@ -70,6 +70,10 @@ Partial Class Admin_Main
         Me.FN_TB = New System.Windows.Forms.TextBox()
         Me.MN_TB = New System.Windows.Forms.TextBox()
         Me.Yellow_Panel2 = New System.Windows.Forms.Panel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.AssignedSectionTable = New System.Windows.Forms.DataGridView()
         Me.AssignedCourseTable = New System.Windows.Forms.DataGridView()
         Me.CDMinstructors_Panel = New System.Windows.Forms.Panel()
@@ -81,10 +85,6 @@ Partial Class Admin_Main
         Me.CDMinstructors_Label = New System.Windows.Forms.Label()
         Me.DropdownTimer = New System.Windows.Forms.Timer(Me.components)
         Me.Welcome_BG = New System.Windows.Forms.PictureBox()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.GreenSide_Panel.SuspendLayout()
         Me.Dropdown_Panel.SuspendLayout()
         CType(Me.CMDRMS_PicBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -95,13 +95,13 @@ Partial Class Admin_Main
         Me.InstructorInfo_Panel.SuspendLayout()
         Me.Yellow_Panel1.SuspendLayout()
         Me.Yellow_Panel2.SuspendLayout()
+        Me.Panel2.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         CType(Me.AssignedSectionTable, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AssignedCourseTable, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.CDMinstructors_Panel.SuspendLayout()
         CType(Me.InstructorsDataTable, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Welcome_BG, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel1.SuspendLayout()
-        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'GreenSide_Panel
@@ -579,6 +579,46 @@ Partial Class Admin_Main
         Me.Yellow_Panel2.Size = New System.Drawing.Size(620, 190)
         Me.Yellow_Panel2.TabIndex = 75
         '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(248, Byte), Integer))
+        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel2.Controls.Add(Me.Label2)
+        Me.Panel2.Location = New System.Drawing.Point(13, 119)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(193, 55)
+        Me.Panel2.TabIndex = 77
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Bernard MT Condensed", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(29, 8)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(116, 40)
+        Me.Label2.TabIndex = 76
+        Me.Label2.Text = "Section:"
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(248, Byte), Integer))
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Location = New System.Drawing.Point(13, 14)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(193, 95)
+        Me.Panel1.TabIndex = 75
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Bernard MT Condensed", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(29, 29)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(110, 40)
+        Me.Label1.TabIndex = 76
+        Me.Label1.Text = "Course:"
+        '
         'AssignedSectionTable
         '
         Me.AssignedSectionTable.AllowUserToAddRows = False
@@ -670,7 +710,7 @@ Partial Class Admin_Main
         Me.AssignedCourseTable.RowHeadersVisible = False
         Me.AssignedCourseTable.RowHeadersWidth = 51
         DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(248, Byte), Integer))
         Me.AssignedCourseTable.RowsDefaultCellStyle = DataGridViewCellStyle8
         Me.AssignedCourseTable.RowTemplate.Height = 25
         Me.AssignedCourseTable.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
@@ -839,46 +879,6 @@ Partial Class Admin_Main
         Me.Welcome_BG.TabIndex = 5
         Me.Welcome_BG.TabStop = False
         '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(248, Byte), Integer))
-        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Location = New System.Drawing.Point(13, 14)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(193, 95)
-        Me.Panel1.TabIndex = 75
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Bernard MT Condensed", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(29, 29)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(110, 40)
-        Me.Label1.TabIndex = 76
-        Me.Label1.Text = "Course:"
-        '
-        'Panel2
-        '
-        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(248, Byte), Integer))
-        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel2.Controls.Add(Me.Label2)
-        Me.Panel2.Location = New System.Drawing.Point(13, 119)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(193, 55)
-        Me.Panel2.TabIndex = 77
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Bernard MT Condensed", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(29, 8)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(116, 40)
-        Me.Label2.TabIndex = 76
-        Me.Label2.Text = "Section:"
-        '
         'Admin_Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -909,16 +909,16 @@ Partial Class Admin_Main
         Me.Yellow_Panel1.ResumeLayout(False)
         Me.Yellow_Panel1.PerformLayout()
         Me.Yellow_Panel2.ResumeLayout(False)
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         CType(Me.AssignedSectionTable, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AssignedCourseTable, System.ComponentModel.ISupportInitialize).EndInit()
         Me.CDMinstructors_Panel.ResumeLayout(False)
         Me.CDMinstructors_Panel.PerformLayout()
         CType(Me.InstructorsDataTable, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Welcome_BG, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
