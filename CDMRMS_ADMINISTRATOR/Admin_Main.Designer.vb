@@ -584,16 +584,16 @@ Partial Class Admin_Main
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(248, Byte), Integer))
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel2.Controls.Add(Me.Label2)
-        Me.Panel2.Location = New System.Drawing.Point(13, 119)
+        Me.Panel2.Location = New System.Drawing.Point(13, 97)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(193, 55)
+        Me.Panel2.Size = New System.Drawing.Size(193, 77)
         Me.Panel2.TabIndex = 77
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Bernard MT Condensed", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(29, 8)
+        Me.Label2.Location = New System.Drawing.Point(29, 18)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(116, 40)
         Me.Label2.TabIndex = 76
@@ -606,14 +606,14 @@ Partial Class Admin_Main
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Location = New System.Drawing.Point(13, 14)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(193, 95)
+        Me.Panel1.Size = New System.Drawing.Size(193, 75)
         Me.Panel1.TabIndex = 75
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Bernard MT Condensed", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(29, 29)
+        Me.Label1.Location = New System.Drawing.Point(29, 17)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(110, 40)
         Me.Label1.TabIndex = 76
@@ -646,7 +646,7 @@ Partial Class Admin_Main
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.AssignedSectionTable.DefaultCellStyle = DataGridViewCellStyle2
         Me.AssignedSectionTable.GridColor = System.Drawing.Color.Black
-        Me.AssignedSectionTable.Location = New System.Drawing.Point(212, 119)
+        Me.AssignedSectionTable.Location = New System.Drawing.Point(212, 97)
         Me.AssignedSectionTable.Name = "AssignedSectionTable"
         Me.AssignedSectionTable.ReadOnly = True
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
@@ -665,7 +665,7 @@ Partial Class Admin_Main
         Me.AssignedSectionTable.RowTemplate.Height = 25
         Me.AssignedSectionTable.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal
         Me.AssignedSectionTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.AssignedSectionTable.Size = New System.Drawing.Size(395, 55)
+        Me.AssignedSectionTable.Size = New System.Drawing.Size(395, 77)
         Me.AssignedSectionTable.TabIndex = 73
         '
         'AssignedCourseTable
@@ -715,7 +715,7 @@ Partial Class Admin_Main
         Me.AssignedCourseTable.RowTemplate.Height = 25
         Me.AssignedCourseTable.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.AssignedCourseTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.AssignedCourseTable.Size = New System.Drawing.Size(395, 95)
+        Me.AssignedCourseTable.Size = New System.Drawing.Size(395, 75)
         Me.AssignedCourseTable.TabIndex = 72
         '
         'CDMinstructors_Panel

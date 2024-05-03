@@ -210,8 +210,9 @@ Public Class Admin_Main
                 CourseCommand.Parameters.AddWithValue("@instructorid", instructorid)
                 Dim dataTable As New DataTable()
                 dataTable.Load(CourseCommand.ExecuteReader())
-
+                AssignedCourseTable.RowTemplate.Height = 30
                 AssignedCourseTable.DataSource = dataTable
+
                 AssignedCourseTable.Columns("course").Width = 295
 
             End Using
@@ -232,6 +233,7 @@ Public Class Admin_Main
             Dim sectionAdapter As New MySqlDataAdapter(sectionQuery, connection)
             sectionAdapter.SelectCommand.Parameters.AddWithValue("@course", course)
             Dim dataTable As New DataTable()
+            AssignedSectionTable.RowTemplate.Height = 44
             sectionAdapter.Fill(dataTable)
 
             AssignedSectionTable.DataSource = dataTable
