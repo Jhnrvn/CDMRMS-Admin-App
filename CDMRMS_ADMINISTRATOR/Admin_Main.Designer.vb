@@ -97,13 +97,13 @@ Partial Class Admin_Main
         Me.CollegeProgramSelector = New System.Windows.Forms.ComboBox()
         Me.ViewStudentList = New System.Windows.Forms.Button()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.StudentlistTable = New System.Windows.Forms.DataGridView()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Search_Label = New System.Windows.Forms.Label()
         Me.StudentSearch = New MetroFramework.Controls.MetroTextBox()
         Me.SubmitGrade_Btn = New System.Windows.Forms.Button()
         Me.StudentGrade_Label = New System.Windows.Forms.Label()
-        Me.Button3 = New System.Windows.Forms.Button()
         Me.GreenSide_Panel.SuspendLayout()
         Me.Dropdown_Panel.SuspendLayout()
         CType(Me.CMDRMS_PicBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1008,6 +1008,23 @@ Partial Class Admin_Main
         Me.Panel5.Size = New System.Drawing.Size(992, 770)
         Me.Panel5.TabIndex = 0
         '
+        'Button3
+        '
+        Me.Button3.BackColor = System.Drawing.Color.Red
+        Me.Button3.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button3.FlatAppearance.BorderColor = System.Drawing.Color.Red
+        Me.Button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.ForeColor = System.Drawing.Color.White
+        Me.Button3.Location = New System.Drawing.Point(711, 592)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(113, 41)
+        Me.Button3.TabIndex = 66
+        Me.Button3.Text = "Edit"
+        Me.Button3.UseVisualStyleBackColor = False
+        '
         'StudentlistTable
         '
         Me.StudentlistTable.AllowUserToResizeColumns = False
@@ -1047,7 +1064,6 @@ Partial Class Admin_Main
         DataGridViewCellStyle30.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.StudentlistTable.RowsDefaultCellStyle = DataGridViewCellStyle30
         Me.StudentlistTable.RowTemplate.Height = 24
-        Me.StudentlistTable.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.StudentlistTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
         Me.StudentlistTable.Size = New System.Drawing.Size(899, 473)
         Me.StudentlistTable.TabIndex = 65
@@ -1125,7 +1141,7 @@ Partial Class Admin_Main
         Me.SubmitGrade_Btn.ForeColor = System.Drawing.Color.Black
         Me.SubmitGrade_Btn.Location = New System.Drawing.Point(830, 592)
         Me.SubmitGrade_Btn.Name = "SubmitGrade_Btn"
-        Me.SubmitGrade_Btn.Size = New System.Drawing.Size(113, 40)
+        Me.SubmitGrade_Btn.Size = New System.Drawing.Size(113, 41)
         Me.SubmitGrade_Btn.TabIndex = 54
         Me.SubmitGrade_Btn.Text = "Save"
         Me.SubmitGrade_Btn.UseVisualStyleBackColor = False
@@ -1140,32 +1156,15 @@ Partial Class Admin_Main
         Me.StudentGrade_Label.TabIndex = 0
         Me.StudentGrade_Label.Text = "Student List"
         '
-        'Button3
-        '
-        Me.Button3.BackColor = System.Drawing.Color.Red
-        Me.Button3.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button3.FlatAppearance.BorderColor = System.Drawing.Color.Red
-        Me.Button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.ForeColor = System.Drawing.Color.White
-        Me.Button3.Location = New System.Drawing.Point(714, 592)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(113, 40)
-        Me.Button3.TabIndex = 66
-        Me.Button3.Text = "Edit"
-        Me.Button3.UseVisualStyleBackColor = False
-        '
         'Admin_Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1550, 870)
-        Me.Controls.Add(Me.Student_Panel)
-        Me.Controls.Add(Me.Instructor_Panel)
         Me.Controls.Add(Me.GreenUpper_Panel)
         Me.Controls.Add(Me.GreenSide_Panel)
+        Me.Controls.Add(Me.Student_Panel)
+        Me.Controls.Add(Me.Instructor_Panel)
         Me.Controls.Add(Me.Welcome_BG)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False

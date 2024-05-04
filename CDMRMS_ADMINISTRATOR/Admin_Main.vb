@@ -12,6 +12,8 @@ Public Class Admin_Main
         Student_Panel.Hide()
         InstructorData()
 
+        StudentList()
+
     End Sub
     ' FORM LOAD - END
 
@@ -279,5 +281,32 @@ Public Class Admin_Main
     End Sub
 
     ' INSTRUCTOR PANEL - END
+
+    ' STUDENT PANEL - START
+
+    Private Sub StudentList()
+
+
+        Dim dataTable As New DataTable()
+        Try
+            connection.Open()
+
+            Dim selectQuery As String = "SELECT * FROM bsit"
+
+            Dim adapter As New MySqlDataAdapter(selectQuery, connection)
+            adapter.Fill(DataTable)
+
+            StudentlistTable.DataSource = dataTable
+
+
+        Catch ex As Exception
+            MessageBox.Show("Error fetching data: " & ex.Message)
+        Finally
+            connection.Close()
+        End Try
+    End Sub
+
+
+    ' STUDENT PANEL - END
 
 End Class
