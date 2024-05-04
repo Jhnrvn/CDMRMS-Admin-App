@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 30, 2024 at 03:47 AM
+-- Generation Time: May 03, 2024 at 06:04 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -34,23 +34,52 @@ CREATE TABLE `assignedcourse` (
   `course` varchar(100) NOT NULL,
   `section_1` varchar(100) NOT NULL,
   `section_2` varchar(100) NOT NULL,
-  `section_3` varchar(100) NOT NULL
+  `section_3` varchar(100) NOT NULL,
+  `section_4` varchar(100) NOT NULL,
+  `section_5` varchar(100) NOT NULL,
+  `section_6` varchar(100) NOT NULL,
+  `section_7` varchar(100) NOT NULL,
+  `section_8` varchar(100) NOT NULL,
+  `section_9` varchar(100) NOT NULL,
+  `section_10` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `assignedcourse`
 --
 
-INSERT INTO `assignedcourse` (`id`, `instructor_id`, `Instructor`, `course`, `section_1`, `section_2`, `section_3`) VALUES
-(1, 'CDM-1111', 'Geanga, John Irvin C.', 'IT ELECT', 'BSIT-2A', 'BSIT-2B', 'BSIT-2C'),
-(2, 'CDM-2222', '', 'SSDEV', '', '', ''),
-(3, 'CDM-3333', '', 'FUDBS', '', '', ''),
-(4, 'CDM-4444', '', 'IP TECH', '', '', ''),
-(5, 'CDM-4444', '', 'ADM', '', '', ''),
-(6, 'CDM-1010', '', 'PROG 2', '', '', ''),
-(7, 'CDM-1111', 'Geanga, John Irvin C.', 'SIA 2', '', '', ''),
-(8, 'CDM-1111', 'Geanga, John Irvin C.', 'GE 1', '', '', ''),
-(9, 'CDM-1111', 'Geanga, John Irvin C.', 'GE 4', '', '', '');
+INSERT INTO `assignedcourse` (`id`, `instructor_id`, `Instructor`, `course`, `section_1`, `section_2`, `section_3`, `section_4`, `section_5`, `section_6`, `section_7`, `section_8`, `section_9`, `section_10`) VALUES
+(1, 'CDM-1111', 'Geanga, John Irvin', 'PROG 1', 'BSIT-1A', 'BSIT-1B', 'BSIT-1C', '', '', '', '', '', '', ''),
+(2, 'CDM-1111', 'Geanga, John Irvin', 'ITCOMP', 'BSIT-1A', 'BSIT-1B', 'BSIT-1C', 'BSIT-1D', '', '', '', '', '', ''),
+(3, 'CDM-1111', '', 'GE 2', 'BSIT-1G', '', '', '', '', '', '', '', '', ''),
+(4, 'CDM-1111', '', 'GE MATH', 'BSIT-1B', '', '', '', '', '', '', '', '', ''),
+(5, 'CDM-1111', '', 'GE 1', 'BSIT-1A', '', '', '', '', '', '', '', '', ''),
+(6, 'CDM-1111', '', 'GE FIL 1', 'BSIT-1F', '', '', '', '', '', '', '', '', ''),
+(7, 'CDM-1111', '', 'PE 1', 'BSIT-1J', '-', '', '', '', '', '', '', '', ''),
+(8, 'CDM-1111', '', 'NSTP 1', 'BSIT-1E', '', '', '', '', '', '', '', '', ''),
+(9, '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(10, '', '', '', '', '', '', '', '', '', '', '', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bsit`
+--
+
+CREATE TABLE `bsit` (
+  `ID` int(11) NOT NULL,
+  `Student ID` varchar(100) NOT NULL,
+  `Student Name` varchar(100) NOT NULL,
+  `Program` varchar(100) NOT NULL,
+  `ITCOMP` double NOT NULL,
+  `PROG 1` double NOT NULL,
+  `GE 2` double NOT NULL,
+  `GE MATH` double NOT NULL,
+  `GE 1` double NOT NULL,
+  `GE FIL 1` double NOT NULL,
+  `PE 1` double NOT NULL,
+  `NSTP 1` double NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -98,6 +127,12 @@ ALTER TABLE `assignedcourse`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `bsit`
+--
+ALTER TABLE `bsit`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- Indexes for table `instructors`
 --
 ALTER TABLE `instructors`
@@ -111,7 +146,13 @@ ALTER TABLE `instructors`
 -- AUTO_INCREMENT for table `assignedcourse`
 --
 ALTER TABLE `assignedcourse`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `bsit`
+--
+ALTER TABLE `bsit`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `instructors`
