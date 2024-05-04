@@ -9,6 +9,7 @@ Public Class Admin_Main
     Private Sub Admin_Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dropdown_Panel.Size = Dropdown_Panel.MinimumSize
         Instructor_Panel.Hide()
+        Student_Panel.Hide()
         InstructorData()
 
     End Sub
@@ -40,7 +41,7 @@ Public Class Admin_Main
         Else
             ' Hide Instructor Panel
             Instructor_Panel.Hide()
-
+            Student_Panel.Hide()
             ' Clear textbox that display instructors information 
             InstructorsID_TB.Clear()
             FN_TB.Clear()
@@ -81,6 +82,7 @@ Public Class Admin_Main
     ' INSTRUCTOR PANEL - START
     Private Sub Instructor_Btn_Click(sender As Object, e As EventArgs) Handles Instructor_Btn.Click
         Instructor_Panel.Show()
+        Student_Panel.Hide()
 
     End Sub
 
@@ -269,6 +271,11 @@ Public Class Admin_Main
         AssignedCourse_Section.Show()
         Me.Enabled = False
 
+    End Sub
+
+    Private Sub Student_Btn_Click(sender As Object, e As EventArgs) Handles Student_Btn.Click
+        Student_Panel.Show()
+        Instructor_Panel.Hide()
     End Sub
 
     ' INSTRUCTOR PANEL - END
