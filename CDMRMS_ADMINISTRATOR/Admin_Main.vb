@@ -259,7 +259,7 @@ Public Class Admin_Main
 
 
     ' Instructor Submitted Grade Button
-    Private Sub InstructorSubmittedGrade_Btn_Click(sender As Object, e As EventArgs) Handles InstructorSubmittedGrade_Btn.Click
+    Private Sub InstructorSubmittedGrade_Btn_Click(sender As Object, e As EventArgs)
 
         InstructorSubmittedGrade.Show()
         Me.Enabled = False
@@ -284,26 +284,40 @@ Public Class Admin_Main
 
     ' STUDENT PANEL - START
 
+    Dim adapter As New MySqlDataAdapter
+    Dim dataTable As New DataTable()
     Private Sub StudentList()
 
-
-        Dim dataTable As New DataTable()
         Try
             connection.Open()
 
             Dim selectQuery As String = "SELECT * FROM bsit"
 
-            Dim adapter As New MySqlDataAdapter(selectQuery, connection)
+            adapter = New MySqlDataAdapter(selectQuery, connection)
             adapter.Fill(DataTable)
 
             StudentlistTable.DataSource = dataTable
-
+            StudentlistTable.Columns("Student ID").Width = 121
+            StudentlistTable.Columns("Student Name").Width = 250
+            StudentlistTable.Columns("ID").Visible = False
 
         Catch ex As Exception
             MessageBox.Show("Error fetching data: " & ex.Message)
         Finally
             connection.Close()
         End Try
+    End Sub
+
+    Private Sub SaveData()
+        Dim builder As New MySqlCommandBuilder(adapter)
+        adapter.Update(DataTable)
+    End Sub
+
+    Private Sub SubmitGrade_Btn_Click(sender As Object, e As EventArgs) Handles SubmitGrade_Btn.Click
+        SaveData()
+        MsgBox("Update successful!", MessageBoxIcon.Information)
+        dataTable.Clear()
+        StudentList()
     End Sub
 
 

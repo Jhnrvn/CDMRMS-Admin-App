@@ -53,7 +53,6 @@ Partial Class Admin_Main
         Me.ReqAndSubmit_Panel = New System.Windows.Forms.Panel()
         Me.AssignedCourse_Btn = New System.Windows.Forms.Button()
         Me.ChangeGradeReq_Btn = New System.Windows.Forms.Button()
-        Me.InstructorSubmittedGrade_Btn = New System.Windows.Forms.Button()
         Me.InstructorInfo_Panel = New System.Windows.Forms.Panel()
         Me.LN_Label = New System.Windows.Forms.Label()
         Me.Birthday_Label = New System.Windows.Forms.Label()
@@ -89,21 +88,21 @@ Partial Class Admin_Main
         Me.CDMinstructors_Label = New System.Windows.Forms.Label()
         Me.DropdownTimer = New System.Windows.Forms.Timer(Me.components)
         Me.Welcome_BG = New System.Windows.Forms.PictureBox()
-        Me.Student_Panel = New System.Windows.Forms.Panel()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.CollegeProgramSelector = New System.Windows.Forms.ComboBox()
-        Me.ViewStudentList = New System.Windows.Forms.Button()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.StudentGrade_Label = New System.Windows.Forms.Label()
+        Me.SubmitGrade_Btn = New System.Windows.Forms.Button()
+        Me.StudentSearch = New MetroFramework.Controls.MetroTextBox()
+        Me.Search_Label = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.StudentlistTable = New System.Windows.Forms.DataGridView()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Search_Label = New System.Windows.Forms.Label()
-        Me.StudentSearch = New MetroFramework.Controls.MetroTextBox()
-        Me.SubmitGrade_Btn = New System.Windows.Forms.Button()
-        Me.StudentGrade_Label = New System.Windows.Forms.Label()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.ViewStudentList = New System.Windows.Forms.Button()
+        Me.CollegeProgramSelector = New System.Windows.Forms.ComboBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Student_Panel = New System.Windows.Forms.Panel()
         Me.GreenSide_Panel.SuspendLayout()
         Me.Dropdown_Panel.SuspendLayout()
         CType(Me.CMDRMS_PicBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -121,11 +120,11 @@ Partial Class Admin_Main
         Me.CDMinstructors_Panel.SuspendLayout()
         CType(Me.InstructorsDataTable, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Welcome_BG, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Student_Panel.SuspendLayout()
-        Me.Panel3.SuspendLayout()
-        Me.Panel4.SuspendLayout()
         Me.Panel5.SuspendLayout()
         CType(Me.StudentlistTable, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel4.SuspendLayout()
+        Me.Panel3.SuspendLayout()
+        Me.Student_Panel.SuspendLayout()
         Me.SuspendLayout()
         '
         'GreenSide_Panel
@@ -280,10 +279,9 @@ Partial Class Admin_Main
         Me.ReqAndSubmit_Panel.BackColor = System.Drawing.Color.White
         Me.ReqAndSubmit_Panel.Controls.Add(Me.AssignedCourse_Btn)
         Me.ReqAndSubmit_Panel.Controls.Add(Me.ChangeGradeReq_Btn)
-        Me.ReqAndSubmit_Panel.Controls.Add(Me.InstructorSubmittedGrade_Btn)
-        Me.ReqAndSubmit_Panel.Location = New System.Drawing.Point(4, 592)
+        Me.ReqAndSubmit_Panel.Location = New System.Drawing.Point(641, 592)
         Me.ReqAndSubmit_Panel.Name = "ReqAndSubmit_Panel"
-        Me.ReqAndSubmit_Panel.Size = New System.Drawing.Size(1322, 181)
+        Me.ReqAndSubmit_Panel.Size = New System.Drawing.Size(685, 181)
         Me.ReqAndSubmit_Panel.TabIndex = 2
         '
         'AssignedCourse_Btn
@@ -296,10 +294,10 @@ Partial Class Admin_Main
         Me.AssignedCourse_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.AssignedCourse_Btn.Font = New System.Drawing.Font("Bernard MT Condensed", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.AssignedCourse_Btn.ForeColor = System.Drawing.Color.White
-        Me.AssignedCourse_Btn.Location = New System.Drawing.Point(880, 3)
+        Me.AssignedCourse_Btn.Location = New System.Drawing.Point(344, 4)
         Me.AssignedCourse_Btn.Name = "AssignedCourse_Btn"
         Me.AssignedCourse_Btn.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
-        Me.AssignedCourse_Btn.Size = New System.Drawing.Size(438, 174)
+        Me.AssignedCourse_Btn.Size = New System.Drawing.Size(336, 174)
         Me.AssignedCourse_Btn.TabIndex = 57
         Me.AssignedCourse_Btn.Text = "Assigned " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Course and " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Section"
         Me.AssignedCourse_Btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -316,33 +314,14 @@ Partial Class Admin_Main
         Me.ChangeGradeReq_Btn.Font = New System.Drawing.Font("Bernard MT Condensed", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ChangeGradeReq_Btn.ForeColor = System.Drawing.Color.White
         Me.ChangeGradeReq_Btn.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.ChangeGradeReq_Btn.Location = New System.Drawing.Point(2, 3)
+        Me.ChangeGradeReq_Btn.Location = New System.Drawing.Point(6, 4)
         Me.ChangeGradeReq_Btn.Name = "ChangeGradeReq_Btn"
         Me.ChangeGradeReq_Btn.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
-        Me.ChangeGradeReq_Btn.Size = New System.Drawing.Size(438, 174)
+        Me.ChangeGradeReq_Btn.Size = New System.Drawing.Size(336, 174)
         Me.ChangeGradeReq_Btn.TabIndex = 55
         Me.ChangeGradeReq_Btn.Text = "Changing " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Grade" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Request"
         Me.ChangeGradeReq_Btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.ChangeGradeReq_Btn.UseVisualStyleBackColor = False
-        '
-        'InstructorSubmittedGrade_Btn
-        '
-        Me.InstructorSubmittedGrade_Btn.BackColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(110, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.InstructorSubmittedGrade_Btn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.InstructorSubmittedGrade_Btn.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.InstructorSubmittedGrade_Btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(110, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.InstructorSubmittedGrade_Btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.InstructorSubmittedGrade_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.InstructorSubmittedGrade_Btn.Font = New System.Drawing.Font("Bernard MT Condensed", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.InstructorSubmittedGrade_Btn.ForeColor = System.Drawing.Color.White
-        Me.InstructorSubmittedGrade_Btn.Location = New System.Drawing.Point(441, 3)
-        Me.InstructorSubmittedGrade_Btn.Name = "InstructorSubmittedGrade_Btn"
-        Me.InstructorSubmittedGrade_Btn.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
-        Me.InstructorSubmittedGrade_Btn.Size = New System.Drawing.Size(438, 174)
-        Me.InstructorSubmittedGrade_Btn.TabIndex = 56
-        Me.InstructorSubmittedGrade_Btn.Text = "Instructor " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Submitted " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Grade"
-        Me.InstructorSubmittedGrade_Btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.InstructorSubmittedGrade_Btn.UseVisualStyleBackColor = False
         '
         'InstructorInfo_Panel
         '
@@ -753,7 +732,7 @@ Partial Class Admin_Main
         Me.CDMinstructors_Panel.Controls.Add(Me.CDMinstructors_Label)
         Me.CDMinstructors_Panel.Location = New System.Drawing.Point(4, 5)
         Me.CDMinstructors_Panel.Name = "CDMinstructors_Panel"
-        Me.CDMinstructors_Panel.Size = New System.Drawing.Size(631, 583)
+        Me.CDMinstructors_Panel.Size = New System.Drawing.Size(631, 768)
         Me.CDMinstructors_Panel.TabIndex = 0
         '
         'Clear_Btn
@@ -903,102 +882,11 @@ Partial Class Admin_Main
         Me.Welcome_BG.TabIndex = 5
         Me.Welcome_BG.TabStop = False
         '
-        'Student_Panel
-        '
-        Me.Student_Panel.BackColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(248, Byte), Integer))
-        Me.Student_Panel.Controls.Add(Me.Panel3)
-        Me.Student_Panel.Controls.Add(Me.Panel4)
-        Me.Student_Panel.Controls.Add(Me.Panel5)
-        Me.Student_Panel.Location = New System.Drawing.Point(218, 91)
-        Me.Student_Panel.Name = "Student_Panel"
-        Me.Student_Panel.Size = New System.Drawing.Size(1334, 784)
-        Me.Student_Panel.TabIndex = 6
-        '
-        'Panel3
-        '
-        Me.Panel3.BackColor = System.Drawing.Color.White
-        Me.Panel3.Controls.Add(Me.Button1)
-        Me.Panel3.Location = New System.Drawing.Point(1001, 583)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(324, 192)
-        Me.Panel3.TabIndex = 2
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(110, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(110, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Bernard MT Condensed", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button1.Location = New System.Drawing.Point(3, 3)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button1.Size = New System.Drawing.Size(316, 184)
-        Me.Button1.TabIndex = 61
-        Me.Button1.Text = "Evaluate" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Student" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Grade"
-        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.UseVisualStyleBackColor = False
-        '
-        'Panel4
-        '
-        Me.Panel4.BackColor = System.Drawing.Color.White
-        Me.Panel4.Controls.Add(Me.Label3)
-        Me.Panel4.Controls.Add(Me.CollegeProgramSelector)
-        Me.Panel4.Controls.Add(Me.ViewStudentList)
-        Me.Panel4.Location = New System.Drawing.Point(1001, 5)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(324, 574)
-        Me.Panel4.TabIndex = 1
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Bernard MT Condensed", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(14, 10)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(232, 40)
-        Me.Label3.TabIndex = 78
-        Me.Label3.Text = "College Program"
-        '
-        'CollegeProgramSelector
-        '
-        Me.CollegeProgramSelector.BackColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(248, Byte), Integer))
-        Me.CollegeProgramSelector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.CollegeProgramSelector.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CollegeProgramSelector.FormattingEnabled = True
-        Me.CollegeProgramSelector.Items.AddRange(New Object() {"BSIT", "BSCPE"})
-        Me.CollegeProgramSelector.Location = New System.Drawing.Point(26, 53)
-        Me.CollegeProgramSelector.Name = "CollegeProgramSelector"
-        Me.CollegeProgramSelector.Size = New System.Drawing.Size(176, 39)
-        Me.CollegeProgramSelector.TabIndex = 77
-        '
-        'ViewStudentList
-        '
-        Me.ViewStudentList.BackColor = System.Drawing.Color.Yellow
-        Me.ViewStudentList.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.ViewStudentList.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(20, Byte), Integer))
-        Me.ViewStudentList.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
-        Me.ViewStudentList.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(20, Byte), Integer))
-        Me.ViewStudentList.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ViewStudentList.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ViewStudentList.ForeColor = System.Drawing.Color.Black
-        Me.ViewStudentList.Location = New System.Drawing.Point(208, 53)
-        Me.ViewStudentList.Name = "ViewStudentList"
-        Me.ViewStudentList.Size = New System.Drawing.Size(90, 40)
-        Me.ViewStudentList.TabIndex = 74
-        Me.ViewStudentList.Text = "View"
-        Me.ViewStudentList.UseVisualStyleBackColor = False
-        '
         'Panel5
         '
         Me.Panel5.BackColor = System.Drawing.SystemColors.Window
-        Me.Panel5.Controls.Add(Me.Button3)
         Me.Panel5.Controls.Add(Me.StudentlistTable)
+        Me.Panel5.Controls.Add(Me.Button3)
         Me.Panel5.Controls.Add(Me.Button2)
         Me.Panel5.Controls.Add(Me.Search_Label)
         Me.Panel5.Controls.Add(Me.StudentSearch)
@@ -1008,6 +896,94 @@ Partial Class Admin_Main
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(992, 770)
         Me.Panel5.TabIndex = 0
+        '
+        'StudentGrade_Label
+        '
+        Me.StudentGrade_Label.AutoSize = True
+        Me.StudentGrade_Label.Font = New System.Drawing.Font("Bernard MT Condensed", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.StudentGrade_Label.Location = New System.Drawing.Point(36, 9)
+        Me.StudentGrade_Label.Name = "StudentGrade_Label"
+        Me.StudentGrade_Label.Size = New System.Drawing.Size(164, 40)
+        Me.StudentGrade_Label.TabIndex = 0
+        Me.StudentGrade_Label.Text = "Student List"
+        '
+        'SubmitGrade_Btn
+        '
+        Me.SubmitGrade_Btn.BackColor = System.Drawing.Color.Yellow
+        Me.SubmitGrade_Btn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.SubmitGrade_Btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(20, Byte), Integer))
+        Me.SubmitGrade_Btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.SubmitGrade_Btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(20, Byte), Integer))
+        Me.SubmitGrade_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.SubmitGrade_Btn.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SubmitGrade_Btn.ForeColor = System.Drawing.Color.Black
+        Me.SubmitGrade_Btn.Location = New System.Drawing.Point(830, 592)
+        Me.SubmitGrade_Btn.Name = "SubmitGrade_Btn"
+        Me.SubmitGrade_Btn.Size = New System.Drawing.Size(113, 41)
+        Me.SubmitGrade_Btn.TabIndex = 54
+        Me.SubmitGrade_Btn.Text = "Save"
+        Me.SubmitGrade_Btn.UseVisualStyleBackColor = False
+        '
+        'StudentSearch
+        '
+        '
+        '
+        '
+        Me.StudentSearch.CustomButton.Image = Nothing
+        Me.StudentSearch.CustomButton.Location = New System.Drawing.Point(223, 2)
+        Me.StudentSearch.CustomButton.Name = ""
+        Me.StudentSearch.CustomButton.Size = New System.Drawing.Size(35, 35)
+        Me.StudentSearch.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.StudentSearch.CustomButton.TabIndex = 1
+        Me.StudentSearch.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.StudentSearch.CustomButton.UseSelectable = True
+        Me.StudentSearch.CustomButton.Visible = False
+        Me.StudentSearch.FontSize = MetroFramework.MetroTextBoxSize.Tall
+        Me.StudentSearch.Lines = New String(-1) {}
+        Me.StudentSearch.Location = New System.Drawing.Point(43, 592)
+        Me.StudentSearch.MaxLength = 100
+        Me.StudentSearch.Name = "StudentSearch"
+        Me.StudentSearch.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.StudentSearch.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.StudentSearch.SelectedText = ""
+        Me.StudentSearch.SelectionLength = 0
+        Me.StudentSearch.SelectionStart = 0
+        Me.StudentSearch.ShortcutsEnabled = True
+        Me.StudentSearch.Size = New System.Drawing.Size(261, 40)
+        Me.StudentSearch.Style = MetroFramework.MetroColorStyle.Green
+        Me.StudentSearch.TabIndex = 61
+        Me.StudentSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.StudentSearch.UseSelectable = True
+        Me.StudentSearch.WaterMarkColor = System.Drawing.Color.Silver
+        Me.StudentSearch.WaterMarkFont = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        '
+        'Search_Label
+        '
+        Me.Search_Label.AutoSize = True
+        Me.Search_Label.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Search_Label.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Search_Label.Location = New System.Drawing.Point(39, 573)
+        Me.Search_Label.Name = "Search_Label"
+        Me.Search_Label.Size = New System.Drawing.Size(124, 20)
+        Me.Search_Label.TabIndex = 62
+        Me.Search_Label.Text = "Search Student"
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.Red
+        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button2.FlatAppearance.BorderColor = System.Drawing.Color.Red
+        Me.Button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.Color.White
+        Me.Button2.Location = New System.Drawing.Point(310, 592)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(90, 40)
+        Me.Button2.TabIndex = 64
+        Me.Button2.Text = "Clear"
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'Button3
         '
@@ -1067,105 +1043,108 @@ Partial Class Admin_Main
         Me.StudentlistTable.RowTemplate.Height = 24
         Me.StudentlistTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
         Me.StudentlistTable.Size = New System.Drawing.Size(899, 473)
-        Me.StudentlistTable.TabIndex = 65
+        Me.StudentlistTable.TabIndex = 67
         '
-        'Button2
+        'Panel4
         '
-        Me.Button2.BackColor = System.Drawing.Color.Red
-        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button2.FlatAppearance.BorderColor = System.Drawing.Color.Red
-        Me.Button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.White
-        Me.Button2.Location = New System.Drawing.Point(310, 592)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(90, 40)
-        Me.Button2.TabIndex = 64
-        Me.Button2.Text = "Clear"
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.Panel4.BackColor = System.Drawing.Color.White
+        Me.Panel4.Controls.Add(Me.Label3)
+        Me.Panel4.Controls.Add(Me.CollegeProgramSelector)
+        Me.Panel4.Controls.Add(Me.ViewStudentList)
+        Me.Panel4.Location = New System.Drawing.Point(1001, 5)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(324, 574)
+        Me.Panel4.TabIndex = 1
         '
-        'Search_Label
+        'ViewStudentList
         '
-        Me.Search_Label.AutoSize = True
-        Me.Search_Label.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Search_Label.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Search_Label.Location = New System.Drawing.Point(39, 573)
-        Me.Search_Label.Name = "Search_Label"
-        Me.Search_Label.Size = New System.Drawing.Size(124, 20)
-        Me.Search_Label.TabIndex = 62
-        Me.Search_Label.Text = "Search Student"
+        Me.ViewStudentList.BackColor = System.Drawing.Color.Yellow
+        Me.ViewStudentList.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ViewStudentList.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(20, Byte), Integer))
+        Me.ViewStudentList.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.ViewStudentList.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(20, Byte), Integer))
+        Me.ViewStudentList.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ViewStudentList.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ViewStudentList.ForeColor = System.Drawing.Color.Black
+        Me.ViewStudentList.Location = New System.Drawing.Point(208, 53)
+        Me.ViewStudentList.Name = "ViewStudentList"
+        Me.ViewStudentList.Size = New System.Drawing.Size(90, 40)
+        Me.ViewStudentList.TabIndex = 74
+        Me.ViewStudentList.Text = "View"
+        Me.ViewStudentList.UseVisualStyleBackColor = False
         '
-        'StudentSearch
+        'CollegeProgramSelector
         '
+        Me.CollegeProgramSelector.BackColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(248, Byte), Integer))
+        Me.CollegeProgramSelector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CollegeProgramSelector.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CollegeProgramSelector.FormattingEnabled = True
+        Me.CollegeProgramSelector.Items.AddRange(New Object() {"BSIT", "BSCPE"})
+        Me.CollegeProgramSelector.Location = New System.Drawing.Point(26, 53)
+        Me.CollegeProgramSelector.Name = "CollegeProgramSelector"
+        Me.CollegeProgramSelector.Size = New System.Drawing.Size(176, 39)
+        Me.CollegeProgramSelector.TabIndex = 77
         '
+        'Label3
         '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Bernard MT Condensed", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(14, 10)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(232, 40)
+        Me.Label3.TabIndex = 78
+        Me.Label3.Text = "College Program"
         '
-        Me.StudentSearch.CustomButton.Image = Nothing
-        Me.StudentSearch.CustomButton.Location = New System.Drawing.Point(223, 2)
-        Me.StudentSearch.CustomButton.Name = ""
-        Me.StudentSearch.CustomButton.Size = New System.Drawing.Size(35, 35)
-        Me.StudentSearch.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.StudentSearch.CustomButton.TabIndex = 1
-        Me.StudentSearch.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
-        Me.StudentSearch.CustomButton.UseSelectable = True
-        Me.StudentSearch.CustomButton.Visible = False
-        Me.StudentSearch.FontSize = MetroFramework.MetroTextBoxSize.Tall
-        Me.StudentSearch.Lines = New String(-1) {}
-        Me.StudentSearch.Location = New System.Drawing.Point(43, 592)
-        Me.StudentSearch.MaxLength = 100
-        Me.StudentSearch.Name = "StudentSearch"
-        Me.StudentSearch.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.StudentSearch.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.StudentSearch.SelectedText = ""
-        Me.StudentSearch.SelectionLength = 0
-        Me.StudentSearch.SelectionStart = 0
-        Me.StudentSearch.ShortcutsEnabled = True
-        Me.StudentSearch.Size = New System.Drawing.Size(261, 40)
-        Me.StudentSearch.Style = MetroFramework.MetroColorStyle.Green
-        Me.StudentSearch.TabIndex = 61
-        Me.StudentSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.StudentSearch.UseSelectable = True
-        Me.StudentSearch.WaterMarkColor = System.Drawing.Color.Silver
-        Me.StudentSearch.WaterMarkFont = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        'Panel3
         '
-        'SubmitGrade_Btn
+        Me.Panel3.BackColor = System.Drawing.Color.White
+        Me.Panel3.Controls.Add(Me.Button1)
+        Me.Panel3.Location = New System.Drawing.Point(1001, 583)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(324, 192)
+        Me.Panel3.TabIndex = 2
         '
-        Me.SubmitGrade_Btn.BackColor = System.Drawing.Color.Yellow
-        Me.SubmitGrade_Btn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.SubmitGrade_Btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(20, Byte), Integer))
-        Me.SubmitGrade_Btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
-        Me.SubmitGrade_Btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(20, Byte), Integer))
-        Me.SubmitGrade_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.SubmitGrade_Btn.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SubmitGrade_Btn.ForeColor = System.Drawing.Color.Black
-        Me.SubmitGrade_Btn.Location = New System.Drawing.Point(830, 592)
-        Me.SubmitGrade_Btn.Name = "SubmitGrade_Btn"
-        Me.SubmitGrade_Btn.Size = New System.Drawing.Size(113, 41)
-        Me.SubmitGrade_Btn.TabIndex = 54
-        Me.SubmitGrade_Btn.Text = "Save"
-        Me.SubmitGrade_Btn.UseVisualStyleBackColor = False
+        'Button1
         '
-        'StudentGrade_Label
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(110, Byte), Integer), CType(CType(33, Byte), Integer))
+        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(110, Byte), Integer), CType(CType(33, Byte), Integer))
+        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(33, Byte), Integer))
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Bernard MT Condensed", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button1.Location = New System.Drawing.Point(3, 3)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.Button1.Size = New System.Drawing.Size(316, 184)
+        Me.Button1.TabIndex = 61
+        Me.Button1.Text = "Evaluate" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Student" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Grade"
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button1.UseVisualStyleBackColor = False
         '
-        Me.StudentGrade_Label.AutoSize = True
-        Me.StudentGrade_Label.Font = New System.Drawing.Font("Bernard MT Condensed", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.StudentGrade_Label.Location = New System.Drawing.Point(36, 9)
-        Me.StudentGrade_Label.Name = "StudentGrade_Label"
-        Me.StudentGrade_Label.Size = New System.Drawing.Size(164, 40)
-        Me.StudentGrade_Label.TabIndex = 0
-        Me.StudentGrade_Label.Text = "Student List"
+        'Student_Panel
+        '
+        Me.Student_Panel.BackColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(248, Byte), Integer))
+        Me.Student_Panel.Controls.Add(Me.Panel3)
+        Me.Student_Panel.Controls.Add(Me.Panel4)
+        Me.Student_Panel.Controls.Add(Me.Panel5)
+        Me.Student_Panel.Location = New System.Drawing.Point(218, 91)
+        Me.Student_Panel.Name = "Student_Panel"
+        Me.Student_Panel.Size = New System.Drawing.Size(1334, 784)
+        Me.Student_Panel.TabIndex = 6
         '
         'Admin_Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1550, 870)
+        Me.Controls.Add(Me.Instructor_Panel)
+        Me.Controls.Add(Me.Student_Panel)
         Me.Controls.Add(Me.GreenUpper_Panel)
         Me.Controls.Add(Me.GreenSide_Panel)
-        Me.Controls.Add(Me.Student_Panel)
-        Me.Controls.Add(Me.Instructor_Panel)
         Me.Controls.Add(Me.Welcome_BG)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
@@ -1198,13 +1177,13 @@ Partial Class Admin_Main
         Me.CDMinstructors_Panel.PerformLayout()
         CType(Me.InstructorsDataTable, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Welcome_BG, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Student_Panel.ResumeLayout(False)
-        Me.Panel3.ResumeLayout(False)
-        Me.Panel4.ResumeLayout(False)
-        Me.Panel4.PerformLayout()
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
         CType(Me.StudentlistTable, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel4.ResumeLayout(False)
+        Me.Panel4.PerformLayout()
+        Me.Panel3.ResumeLayout(False)
+        Me.Student_Panel.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -1226,7 +1205,6 @@ Partial Class Admin_Main
     Friend WithEvents Institute As Label
     Friend WithEvents ViewInstructorInfo As Button
     Friend WithEvents ChangeGradeReq_Btn As Button
-    Friend WithEvents InstructorSubmittedGrade_Btn As Button
     Friend WithEvents Welcome_BG As PictureBox
     Friend WithEvents InstructorSearchBar As MetroFramework.Controls.MetroTextBox
     Friend WithEvents InstructorsDataTable As DataGridView
@@ -1259,19 +1237,19 @@ Partial Class Admin_Main
     Friend WithEvents Label1 As Label
     Friend WithEvents AssignedSectionTable As DataGridView
     Friend WithEvents AssignedCourseTable As DataGridView
-    Friend WithEvents Student_Panel As Panel
-    Friend WithEvents Panel3 As Panel
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Panel4 As Panel
-    Friend WithEvents Label3 As Label
-    Friend WithEvents CollegeProgramSelector As ComboBox
-    Friend WithEvents ViewStudentList As Button
     Friend WithEvents Panel5 As Panel
     Friend WithEvents StudentlistTable As DataGridView
+    Friend WithEvents Button3 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Search_Label As Label
     Friend WithEvents StudentSearch As MetroFramework.Controls.MetroTextBox
     Friend WithEvents SubmitGrade_Btn As Button
     Friend WithEvents StudentGrade_Label As Label
-    Friend WithEvents Button3 As Button
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents Label3 As Label
+    Friend WithEvents CollegeProgramSelector As ComboBox
+    Friend WithEvents ViewStudentList As Button
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Student_Panel As Panel
 End Class
