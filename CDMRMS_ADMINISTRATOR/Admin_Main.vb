@@ -100,10 +100,14 @@ Public Class Admin_Main
 
             Dim datatable As New DataTable()
             Using adapter As New MySqlDataAdapter(command)
-                adapter.Fill(datatable)
-                InstructorsDataTable.DataSource = datatable
-            End Using
 
+                adapter.Fill(datatable)
+
+
+                InstructorsDataTable.DataSource = datatable
+                InstructorsDataTable.ColumnHeadersHeight = 200
+
+            End Using
 
         Catch ex As Exception
             MessageBox.Show("Error fetching data: " & ex.Message)
