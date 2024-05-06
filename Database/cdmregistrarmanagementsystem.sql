@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 03, 2024 at 06:04 PM
+-- Generation Time: May 06, 2024 at 05:15 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -55,7 +55,7 @@ INSERT INTO `assignedcourse` (`id`, `instructor_id`, `Instructor`, `course`, `se
 (4, 'CDM-1111', '', 'GE MATH', 'BSIT-1B', '', '', '', '', '', '', '', '', ''),
 (5, 'CDM-1111', '', 'GE 1', 'BSIT-1A', '', '', '', '', '', '', '', '', ''),
 (6, 'CDM-1111', '', 'GE FIL 1', 'BSIT-1F', '', '', '', '', '', '', '', '', ''),
-(7, 'CDM-1111', '', 'PE 1', 'BSIT-1J', '-', '', '', '', '', '', '', '', ''),
+(7, 'CDM-1111', '', 'PE 1', 'BSIT-1J', '', '', '', '', '', '', '', '', ''),
 (8, 'CDM-1111', '', 'NSTP 1', 'BSIT-1E', '', '', '', '', '', '', '', '', ''),
 (9, '', '', '', '', '', '', '', '', '', '', '', '', ''),
 (10, '', '', '', '', '', '', '', '', '', '', '', '', '');
@@ -71,6 +71,9 @@ CREATE TABLE `bsit` (
   `Student ID` varchar(100) NOT NULL,
   `Student Name` varchar(100) NOT NULL,
   `Program` varchar(100) NOT NULL,
+  `Year` varchar(100) NOT NULL,
+  `Semester` varchar(100) NOT NULL,
+  `Section` varchar(100) NOT NULL,
   `ITCOMP` double NOT NULL,
   `PROG 1` double NOT NULL,
   `GE 2` double NOT NULL,
@@ -80,6 +83,25 @@ CREATE TABLE `bsit` (
   `PE 1` double NOT NULL,
   `NSTP 1` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `bsit`
+--
+
+INSERT INTO `bsit` (`ID`, `Student ID`, `Student Name`, `Program`, `Year`, `Semester`, `Section`, `ITCOMP`, `PROG 1`, `GE 2`, `GE MATH`, `GE 1`, `GE FIL 1`, `PE 1`, `NSTP 1`) VALUES
+(1, '', 'Geanga, John Irvin', 'BSIT', '1st Year', '', 'BSIT-1B', 0, 1.75, 0, 0, 0, 0, 0, 0),
+(2, '', 'Geanga', 'BSIT', '1st Year', '', 'BSIT-3A', 0, 0, 0, 0, 0, 0, 0, 0),
+(3, '', '', 'BSIT', '1st Year', '', 'BSIT-1B', 0, 1.5, 0, 0, 0, 0, 0, 0),
+(4, '', '', 'BSIT', '1st Year', '', 'BSIT-1B', 0, 1.25, 0, 0, 0, 0, 0, 0),
+(5, '', '', 'BSIT', '1st Year', '', 'BSIT-1B', 0, 1.75, 0, 0, 0, 0, 0, 0),
+(6, '', '', 'BSIT', '1st Year', '', 'BSIT-1B', 0, 1.5, 0, 0, 0, 0, 0, 0),
+(7, '', '', '', '', '', 'BSIT-1A', 0, 1.5, 0, 0, 0, 0, 0, 0),
+(8, '', '', '', '', '', 'BSIT-1A', 0, 0, 0, 0, 0, 0, 0, 0),
+(9, '', '', '', '', '', 'BSIT-1A', 0, 0, 0, 0, 0, 0, 0, 0),
+(10, '', '', '', '', '', 'BSIT-1A', 0, 0, 0, 0, 0, 0, 0, 0),
+(11, '', '', '', '', '', 'BSIT-1A', 0, 0, 0, 0, 0, 0, 0, 0),
+(12, '', '', '', '', '', 'BSIT-1A', 0, 0, 0, 0, 0, 0, 0, 0),
+(13, '', '', '', '', '', 'BSIT-1A', 0, 0, 0, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -97,24 +119,37 @@ CREATE TABLE `instructors` (
   `email` varchar(100) NOT NULL,
   `contact#` varchar(100) NOT NULL,
   `birthday` date NOT NULL,
-  `password` varchar(100) NOT NULL
+  `password` varchar(100) NOT NULL,
+  `Status` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `instructors`
 --
 
-INSERT INTO `instructors` (`id`, `firstname`, `middlename`, `lastname`, `instructorid`, `gender`, `email`, `contact#`, `birthday`, `password`) VALUES
-(1, 'John Irvin', 'N/A', 'Geanga', 'CDM-1111', 'Male', 'johnirvingeanga@gmail.com', '09111111111', '2024-04-24', '938db8c9f82c8cb58d3f3ef4fd250036a48d26a712753d2fde5abd03a85cabf4'),
-(2, 'Matt', 'N/A', 'Lawson', 'CDM-2222', 'Male', 'sample@gmail.com', '09222222222', '2024-04-26', '938db8c9f82c8cb58d3f3ef4fd250036a48d26a712753d2fde5abd03a85cabf4'),
-(3, 'Raymond', 'N/A', 'Linwood', 'CDM-3333', 'Male', 'sample@gmail.com', '09333333333', '2024-04-26', '938db8c9f82c8cb58d3f3ef4fd250036a48d26a712753d2fde5abd03a85cabf4'),
-(4, 'Jordyn', 'N/A', 'leo', 'CDM-4444', 'Male', 'sample@gmail.com', '09444444444', '2024-04-26', '938db8c9f82c8cb58d3f3ef4fd250036a48d26a712753d2fde5abd03a85cabf4'),
-(5, 'Sherie', 'N/A', 'Kali', 'CDM-5555', 'Female', 'sample@gmail.com', '09555555555', '2024-04-26', '938db8c9f82c8cb58d3f3ef4fd250036a48d26a712753d2fde5abd03a85cabf4'),
-(6, 'Silvia', 'N/A', 'Marty', 'CDM-6666', 'Female', 'sample@gmail.com', '09666666666', '2024-04-26', '938db8c9f82c8cb58d3f3ef4fd250036a48d26a712753d2fde5abd03a85cabf4'),
-(7, 'Edith', 'N/A', 'Bernadette', 'CDM-7777', 'Female', 'sample@gmail.com', '09777777777', '2024-04-26', '938db8c9f82c8cb58d3f3ef4fd250036a48d26a712753d2fde5abd03a85cabf4'),
-(8, 'Cydney', 'N/A', 'Kris', 'CDM-8888', 'Female', 'sample@gmail.com', '09888888888', '2024-04-26', '938db8c9f82c8cb58d3f3ef4fd250036a48d26a712753d2fde5abd03a85cabf4'),
-(9, 'Catherin', 'N/A', 'Shonda', 'CDM-9999', 'Female', 'sample@gmail.com', '09999999999', '2024-04-26', '938db8c9f82c8cb58d3f3ef4fd250036a48d26a712753d2fde5abd03a85cabf4'),
-(14, 'Max', 'N/A', 'Collins', 'CDM-1010', 'Male', 'sample@gmail.com', '09101010101', '2024-04-28', '938db8c9f82c8cb58d3f3ef4fd250036a48d26a712753d2fde5abd03a85cabf4');
+INSERT INTO `instructors` (`id`, `firstname`, `middlename`, `lastname`, `instructorid`, `gender`, `email`, `contact#`, `birthday`, `password`, `Status`) VALUES
+(2, 'Matt', 'N/A', 'Lawson', 'CDM-2222', 'Male', 'sample@gmail.com', '09222222222', '2024-04-26', '938db8c9f82c8cb58d3f3ef4fd250036a48d26a712753d2fde5abd03a85cabf4', 0),
+(3, 'Raymond', 'N/A', 'Linwood', 'CDM-3333', 'Male', 'sample@gmail.com', '09333333333', '2024-04-26', '938db8c9f82c8cb58d3f3ef4fd250036a48d26a712753d2fde5abd03a85cabf4', 0),
+(4, 'Jordyn', 'N/A', 'leo', 'CDM-4444', 'Male', 'sample@gmail.com', '09444444444', '2024-04-26', '938db8c9f82c8cb58d3f3ef4fd250036a48d26a712753d2fde5abd03a85cabf4', 0),
+(5, 'Sherie', 'N/A', 'Kali', 'CDM-5555', 'Female', 'sample@gmail.com', '09555555555', '2024-04-26', '938db8c9f82c8cb58d3f3ef4fd250036a48d26a712753d2fde5abd03a85cabf4', 0),
+(6, 'Silvia', 'N/A', 'Marty', 'CDM-6666', 'Female', 'sample@gmail.com', '09666666666', '2024-04-26', '938db8c9f82c8cb58d3f3ef4fd250036a48d26a712753d2fde5abd03a85cabf4', 0),
+(7, 'Edith', 'N/A', 'Bernadette', 'CDM-7777', 'Female', 'sample@gmail.com', '09777777777', '2024-04-26', '938db8c9f82c8cb58d3f3ef4fd250036a48d26a712753d2fde5abd03a85cabf4', 0),
+(8, 'Cydney', 'N/A', 'Kris', 'CDM-8888', 'Female', 'sample@gmail.com', '09888888888', '2024-04-26', '938db8c9f82c8cb58d3f3ef4fd250036a48d26a712753d2fde5abd03a85cabf4', 0),
+(9, 'Catherin', 'N/A', 'Shonda', 'CDM-9999', 'Female', 'sample@gmail.com', '09999999999', '2024-04-26', '938db8c9f82c8cb58d3f3ef4fd250036a48d26a712753d2fde5abd03a85cabf4', 0),
+(14, 'Max', 'N/A', 'Collins', 'CDM-1010', 'Male', 'sample@gmail.com', '09101010101', '2024-04-28', '938db8c9f82c8cb58d3f3ef4fd250036a48d26a712753d2fde5abd03a85cabf4', 0),
+(39, 'John Irvin', 'N/A', 'Geanga', 'CDM-1111', 'Male', 'johnirvingeanga@gmail.com', '09683061658', '2024-05-06', '938db8c9f82c8cb58d3f3ef4fd250036a48d26a712753d2fde5abd03a85cabf4', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `request`
+--
+
+CREATE TABLE `request` (
+  `ID` int(11) NOT NULL,
+  `Instructor ID` varchar(100) NOT NULL,
+  `Instructor Name` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Indexes for dumped tables
@@ -139,6 +174,12 @@ ALTER TABLE `instructors`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `request`
+--
+ALTER TABLE `request`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -152,13 +193,19 @@ ALTER TABLE `assignedcourse`
 -- AUTO_INCREMENT for table `bsit`
 --
 ALTER TABLE `bsit`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `instructors`
 --
 ALTER TABLE `instructors`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+
+--
+-- AUTO_INCREMENT for table `request`
+--
+ALTER TABLE `request`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
