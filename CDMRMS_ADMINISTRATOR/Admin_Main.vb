@@ -318,6 +318,7 @@ Public Class Admin_Main
     End Sub
 
     Private Sub SubmitGrade_Btn_Click(sender As Object, e As EventArgs) Handles SubmitGrade_Btn.Click
+
         SaveData()
         MsgBox("Update successful!", MessageBoxIcon.Information)
         dataTable.Clear()
