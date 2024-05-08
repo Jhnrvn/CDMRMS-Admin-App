@@ -48,47 +48,94 @@ Public Class ChangingGradeRequest
 
 
     Private Sub Approve_Btn_Click(sender As Object, e As EventArgs) Handles Approve_Btn.Click
-        If PendingRequestTable.SelectedRows.Count > 0 Then
+        Dim choice As DialogResult = MsgBox("Approve Request?", MessageBoxButtons.YesNo)
 
-            Dim selectedRow As DataGridViewRow = PendingRequestTable.SelectedRows(0)
-            Dim instructorid As String
-            instructorid = selectedRow.Cells("Instructor ID").Value.ToString()
+        If choice = DialogResult.Yes Then
+
+            If PendingRequestTable.SelectedRows.Count > 0 Then
+
+                Dim selectedRow As DataGridViewRow = PendingRequestTable.SelectedRows(0)
+                Dim instructorid As String
+                instructorid = selectedRow.Cells("Instructor ID").Value.ToString()
 
 
-            Dim status As Boolean = True
+                Dim status As Boolean = True
 
-            Dim ApprovedQuery As String = " UPDATE instructors SET Status = @status WHERE instructorid = @instructorid "
-            Dim DeleteQuery As String = " DELETE FROM request WHERE `Instructor ID` = @instructorid "
-            Try
-                connection.Open()
+                Dim ApprovedQuery As String = " UPDATE instructors SET Status = @status WHERE instructorid = @instructorid "
+                Dim DeleteQuery As String = " DELETE FROM request WHERE `Instructor ID` = @instructorid "
+                Try
+                    connection.Open()
 
-                Using ApprovedCommand As New MySqlCommand(ApprovedQuery, connection)
-                    ApprovedCommand.Parameters.AddWithValue("@status", status)
-                    ApprovedCommand.Parameters.AddWithValue("@instructorid", instructorid)
-                    ApprovedCommand.ExecuteNonQuery()
+                    Using ApprovedCommand As New MySqlCommand(ApprovedQuery, connection)
+                        ApprovedCommand.Parameters.AddWithValue("@status", status)
+                        ApprovedCommand.Parameters.AddWithValue("@instructorid", instructorid)
+                        ApprovedCommand.ExecuteNonQuery()
 
-                End Using
+                    End Using
 
-                Using DeleteCommand As New MySqlCommand(DeleteQuery, connection)
-                    DeleteCommand.Parameters.AddWithValue("@instructorid", instructorid)
-                    DeleteCommand.ExecuteNonQuery()
+                    Using DeleteCommand As New MySqlCommand(DeleteQuery, connection)
+                        DeleteCommand.Parameters.AddWithValue("@instructorid", instructorid)
+                        DeleteCommand.ExecuteNonQuery()
 
-                End Using
+                    End Using
 
-                MsgBox("Request Approved")
+                    MsgBox("Request Approved")
 
-            Catch ex As Exception
+                Catch ex As Exception
 
-                MsgBox("error" & ex.Message)
+                    MsgBox("error" & ex.Message)
 
-            Finally
-                connection.Close()
+                Finally
+                    connection.Close()
 
-            End Try
-            LoadInstructorRequest()
+                End Try
+                LoadInstructorRequest()
+
+            End If
 
         End If
 
+
+    End Sub
+
+
+    Private Sub Decline_Btn_Click(sender As Object, e As EventArgs) Handles Decline_Btn.Click
+
+        Dim choice As DialogResult = MsgBox("Decline Request?", MessageBoxButtons.YesNo)
+
+        If choice = DialogResult.Yes Then
+
+            If PendingRequestTable.SelectedRows.Count > 0 Then
+
+                Dim selectedRow As DataGridViewRow = PendingRequestTable.SelectedRows(0)
+                Dim instructorid As String
+                instructorid = selectedRow.Cells("Instructor ID").Value.ToString()
+
+                Dim DeleteQuery As String = " DELETE FROM request WHERE `Instructor ID` = @instructorid "
+                Try
+                    connection.Open()
+
+                    Using DeleteCommand As New MySqlCommand(DeleteQuery, connection)
+                        DeleteCommand.Parameters.AddWithValue("@instructorid", instructorid)
+                        DeleteCommand.ExecuteNonQuery()
+
+                    End Using
+
+                    MsgBox("Request Declined.")
+
+                Catch ex As Exception
+
+                    MsgBox("error" & ex.Message)
+
+                Finally
+                    connection.Close()
+
+                End Try
+                LoadInstructorRequest()
+
+            End If
+
+        End If
 
     End Sub
 
@@ -100,5 +147,6 @@ Public Class ChangingGradeRequest
         Admin_Main.Enabled = True
 
     End Sub
+
 
 End Class
