@@ -33,8 +33,8 @@ Public Class ChangingGradeRequest
 
 
                 PendingRequestTable.DataSource = datatable
-                PendingRequestTable.Columns("Instructor ID").Width = 272
-                PendingRequestTable.Columns("Instructor Name").Width = 272
+                PendingRequestTable.Columns("Instructor ID").Width = 291
+                PendingRequestTable.Columns("Instructor Name").Width = 292
 
             End Using
 
@@ -120,7 +120,6 @@ Public Class ChangingGradeRequest
                         DeleteCommand.ExecuteNonQuery()
 
                     End Using
-
                     MsgBox("Request Declined.")
 
                 Catch ex As Exception
@@ -134,7 +133,6 @@ Public Class ChangingGradeRequest
                 LoadInstructorRequest()
 
             End If
-
         End If
 
     End Sub

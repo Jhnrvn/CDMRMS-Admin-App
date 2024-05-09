@@ -1,5 +1,4 @@
-﻿Imports System.Drawing.Text
-Imports MySql.Data.MySqlClient
+﻿Imports MySql.Data.MySqlClient
 
 Public Class Admin_Main
 
@@ -7,12 +6,21 @@ Public Class Admin_Main
 
     ' FORM LOAD - START
     Private Sub Admin_Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        PinLock_Panel.Show()
+        Lock_Btn.Hide()
+        Menu_Btn.Enabled = False
+
         Dropdown_Panel.Size = Dropdown_Panel.MinimumSize
         Instructor_Panel.Hide()
         Student_Panel.Hide()
         InstructorData()
 
         StudentList()
+
+        StudentlistTable.ReadOnly = True
+        StudentlistTable.AllowUserToAddRows = False
+        Delete_Btn.Enabled = False
 
     End Sub
     ' FORM LOAD - END
@@ -78,6 +86,77 @@ Public Class Admin_Main
 
     End Sub
     ' DROP-DOWN MENU ANIMATION - END
+
+
+    ' ADMIN PIN  - START
+
+    Private Sub LockAdmin()
+
+        Dim pin As String = "1111"
+        Dim userPin As String = Pin_1.Text + Pin_2.Text + Pin_3.Text + Pin_4.Text
+
+        If userPin = pin Then
+
+            MsgBox("Correct Pin!", MessageBoxIcon.Information)
+            PinLock_Panel.Hide()
+            Lock_Btn.Show()
+            Menu_Btn.Enabled = True
+
+            Pin_1.Clear()
+            Pin_2.Clear()
+            Pin_3.Clear()
+            Pin_4.Clear()
+        Else
+
+            MsgBox("Wrong Pin!", MessageBoxIcon.Error)
+
+            Pin_1.Clear()
+            Pin_2.Clear()
+            Pin_3.Clear()
+            Pin_4.Clear()
+
+        End If
+    End Sub
+
+    Private Sub Pin_1_TextChanged(sender As Object, e As EventArgs) Handles Pin_1.TextChanged, Pin_2.TextChanged, Pin_3.TextChanged, Pin_4.TextChanged
+
+        If Pin_1.Text.Length = 1 Then
+            Pin_2.Focus()
+        End If
+
+        If Pin_2.Text.Length = 1 Then
+            Pin_3.Focus()
+        End If
+
+        If Pin_3.Text.Length = 1 Then
+            Pin_4.Focus()
+        End If
+
+
+    End Sub
+
+
+    Private Sub Verify_Btn_Click(sender As Object, e As EventArgs) Handles Verify_Btn.Click
+
+        LockAdmin()
+
+    End Sub
+
+    Private Sub Lock_Btn_Click(sender As Object, e As EventArgs) Handles Lock_Btn.Click
+        Dim choice As DialogResult = MsgBox("Are you sure?", MessageBoxButtons.YesNo)
+
+        If choice = DialogResult.Yes Then
+            Menu_Btn.PerformClick()
+
+            PinLock_Panel.Show()
+            Menu_Btn.Enabled = False
+            Lock_Btn.Hide()
+
+
+        End If
+
+    End Sub
+    ' ADMIN LOCK
 
 
 
@@ -262,15 +341,6 @@ Public Class Admin_Main
     End Sub
 
 
-    ' Instructor Submitted Grade Button
-    Private Sub InstructorSubmittedGrade_Btn_Click(sender As Object, e As EventArgs)
-
-        InstructorSubmittedGrade.Show()
-        Me.Enabled = False
-
-    End Sub
-
-
     ' Assiged Course and Section Button
     Private Sub AssignedCourse_Btn_Click(sender As Object, e As EventArgs) Handles AssignedCourse_Btn.Click
 
@@ -290,6 +360,8 @@ Public Class Admin_Main
 
     Dim adapter As New MySqlDataAdapter
     Dim dataTable As New DataTable()
+
+    ' Student list Table
     Private Sub StudentList()
 
         Try
@@ -317,12 +389,100 @@ Public Class Admin_Main
         adapter.Update(DataTable)
     End Sub
 
-    Private Sub SubmitGrade_Btn_Click(sender As Object, e As EventArgs) Handles SubmitGrade_Btn.Click
+
+
+    ' Student Search Function
+    Private Sub StudentSearchBar_TextChanged(sender As Object, e As EventArgs) Handles StudentSearchBar.TextChanged
+        Dim searchTerm As String = StudentSearchBar.Text.Trim()
+        If searchTerm <> "" Then
+            Try
+                connection.Open()
+
+                Dim query As String = "SELECT * FROM bsit WHERE `Student ID` LIKE @searchTerm OR `Student Name` LIKE @searchTerm OR `Year` LIKE @searchTerm OR `Section` LIKE @searchTerm"
+                Dim command As New MySqlCommand(query, connection)
+
+                command.Parameters.AddWithValue("@searchTerm", "%" & searchTerm & "%")
+
+                Dim dataTable As New DataTable()
+
+                Dim adapter As New MySqlDataAdapter(command)
+                adapter.Fill(dataTable)
+                StudentlistTable.DataSource = dataTable
+            Catch ex As Exception
+                MessageBox.Show("Error searching data: " & ex.Message)
+            Finally
+                connection.Close()
+
+            End Try
+        End If
+
+        If String.IsNullOrEmpty(StudentSearchBar.Text.Trim()) Then
+            dataTable.Clear()
+            StudentList()
+
+        End If
+    End Sub
+
+    ' Delete Row from Student list Table
+    Private Sub Delete_Btn_Click(sender As Object, e As EventArgs) Handles Delete_Btn.Click
+
+        Dim choice As DialogResult = MsgBox("Delete selected row?", MessageBoxButtons.YesNo)
+
+        If choice = DialogResult.Yes Then
+
+            If StudentlistTable.SelectedRows.Count > 0 Then
+
+                Dim selectedRow As DataGridViewRow = StudentlistTable.SelectedRows(0)
+                Dim ID As String
+                ID = selectedRow.Cells("ID").Value.ToString()
+
+                Dim DeleteQuery As String = " DELETE FROM bsit WHERE `ID` = @ID "
+                Try
+                    connection.Open()
+
+                    Using DeleteCommand As New MySqlCommand(DeleteQuery, connection)
+                        DeleteCommand.Parameters.AddWithValue("@ID", ID)
+                        DeleteCommand.ExecuteNonQuery()
+
+                    End Using
+
+                    MsgBox("Row deleted successfully.", MessageBoxIcon.Information)
+
+                Catch ex As Exception
+
+                    MsgBox("error" & ex.Message)
+
+                Finally
+                    connection.Close()
+
+                End Try
+                dataTable.Clear()
+                StudentList()
+
+            End If
+
+        End If
+    End Sub
+
+    ' Edit Student List Table
+    Private Sub Edit_Btn_Click(sender As Object, e As EventArgs) Handles Edit_Btn.Click
+
+        StudentlistTable.ReadOnly = False
+        MsgBox("Edit Enabled.", MessageBoxIcon.Information)
+        StudentlistTable.AllowUserToAddRows = True
+        Delete_Btn.Enabled = False
+
+    End Sub
+
+    Private Sub Save_Btn_Click(sender As Object, e As EventArgs) Handles Save_Btn.Click
 
         SaveData()
+        StudentlistTable.ReadOnly = True
         MsgBox("Update successful!", MessageBoxIcon.Information)
         dataTable.Clear()
         StudentList()
+        StudentlistTable.AllowUserToAddRows = False
+        Delete_Btn.Enabled = True
     End Sub
 
 
