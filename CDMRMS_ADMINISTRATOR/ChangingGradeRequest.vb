@@ -38,6 +38,7 @@ Public Class ChangingGradeRequest
 
             End Using
 
+
         Catch ex As Exception
             MessageBox.Show("Error fetching data: " & ex.Message)
         Finally
@@ -131,6 +132,8 @@ Public Class ChangingGradeRequest
 
                 End Try
                 LoadInstructorRequest()
+
+
 
             End If
         End If

@@ -9,7 +9,7 @@ Public Class AssignedCourse_Section
         AssignedCourse()
         AssignedCourseTable.ReadOnly = True
         AssignedCourseTable.AllowUserToAddRows = False
-        Delete_Btn.Enabled = False
+
     End Sub
     ' FORM LOAD - END
 
@@ -31,7 +31,7 @@ Public Class AssignedCourse_Section
 
             adapter = New MySqlDataAdapter(selectQuery, connection)
 
-            AssignedCourseTable.RowTemplate.Height = 35
+            AssignedCourseTable.RowTemplate.Height = 30
             adapter.Fill(dataTable)
 
             AssignedCourseTable.DataSource = dataTable

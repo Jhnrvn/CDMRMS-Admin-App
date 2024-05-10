@@ -321,7 +321,7 @@ Public Class Admin_Main
             Dim sectionAdapter As New MySqlDataAdapter(sectionQuery, connection)
             sectionAdapter.SelectCommand.Parameters.AddWithValue("@course", course)
             Dim dataTable As New DataTable()
-            AssignedSectionTable.RowTemplate.Height = 92
+            AssignedSectionTable.RowTemplate.Height = 60
             sectionAdapter.Fill(dataTable)
 
             AssignedSectionTable.DataSource = dataTable
@@ -485,6 +485,7 @@ Public Class Admin_Main
         StudentlistTable.AllowUserToAddRows = False
         Delete_Btn.Enabled = True
     End Sub
+
 
     ' STUDENT PANEL - END
 
