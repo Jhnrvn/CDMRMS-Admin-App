@@ -20,7 +20,6 @@ Public Class Admin_Main
 
         StudentlistTable.ReadOnly = True
         StudentlistTable.AllowUserToAddRows = False
-        Delete_Btn.Enabled = False
 
     End Sub
     ' FORM LOAD - END
@@ -146,7 +145,9 @@ Public Class Admin_Main
         Dim choice As DialogResult = MsgBox("Are you sure?", MessageBoxButtons.YesNo)
 
         If choice = DialogResult.Yes Then
-            Menu_Btn.PerformClick()
+            If Dropdown_Panel.Size = Dropdown_Panel.MaximumSize Then
+                Menu_Btn.PerformClick()
+            End If
 
             PinLock_Panel.Show()
             Menu_Btn.Enabled = False
@@ -297,7 +298,7 @@ Public Class Admin_Main
                 CourseCommand.Parameters.AddWithValue("@instructorid", instructorid)
                 Dim dataTable As New DataTable()
                 dataTable.Load(CourseCommand.ExecuteReader())
-                AssignedCourseTable.RowTemplate.Height = 30
+                AssignedCourseTable.RowTemplate.Height = 36
                 AssignedCourseTable.DataSource = dataTable
 
                 AssignedCourseTable.Columns("course").Width = 295
@@ -320,7 +321,7 @@ Public Class Admin_Main
             Dim sectionAdapter As New MySqlDataAdapter(sectionQuery, connection)
             sectionAdapter.SelectCommand.Parameters.AddWithValue("@course", course)
             Dim dataTable As New DataTable()
-            AssignedSectionTable.RowTemplate.Height = 44
+            AssignedSectionTable.RowTemplate.Height = 92
             sectionAdapter.Fill(dataTable)
 
             AssignedSectionTable.DataSource = dataTable
@@ -370,7 +371,7 @@ Public Class Admin_Main
             Dim selectQuery As String = "SELECT * FROM bsit"
 
             adapter = New MySqlDataAdapter(selectQuery, connection)
-            adapter.Fill(DataTable)
+            adapter.Fill(dataTable)
 
             StudentlistTable.DataSource = dataTable
             StudentlistTable.Columns("Student ID").Width = 121
@@ -386,7 +387,7 @@ Public Class Admin_Main
 
     Private Sub SaveData()
         Dim builder As New MySqlCommandBuilder(adapter)
-        adapter.Update(DataTable)
+        adapter.Update(dataTable)
     End Sub
 
 
@@ -485,7 +486,8 @@ Public Class Admin_Main
         Delete_Btn.Enabled = True
     End Sub
 
-
     ' STUDENT PANEL - END
+
+
 
 End Class
