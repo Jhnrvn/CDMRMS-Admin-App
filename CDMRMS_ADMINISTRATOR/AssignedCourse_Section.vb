@@ -38,9 +38,9 @@ Public Class AssignedCourse_Section
 
 
             AssignedCourseTable.Columns("id").Visible = False
-            AssignedCourseTable.Columns("instructor_id").Width = 150
-            AssignedCourseTable.Columns("instructor").Width = 200
-            AssignedCourseTable.Columns("course").Width = 133
+            AssignedCourseTable.Columns("instructor_id").Width = 130
+            AssignedCourseTable.Columns("instructor").Width = 175
+            AssignedCourseTable.Columns("course").Width = 130
 
         Catch ex As Exception
             MessageBox.Show("Error fetching data: " & ex.Message)
