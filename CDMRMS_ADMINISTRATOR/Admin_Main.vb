@@ -16,7 +16,7 @@ Public Class Admin_Main
         Student_Panel.Hide()
         InstructorData()
 
-        StudentList()
+
 
         StudentlistTable.ReadOnly = True
         StudentlistTable.AllowUserToAddRows = False
@@ -200,6 +200,9 @@ Public Class Admin_Main
     ' Search Function for CDM Instructor Table
     Private Sub InstructorSearchBar_textChanged(sender As Object, e As EventArgs) Handles InstructorSearchBar.TextChanged
         Dim searchTerm As String = InstructorSearchBar.Text.Trim()
+
+
+
         If searchTerm <> "" Then
             Try
                 connection.Open()
@@ -225,6 +228,8 @@ Public Class Admin_Main
         If String.IsNullOrEmpty(InstructorSearchBar.Text.Trim()) Then
             InstructorData()
         End If
+
+
     End Sub
 
 
@@ -365,24 +370,55 @@ Public Class Admin_Main
     ' Student list Table
     Private Sub StudentList()
 
-        Try
-            connection.Open()
+        dataTable.Clear()
 
-            Dim selectQuery As String = "SELECT * FROM bsit"
+        If CollegeProgramSelector.Text = "BSIT" Then
+            Try
 
-            adapter = New MySqlDataAdapter(selectQuery, connection)
-            adapter.Fill(dataTable)
+                connection.Open()
 
-            StudentlistTable.DataSource = dataTable
-            StudentlistTable.Columns("Student ID").Width = 121
-            StudentlistTable.Columns("Student Name").Width = 250
-            StudentlistTable.Columns("ID").Visible = False
+                Dim selectQuery As String = "SELECT * FROM bsit"
 
-        Catch ex As Exception
-            MessageBox.Show("Error fetching data: " & ex.Message)
-        Finally
-            connection.Close()
-        End Try
+                adapter = New MySqlDataAdapter(selectQuery, connection)
+                adapter.Fill(dataTable)
+
+                StudentlistTable.DataSource = dataTable
+                StudentlistTable.Columns("Student ID").Width = 121
+                StudentlistTable.Columns("Student Name").Width = 250
+                StudentlistTable.Columns("ID").Visible = False
+
+            Catch ex As Exception
+                MessageBox.Show("Error fetching data: " & ex.Message)
+            Finally
+                connection.Close()
+            End Try
+
+
+        ElseIf CollegeProgramSelector.Text = "BSCPE" Then
+            Try
+
+                connection.Open()
+
+                Dim selectQuery As String = "SELECT * FROM bscpe"
+
+                adapter = New MySqlDataAdapter(selectQuery, connection)
+                adapter.Fill(dataTable)
+
+                StudentlistTable.DataSource = dataTable
+                StudentlistTable.Columns("Student ID").Width = 121
+                StudentlistTable.Columns("Student Name").Width = 250
+                StudentlistTable.Columns("ID").Visible = False
+
+            Catch ex As Exception
+                MessageBox.Show("Error fetching data: " & ex.Message)
+            Finally
+                connection.Close()
+            End Try
+
+        End If
+
+
+
     End Sub
 
     Private Sub SaveData()
@@ -395,6 +431,7 @@ Public Class Admin_Main
     ' Student Search Function
     Private Sub StudentSearchBar_TextChanged(sender As Object, e As EventArgs) Handles StudentSearchBar.TextChanged
         Dim searchTerm As String = StudentSearchBar.Text.Trim()
+
         If searchTerm <> "" Then
             Try
                 connection.Open()
@@ -437,8 +474,18 @@ Public Class Admin_Main
                 Dim ID As String
                 ID = selectedRow.Cells("ID").Value.ToString()
 
-                Dim DeleteQuery As String = " DELETE FROM bsit WHERE `ID` = @ID "
+                Dim DeleteQuery As String = ""
+
+                If CollegeProgramSelector.Text = "BSIT" Then
+                    DeleteQuery = " DELETE FROM bsit WHERE `ID` = @ID "
+
+                ElseIf CollegeProgramSelector.Text = "BSCPE" Then
+                    DeleteQuery = " DELETE FROM bscpe WHERE `ID` = @ID "
+
+                End If
+
                 Try
+
                     connection.Open()
 
                     Using DeleteCommand As New MySqlCommand(DeleteQuery, connection)
@@ -485,6 +532,26 @@ Public Class Admin_Main
         StudentlistTable.AllowUserToAddRows = False
         Delete_Btn.Enabled = True
     End Sub
+
+
+    Private Sub CollegeProgramSelector_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CollegeProgramSelector.SelectedIndexChanged
+        StudentList()
+    End Sub
+
+    Private Sub StudentSearchBar_Click(sender As Object, e As EventArgs) Handles StudentSearchBar.Click
+        If String.IsNullOrEmpty(CollegeProgramSelector.Text) Then
+            StudentSearchBar.Enabled = False
+        Else
+            StudentSearchBar.Enabled = True
+        End If
+    End Sub
+
+    Private Sub EvaluateGrade_Btn_Click(sender As Object, e As EventArgs) Handles EvaluateGrade_Btn.Click
+        EvaluateStudentGrades.Show()
+        Me.Enabled = False
+    End Sub
+
+
 
 
     ' STUDENT PANEL - END

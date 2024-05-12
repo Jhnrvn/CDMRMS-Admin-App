@@ -64,11 +64,12 @@ Public Class AssignedCourse_Section
                 Dim dataTable As New DataTable()
 
                 Dim adapter As New MySqlDataAdapter(command)
-                AssignedCourseTable.RowTemplate.Height = 35
+                AssignedCourseTable.RowTemplate.Height = 30
                 adapter.Fill(dataTable)
                 AssignedCourseTable.DataSource = dataTable
-                AssignedCourseTable.Columns("instructor_id").Width = 150
-                AssignedCourseTable.Columns("instructor").Width = 200
+                AssignedCourseTable.Columns("instructor_id").Width = 130
+                AssignedCourseTable.Columns("instructor").Width = 175
+                AssignedCourseTable.Columns("course").Width = 130
             Catch ex As Exception
                 MessageBox.Show("Error searching data: " & ex.Message)
             Finally

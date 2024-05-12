@@ -146,6 +146,7 @@ Public Class ChangingGradeRequest
 
         Me.Close()
         Admin_Main.Enabled = True
+        Admin_Main.BringToFront()
 
     End Sub
 
