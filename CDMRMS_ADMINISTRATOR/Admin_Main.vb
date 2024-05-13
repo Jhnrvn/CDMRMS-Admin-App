@@ -334,6 +334,7 @@ Public Class Admin_Main
             AssignedSectionTable.Columns("instructor_id").Visible = False
             AssignedSectionTable.Columns("Instructor").Visible = False
             AssignedSectionTable.Columns("course").Visible = False
+            AssignedSectionTable.Columns("Program").Visible =False
         End If
     End Sub
 

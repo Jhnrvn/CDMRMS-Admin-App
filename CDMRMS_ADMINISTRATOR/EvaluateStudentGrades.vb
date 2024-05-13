@@ -1,4 +1,5 @@
-﻿Imports MySql.Data.MySqlClient
+﻿
+Imports MySql.Data.MySqlClient
 
 Public Class EvaluateStudentGrades
 
@@ -13,92 +14,50 @@ Public Class EvaluateStudentGrades
     ' DATABASE CONNECTION - END
 
 
-    Private Sub Evaluate_Btn_Click(sender As Object, e As EventArgs) Handles Evalaute_Btn.Click
+    Private Sub Evaluate_Btn_Click(sender As Object, e As EventArgs) Handles Evaluate_Btn.Click
 
-        Dim CheckQuery As String = "SELECT `Student ID`, Year, Semester FROM bsit"
-        Dim year As String = ""
-        Dim semester As String = ""
-        Dim studentID As String = ""
-        Dim GWA As Double
+        FirstYear1stSem()
+
+    End Sub
+
+
+    Private Sub FirstYear1stSem()
+
+        Dim query As String = "SELECT * FROM bsit"
+
         Using connection As New MySqlConnection(ConnectionString)
-            Using checkcommand As New MySqlCommand(CheckQuery, connection)
+            Using command As New MySqlCommand(query, connection)
+                connection.Open()
 
-                Try
-                    connection.Open()
-                    Dim reader As MySqlDataReader = checkcommand.ExecuteReader()
+                Dim reader As MySqlDataReader = command.ExecuteReader()
 
-                    While reader.Read()
+                While reader.Read()
 
-                        year = reader.GetString("Year")
-                        semester = reader.GetString("Semester")
+                    Dim id As Integer = Convert.ToInt32(reader("ID"))
+                    Dim sub1 As String = reader("PROG 1").ToString
 
-                    End While
-                    reader.Close()
-
-                Catch ex As Exception
-                    MsgBox("error 1: " & ex.Message)
-                Finally
-                    connection.Close()
-
-                End Try
-
-                If year = "1st Year" And semester = "1st sem" Then
+                    sub1 = sub1 & "_updated"
 
 
-                    Dim query As String = "SELECT `Student ID`, `ITCOMP`, `PROG 1`, `GE 2`, `GE MATH`, `GE 1`, `GE FIL 1` FROM bsit"
+                    Dim updatequery As String = "UPDATE bsit SET `2nd Year 1st Sem GWA` = @sub1 WHERE `ID` = @id "
+                    Using UpdateCommand As New MySqlCommand(updatequery, connection)
 
+                        UpdateCommand.Parameters.AddWithValue("@sub1", sub1)
+                        UpdateCommand.Parameters.AddWithValue("@id", id)
 
-
-
-                    Using command As New MySqlCommand(query, connection)
-                        Try
-                            connection.Open()
-
-                            Dim coursereader As MySqlDataReader = command.ExecuteReader()
-
-                            While coursereader.Read()
-
-                                studentID = coursereader("Student ID")
-                                Dim sub1 As Double = coursereader("ITCOMP")
-                                Dim sub2 As Double = coursereader("PROG 1")
-                                Dim sub3 As Double = coursereader("GE 2")
-                                Dim sub4 As Double = coursereader("GE MATH")
-                                Dim sub5 As Double = coursereader("GE 1")
-                                Dim sub6 As Double = coursereader("GE FIL 1")
-
-                                GWA = (sub1 + sub2 + sub3 + sub4 + sub5 + sub6) / 6
-
-                                Dim updateQuery As String = "UPDATE bsit SET `1st Year 1st Sem GWA` = @GWA WHERE `Student ID` = @StudentID"
-
-                                Using updateCommand As New MySqlCommand(updateQuery, connection)
-                                    updateCommand.Parameters.AddWithValue("@GWA", GWA)
-                                    updateCommand.Parameters.AddWithValue("@StudentID", studentID)
-
-                                    updateCommand.ExecuteNonQuery()
-                                    MsgBox("GWA computed Successfully!")
-                                End Using
-
-                            End While
-                            coursereader.Close()
-
-                        Catch ex As Exception
-                            MsgBox("error1: " & ex.Message)
-                        Finally
-                            connection.Close()
-
-                        End Try
+                        UpdateCommand.ExecuteNonQuery()
 
                     End Using
 
-
-                End If
-
+                End While
+                reader.Close()
+                connection.Close()
             End Using
         End Using
 
 
-    End Sub
 
+    End Sub
 
     ' Close form
     Private Sub Close_Btn_Click(sender As Object, e As EventArgs) Handles Close_Btn.Click

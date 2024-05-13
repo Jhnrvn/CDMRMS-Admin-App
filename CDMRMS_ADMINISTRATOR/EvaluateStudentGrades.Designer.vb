@@ -28,9 +28,9 @@ Partial Class EvaluateStudentGrades
         Me.Evaluate_Label = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Evalaute_Btn = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Evaluate_Btn = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -79,7 +79,7 @@ Partial Class EvaluateStudentGrades
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(248, Byte), Integer))
         Me.Panel2.Controls.Add(Me.Panel3)
-        Me.Panel2.Controls.Add(Me.Evalaute_Btn)
+        Me.Panel2.Controls.Add(Me.Evaluate_Btn)
         Me.Panel2.Location = New System.Drawing.Point(16, 63)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(823, 516)
@@ -94,6 +94,14 @@ Partial Class EvaluateStudentGrades
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(781, 352)
         Me.Panel3.TabIndex = 70
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(318, 205)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(132, 34)
+        Me.TextBox1.TabIndex = 72
         '
         'Button1
         '
@@ -112,30 +120,22 @@ Partial Class EvaluateStudentGrades
         Me.Button1.Text = "Evaluate"
         Me.Button1.UseVisualStyleBackColor = False
         '
-        'Evalaute_Btn
+        'Evaluate_Btn
         '
-        Me.Evalaute_Btn.BackColor = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.Evalaute_Btn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Evalaute_Btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.Evalaute_Btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
-        Me.Evalaute_Btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Evalaute_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Evalaute_Btn.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Evalaute_Btn.ForeColor = System.Drawing.Color.Black
-        Me.Evalaute_Btn.Location = New System.Drawing.Point(695, 421)
-        Me.Evalaute_Btn.Name = "Evalaute_Btn"
-        Me.Evalaute_Btn.Size = New System.Drawing.Size(107, 40)
-        Me.Evalaute_Btn.TabIndex = 69
-        Me.Evalaute_Btn.Text = "Evaluate"
-        Me.Evalaute_Btn.UseVisualStyleBackColor = False
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(318, 205)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(132, 34)
-        Me.TextBox1.TabIndex = 72
+        Me.Evaluate_Btn.BackColor = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.Evaluate_Btn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Evaluate_Btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.Evaluate_Btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.Evaluate_Btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Evaluate_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Evaluate_Btn.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Evaluate_Btn.ForeColor = System.Drawing.Color.Black
+        Me.Evaluate_Btn.Location = New System.Drawing.Point(695, 421)
+        Me.Evaluate_Btn.Name = "Evaluate_Btn"
+        Me.Evaluate_Btn.Size = New System.Drawing.Size(107, 40)
+        Me.Evaluate_Btn.TabIndex = 69
+        Me.Evaluate_Btn.Text = "Evaluate"
+        Me.Evaluate_Btn.UseVisualStyleBackColor = False
         '
         'EvaluateStudentGrades
         '
@@ -161,7 +161,7 @@ Partial Class EvaluateStudentGrades
     Friend WithEvents Close_Btn As Button
     Friend WithEvents Evaluate_Label As Label
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents Evalaute_Btn As Button
+    Friend WithEvents Evaluate_Btn As Button
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Button1 As Button
     Friend WithEvents TextBox1 As TextBox
