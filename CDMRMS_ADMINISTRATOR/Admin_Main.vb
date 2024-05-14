@@ -201,8 +201,6 @@ Public Class Admin_Main
     Private Sub InstructorSearchBar_textChanged(sender As Object, e As EventArgs) Handles InstructorSearchBar.TextChanged
         Dim searchTerm As String = InstructorSearchBar.Text.Trim()
 
-
-
         If searchTerm <> "" Then
             Try
                 connection.Open()
@@ -229,7 +227,6 @@ Public Class Admin_Main
             InstructorData()
         End If
 
-
     End Sub
 
 
@@ -238,56 +235,62 @@ Public Class Admin_Main
         InstructorSearchBar.Clear()
     End Sub
 
-    Private Sub ViewInstructorInfo_Click(sender As Object, e As EventArgs) Handles ViewInstructorInfo.Click
-        If InstructorsDataTable.SelectedRows.Count > 0 Then
-
-            Dim selectedRow As DataGridViewRow = InstructorsDataTable.SelectedRows(0)
-            Dim instructorid As String
-            instructorid = selectedRow.Cells("instructorid").Value.ToString()
-
-            AdminInstructorsInfo(instructorid)
-            AssignedCourse(instructorid)
-        End If
-
-    End Sub
-
 
     ' Display instructor Information when you click the row from CDM instructor table
-    Private Sub AdminInstructorsInfo(instructorid)
-        Dim query As String = "SELECT * FROM `instructors` WHERE instructorid = @instructorid"
-        Using connection As New MySqlConnection(ConnectionString)
-            Using command As New MySqlCommand(query, connection)
+    Dim instructorid As String
+    Private Sub InstructorsDataTable_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles InstructorsDataTable.CellClick
+        If e.RowIndex >= 0 Then
 
-                command.Parameters.AddWithValue("@instructorid", instructorid)
+            Dim selectedRow As DataGridViewRow = InstructorsDataTable.Rows(e.RowIndex)
+            instructorid = selectedRow.Cells("instructorid").Value.ToString()
 
-                Try
-                    connection.Open()
+            Dim sectionQuery As String = "SELECT * FROM instructors WHERE instructorid = @instructorid"
+            Dim sectionAdapter As New MySqlDataAdapter(sectionQuery, connection)
+            sectionAdapter.SelectCommand.Parameters.AddWithValue("@instructorid", instructorid)
 
-                    Using reader As MySqlDataReader = command.ExecuteReader
+            Using connection As New MySqlConnection(ConnectionString)
+                Using command As New MySqlCommand(sectionQuery, connection)
 
-                        If reader.Read Then
+                    command.Parameters.AddWithValue("@instructorid", instructorid)
 
-                            Dim dateOnly As Date = Convert.ToDateTime(reader("birthday"))
+                    Try
+                        connection.Open()
 
-                            InstructorsID_TB.Text = reader("instructorid").ToString()
-                            FN_TB.Text = reader("firstname").ToString()
-                            MN_TB.Text = reader("middlename").ToString()
-                            LN_TB.Text = reader("lastname").ToString()
-                            Sex_TB.Text = reader("gender").ToString()
-                            CN_TB.Text = reader("contact#").ToString()
-                            Birthday_TB.Text = dateOnly.ToString("MM-dd-yyyy")
-                            Email_TB.Text = reader("email").ToString()
+                        Using reader As MySqlDataReader = command.ExecuteReader
 
-                        End If
-                    End Using
+                            If reader.Read Then
 
-                Catch ex As Exception
+                                Dim dateOnly As Date = Convert.ToDateTime(reader("birthday"))
 
-                End Try
+                                InstructorsID_TB.Text = reader("instructorid").ToString()
+                                FN_TB.Text = reader("firstname").ToString()
+                                MN_TB.Text = reader("middlename").ToString()
+                                LN_TB.Text = reader("lastname").ToString()
+                                Sex_TB.Text = reader("gender").ToString()
+                                CN_TB.Text = reader("contact#").ToString()
+                                Birthday_TB.Text = dateOnly.ToString("MM-dd-yyyy")
+                                Email_TB.Text = reader("email").ToString()
+
+                                If InstructorsDataTable.SelectedRows.Count > 0 Then
+
+
+                                    Dim instructorid As String
+                                    instructorid = selectedRow.Cells("instructorid").Value.ToString()
+
+
+                                    AssignedCourse(instructorid)
+                                End If
+                            End If
+                        End Using
+
+                    Catch ex As Exception
+
+                    End Try
+                End Using
             End Using
-        End Using
-        connection.Close()
+            connection.Close()
 
+        End If
     End Sub
 
 
@@ -552,11 +555,6 @@ Public Class Admin_Main
         Me.Enabled = False
     End Sub
 
-
-
-
     ' STUDENT PANEL - END
-
-
 
 End Class

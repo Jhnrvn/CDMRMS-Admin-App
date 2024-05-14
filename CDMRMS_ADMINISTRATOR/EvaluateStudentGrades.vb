@@ -23,37 +23,7 @@ Public Class EvaluateStudentGrades
 
     Private Sub FirstYear1stSem()
 
-        Dim query As String = "SELECT * FROM bsit"
 
-        Using connection As New MySqlConnection(ConnectionString)
-            Using command As New MySqlCommand(query, connection)
-                connection.Open()
-
-                Dim reader As MySqlDataReader = command.ExecuteReader()
-
-                While reader.Read()
-
-                    Dim id As Integer = Convert.ToInt32(reader("ID"))
-                    Dim sub1 As String = reader("PROG 1").ToString
-
-                    sub1 = sub1 & "_updated"
-
-
-                    Dim updatequery As String = "UPDATE bsit SET `2nd Year 1st Sem GWA` = @sub1 WHERE `ID` = @id "
-                    Using UpdateCommand As New MySqlCommand(updatequery, connection)
-
-                        UpdateCommand.Parameters.AddWithValue("@sub1", sub1)
-                        UpdateCommand.Parameters.AddWithValue("@id", id)
-
-                        UpdateCommand.ExecuteNonQuery()
-
-                    End Using
-
-                End While
-                reader.Close()
-                connection.Close()
-            End Using
-        End Using
 
 
 
