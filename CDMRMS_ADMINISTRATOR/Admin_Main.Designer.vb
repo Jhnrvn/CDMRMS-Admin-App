@@ -809,7 +809,7 @@ Partial Class Admin_Main
         '
         Me.InstructorInstruction_1.AutoSize = True
         Me.InstructorInstruction_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.InstructorInstruction_1.ForeColor = System.Drawing.Color.DarkGreen
+        Me.InstructorInstruction_1.ForeColor = System.Drawing.Color.Black
         Me.InstructorInstruction_1.Location = New System.Drawing.Point(7, 10)
         Me.InstructorInstruction_1.Name = "InstructorInstruction_1"
         Me.InstructorInstruction_1.Size = New System.Drawing.Size(456, 60)

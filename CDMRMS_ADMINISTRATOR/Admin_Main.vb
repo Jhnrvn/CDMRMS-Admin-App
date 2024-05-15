@@ -205,7 +205,7 @@ Public Class Admin_Main
             Try
                 connection.Open()
 
-                Dim query As String = "SELECT * FROM instructors WHERE firstname LIKE @searchTerm OR middlename LIKE @searchTerm OR lastname LIKE @searchTerm OR instructorid LIKE @searchTerm"
+                Dim query As String = "SELECT `firstname`, `middlename`, `lastname`, `instructorid` FROM instructors WHERE firstname LIKE @searchTerm OR middlename LIKE @searchTerm OR lastname LIKE @searchTerm OR instructorid LIKE @searchTerm"
                 Dim command As New MySqlCommand(query, connection)
 
                 command.Parameters.AddWithValue("@searchTerm", "%" & searchTerm & "%")
