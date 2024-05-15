@@ -96,7 +96,7 @@ Public Class Admin_Main
 
         If userPin = pin Then
 
-            MsgBox("Correct Pin!", MessageBoxIcon.Information)
+            MessageBox.Show("PIN validation successful. Access granted.", "PIN Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information)
             PinLock_Panel.Hide()
             Lock_Btn.Show()
             Menu_Btn.Enabled = True
@@ -107,8 +107,7 @@ Public Class Admin_Main
             Pin_4.Clear()
         Else
 
-            MsgBox("Wrong Pin!", MessageBoxIcon.Error)
-
+            MessageBox.Show("Incorrect PIN. Access denied. Please retry.", "PIN Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Pin_1.Clear()
             Pin_2.Clear()
             Pin_3.Clear()
@@ -142,7 +141,7 @@ Public Class Admin_Main
     End Sub
 
     Private Sub Lock_Btn_Click(sender As Object, e As EventArgs) Handles Lock_Btn.Click
-        Dim choice As DialogResult = MsgBox("Are you sure?", MessageBoxButtons.YesNo)
+        Dim choice As DialogResult = MessageBox.Show("Are you sure you want to proceed with locking the application?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
         If choice = DialogResult.Yes Then
             If Dropdown_Panel.Size = Dropdown_Panel.MaximumSize Then
