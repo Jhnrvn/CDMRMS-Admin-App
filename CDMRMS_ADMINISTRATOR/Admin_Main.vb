@@ -463,6 +463,7 @@ Public Class Admin_Main
             StudentList()
 
         End If
+
     End Sub
 
     ' Delete Row from Student list Table
@@ -542,13 +543,7 @@ Public Class Admin_Main
         StudentList()
     End Sub
 
-    Private Sub StudentSearchBar_Click(sender As Object, e As EventArgs) Handles StudentSearchBar.Click
-        If String.IsNullOrEmpty(CollegeProgramSelector.Text) Then
-            StudentSearchBar.Enabled = False
-        Else
-            StudentSearchBar.Enabled = True
-        End If
-    End Sub
+
 
     Private Sub EvaluateGrade_Btn_Click(sender As Object, e As EventArgs) Handles EvaluateGrade_Btn.Click
         EvaluateStudentGrades.Show()
