@@ -137,7 +137,7 @@ Partial Class EvaluateStudentGrades
         Me.Label2.Size = New System.Drawing.Size(381, 66)
         Me.Label2.TabIndex = 76
         Me.Label2.Text = "Select the semester for evaluating all grades " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "across all courses/subjects offer" &
-    "ed during that " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "semester, From 1st year to 4th year."
+    "ed during that " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "semester from 1st year to 4th year."
         '
         'Evaluate_Btn
         '

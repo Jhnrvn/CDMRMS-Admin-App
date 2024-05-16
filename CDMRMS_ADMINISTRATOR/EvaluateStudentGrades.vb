@@ -24,7 +24,7 @@ Public Class EvaluateStudentGrades
             SecondSemBSIT()
 
         Else
-            MsgBox("Please choose semester that you want to evaluate.", MessageBoxIcon.Warning)
+            MessageBox.Show("Please choose an option from the dropdown menu.", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Warning)
 
         End If
 

@@ -373,11 +373,11 @@ Public Class Admin_Main
     ' Student list Table
     Private Sub StudentList()
 
-        dataTable.Clear()
 
         If CollegeProgramSelector.Text = "BSIT" Then
-            Try
 
+            Try
+                dataTable.Clear()
                 connection.Open()
 
                 Dim selectQuery As String = "SELECT * FROM bsit"
@@ -387,7 +387,7 @@ Public Class Admin_Main
 
                 StudentlistTable.DataSource = dataTable
                 StudentlistTable.Columns("Student ID").Width = 121
-                StudentlistTable.Columns("Student Name").Width = 250
+                StudentlistTable.Columns("Student Name").Width = 220
                 StudentlistTable.Columns("ID").Visible = False
 
             Catch ex As Exception
@@ -396,10 +396,10 @@ Public Class Admin_Main
                 connection.Close()
             End Try
 
-
         ElseIf CollegeProgramSelector.Text = "BSCPE" Then
-            Try
 
+            Try
+                dataTable.Clear()
                 connection.Open()
 
                 Dim selectQuery As String = "SELECT * FROM bscpe"
@@ -409,9 +409,10 @@ Public Class Admin_Main
 
                 StudentlistTable.DataSource = dataTable
                 StudentlistTable.Columns("Student ID").Width = 121
-                StudentlistTable.Columns("Student Name").Width = 250
+                StudentlistTable.Columns("Student Name").Width = 220
                 StudentlistTable.Columns("ID").Visible = False
 
+                Dim cmb As New DataGridViewComboBoxCell()
             Catch ex As Exception
                 MessageBox.Show("Error fetching data: " & ex.Message)
             Finally
@@ -428,7 +429,6 @@ Public Class Admin_Main
         Dim builder As New MySqlCommandBuilder(adapter)
         adapter.Update(dataTable)
     End Sub
-
 
 
     ' Student Search Function
@@ -523,6 +523,53 @@ Public Class Admin_Main
         MsgBox("Edit Enabled.", MessageBoxIcon.Information)
         StudentlistTable.AllowUserToAddRows = True
         Delete_Btn.Enabled = False
+
+        If CollegeProgramSelector.Text = "BSIT" Then
+
+            ' Combobox For Program Columns
+            For Each row1 As DataGridViewRow In StudentlistTable.Rows
+                Dim ComboBoxCell As New DataGridViewComboBoxCell()
+
+                ComboBoxCell.Items.Add("BSIT")
+
+                row1.Cells("Program") = ComboBoxCell
+            Next
+
+        ElseIf CollegeProgramSelector.Text = "BSCPE" Then
+            ' Combobox For Program Columns
+            For Each row2 As DataGridViewRow In StudentlistTable.Rows
+                Dim ComboBoxCell As New DataGridViewComboBoxCell()
+
+                ComboBoxCell.Items.Add("BSCPE")
+
+                row2.Cells("Program") = ComboBoxCell
+            Next
+
+        End If
+
+        ' Combobox For Year Columns
+        For Each row3 As DataGridViewRow In StudentlistTable.Rows
+            Dim comboboxcell As New DataGridViewComboBoxCell()
+
+            comboboxcell.Items.Add("1st Year")
+            comboboxcell.Items.Add("2nd Year")
+            comboboxcell.Items.Add("3rd Year")
+            comboboxcell.Items.Add("4th Year")
+
+            row3.Cells("Year") = comboboxcell
+
+        Next
+
+        ' Combobox For Semester Columns
+        For Each row4 As DataGridViewRow In StudentlistTable.Rows
+            Dim comboboxcell As New DataGridViewComboBoxCell()
+
+            comboboxcell.Items.Add("1st Sem")
+            comboboxcell.Items.Add("2nd Sem")
+
+            row4.Cells("Semester") = comboboxcell
+
+        Next
 
     End Sub
 
