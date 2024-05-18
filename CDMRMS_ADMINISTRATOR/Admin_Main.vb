@@ -17,6 +17,8 @@ Public Class Admin_Main
         InstructorData()
 
 
+        Notification_Timer.Interval = 3000
+        Notification_Timer.Start()
 
         StudentlistTable.ReadOnly = True
         StudentlistTable.AllowUserToAddRows = False
@@ -349,6 +351,51 @@ Public Class Admin_Main
 
     End Sub
 
+    ' Notification Counter 
+    Private Sub NotificationCounter()
+
+        Using connection As New MySqlConnection(ConnectionString)
+            connection.Open()
+
+            Dim query As String = "SELECT COUNT(*) FROM `request`"
+            Dim command As New MySqlCommand(query, connection)
+            Dim count As Integer = Convert.ToInt32(command.ExecuteScalar())
+
+            If count = 0 Then
+                ChangeGradeReq_Btn.Image = Image.FromFile("D:\Development Projects\Visual Basic\CDM Registrar Management System\CDMRMS_ADMINISTRATOR\Assets\Main\Update Grade Button Icon.png")
+            ElseIf count = 1 Then
+                ChangeGradeReq_Btn.Image = Image.FromFile("D:\Development Projects\Visual Basic\CDM Registrar Management System\CDMRMS_ADMINISTRATOR\Assets\Main\Notification Counter\Notification Counter 1.png")
+            ElseIf count = 2 Then
+                ChangeGradeReq_Btn.Image = Image.FromFile("D:\Development Projects\Visual Basic\CDM Registrar Management System\CDMRMS_ADMINISTRATOR\Assets\Main\Notification Counter\Notification Counter 2.png")
+            ElseIf count = 3 Then
+                ChangeGradeReq_Btn.Image = Image.FromFile("D:\Development Projects\Visual Basic\CDM Registrar Management System\CDMRMS_ADMINISTRATOR\Assets\Main\Notification Counter\Notification Counter 3.png")
+            ElseIf count = 4 Then
+                ChangeGradeReq_Btn.Image = Image.FromFile("D:\Development Projects\Visual Basic\CDM Registrar Management System\CDMRMS_ADMINISTRATOR\Assets\Main\Notification Counter\Notification Counter 4.png")
+            ElseIf count = 5 Then
+                ChangeGradeReq_Btn.Image = Image.FromFile("D:\Development Projects\Visual Basic\CDM Registrar Management System\CDMRMS_ADMINISTRATOR\Assets\Main\Notification Counter\Notification Counter 5.png")
+            ElseIf count = 6 Then
+                ChangeGradeReq_Btn.Image = Image.FromFile("D:\Development Projects\Visual Basic\CDM Registrar Management System\CDMRMS_ADMINISTRATOR\Assets\Main\Notification Counter\Notification Counter 6.png")
+            ElseIf count = 7 Then
+                ChangeGradeReq_Btn.Image = Image.FromFile("D:\Development Projects\Visual Basic\CDM Registrar Management System\CDMRMS_ADMINISTRATOR\Assets\Main\Notification Counter\Notification Counter 7.png")
+            ElseIf count = 8 Then
+                ChangeGradeReq_Btn.Image = Image.FromFile("D:\Development Projects\Visual Basic\CDM Registrar Management System\CDMRMS_ADMINISTRATOR\Assets\Main\Notification Counter\Notification Counter 8.png")
+            ElseIf count = 9 Then
+                ChangeGradeReq_Btn.Image = Image.FromFile("D:\Development Projects\Visual Basic\CDM Registrar Management System\CDMRMS_ADMINISTRATOR\Assets\Main\Notification Counter\Notification Counter 9.png")
+            ElseIf count > 9 Then
+                ChangeGradeReq_Btn.Image = Image.FromFile("D:\Development Projects\Visual Basic\CDM Registrar Management System\CDMRMS_ADMINISTRATOR\Assets\Main\Notification Counter\Notification Counter 9+.png")
+            End If
+
+        End Using
+        connection.Close()
+
+    End Sub
+
+    ' Notification Counter Timer
+    Private Sub Notification_Timer_Tick(sender As Object, e As EventArgs) Handles Notification_Timer.Tick
+        NotificationCounter()
+    End Sub
+
+
 
     ' Assiged Course and Section Button
     Private Sub AssignedCourse_Btn_Click(sender As Object, e As EventArgs) Handles AssignedCourse_Btn.Click
@@ -595,6 +642,8 @@ Public Class Admin_Main
         EvaluateStudentGrades.Show()
         Me.Enabled = False
     End Sub
+
+
 
     ' STUDENT PANEL - END
 
