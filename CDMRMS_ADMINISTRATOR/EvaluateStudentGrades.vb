@@ -139,6 +139,7 @@ Public Class EvaluateStudentGrades
         Next
         MessageBox.Show("Successfully evaluated all grades from 1st Semester.", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
         connection.Close()
+        Admin_Main.StudentList()
     End Sub
 
 
@@ -249,6 +250,7 @@ Public Class EvaluateStudentGrades
         Next
         MessageBox.Show("Successfully evaluated all grades from 2nd Semester.", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
         connection.Close()
+        Admin_Main.StudentList()
 
     End Sub
 

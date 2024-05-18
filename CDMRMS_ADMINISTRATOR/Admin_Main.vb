@@ -418,7 +418,7 @@ Public Class Admin_Main
     Dim dataTable As New DataTable()
 
     ' Student list Table
-    Private Sub StudentList()
+    Public Sub StudentList()
 
 
         If CollegeProgramSelector.Text = "BSIT" Then
