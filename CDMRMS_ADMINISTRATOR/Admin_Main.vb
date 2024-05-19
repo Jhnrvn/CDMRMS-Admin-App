@@ -482,7 +482,7 @@ Public Class Admin_Main
     Private Sub SaveData(dataTable)
 
         Try
-            adapter.SelectCommand.Connection = connection
+
             Dim builder As New MySqlCommandBuilder(adapter)
             adapter.Update(dataTable)
 

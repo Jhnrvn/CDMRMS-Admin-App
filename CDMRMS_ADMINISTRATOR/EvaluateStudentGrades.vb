@@ -19,11 +19,13 @@ Public Class EvaluateStudentGrades
 
             FirstSemBSIT()
             FirstSemBSCPE()
+            MessageBox.Show("Successfully evaluated all grades for 1st Semester.", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         ElseIf SemesterSelector.Text = "2nd Semester" Then
 
             SecondSemBSIT()
             SecondSemBSCPE()
+            MessageBox.Show("Successfully evaluated all grades for 2nd Semester.", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         Else
             MessageBox.Show("Please choose an option from the dropdown menu.", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -139,9 +141,9 @@ Public Class EvaluateStudentGrades
             updatecommand.ExecuteNonQuery()
 
         Next
-        MessageBox.Show("Successfully evaluated all grades from 1st Semester.", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
         connection.Close()
         Admin_Main.StudentList()
+
     End Sub
 
 
@@ -159,7 +161,105 @@ Public Class EvaluateStudentGrades
 
         For Each row As DataRow In table.Rows
 
+            Dim studentID As String = Convert.ToString(row("Student ID"))
+            Dim year As String = Convert.ToString(row("Year"))
+
+            ' 1st Year 1st Semester Subjects/Courses
+            Dim subject1 As Double = Convert.ToDouble(row("SUBJECT 1"))
+            Dim subject2 As Double = Convert.ToDouble(row("SUBJECT 2"))
+            Dim subject3 As Double = Convert.ToDouble(row("SUBJECT 3"))
+            Dim subject4 As Double = Convert.ToDouble(row("SUBJECT 4"))
+            Dim subject5 As Double = Convert.ToDouble(row("SUBJECT 5"))
+            Dim subject6 As Double = Convert.ToDouble(row("SUBJECT 6"))
+
+            ' 2nd Year 1st Semester Subjects/Courses
+            Dim subject13 As Double = Convert.ToDouble(row("SUBJECT 13"))
+            Dim subject14 As Double = Convert.ToDouble(row("SUBJECT 14"))
+            Dim subject15 As Double = Convert.ToDouble(row("SUBJECT 15"))
+            Dim subject16 As Double = Convert.ToDouble(row("SUBJECT 16"))
+            Dim subject17 As Double = Convert.ToDouble(row("SUBJECT 17"))
+            Dim subject18 As Double = Convert.ToDouble(row("SUBJECT 18"))
+            Dim subject19 As Double = Convert.ToDouble(row("SUBJECT 19"))
+
+            ' 3rd Year 1st Semester Subjects/Courses
+            Dim subject27 As Double = Convert.ToDouble(row("SUBJECT 27"))
+            Dim subject28 As Double = Convert.ToDouble(row("SUBJECT 28"))
+            Dim subject29 As Double = Convert.ToDouble(row("SUBJECT 29"))
+            Dim subject30 As Double = Convert.ToDouble(row("SUBJECT 30"))
+            Dim subject31 As Double = Convert.ToDouble(row("SUBJECT 31"))
+            Dim subject32 As Double = Convert.ToDouble(row("SUBJECT 32"))
+            Dim subject33 As Double = Convert.ToDouble(row("SUBJECT 33"))
+            Dim subject34 As Double = Convert.ToDouble(row("SUBJECT 34"))
+
+            ' 4th Year 1st Semester Subjects/Courses
+            Dim subject43 As Double = Convert.ToDouble(row("SUBJECT 43"))
+            Dim subject44 As Double = Convert.ToDouble(row("SUBJECT 44"))
+            Dim subject45 As Double = Convert.ToDouble(row("SUBJECT 45"))
+            Dim subject46 As Double = Convert.ToDouble(row("SUBJECT 46"))
+            Dim subject47 As Double = Convert.ToDouble(row("SUBJECT 47"))
+            Dim subject48 As Double = Convert.ToDouble(row("SUBJECT 48"))
+            Dim subject49 As Double = Convert.ToDouble(row("SUBJECT 49"))
+            Dim subject50 As Double = Convert.ToDouble(row("SUBJECT 50"))
+
+            Dim grade As Double
+            If year = "1st Year" Then
+                grade = (subject1 + subject2 + subject3 + subject4 + subject5 + subject6) / 6
+                row("1st Year 1st Sem GWA") = grade
+
+            ElseIf year = "2nd Year" Then
+                grade = (subject13 + subject14 + subject15 + subject16 + subject17 + subject18 + subject19) / 7
+                row("2nd Year 1st Sem GWA") = grade
+
+            ElseIf year = "3rd Year" Then
+                grade = (subject27 + subject28 + subject29 + subject30 + subject31 + subject32 + subject33 + subject34) / 8
+                row("3rd Year 1st Sem GWA") = grade
+
+            ElseIf year = "4th Year" Then
+                grade = (subject43 + subject44 + subject45 + subject46 + subject47 + subject48 + subject49 + subject50) / 8
+                row("4th Year 1st Sem GWA") = grade
+
+            End If
+
         Next
+
+        connection.Open()
+
+        For Each row As DataRow In table.Rows
+
+            Dim studentID As String = Convert.ToString(row("Student ID"))
+            Dim year As String = Convert.ToString(row("Year"))
+
+            Dim grade As Double
+            Dim updatequery As String = ""
+
+            If year = "1st Year" Then
+                grade = Convert.ToDouble(row("1st Year 1st Sem GWA"))
+                updatequery = "UPDATE bscpe SET `1st Year 1st Sem GWA` = @grade WHERE `Student ID` = @studentid"
+
+            ElseIf year = "2nd Year" Then
+                grade = Convert.ToDouble(row("2nd Year 1st Sem GWA"))
+                updatequery = "UPDATE bscpe SET `2nd Year 1st Sem GWA` = @grade WHERE `Student ID` = @studentid"
+
+            ElseIf year = "3rd Year" Then
+                grade = Convert.ToDouble(row("3rd Year 1st Sem GWA"))
+                updatequery = "UPDATE bscpe SET `3rd Year 1st Sem GWA` = @grade WHERE `Student ID` = @studentid"
+
+            ElseIf year = "4th Year" Then
+                grade = Convert.ToDouble(row("4th Year 1st Sem GWA"))
+                updatequery = "UPDATE bscpe SET `4th Year 1st Sem GWA` = @grade WHERE `Student ID` = @studentid"
+
+            End If
+
+            Dim updatecommand As New MySqlCommand(updatequery, connection)
+
+            updatecommand.Parameters.AddWithValue("@grade", Math.Round(grade, 2))
+            updatecommand.Parameters.AddWithValue("@studentid", studentID)
+
+            updatecommand.ExecuteNonQuery()
+
+        Next
+        connection.Close()
+        Admin_Main.StudentList()
 
     End Sub
 
@@ -269,8 +369,6 @@ Public Class EvaluateStudentGrades
             updatecommand.ExecuteNonQuery()
 
         Next
-
-        MessageBox.Show("Successfully evaluated all grades from 2nd Semester.", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
         connection.Close()
         Admin_Main.StudentList()
 
@@ -291,9 +389,107 @@ Public Class EvaluateStudentGrades
 
         For Each row As DataRow In table.Rows
 
-        Next
-    End Sub
+            Dim studentID As String = Convert.ToString(row("Student ID"))
+            Dim year As String = Convert.ToString(row("Year"))
 
+            ' 1st Year 2nd Semester Subjects/Courses
+            Dim subject7 As Double = Convert.ToDouble(row("SUBJECT 7"))
+            Dim subject8 As Double = Convert.ToDouble(row("SUBJECT 8"))
+            Dim subject9 As Double = Convert.ToDouble(row("SUBJECT 9"))
+            Dim subject10 As Double = Convert.ToDouble(row("SUBJECT 10"))
+            Dim subject11 As Double = Convert.ToDouble(row("SUBJECT 11"))
+            Dim subject12 As Double = Convert.ToDouble(row("SUBJECT 12"))
+
+            ' 2nd Year 2nd Semester Subjects/Courses
+            Dim subject20 As Double = Convert.ToDouble(row("SUBJECT 20"))
+            Dim subject21 As Double = Convert.ToDouble(row("SUBJECT 21"))
+            Dim subject22 As Double = Convert.ToDouble(row("SUBJECT 22"))
+            Dim subject23 As Double = Convert.ToDouble(row("SUBJECT 23"))
+            Dim subject24 As Double = Convert.ToDouble(row("SUBJECT 24"))
+            Dim subject25 As Double = Convert.ToDouble(row("SUBJECT 25"))
+            Dim subject26 As Double = Convert.ToDouble(row("SUBJECT 26"))
+
+            ' 3rd Year 2nd Semester Subjects/Courses
+            Dim subject35 As Double = Convert.ToDouble(row("SUBJECT 35"))
+            Dim subject36 As Double = Convert.ToDouble(row("SUBJECT 36"))
+            Dim subject37 As Double = Convert.ToDouble(row("SUBJECT 37"))
+            Dim subject38 As Double = Convert.ToDouble(row("SUBJECT 38"))
+            Dim subject39 As Double = Convert.ToDouble(row("SUBJECT 39"))
+            Dim subject40 As Double = Convert.ToDouble(row("SUBJECT 40"))
+            Dim subject41 As Double = Convert.ToDouble(row("SUBJECT 41"))
+            Dim subject42 As Double = Convert.ToDouble(row("SUBJECT 42"))
+
+            ' 4th Year 2nd Semester Subjects/Courses
+            Dim subject51 As Double = Convert.ToDouble(row("SUBJECT 51"))
+            Dim subject52 As Double = Convert.ToDouble(row("SUBJECT 52"))
+            Dim subject53 As Double = Convert.ToDouble(row("SUBJECT 53"))
+            Dim subject54 As Double = Convert.ToDouble(row("SUBJECT 54"))
+            Dim subject55 As Double = Convert.ToDouble(row("SUBJECT 55"))
+            Dim subject56 As Double = Convert.ToDouble(row("SUBJECT 56"))
+            Dim subject57 As Double = Convert.ToDouble(row("SUBJECT 57"))
+            Dim subject58 As Double = Convert.ToDouble(row("SUBJECT 58"))
+
+            Dim grade As Double
+            If year = "1st Year" Then
+                grade = (subject7 + subject8 + subject9 + subject10 + subject11 + subject12) / 6
+                row("1st Year 2nd Sem GWA") = grade
+
+            ElseIf year = "2nd Year" Then
+                grade = (subject20 + subject21 + subject22 + subject23 + subject24 + subject25 + subject26) / 7
+                row("2nd Year 2nd Sem GWA") = grade
+
+            ElseIf year = "3rd Year" Then
+                grade = (subject35 + subject36 + subject37 + subject38 + subject39 + subject40 + subject41 + subject42) / 8
+                row("3rd Year 2nd Sem GWA") = grade
+
+            ElseIf year = "4th Year" Then
+                grade = (subject51 + subject52 + subject53 + subject54 + subject55 + subject56 + subject57 + subject58) / 8
+                row("4th Year 2nd Sem GWA") = grade
+
+            End If
+
+        Next
+
+        connection.Open()
+
+        For Each row As DataRow In table.Rows
+
+            Dim studentID As String = Convert.ToString(row("Student ID"))
+            Dim year As String = Convert.ToString(row("Year"))
+
+            Dim grade As Double
+            Dim updatequery As String = ""
+
+            If year = "1st Year" Then
+                grade = Convert.ToDouble(row("1st Year 2nd Sem GWA"))
+                updatequery = "UPDATE bscpe SET `1st Year 2nd Sem GWA` = @grade WHERE `Student ID` = @studentid"
+
+            ElseIf year = "2nd Year" Then
+                grade = Convert.ToDouble(row("2nd Year 2nd Sem GWA"))
+                updatequery = "UPDATE bscpe SET `2nd Year 2nd Sem GWA` = @grade WHERE `Student ID` = @studentid"
+
+            ElseIf year = "3rd Year" Then
+                grade = Convert.ToDouble(row("3rd Year 2nd Sem GWA"))
+                updatequery = "UPDATE bscpe SET `3rd Year 2nd Sem GWA` = @grade WHERE `Student ID` = @studentid"
+
+            ElseIf year = "4th Year" Then
+                grade = Convert.ToDouble(row("4th Year 2nd Sem GWA"))
+                updatequery = "UPDATE bscpe SET `4th Year 2nd Sem GWA` = @grade WHERE `Student ID` = @studentid"
+
+            End If
+
+            Dim updatecommand As New MySqlCommand(updatequery, connection)
+
+            updatecommand.Parameters.AddWithValue("@grade", Math.Round(grade, 2))
+            updatecommand.Parameters.AddWithValue("@studentid", studentID)
+
+            updatecommand.ExecuteNonQuery()
+
+        Next
+        connection.Close()
+        Admin_Main.StudentList()
+
+    End Sub
 
 
     ' Close form

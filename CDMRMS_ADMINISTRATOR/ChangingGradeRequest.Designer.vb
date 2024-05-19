@@ -22,10 +22,10 @@ Partial Class ChangingGradeRequest
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Close_Btn = New System.Windows.Forms.Button()
         Me.Profile_Label = New System.Windows.Forms.Label()
@@ -33,9 +33,12 @@ Partial Class ChangingGradeRequest
         Me.Approve_Btn = New System.Windows.Forms.Button()
         Me.PendingRequestTable = New System.Windows.Forms.DataGridView()
         Me.Decline_Btn = New System.Windows.Forms.Button()
+        Me.Panel12 = New System.Windows.Forms.Panel()
+        Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.PendingRequestTable, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -80,9 +83,8 @@ Partial Class ChangingGradeRequest
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(248, Byte), Integer))
-        Me.Panel2.Controls.Add(Me.Approve_Btn)
         Me.Panel2.Controls.Add(Me.PendingRequestTable)
-        Me.Panel2.Controls.Add(Me.Decline_Btn)
+        Me.Panel2.Controls.Add(Me.Panel3)
         Me.Panel2.Location = New System.Drawing.Point(16, 63)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(823, 516)
@@ -98,9 +100,9 @@ Partial Class ChangingGradeRequest
         Me.Approve_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Approve_Btn.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Approve_Btn.ForeColor = System.Drawing.Color.Black
-        Me.Approve_Btn.Location = New System.Drawing.Point(695, 421)
+        Me.Approve_Btn.Location = New System.Drawing.Point(619, 16)
         Me.Approve_Btn.Name = "Approve_Btn"
-        Me.Approve_Btn.Size = New System.Drawing.Size(107, 40)
+        Me.Approve_Btn.Size = New System.Drawing.Size(149, 40)
         Me.Approve_Btn.TabIndex = 69
         Me.Approve_Btn.Text = "Approve"
         Me.Approve_Btn.UseVisualStyleBackColor = False
@@ -111,40 +113,40 @@ Partial Class ChangingGradeRequest
         Me.PendingRequestTable.AllowUserToResizeColumns = False
         Me.PendingRequestTable.AllowUserToResizeRows = False
         Me.PendingRequestTable.BackgroundColor = System.Drawing.Color.White
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Bernard MT Condensed", 14.0!)
-        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.PendingRequestTable.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Bernard MT Condensed", 14.0!)
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.PendingRequestTable.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.PendingRequestTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.PendingRequestTable.Cursor = System.Windows.Forms.Cursors.Default
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle10.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Yellow
-        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.PendingRequestTable.DefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Yellow
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.PendingRequestTable.DefaultCellStyle = DataGridViewCellStyle6
         Me.PendingRequestTable.GridColor = System.Drawing.Color.Black
         Me.PendingRequestTable.Location = New System.Drawing.Point(21, 16)
         Me.PendingRequestTable.Name = "PendingRequestTable"
         Me.PendingRequestTable.ReadOnly = True
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.PendingRequestTable.RowHeadersDefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.PendingRequestTable.RowHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.PendingRequestTable.RowHeadersVisible = False
         Me.PendingRequestTable.RowHeadersWidth = 51
-        DataGridViewCellStyle12.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PendingRequestTable.RowsDefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PendingRequestTable.RowsDefaultCellStyle = DataGridViewCellStyle8
         Me.PendingRequestTable.RowTemplate.Height = 24
         Me.PendingRequestTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.PendingRequestTable.Size = New System.Drawing.Size(781, 352)
@@ -160,12 +162,31 @@ Partial Class ChangingGradeRequest
         Me.Decline_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Decline_Btn.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Decline_Btn.ForeColor = System.Drawing.Color.White
-        Me.Decline_Btn.Location = New System.Drawing.Point(582, 421)
+        Me.Decline_Btn.Location = New System.Drawing.Point(619, 62)
         Me.Decline_Btn.Name = "Decline_Btn"
-        Me.Decline_Btn.Size = New System.Drawing.Size(107, 40)
+        Me.Decline_Btn.Size = New System.Drawing.Size(149, 40)
         Me.Decline_Btn.TabIndex = 58
         Me.Decline_Btn.Text = "Decline"
         Me.Decline_Btn.UseVisualStyleBackColor = False
+        '
+        'Panel12
+        '
+        Me.Panel12.BackColor = System.Drawing.Color.FromArgb(CType(CType(223, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(216, Byte), Integer))
+        Me.Panel12.Location = New System.Drawing.Point(20, 16)
+        Me.Panel12.Name = "Panel12"
+        Me.Panel12.Size = New System.Drawing.Size(574, 86)
+        Me.Panel12.TabIndex = 81
+        '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.White
+        Me.Panel3.Controls.Add(Me.Panel12)
+        Me.Panel3.Controls.Add(Me.Approve_Btn)
+        Me.Panel3.Controls.Add(Me.Decline_Btn)
+        Me.Panel3.Location = New System.Drawing.Point(21, 380)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(781, 117)
+        Me.Panel3.TabIndex = 82
         '
         'ChangingGradeRequest
         '
@@ -182,6 +203,7 @@ Partial Class ChangingGradeRequest
         Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         CType(Me.PendingRequestTable, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel3.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -193,4 +215,6 @@ Partial Class ChangingGradeRequest
     Friend WithEvents Decline_Btn As Button
     Friend WithEvents PendingRequestTable As DataGridView
     Friend WithEvents Approve_Btn As Button
+    Friend WithEvents Panel12 As Panel
+    Friend WithEvents Panel3 As Panel
 End Class
