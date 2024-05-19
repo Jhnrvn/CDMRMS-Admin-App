@@ -1,4 +1,5 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.Net.NetworkInformation
+Imports MySql.Data.MySqlClient
 
 Public Class Admin_Main
 
@@ -338,7 +339,7 @@ Public Class Admin_Main
             AssignedSectionTable.Columns("instructor_id").Visible = False
             AssignedSectionTable.Columns("Instructor").Visible = False
             AssignedSectionTable.Columns("course").Visible = False
-            AssignedSectionTable.Columns("Program").Visible =False
+            AssignedSectionTable.Columns("Program").Visible = False
         End If
     End Sub
 
@@ -414,20 +415,23 @@ Public Class Admin_Main
 
     ' STUDENT PANEL - START
 
-    Dim adapter As New MySqlDataAdapter
-    Dim dataTable As New DataTable()
+    Private adapter As New MySqlDataAdapter
+    Private dataTable As New DataTable()
+
 
     ' Student list Table
     Public Sub StudentList()
 
-
         If CollegeProgramSelector.Text = "BSIT" Then
+
+            dataTable = New DataTable
 
             Try
                 dataTable.Clear()
                 connection.Open()
 
                 Dim selectQuery As String = "SELECT * FROM bsit"
+
 
                 adapter = New MySqlDataAdapter(selectQuery, connection)
                 adapter.Fill(dataTable)
@@ -445,6 +449,8 @@ Public Class Admin_Main
 
         ElseIf CollegeProgramSelector.Text = "BSCPE" Then
 
+            dataTable = New DataTable
+
             Try
                 dataTable.Clear()
                 connection.Open()
@@ -452,6 +458,7 @@ Public Class Admin_Main
                 Dim selectQuery As String = "SELECT * FROM bscpe"
 
                 adapter = New MySqlDataAdapter(selectQuery, connection)
+
                 adapter.Fill(dataTable)
 
                 StudentlistTable.DataSource = dataTable
@@ -468,13 +475,23 @@ Public Class Admin_Main
 
         End If
 
-
+        SaveData(dataTable)
 
     End Sub
 
-    Private Sub SaveData()
-        Dim builder As New MySqlCommandBuilder(adapter)
-        adapter.Update(dataTable)
+    Private Sub SaveData(dataTable)
+
+        Try
+            adapter.SelectCommand.Connection = connection
+            Dim builder As New MySqlCommandBuilder(adapter)
+            adapter.Update(dataTable)
+
+        Catch ex As Exception
+
+            MsgBox(ex.Message)
+
+        End Try
+
     End Sub
 
 
@@ -482,29 +499,55 @@ Public Class Admin_Main
     Private Sub StudentSearchBar_TextChanged(sender As Object, e As EventArgs) Handles StudentSearchBar.TextChanged
         Dim searchTerm As String = StudentSearchBar.Text.Trim()
 
-        If searchTerm <> "" Then
-            Try
-                connection.Open()
+        If CollegeProgramSelector.Text = "BSIT" Then
+            If searchTerm <> "" Then
+                Try
+                    connection.Open()
 
-                Dim query As String = "SELECT * FROM bsit WHERE `Student ID` LIKE @searchTerm OR `Student Name` LIKE @searchTerm OR `Year` LIKE @searchTerm OR `Section` LIKE @searchTerm"
-                Dim command As New MySqlCommand(query, connection)
+                    Dim query As String = "SELECT * FROM bsit WHERE `Student ID` LIKE @searchTerm OR `Student Name` LIKE @searchTerm OR `Year` LIKE @searchTerm OR `Section` LIKE @searchTerm"
+                    Dim command As New MySqlCommand(query, connection)
 
-                command.Parameters.AddWithValue("@searchTerm", "%" & searchTerm & "%")
+                    command.Parameters.AddWithValue("@searchTerm", "%" & searchTerm & "%")
 
-                Dim dataTable As New DataTable()
+                    Dim dataTable As New DataTable()
 
-                Dim adapter As New MySqlDataAdapter(command)
-                adapter.Fill(dataTable)
-                StudentlistTable.DataSource = dataTable
-            Catch ex As Exception
-                MessageBox.Show("Error searching data: " & ex.Message)
-            Finally
-                connection.Close()
+                    Dim adapter As New MySqlDataAdapter(command)
+                    adapter.Fill(dataTable)
+                    StudentlistTable.DataSource = dataTable
+                Catch ex As Exception
+                    MessageBox.Show("Error searching data: " & ex.Message)
+                Finally
+                    connection.Close()
 
-            End Try
+                End Try
+            End If
+
+        ElseIf CollegeProgramSelector.Text = "BSCPE" Then
+            If searchTerm <> "" Then
+                Try
+                    connection.Open()
+
+                    Dim query As String = "SELECT * FROM bscpe WHERE `Student ID` LIKE @searchTerm OR `Student Name` LIKE @searchTerm OR `Year` LIKE @searchTerm OR `Section` LIKE @searchTerm"
+                    Dim command As New MySqlCommand(query, connection)
+
+                    command.Parameters.AddWithValue("@searchTerm", "%" & searchTerm & "%")
+
+                    Dim dataTable As New DataTable()
+
+                    Dim adapter As New MySqlDataAdapter(command)
+                    adapter.Fill(dataTable)
+                    StudentlistTable.DataSource = dataTable
+                Catch ex As Exception
+                    MessageBox.Show("Error searching data: " & ex.Message)
+                Finally
+                    connection.Close()
+
+                End Try
+            End If
         End If
 
         If String.IsNullOrEmpty(StudentSearchBar.Text.Trim()) Then
+
             dataTable.Clear()
             StudentList()
 
@@ -536,7 +579,6 @@ Public Class Admin_Main
                 End If
 
                 Try
-
                     connection.Open()
 
                     Using DeleteCommand As New MySqlCommand(DeleteQuery, connection)
@@ -622,13 +664,14 @@ Public Class Admin_Main
 
     Private Sub Save_Btn_Click(sender As Object, e As EventArgs) Handles Save_Btn.Click
 
-        SaveData()
+        SaveData(dataTable)
         StudentlistTable.ReadOnly = True
         MsgBox("Update successful!", MessageBoxIcon.Information)
         dataTable.Clear()
         StudentList()
         StudentlistTable.AllowUserToAddRows = False
         Delete_Btn.Enabled = True
+
     End Sub
 
 
@@ -642,8 +685,6 @@ Public Class Admin_Main
         EvaluateStudentGrades.Show()
         Me.Enabled = False
     End Sub
-
-
 
     ' STUDENT PANEL - END
 

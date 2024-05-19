@@ -18,18 +18,20 @@ Public Class EvaluateStudentGrades
         If SemesterSelector.Text = "1st Semester" Then
 
             FirstSemBSIT()
+            FirstSemBSCPE()
 
         ElseIf SemesterSelector.Text = "2nd Semester" Then
 
             SecondSemBSIT()
+            SecondSemBSCPE()
 
         Else
             MessageBox.Show("Please choose an option from the dropdown menu.", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Warning)
 
         End If
 
-
     End Sub
+
 
     ' BSIT First Semester Grade Evalauation
     Private Sub FirstSemBSIT()
@@ -143,6 +145,25 @@ Public Class EvaluateStudentGrades
     End Sub
 
 
+    ' BSCPE First Semester Grade Evaluation
+    Private Sub FirstSemBSCPE()
+
+        Dim selectquery As String = "SELECT * FROM bscpe "
+        Dim command As New MySqlCommand(selectquery, connection)
+        Dim adapter As New MySqlDataAdapter(command)
+        Dim table As New DataTable()
+
+        connection.Open()
+        adapter.Fill(table)
+        connection.Close()
+
+        For Each row As DataRow In table.Rows
+
+        Next
+
+    End Sub
+
+
     ' BSIT Second Semester Grade Evaluation
     Private Sub SecondSemBSIT()
 
@@ -248,10 +269,29 @@ Public Class EvaluateStudentGrades
             updatecommand.ExecuteNonQuery()
 
         Next
+
         MessageBox.Show("Successfully evaluated all grades from 2nd Semester.", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
         connection.Close()
         Admin_Main.StudentList()
 
+    End Sub
+
+
+    ' BSCPE Second Semester Grade Evaluation
+    Private Sub SecondSemBSCPE()
+
+        Dim selectquery As String = "SELECT * FROM bscpe "
+        Dim command As New MySqlCommand(selectquery, connection)
+        Dim adapter As New MySqlDataAdapter(command)
+        Dim table As New DataTable()
+
+        connection.Open()
+        adapter.Fill(table)
+        connection.Close()
+
+        For Each row As DataRow In table.Rows
+
+        Next
     End Sub
 
 
