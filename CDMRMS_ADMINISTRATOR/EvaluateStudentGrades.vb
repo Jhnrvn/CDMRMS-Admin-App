@@ -159,6 +159,7 @@ Public Class EvaluateStudentGrades
             Dim honorStatus4 As Boolean = Convert.ToBoolean(row("4th Year 1st Sem Honor Status"))
             Dim updatequery As String
 
+
             If year = "1st Year" Then
                 grade = Convert.ToDouble(row("1st Year 1st Sem GWA"))
                 updatequery = "UPDATE bsit SET `1st Year 1st Sem GWA` = @grade, `1st Year 1st Sem Honor Status` = @honorStatus1 WHERE `Student ID` = @studentid"
@@ -170,6 +171,16 @@ Public Class EvaluateStudentGrades
                 updatecommand.Parameters.AddWithValue("@studentid", studentID)
 
                 updatecommand.ExecuteNonQuery()
+
+                ' 1st Year 1st Sem Deans Lister Insert Query 
+                If honorStatus2 = True Then
+
+                    Dim query As String = "INSERT INTO deanslist (`Student ID`, `Student Name`, `Program`,`Year`, `Section`, `GWA` ) SELECT `Student ID`, `Student Name`, `Program`, `Year`,`Section`,`1st Year 1st Sem GWA` FROM bsit WHERE `Student ID` = @studentID"
+                    Dim insertcommand As New MySqlCommand(query, connection)
+                    insertcommand.Parameters.AddWithValue("@studentID", studentID)
+                    insertcommand.ExecuteNonQuery()
+
+                End If
 
             ElseIf year = "2nd Year" Then
                 grade = Convert.ToDouble(row("2nd Year 1st Sem GWA"))
@@ -183,6 +194,16 @@ Public Class EvaluateStudentGrades
 
                 updatecommand.ExecuteNonQuery()
 
+                ' 2nd Year 1st Sem Deans Lister Insert Query 
+                If honorStatus2 = True Then
+
+                    Dim query As String = "INSERT INTO deanslist (`Student ID`, `Student Name`, `Program`,`Year`, `Section`, `GWA` ) SELECT `Student ID`, `Student Name`, `Program`, `Year`,`Section`,`2nd Year 1st Sem GWA` FROM bsit WHERE `Student ID` = @studentID"
+                    Dim insertcommand As New MySqlCommand(query, connection)
+                    insertcommand.Parameters.AddWithValue("@studentID", studentID)
+                    insertcommand.ExecuteNonQuery()
+
+                End If
+
             ElseIf year = "3rd Year" Then
                 grade = Convert.ToDouble(row("3rd Year 1st Sem GWA"))
                 updatequery = "UPDATE bsit SET `2nd Year 1st Sem GWA` = @grade, `3rd Year 1st Sem Honor Status` = @honorStatus3 WHERE `Student ID` = @studentid"
@@ -194,6 +215,16 @@ Public Class EvaluateStudentGrades
                 updatecommand.Parameters.AddWithValue("@studentid", studentID)
 
                 updatecommand.ExecuteNonQuery()
+
+                ' 3rd Year 1st Sem Deans Lister Insert Query 
+                If honorStatus3 = True Then
+
+                    Dim query As String = "INSERT INTO deanslist (`Student ID`, `Student Name`, `Program`,`Year`, `Section`, `GWA` ) SELECT `Student ID`, `Student Name`, `Program`, `Year`,`Section`,`3rd Year 1st Sem GWA` FROM bsit WHERE `Student ID` = @studentID"
+                    Dim insertcommand As New MySqlCommand(query, connection)
+                    insertcommand.Parameters.AddWithValue("@studentID", studentID)
+                    insertcommand.ExecuteNonQuery()
+
+                End If
 
             ElseIf year = "4th Year" Then
                 grade = Convert.ToDouble(row("4th Year 1st Sem GWA"))
@@ -207,20 +238,20 @@ Public Class EvaluateStudentGrades
 
                 updatecommand.ExecuteNonQuery()
 
+                ' 4th Year 1st Sem Deans Lister Insert Query 
+                If honorStatus4 = True Then
+
+                    Dim query As String = "INSERT INTO deanslist (`Student ID`, `Student Name`, `Program`,`Year`, `Section`, `GWA` ) SELECT `Student ID`, `Student Name`, `Program`, `Year`,`Section`,`4th Year 1st Sem GWA` FROM bsit WHERE `Student ID` = @studentID"
+                    Dim insertcommand As New MySqlCommand(query, connection)
+                    insertcommand.Parameters.AddWithValue("@studentID", studentID)
+                    insertcommand.ExecuteNonQuery()
+
+                End If
+
             End If
 
         Next
         connection.Close()
-
-
-        connection.Open()
-
-        For Each row As DataRow In table.Rows
-
-
-
-        Next
-
 
         Admin_Main.StudentList()
 
