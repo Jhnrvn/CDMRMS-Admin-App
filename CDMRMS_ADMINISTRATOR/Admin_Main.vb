@@ -1,5 +1,4 @@
-﻿Imports System.Net.NetworkInformation
-Imports MySql.Data.MySqlClient
+﻿Imports MySql.Data.MySqlClient
 
 Public Class Admin_Main
 
@@ -15,6 +14,7 @@ Public Class Admin_Main
         Dropdown_Panel.Size = Dropdown_Panel.MinimumSize
         Instructor_Panel.Hide()
         Student_Panel.Hide()
+        Dashboard_Panel.Hide()
         InstructorData()
 
 
@@ -54,6 +54,7 @@ Public Class Admin_Main
             ' Hide Instructor Panel
             Instructor_Panel.Hide()
             Student_Panel.Hide()
+            Dashboard_Panel.Hide()
             ' Clear textbox that display instructors information 
             InstructorsID_TB.Clear()
             FN_TB.Clear()
@@ -103,6 +104,8 @@ Public Class Admin_Main
             PinLock_Panel.Hide()
             Lock_Btn.Show()
             Menu_Btn.Enabled = True
+            Student_Panel.Enabled = True
+            Instructor_Panel.Enabled = True
 
             Pin_1.Clear()
             Pin_2.Clear()
@@ -153,6 +156,8 @@ Public Class Admin_Main
 
             PinLock_Panel.Show()
             Menu_Btn.Enabled = False
+            Student_Panel.Enabled = False
+            Instructor_Panel.Enabled = False
             Lock_Btn.Hide()
 
 
@@ -161,12 +166,21 @@ Public Class Admin_Main
     End Sub
     ' ADMIN LOCK
 
+    ' DASHBOARD PANEL - START
+    Private Sub Dashboard_Btn_Click(sender As Object, e As EventArgs) Handles Dashboard_Btn.Click
+        Dashboard_Panel.Show()
+        Student_Panel.Hide()
+        Instructor_Panel.Hide()
+
+    End Sub
+    ' DASHBOARD PANEL - END
 
 
     ' INSTRUCTOR PANEL - START
     Private Sub Instructor_Btn_Click(sender As Object, e As EventArgs) Handles Instructor_Btn.Click
         Instructor_Panel.Show()
         Student_Panel.Hide()
+        Dashboard_Panel.Hide()
 
     End Sub
 
@@ -406,14 +420,18 @@ Public Class Admin_Main
 
     End Sub
 
-    Private Sub Student_Btn_Click(sender As Object, e As EventArgs) Handles Student_Btn.Click
-        Student_Panel.Show()
-        Instructor_Panel.Hide()
-    End Sub
+
 
     ' INSTRUCTOR PANEL - END
 
     ' STUDENT PANEL - START
+
+    Private Sub Student_Btn_Click(sender As Object, e As EventArgs) Handles Student_Btn.Click
+        Student_Panel.Show()
+        Instructor_Panel.Hide()
+        Dashboard_Panel.Hide()
+    End Sub
+
 
     Private adapter As New MySqlDataAdapter
     Private dataTable As New DataTable()
@@ -685,6 +703,8 @@ Public Class Admin_Main
         EvaluateStudentGrades.Show()
         Me.Enabled = False
     End Sub
+
+
 
     ' STUDENT PANEL - END
 
