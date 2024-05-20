@@ -83,23 +83,63 @@ Public Class EvaluateStudentGrades
             Dim capstone2 As Double = Convert.ToDouble(row("CAPSTONE 2"))
 
             Dim grade As Double
+            Dim honorStatus As Boolean = True
+
             If year = "1st Year" Then
+                ' GWA Computation For 1st Year 1st Sem
                 grade = (prog1 + itcomp + ge2 + gemath + ge1 + gefil1) / 6
                 row("1st Year 1st Sem GWA") = grade
 
-            ElseIf year = "2nd Year" Then
+                ' Deans lister Validation for 1st Year 1st Sem BSIT
+                If (prog1 > 2.0 Or prog1 < 1) Or (itcomp > 2.0 Or itcomp < 1) Or (ge2 > 2.0 Or ge2 < 1) Or (gemath > 2.0 Or gemath < 1) Or (ge1 > 2.0 Or ge1 < 1) Or (gefil1 > 2.0 Or gefil1 < 1) Then
+                    row("1st Year 1st Sem Honor Status") = honorStatus = False
 
+                Else
+                    row("1st Year 1st Sem Honor Status") = honorStatus
+
+                End If
+
+            ElseIf year = "2nd Year" Then
+                ' GWA Computation For 2nd Year 1st Sem
                 grade = (prog3 + elect1 + ge4 + ge12 + sia1 + sp + gesci) / 7
                 row("2nd Year 1st Sem GWA") = grade
 
-            ElseIf year = "3rd Year" Then
+                ' Deans Lister Validation For 2nd Year 1st Sem BSIT
+                If (prog3 > 2.0 Or prog3 < 1) Or (elect1 > 2.0 Or elect1 < 1) Or (ge4 > 2.0 Or ge4 < 1) Or (ge12 > 2.0 Or ge12 < 1) Or (sia1 > 2.0 Or sia1 < 1) Or (sp > 2.0 Or sp < 1) Or (gesci > 2.0 Or gesci < 1) Then
+                    row("2nd Year 1st Sem Honor Status") = honorStatus = False
 
+                Else
+                    row("2nd Year 1st Sem Honor Status") = honorStatus
+
+                End If
+
+            ElseIf year = "3rd Year" Then
+                ' GWA Computation For 3rd Year 1st Sem
                 grade = (net2 + im1 + appsdev1 + os + ias1 + hci + adbs + elect3) / 8
                 row("3rd Year 1st Sem GWA") = grade
 
+                ' Deans Lister Validation For 3rd Year 1st Sem BSIT
+                If (net2 > 2.0 Or net2 < 1) Or (im1 > 2.0 Or im1 < 1) Or (appsdev1 > 2.0 Or appsdev1 < 1) Or (os > 2.0 Or os < 1) Or (ias1 > 2.0 Or ias1 < 1) Or (hci > 2.0 Or hci < 1) Or (adbs > 2.0 Or adbs < 1) Or (elect3 > 2.0 Or elect3 < 1) Then
+                    row("3rd Year 1st Sem Honor Status") = honorStatus = False
+
+                Else
+                    row("3rd Year 1st Sem Honor Status") = honorStatus
+
+                End If
+
             ElseIf year = "4th Year" Then
+                ' GWA for 4th Year 1st Sem
                 grade = capstone2
                 row("4th Year 1st Sem GWA") = grade
+
+                ' Deans Lister Validation For 3rd Year 1st Sem BSIT
+                If capstone2 > 2.0 Or capstone2 < 1 Then
+                    row("4th Year 1st Sem Honor Status") = honorStatus = False
+
+                Else
+                    row("4th Year 1st Sem Honor Status") = honorStatus
+
+                End If
             End If
 
         Next
@@ -113,35 +153,75 @@ Public Class EvaluateStudentGrades
             Dim year As String = Convert.ToString(row("Year"))
 
             Dim grade As Double
-            Dim updatequery As String = ""
+            Dim honorStatus1 As Boolean = Convert.ToBoolean(row("1st Year 1st Sem Honor Status"))
+            Dim honorStatus2 As Boolean = Convert.ToBoolean(row("2nd Year 1st Sem Honor Status"))
+            Dim honorStatus3 As Boolean = Convert.ToBoolean(row("3rd Year 1st Sem Honor Status"))
+            Dim honorStatus4 As Boolean = Convert.ToBoolean(row("4th Year 1st Sem Honor Status"))
+            Dim updatequery As String
 
             If year = "1st Year" Then
                 grade = Convert.ToDouble(row("1st Year 1st Sem GWA"))
-                updatequery = "UPDATE bsit SET `1st Year 1st Sem GWA` = @grade WHERE `Student ID` = @studentid"
+                updatequery = "UPDATE bsit SET `1st Year 1st Sem GWA` = @grade, `1st Year 1st Sem Honor Status` = @honorStatus1 WHERE `Student ID` = @studentid"
+
+                Dim updatecommand As New MySqlCommand(updatequery, connection)
+
+                updatecommand.Parameters.AddWithValue("@grade", Math.Round(grade, 2))
+                updatecommand.Parameters.AddWithValue("@honorStatus1", honorStatus1)
+                updatecommand.Parameters.AddWithValue("@studentid", studentID)
+
+                updatecommand.ExecuteNonQuery()
 
             ElseIf year = "2nd Year" Then
                 grade = Convert.ToDouble(row("2nd Year 1st Sem GWA"))
-                updatequery = "UPDATE bsit SET `2nd Year 1st Sem GWA` = @grade WHERE `Student ID` = @studentid"
+                updatequery = "UPDATE bsit SET `2nd Year 1st Sem GWA` = @grade, `2nd Year 1st Sem Honor Status` = @honorStatus2 WHERE `Student ID` = @studentid"
+
+                Dim updatecommand As New MySqlCommand(updatequery, connection)
+
+                updatecommand.Parameters.AddWithValue("@grade", Math.Round(grade, 2))
+                updatecommand.Parameters.AddWithValue("@honorStatus2", honorStatus2)
+                updatecommand.Parameters.AddWithValue("@studentid", studentID)
+
+                updatecommand.ExecuteNonQuery()
 
             ElseIf year = "3rd Year" Then
                 grade = Convert.ToDouble(row("3rd Year 1st Sem GWA"))
-                updatequery = "UPDATE bsit SET `3rd Year 1st Sem GWA` = @grade WHERE `Student ID` = @studentid"
+                updatequery = "UPDATE bsit SET `2nd Year 1st Sem GWA` = @grade, `3rd Year 1st Sem Honor Status` = @honorStatus3 WHERE `Student ID` = @studentid"
+
+                Dim updatecommand As New MySqlCommand(updatequery, connection)
+
+                updatecommand.Parameters.AddWithValue("@grade", Math.Round(grade, 2))
+                updatecommand.Parameters.AddWithValue("@honorStatus3", honorStatus3)
+                updatecommand.Parameters.AddWithValue("@studentid", studentID)
+
+                updatecommand.ExecuteNonQuery()
 
             ElseIf year = "4th Year" Then
                 grade = Convert.ToDouble(row("4th Year 1st Sem GWA"))
-                updatequery = "UPDATE bsit SET `4th Year 1st Sem GWA` = @grade WHERE `Student ID` = @studentid"
+                updatequery = "UPDATE bsit SET `2nd Year 1st Sem GWA` = @grade, `4th Year 1st Sem Honor Status` = @honorStatus4 WHERE `Student ID` = @studentid"
+
+                Dim updatecommand As New MySqlCommand(updatequery, connection)
+
+                updatecommand.Parameters.AddWithValue("@grade", Math.Round(grade, 2))
+                updatecommand.Parameters.AddWithValue("@honorStatus4", honorStatus4)
+                updatecommand.Parameters.AddWithValue("@studentid", studentID)
+
+                updatecommand.ExecuteNonQuery()
 
             End If
 
-            Dim updatecommand As New MySqlCommand(updatequery, connection)
-
-            updatecommand.Parameters.AddWithValue("@grade", Math.Round(grade, 2))
-            updatecommand.Parameters.AddWithValue("@studentid", studentID)
-
-            updatecommand.ExecuteNonQuery()
-
         Next
         connection.Close()
+
+
+        connection.Open()
+
+        For Each row As DataRow In table.Rows
+
+
+
+        Next
+
+
         Admin_Main.StudentList()
 
     End Sub

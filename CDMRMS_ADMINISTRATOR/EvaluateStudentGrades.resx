@@ -121,7 +121,7 @@
   <data name="PictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAOwAAADgCAYAAAAAEYpvAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAA/5FJREFUeF7svQV4HEfTtrsMYpYsyczMzBAzM7Mlg2QLLLJlZmZmZmaGODElZmZm
+        vwAADr8BOAVTJAAA/5FJREFUeF7svQV4HEfTtrsMYpYsyczMzBAzM7Mlg2QLLLJlZmZmZmaGODElZmZm
         lsWSn1PVM7NaO877f+d8/0niN2pddc3s7MzsqLvurqqmUSE9paf09MOkdGDTU3r6gVI6sOkpPf1AKR3Y
         9JSefqCUDmx6Sk8/UEoHNj2lpx8opQObntLTD5TSgU1P6ekHSunApqf09AOldGDTU3r6gVI6sOkpPf1A
         KR3Y9JSefqCUDmx6Sk8/UEoHNj2lpx8opQObntLTD5TSgU1P6ekHSunApqf09AOldGDTU3r6gVI6sOkp
@@ -1221,7 +1221,7 @@
 2. Must hav passed NSTP and PE in identified
     semester (Not Included in the computation).
 
-3. Must have a GWA of 1.00 0 2.00.
+3. Must have a GWA of 1.00 - 2.00.
 
 4. No INC mark.</value>
   </data>

@@ -49,7 +49,7 @@ Public Class ChangingGradeRequest
 
 
     Private Sub Approve_Btn_Click(sender As Object, e As EventArgs) Handles Approve_Btn.Click
-        Dim choice As DialogResult = MsgBox("Approve Request?", MessageBoxButtons.YesNo)
+        Dim choice As DialogResult = MessageBox.Show("Approve request?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
         If choice = DialogResult.Yes Then
 
@@ -80,7 +80,7 @@ Public Class ChangingGradeRequest
 
                     End Using
 
-                    MsgBox("Request Approved")
+                    MessageBox.Show("Request approved.", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                 Catch ex As Exception
 
@@ -102,7 +102,7 @@ Public Class ChangingGradeRequest
 
     Private Sub Decline_Btn_Click(sender As Object, e As EventArgs) Handles Decline_Btn.Click
 
-        Dim choice As DialogResult = MsgBox("Decline Request?", MessageBoxButtons.YesNo)
+        Dim choice As DialogResult = MessageBox.Show("Decline request?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
         If choice = DialogResult.Yes Then
 
@@ -121,7 +121,8 @@ Public Class ChangingGradeRequest
                         DeleteCommand.ExecuteNonQuery()
 
                     End Using
-                    MsgBox("Request Declined.")
+
+                    MessageBox.Show("Request declined.", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                 Catch ex As Exception
 
