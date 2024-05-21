@@ -17,11 +17,37 @@ Public Class EvaluateStudentGrades
 
         If SemesterSelector.Text = "1st Semester" Then
 
+            Try
+                connection.Open()
+                Dim deletequery As String = "DELETE FROM deanslist"
+
+                Using deletecommand As New MySqlCommand(deletequery, connection)
+                    deletecommand.ExecuteNonQuery()
+                End Using
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            Finally
+                connection.Close()
+            End Try
+
             FirstSemBSIT()
             FirstSemBSCPE()
             MessageBox.Show("Successfully evaluated all grades for 1st Semester.", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         ElseIf SemesterSelector.Text = "2nd Semester" Then
+
+            Try
+                connection.Open()
+                Dim deletequery As String = "DELETE FROM deanslist"
+
+                Using deletecommand As New MySqlCommand(deletequery, connection)
+                    deletecommand.ExecuteNonQuery()
+                End Using
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            Finally
+                connection.Close()
+            End Try
 
             SecondSemBSIT()
             SecondSemBSCPE()
@@ -743,21 +769,51 @@ Public Class EvaluateStudentGrades
             Dim subject58 As Double = Convert.ToDouble(row("SUBJECT 58"))
 
             Dim grade As Double
+            Dim honorStatus As Boolean = True
+
             If year = "1st Year" Then
                 grade = (subject7 + subject8 + subject9 + subject10 + subject11 + subject12) / 6
                 row("1st Year 2nd Sem GWA") = grade
+
+                If (subject7 > 2.0 Or subject7 < 1) Or (subject8 > 2.0 Or subject8 < 1) Or (subject9 > 2.0 Or subject9 < 1) Or (subject10 > 2.0 Or subject10 < 1) Or (subject11 > 2.0 Or subject11 < 1) Or (subject12 > 2.0 Or subject12 < 1) Then
+                    row("1st Year 2nd Sem Honor Status") = honorStatus = False
+                Else
+                    row("1st Year 2nd Sem Honor Status") = honorStatus
+
+                End If
 
             ElseIf year = "2nd Year" Then
                 grade = (subject20 + subject21 + subject22 + subject23 + subject24 + subject25 + subject26) / 7
                 row("2nd Year 2nd Sem GWA") = grade
 
+                If (subject20 > 2.0 Or subject20 < 1) Or (subject21 > 2.0 Or subject21 < 1) Or (subject22 > 2.0 Or subject22 < 1) Or (subject23 > 2.0 Or subject23 < 1) Or (subject24 > 2.0 Or subject24 < 1) Or (subject25 > 2.0 Or subject25 < 1) Or (subject26 > 2.0 Or subject26 < 1) Then
+                    row("2nd Year 2nd Sem Honor Status") = honorStatus = False
+                Else
+                    row("2nd Year 2nd Sem Honor Status") = honorStatus
+
+                End If
+
             ElseIf year = "3rd Year" Then
                 grade = (subject35 + subject36 + subject37 + subject38 + subject39 + subject40 + subject41 + subject42) / 8
                 row("3rd Year 2nd Sem GWA") = grade
 
+                If (subject35 > 2.0 Or subject35 < 1) Or (subject36 > 2.0 Or subject36 < 1) Or (subject37 > 2.0 Or subject37 < 1) Or (subject38 > 2.0 Or subject38 < 1) Or (subject39 > 2.0 Or subject39 < 1) Or (subject40 > 2.0 Or subject40 < 1) Or (subject41 > 2.0 Or subject41 < 1) Or (subject42 > 2.0 Or subject42 < 1) Then
+                    row("3rd Year 2nd Sem Honor Status") = honorStatus = False
+                Else
+                    row("3rd Year 2nd Sem Honor Status") = honorStatus
+
+                End If
+
             ElseIf year = "4th Year" Then
                 grade = (subject51 + subject52 + subject53 + subject54 + subject55 + subject56 + subject57 + subject58) / 8
                 row("4th Year 2nd Sem GWA") = grade
+
+                If (subject51 > 2.0 Or subject51 < 1) Or (subject52 > 2.0 Or subject52 < 1) Or (subject53 > 2.0 Or subject53 < 1) Or (subject38 > 2.0 Or subject38 < 1) Or (subject39 > 2.0 Or subject39 < 1) Or (subject40 > 2.0 Or subject40 < 1) Or (subject41 > 2.0 Or subject41 < 1) Or (subject42 > 2.0 Or subject42 < 1) Then
+                    row("4th Year 2nd Sem Honor Status") = honorStatus = False
+                Else
+                    row("4th Year 2nd Sem Honor Status") = honorStatus
+
+                End If
 
             End If
 
@@ -771,32 +827,97 @@ Public Class EvaluateStudentGrades
             Dim year As String = Convert.ToString(row("Year"))
 
             Dim grade As Double
-            Dim updatequery As String = ""
+            Dim honorStatus1 As Boolean = Convert.ToBoolean(row("1st Year 2nd Sem Honor Status"))
+            Dim honorStatus2 As Boolean = Convert.ToBoolean(row("2nd Year 2nd Sem Honor Status"))
+            Dim honorStatus3 As Boolean = Convert.ToBoolean(row("3rd Year 2nd Sem Honor Status"))
+            Dim honorStatus4 As Boolean = Convert.ToBoolean(row("4th Year 2nd Sem Honor Status"))
+            Dim updatequery As String
 
             If year = "1st Year" Then
                 grade = Convert.ToDouble(row("1st Year 2nd Sem GWA"))
-                updatequery = "UPDATE bscpe SET `1st Year 2nd Sem GWA` = @grade WHERE `Student ID` = @studentid"
+                updatequery = "UPDATE bscpe SET `1st Year 2nd Sem GWA` = @grade, `1st Year 2nd Sem Honor Status` = @honorstatus1  WHERE `Student ID` = @studentid"
+
+                Dim updatecommand As New MySqlCommand(updatequery, connection)
+
+                updatecommand.Parameters.AddWithValue("@grade", Math.Round(grade, 2))
+                updatecommand.Parameters.AddWithValue("@honorstatus1", honorStatus1)
+                updatecommand.Parameters.AddWithValue("@studentid", studentID)
+
+                updatecommand.ExecuteNonQuery()
+
+                ' 1st Year 1st Sem Deans Lister Insert Query 
+                If honorStatus1 = True Then
+                    Dim query As String = "INSERT INTO deanslist (`Student ID`, `Student Name`, `Program`,`Year`, `Section`, `GWA` ) SELECT `Student ID`, `Student Name`, `Program`, `Year`,`Section`,`1st Year 2nd Sem GWA` FROM bscpe WHERE `Student ID` = @studentID"
+                    Dim insertcommand As New MySqlCommand(query, connection)
+                    insertcommand.Parameters.AddWithValue("@studentID", studentID)
+                    insertcommand.ExecuteNonQuery()
+
+                End If
 
             ElseIf year = "2nd Year" Then
                 grade = Convert.ToDouble(row("2nd Year 2nd Sem GWA"))
-                updatequery = "UPDATE bscpe SET `2nd Year 2nd Sem GWA` = @grade WHERE `Student ID` = @studentid"
+                updatequery = "UPDATE bscpe SET `2nd Year 2nd Sem GWA` = @grade, `2nd Year 2nd Sem Honor Status` = @honorstatus2  WHERE `Student ID` = @studentid"
+
+                Dim updatecommand As New MySqlCommand(updatequery, connection)
+
+                updatecommand.Parameters.AddWithValue("@grade", Math.Round(grade, 2))
+                updatecommand.Parameters.AddWithValue("@honorstatus2", honorStatus2)
+                updatecommand.Parameters.AddWithValue("@studentid", studentID)
+
+                updatecommand.ExecuteNonQuery()
+
+                ' 1st Year 1st Sem Deans Lister Insert Query 
+                If honorStatus2 = True Then
+                    Dim query As String = "INSERT INTO deanslist (`Student ID`, `Student Name`, `Program`,`Year`, `Section`, `GWA` ) SELECT `Student ID`, `Student Name`, `Program`, `Year`,`Section`,`2nd Year 2nd Sem GWA` FROM bscpe WHERE `Student ID` = @studentID"
+                    Dim insertcommand As New MySqlCommand(query, connection)
+                    insertcommand.Parameters.AddWithValue("@studentID", studentID)
+                    insertcommand.ExecuteNonQuery()
+
+                End If
 
             ElseIf year = "3rd Year" Then
                 grade = Convert.ToDouble(row("3rd Year 2nd Sem GWA"))
-                updatequery = "UPDATE bscpe SET `3rd Year 2nd Sem GWA` = @grade WHERE `Student ID` = @studentid"
+                updatequery = "UPDATE bscpe SET `3rd Year 2nd Sem GWA` = @grade, `3rd Year 2nd Sem Honor Status` = @honorstatus3  WHERE `Student ID` = @studentid"
+
+                Dim updatecommand As New MySqlCommand(updatequery, connection)
+
+                updatecommand.Parameters.AddWithValue("@grade", Math.Round(grade, 2))
+                updatecommand.Parameters.AddWithValue("@honorstatus3", honorStatus3)
+                updatecommand.Parameters.AddWithValue("@studentid", studentID)
+
+                updatecommand.ExecuteNonQuery()
+
+                ' 1st Year 1st Sem Deans Lister Insert Query 
+                If honorStatus3 = True Then
+                    Dim query As String = "INSERT INTO deanslist (`Student ID`, `Student Name`, `Program`,`Year`, `Section`, `GWA` ) SELECT `Student ID`, `Student Name`, `Program`, `Year`,`Section`,`3rd Year 2nd Sem GWA` FROM bscpe WHERE `Student ID` = @studentID"
+                    Dim insertcommand As New MySqlCommand(query, connection)
+                    insertcommand.Parameters.AddWithValue("@studentID", studentID)
+                    insertcommand.ExecuteNonQuery()
+
+                End If
 
             ElseIf year = "4th Year" Then
                 grade = Convert.ToDouble(row("4th Year 2nd Sem GWA"))
-                updatequery = "UPDATE bscpe SET `4th Year 2nd Sem GWA` = @grade WHERE `Student ID` = @studentid"
+                updatequery = "UPDATE bscpe SET `4th Year 2nd Sem GWA` = @grade, `4th Year 2nd Sem Honor Status` = @honorstatus4  WHERE `Student ID` = @studentid"
+
+                Dim updatecommand As New MySqlCommand(updatequery, connection)
+
+                updatecommand.Parameters.AddWithValue("@grade", Math.Round(grade, 2))
+                updatecommand.Parameters.AddWithValue("@honorstatus4", honorStatus4)
+                updatecommand.Parameters.AddWithValue("@studentid", studentID)
+
+                updatecommand.ExecuteNonQuery()
+
+                ' 1st Year 1st Sem Deans Lister Insert Query 
+                If honorStatus4 = True Then
+                    Dim query As String = "INSERT INTO deanslist (`Student ID`, `Student Name`, `Program`,`Year`, `Section`, `GWA` ) SELECT `Student ID`, `Student Name`, `Program`, `Year`,`Section`,`4th Year 2nd Sem GWA` FROM bscpe WHERE `Student ID` = @studentID"
+                    Dim insertcommand As New MySqlCommand(query, connection)
+                    insertcommand.Parameters.AddWithValue("@studentID", studentID)
+                    insertcommand.ExecuteNonQuery()
+
+                End If
 
             End If
-
-            Dim updatecommand As New MySqlCommand(updatequery, connection)
-
-            updatecommand.Parameters.AddWithValue("@grade", Math.Round(grade, 2))
-            updatecommand.Parameters.AddWithValue("@studentid", studentID)
-
-            updatecommand.ExecuteNonQuery()
 
         Next
         connection.Close()

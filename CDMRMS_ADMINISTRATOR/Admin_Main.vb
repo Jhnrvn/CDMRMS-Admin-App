@@ -17,6 +17,7 @@ Public Class Admin_Main
         Dashboard_Panel.Hide()
         InstructorData()
 
+        DeansListTable()
 
         Notification_Timer.Interval = 3000
         Notification_Timer.Start()
@@ -118,7 +119,7 @@ Public Class Admin_Main
             Pin_2.Clear()
             Pin_3.Clear()
             Pin_4.Clear()
-
+            Pin_1.Focus()
         End If
     End Sub
 
@@ -166,6 +167,7 @@ Public Class Admin_Main
     End Sub
     ' ADMIN LOCK
 
+
     ' DASHBOARD PANEL - START
     Private Sub Dashboard_Btn_Click(sender As Object, e As EventArgs) Handles Dashboard_Btn.Click
         Dashboard_Panel.Show()
@@ -173,6 +175,35 @@ Public Class Admin_Main
         Instructor_Panel.Hide()
 
     End Sub
+
+    Private Sub DeansListTable()
+
+        Try
+            connection.Open()
+
+            Dim query As String = "SELECT * FROM deanslist ORDER BY `GWA` ASC"
+
+            Dim command As New MySqlCommand(query, connection)
+
+            Dim datatable As New DataTable()
+            Using adapter As New MySqlDataAdapter(command)
+
+                adapter.Fill(datatable)
+
+
+                DeansList_Table.DataSource = datatable
+                DeansList_Table.Columns("ID").Visible = False
+                DeansList_Table.Columns("Student Name").Width = 150
+                DeansList_Table.Columns("GWA").Width = 82
+
+            End Using
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
+
+
     ' DASHBOARD PANEL - END
 
 
@@ -322,7 +353,7 @@ Public Class Admin_Main
                 CourseCommand.Parameters.AddWithValue("@instructorid", instructorid)
                 Dim dataTable As New DataTable()
                 dataTable.Load(CourseCommand.ExecuteReader())
-                AssignedCourseTable.RowTemplate.Height = 36
+                AssignedCourseTable.RowTemplate.Height = 30
                 AssignedCourseTable.DataSource = dataTable
 
                 AssignedCourseTable.Columns("course").Width = 295
