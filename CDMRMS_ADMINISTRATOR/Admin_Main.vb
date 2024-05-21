@@ -458,6 +458,10 @@ Public Class Admin_Main
                 StudentlistTable.Columns("Student ID").Width = 121
                 StudentlistTable.Columns("Student Name").Width = 220
                 StudentlistTable.Columns("ID").Visible = False
+                StudentlistTable.Columns("1st Year 1st Sem Honor Status").Visible = False
+                StudentlistTable.Columns("2nd Year 1st Sem Honor Status").Visible = False
+                StudentlistTable.Columns("3rd Year 1st Sem Honor Status").Visible = False
+                StudentlistTable.Columns("4th Year 1st Sem Honor Status").Visible = False
 
             Catch ex As Exception
                 MessageBox.Show("Error fetching data: " & ex.Message)
@@ -483,6 +487,10 @@ Public Class Admin_Main
                 StudentlistTable.Columns("Student ID").Width = 121
                 StudentlistTable.Columns("Student Name").Width = 220
                 StudentlistTable.Columns("ID").Visible = False
+                StudentlistTable.Columns("1st Year 1st Sem Honor Status").Visible = False
+                StudentlistTable.Columns("2nd Year 1st Sem Honor Status").Visible = False
+                StudentlistTable.Columns("3rd Year 1st Sem Honor Status").Visible = False
+                StudentlistTable.Columns("4th Year 1st Sem Honor Status").Visible = False
 
                 Dim cmb As New DataGridViewComboBoxCell()
             Catch ex As Exception
