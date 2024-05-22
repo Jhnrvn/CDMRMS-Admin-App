@@ -32,6 +32,7 @@ Public Class EvaluateStudentGrades
 
             FirstSemBSIT()
             FirstSemBSCPE()
+            Admin_Main.DeansListTable()
             MessageBox.Show("Successfully evaluated all grades for 1st Semester.", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         ElseIf SemesterSelector.Text = "2nd Semester" Then
@@ -51,6 +52,7 @@ Public Class EvaluateStudentGrades
 
             SecondSemBSIT()
             SecondSemBSCPE()
+            Admin_Main.DeansListTable()
             MessageBox.Show("Successfully evaluated all grades for 2nd Semester.", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         Else

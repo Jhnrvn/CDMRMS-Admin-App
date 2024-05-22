@@ -18,12 +18,16 @@ Public Class Admin_Main
         InstructorData()
 
         DeansListTable()
+        Dashboard_Timer.Interval = 3000
+        Dashboard_Timer.Start()
 
         Notification_Timer.Interval = 3000
         Notification_Timer.Start()
 
         StudentlistTable.ReadOnly = True
         StudentlistTable.AllowUserToAddRows = False
+
+
 
     End Sub
     ' FORM LOAD - END
@@ -176,7 +180,7 @@ Public Class Admin_Main
 
     End Sub
 
-    Private Sub DeansListTable()
+    Public Sub DeansListTable()
 
         Try
             connection.Open()
@@ -198,11 +202,90 @@ Public Class Admin_Main
 
             End Using
         Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            connection.Close()
 
         End Try
 
     End Sub
 
+
+    Private Sub Dashboard()
+
+        Dim CountRow1, CountRow2, CountRow3, CountRow4 As Integer
+
+        Try
+            connection.Open()
+
+            Dim query As String = "SELECT COUNT(*) FROM bsit"
+            Dim command As New MySqlCommand(query, connection)
+
+            CountRow1 = Convert.ToInt32(command.ExecuteScalar())
+
+            BSITStudents_TB.Text = CountRow1
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            connection.Close()
+        End Try
+
+        Try
+            connection.Open()
+
+            Dim query As String = "SELECT COUNT(*) FROM bscpe"
+            Dim command As New MySqlCommand(query, connection)
+
+            CountRow2 = Convert.ToInt32(command.ExecuteScalar())
+
+            BSCPEStudents_TB.Text = CountRow2
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            connection.Close()
+        End Try
+
+        Try
+            connection.Open()
+
+            Dim query As String = "SELECT COUNT(*) FROM deanslist"
+            Dim command As New MySqlCommand(query, connection)
+
+            CountRow3 = Convert.ToInt32(command.ExecuteScalar())
+
+            DeansList_TB.Text = CountRow3
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            connection.Close()
+        End Try
+
+        TotalStudents_TB.Text = CountRow1 + CountRow2
+
+        Try
+            connection.Open()
+
+            Dim query As String = "SELECT COUNT(*) FROM instructors"
+            Dim command As New MySqlCommand(query, connection)
+
+            CountRow4 = Convert.ToInt32(command.ExecuteScalar())
+
+            CDMInstrutors_TB.Text = CountRow4
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            connection.Close()
+
+        End Try
+
+    End Sub
+
+    Private Sub Dashboard_Timer_Tick(sender As Object, e As EventArgs) Handles Dashboard_Timer.Tick
+        Dashboard()
+        
+    End Sub
 
     ' DASHBOARD PANEL - END
 
@@ -742,7 +825,6 @@ Public Class Admin_Main
         EvaluateStudentGrades.Show()
         Me.Enabled = False
     End Sub
-
 
 
     ' STUDENT PANEL - END
