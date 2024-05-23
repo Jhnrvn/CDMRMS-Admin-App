@@ -19,11 +19,12 @@ Public Class EvaluateStudentGrades
 
             Try
                 connection.Open()
-                Dim deletequery As String = "DELETE FROM deanslist"
 
-                Using deletecommand As New MySqlCommand(deletequery, connection)
-                    deletecommand.ExecuteNonQuery()
-                End Using
+                Dim resetTableQuery As String = "TRUNCATE TABLE deanslist"
+                Dim resetCommand As New MySqlCommand(resetTableQuery, connection)
+
+                resetCommand.ExecuteNonQuery()
+
             Catch ex As Exception
                 MsgBox(ex.Message)
             Finally
@@ -39,11 +40,12 @@ Public Class EvaluateStudentGrades
 
             Try
                 connection.Open()
-                Dim deletequery As String = "DELETE FROM deanslist"
 
-                Using deletecommand As New MySqlCommand(deletequery, connection)
-                    deletecommand.ExecuteNonQuery()
-                End Using
+                Dim resetTableQuery As String = "TRUNCATE TABLE deanslist"
+                Dim resetCommand As New MySqlCommand(resetTableQuery, connection)
+
+                resetCommand.ExecuteNonQuery()
+
             Catch ex As Exception
                 MsgBox(ex.Message)
             Finally

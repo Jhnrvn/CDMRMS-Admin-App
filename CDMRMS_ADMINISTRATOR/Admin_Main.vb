@@ -284,8 +284,43 @@ Public Class Admin_Main
 
     Private Sub Dashboard_Timer_Tick(sender As Object, e As EventArgs) Handles Dashboard_Timer.Tick
         Dashboard()
-        
+
     End Sub
+
+    Private Sub DashboardStudentSearchBar_textChanged(sender As Object, e As EventArgs) Handles DashboardStudentSearchBar.TextChanged
+        Dim searchTerm As String = DashboardStudentSearchBar.Text.Trim
+
+        If searchTerm <> "" Then
+            Try
+                connection.Open()
+
+                Dim query As String = "SELECT `Student ID`, `Student Name`, `Program`, `Year`, `Section`, `GWA` FROM deanslist WHERE `Student ID` LIKE @searchTerm OR `Student Name` LIKE @searchTerm OR `Program` LIKE @searchTerm OR `Year` LIKE @searchTerm  OR `Section` LIKE @searchTerm OR `GWA` LIKE @searchTerm"
+                Dim command As New MySqlCommand(query, connection)
+
+                command.Parameters.AddWithValue("@searchTerm", "%" & searchTerm & "%")
+
+                Dim dataTable As New DataTable()
+
+                Dim adapter As New MySqlDataAdapter(command)
+                adapter.Fill(dataTable)
+                DeansList_Table.DataSource = dataTable
+            Catch ex As Exception
+                MessageBox.Show("Error searching data: " & ex.Message)
+            Finally
+                connection.Close()
+
+            End Try
+        End If
+
+        If String.IsNullOrEmpty(DashboardStudentSearchBar.Text.Trim()) Then
+            DeansListTable()
+        End If
+
+    End Sub
+    Private Sub DBClear_Btn_Click(sender As Object, e As EventArgs) Handles DBClear_Btn.Click
+        DashboardStudentSearchBar.Clear()
+    End Sub
+
 
     ' DASHBOARD PANEL - END
 
@@ -825,7 +860,6 @@ Public Class Admin_Main
         EvaluateStudentGrades.Show()
         Me.Enabled = False
     End Sub
-
 
     ' STUDENT PANEL - END
 
