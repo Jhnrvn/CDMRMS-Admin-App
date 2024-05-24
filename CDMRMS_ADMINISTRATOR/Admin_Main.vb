@@ -733,7 +733,7 @@ Public Class Admin_Main
     ' Delete Row from Student list Table
     Private Sub Delete_Btn_Click(sender As Object, e As EventArgs) Handles Delete_Btn.Click
 
-        Dim choice As DialogResult = MsgBox("Delete selected row?", MessageBoxButtons.YesNo)
+        Dim choice As DialogResult = MessageBox.Show("Are you sure you want to delete this row?.", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
         If choice = DialogResult.Yes Then
 
@@ -784,7 +784,7 @@ Public Class Admin_Main
     Private Sub Edit_Btn_Click(sender As Object, e As EventArgs) Handles Edit_Btn.Click
 
         StudentlistTable.ReadOnly = False
-        MsgBox("Edit Enabled.", MessageBoxIcon.Information)
+        MessageBox.Show("Edit enabled.", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
         StudentlistTable.AllowUserToAddRows = True
         Delete_Btn.Enabled = False
 
@@ -841,7 +841,7 @@ Public Class Admin_Main
 
         SaveData(dataTable)
         StudentlistTable.ReadOnly = True
-        MsgBox("Update successful!", MessageBoxIcon.Information)
+        MessageBox.Show("Save successfully!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information)
         dataTable.Clear()
         StudentList()
         StudentlistTable.AllowUserToAddRows = False
@@ -861,6 +861,17 @@ Public Class Admin_Main
         Me.Enabled = False
     End Sub
 
+
+
     ' STUDENT PANEL - END
+
+
+    ' ABOUT PANEL - START
+    Private Sub About_Btn_Click(sender As Object, e As EventArgs) Handles About_Btn.Click
+        About.Show()
+        Me.Enabled = False
+    End Sub
+    ' ABOUT PANEL - END
+
 
 End Class
