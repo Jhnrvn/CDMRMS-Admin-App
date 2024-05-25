@@ -869,7 +869,7 @@ Public Class Admin_Main
     ' ABOUT PANEL - START
     Private Sub About_Btn_Click(sender As Object, e As EventArgs) Handles About_Btn.Click
         About.Show()
-        Me.Enabled = False
+
     End Sub
     ' ABOUT PANEL - END
 

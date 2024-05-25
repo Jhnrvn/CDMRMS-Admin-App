@@ -27,6 +27,12 @@ Partial Class About
         Me.Evaluate_Label = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -34,12 +40,6 @@ Partial Class About
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.InstructorInstruction_1 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -114,12 +114,78 @@ Partial Class About
         Me.Panel3.Size = New System.Drawing.Size(781, 478)
         Me.Panel3.TabIndex = 70
         '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.ForeColor = System.Drawing.Color.Black
+        Me.Label12.Location = New System.Drawing.Point(465, 307)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(168, 22)
+        Me.Label12.TabIndex = 95
+        Me.Label12.Text = "Aries Panganiban" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.Color.Black
+        Me.Label11.Location = New System.Drawing.Point(124, 307)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(171, 22)
+        Me.Label11.TabIndex = 94
+        Me.Label11.Text = "Khelly Ann Garcia"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.Color.Black
+        Me.Label10.Location = New System.Drawing.Point(124, 274)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(176, 22)
+        Me.Label10.TabIndex = 93
+        Me.Label10.Text = "John Loyd Anagap"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.Black
+        Me.Label9.Location = New System.Drawing.Point(465, 274)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(194, 22)
+        Me.Label9.TabIndex = 92
+        Me.Label9.Text = "Erica Janne Damaso"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Bernard MT Condensed", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.Black
+        Me.Label8.Location = New System.Drawing.Point(322, 237)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(131, 24)
+        Me.Label8.TabIndex = 91
+        Me.Label8.Text = "Other Members:"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.Black
+        Me.Label7.Location = New System.Drawing.Point(321, 197)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(132, 20)
+        Me.Label7.TabIndex = 90
+        Me.Label7.Text = "Project Manager"
+        '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.Black
-        Me.Label5.Location = New System.Drawing.Point(289, 178)
+        Me.Label5.Location = New System.Drawing.Point(289, 175)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(199, 22)
         Me.Label5.TabIndex = 89
@@ -130,7 +196,7 @@ Partial Class About
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.Black
-        Me.Label6.Location = New System.Drawing.Point(308, 142)
+        Me.Label6.Location = New System.Drawing.Point(308, 141)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(159, 20)
         Me.Label6.TabIndex = 88
@@ -141,7 +207,7 @@ Partial Class About
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(289, 120)
+        Me.Label4.Location = New System.Drawing.Point(289, 119)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(199, 22)
         Me.Label4.TabIndex = 87
@@ -187,75 +253,9 @@ Partial Class About
         Me.InstructorInstruction_1.ForeColor = System.Drawing.Color.Black
         Me.InstructorInstruction_1.Location = New System.Drawing.Point(70, 18)
         Me.InstructorInstruction_1.Name = "InstructorInstruction_1"
-        Me.InstructorInstruction_1.Size = New System.Drawing.Size(586, 22)
+        Me.InstructorInstruction_1.Size = New System.Drawing.Size(576, 22)
         Me.InstructorInstruction_1.TabIndex = 83
-        Me.InstructorInstruction_1.Text = "This application is designed and developed by BSIT-2C Group 7 lead by"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.Black
-        Me.Label7.Location = New System.Drawing.Point(321, 200)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(132, 20)
-        Me.Label7.TabIndex = 90
-        Me.Label7.Text = "Project Manager"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Bernard MT Condensed", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.Black
-        Me.Label8.Location = New System.Drawing.Point(322, 247)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(131, 24)
-        Me.Label8.TabIndex = 91
-        Me.Label8.Text = "Other Members:"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.Color.Black
-        Me.Label9.Location = New System.Drawing.Point(465, 284)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(194, 22)
-        Me.Label9.TabIndex = 92
-        Me.Label9.Text = "Erica Janne Damaso"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.Color.Black
-        Me.Label10.Location = New System.Drawing.Point(124, 284)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(176, 22)
-        Me.Label10.TabIndex = 93
-        Me.Label10.Text = "John Loyd Anagap"
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.Color.Black
-        Me.Label11.Location = New System.Drawing.Point(124, 317)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(171, 22)
-        Me.Label11.TabIndex = 94
-        Me.Label11.Text = "Khelly Ann Garcia"
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.ForeColor = System.Drawing.Color.Black
-        Me.Label12.Location = New System.Drawing.Point(465, 317)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(168, 22)
-        Me.Label12.TabIndex = 95
-        Me.Label12.Text = "Aries Panganiban" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.InstructorInstruction_1.Text = "This application is designed and developed by BSIT-2C Group 7 led by"
         '
         'About
         '
