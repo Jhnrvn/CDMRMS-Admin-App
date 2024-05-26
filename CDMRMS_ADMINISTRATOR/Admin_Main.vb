@@ -1,4 +1,5 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.Security.AccessControl
+Imports MySql.Data.MySqlClient
 
 Public Class Admin_Main
 
@@ -863,6 +864,201 @@ Public Class Admin_Main
 
 
 
+    Private Sub StudentlistTable_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles StudentlistTable.CellClick
+
+        Course_Label1.Text = ""
+        Course_Label2.Text = ""
+        Course_Label3.Text = ""
+        Course_Label4.Text = ""
+        Course_Label5.Text = ""
+        Course_Label6.Text = ""
+        Course_Label7.Text = ""
+        Course_Label8.Text = ""
+
+        If e.RowIndex >= 0 Then
+
+            Dim selectedRow As DataGridViewRow = StudentlistTable.Rows(e.RowIndex)
+            Dim studentid As String = selectedRow.Cells("Student ID").Value.ToString()
+            Dim program As String = selectedRow.Cells("Program").Value.ToString()
+
+
+            Dim sectionQuery As String = $"SELECT * FROM `{program}` WHERE `Student ID` = @studentid"
+            Dim sectionAdapter As New MySqlDataAdapter(sectionQuery, connection)
+            sectionAdapter.SelectCommand.Parameters.AddWithValue("@studentid", studentid)
+
+
+            Using connection As New MySqlConnection(ConnectionString)
+                Using command As New MySqlCommand(sectionQuery, connection)
+
+                    command.Parameters.AddWithValue("@studentid", studentid)
+
+                    Try
+                        connection.Open()
+
+                        Using reader As MySqlDataReader = command.ExecuteReader
+
+                            If reader.Read Then
+
+                                If program = "BSIT" Then
+                                    If Year_CB.Text = "1st" And Sem_CB.Text = "1st" Then
+
+                                        Course_Label1.Text = "IT COMP"
+                                        Course_Label2.Text = "PROG 1"
+                                        Course_Label3.Text = "GE 2"
+                                        Course_Label4.Text = "GE MATH"
+                                        Course_Label5.Text = "GE 1"
+                                        Course_Label6.Text = "GE FIL 1"
+                                        Course_Label7.Text = "PE 1"
+                                        Course_Label8.Text = "NSTP 1"
+
+                                        Grade_TB1.Text = reader("ITCOMP").ToString()
+                                        Grade_TB2.Text = reader("PROG 1").ToString()
+                                        Grade_TB3.Text = reader("GE 2").ToString()
+                                        Grade_TB4.Text = reader("GE MATH").ToString()
+                                        Grade_TB5.Text = reader("GE 1").ToString()
+                                        Grade_TB6.Text = reader("GE FIL 1").ToString()
+                                        Grade_TB7.Text = reader("PE 1").ToString()
+                                        Grade_TB8.Text = reader("NSTP 1").ToString()
+
+                                    ElseIf Year_CB.Text = "1st" And Sem_CB.Text = "2nd" Then
+
+                                        Course_Label1.Text = "DISCRETE"
+                                        Course_Label2.Text = "PROG 2"
+                                        Course_Label3.Text = "GE 3"
+                                        Course_Label4.Text = "HUM"
+                                        Course_Label5.Text = "GE FIL 2"
+                                        Course_Label6.Text = "GEEL 2"
+                                        Course_Label7.Text = "PE 2"
+                                        Course_Label8.Text = "NSTP 2"
+
+                                        Grade_TB1.Text = reader("DISCRETE").ToString()
+                                        Grade_TB2.Text = reader("PROG 2").ToString()
+                                        Grade_TB3.Text = reader("GE 3").ToString()
+                                        Grade_TB4.Text = reader("HUM").ToString()
+                                        Grade_TB5.Text = reader("GE FIL 2").ToString()
+                                        Grade_TB6.Text = reader("GEEL 2").ToString()
+                                        Grade_TB7.Text = reader("PE 2").ToString()
+                                        Grade_TB8.Text = reader("NSTP 2").ToString()
+
+                                    ElseIf Year_CB.Text = "2nd" And Sem_CB.Text = "1st" Then
+
+                                        Course_Label1.Text = "PROG 3"
+                                        Course_Label2.Text = "ELECT 1"
+                                        Course_Label3.Text = "GE 4"
+                                        Course_Label4.Text = "GE 12"
+                                        Course_Label5.Text = "SIA 1"
+                                        Course_Label6.Text = "SP"
+                                        Course_Label7.Text = "GE SCI"
+                                        Course_Label8.Text = "PE 3"
+
+                                        Grade_TB1.Text = reader("PROG 3").ToString()
+                                        Grade_TB2.Text = reader("ELECT 1").ToString()
+                                        Grade_TB3.Text = reader("GE 4").ToString()
+                                        Grade_TB4.Text = reader("GE 12").ToString()
+                                        Grade_TB5.Text = reader("SIA 1").ToString()
+                                        Grade_TB6.Text = reader("SP").ToString()
+                                        Grade_TB7.Text = reader("GE SCI").ToString()
+                                        Grade_TB8.Text = reader("PE 3").ToString()
+
+                                    ElseIf Year_CB.Text = "2nd" And Sem_CB.Text = "2nd" Then
+
+                                        Course_Label1.Text = "ACSS"
+                                        Course_Label2.Text = "ELECT 2"
+                                        Course_Label3.Text = "NET 1"
+                                        Course_Label4.Text = "GE 5"
+                                        Course_Label5.Text = "FUDBS"
+                                        Course_Label6.Text = "SSD"
+                                        Course_Label7.Text = "IPTECH"
+                                        Course_Label8.Text = "PE 4"
+
+                                        Grade_TB1.Text = reader("ACSS").ToString()
+                                        Grade_TB2.Text = reader("ELECT 2").ToString()
+                                        Grade_TB3.Text = reader("NET 1").ToString()
+                                        Grade_TB4.Text = reader("GE 5").ToString()
+                                        Grade_TB5.Text = reader("FUDBS").ToString()
+                                        Grade_TB6.Text = reader("SSD").ToString()
+                                        Grade_TB7.Text = reader("IPTECH").ToString()
+                                        Grade_TB8.Text = reader("PE 4").ToString()
+
+                                    ElseIf Year_CB.Text = "3rd" And Sem_CB.Text = "1st" Then
+
+                                        Course_Label1.Text = "NET 2"
+                                        Course_Label2.Text = "IM 1"
+                                        Course_Label3.Text = "APPSDEV 1"
+                                        Course_Label4.Text = "OS"
+                                        Course_Label5.Text = "IAS 1"
+                                        Course_Label6.Text = "HCI"
+                                        Course_Label7.Text = "ADBS"
+                                        Course_Label8.Text = "ELECT 3"
+
+                                        Grade_TB1.Text = reader("NET 2").ToString()
+                                        Grade_TB2.Text = reader("IM 1").ToString()
+                                        Grade_TB3.Text = reader("APPSDEV 1").ToString()
+                                        Grade_TB4.Text = reader("OS").ToString()
+                                        Grade_TB5.Text = reader("IAS 1").ToString()
+                                        Grade_TB6.Text = reader("HCI").ToString()
+                                        Grade_TB7.Text = reader("ADBS").ToString()
+                                        Grade_TB8.Text = reader("ELECT 3").ToString()
+
+                                    ElseIf Year_CB.Text = "3rd" And Sem_CB.Text = "2nd" Then
+
+                                        Course_Label1.Text = "GE RIZAL"
+                                        Course_Label2.Text = "IM 2"
+                                        Course_Label3.Text = "QM"
+                                        Course_Label4.Text = "SA"
+                                        Course_Label5.Text = "IAS 2"
+                                        Course_Label6.Text = "CAPSTONE 1"
+                                        Course_Label7.Text = "ELECT 4"
+
+                                        Grade_TB1.Text = reader("GE RIZAL").ToString()
+                                        Grade_TB2.Text = reader("IM 2").ToString()
+                                        Grade_TB3.Text = reader("QM").ToString()
+                                        Grade_TB4.Text = reader("SA").ToString()
+                                        Grade_TB5.Text = reader("IAS 2").ToString()
+                                        Grade_TB6.Text = reader("CAPSTONE 1").ToString()
+                                        Grade_TB7.Text = reader("ELECT 4").ToString()
+
+                                    ElseIf Year_CB.Text = "4th" And Sem_CB.Text = "1st" Then
+
+                                        Course_Label1.Text = "CAPSTONE 2"
+
+                                        Grade_TB1.Text = reader("CAPSTONE 2").ToString()
+
+                                    ElseIf Year_CB.Text = "4th" And Sem_CB.Text = "2nd" Then
+                                        Course_Label1.Text = " PRACTICUM"
+
+                                        Grade_TB1.Text = reader("PRACTICUM").ToString()
+
+                                    End If
+                                ElseIf program = "BSCPE" Then
+                                    If Year_CB.Text = "1st" And Sem_CB.Text = "1st" Then
+
+                                        Course_Label1.Text = "Subject 1"
+
+
+
+                                        Grade_TB1.Text = reader("SUBJECT 1").ToString()
+
+                                    Else
+
+                                    End If
+                                End If
+                            End If
+                        End Using
+
+                    Catch ex As Exception
+
+                    End Try
+                End Using
+            End Using
+            connection.Close()
+
+        End If
+    End Sub
+
+
+
+
     ' STUDENT PANEL - END
 
 
@@ -871,6 +1067,9 @@ Public Class Admin_Main
         About.Show()
 
     End Sub
+
+
+
     ' ABOUT PANEL - END
 
 
