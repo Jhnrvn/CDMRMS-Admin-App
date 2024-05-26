@@ -1128,10 +1128,10 @@ Partial Class Admin_Main
         Me.Label10.ForeColor = System.Drawing.Color.Black
         Me.Label10.Location = New System.Drawing.Point(8, 16)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(462, 40)
+        Me.Label10.Size = New System.Drawing.Size(333, 40)
         Me.Label10.TabIndex = 2
-        Me.Label10.Text = "1. Select a college program from the college program Dropdown " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "    option  to lo" &
-    "ad the student list into the table."
+        Me.Label10.Text = "1. Select from the college program Dropdown " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "    option  to load the student lis" &
+    "t into the table."
         '
         'Label4
         '
@@ -1388,9 +1388,8 @@ Partial Class Admin_Main
         Me.Course_Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Course_Label8.Location = New System.Drawing.Point(18, 306)
         Me.Course_Label8.Name = "Course_Label8"
-        Me.Course_Label8.Size = New System.Drawing.Size(77, 18)
+        Me.Course_Label8.Size = New System.Drawing.Size(0, 18)
         Me.Course_Label8.TabIndex = 15
-        Me.Course_Label8.Text = "IT COMP"
         '
         'Course_Label7
         '
@@ -1398,9 +1397,8 @@ Partial Class Admin_Main
         Me.Course_Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Course_Label7.Location = New System.Drawing.Point(18, 270)
         Me.Course_Label7.Name = "Course_Label7"
-        Me.Course_Label7.Size = New System.Drawing.Size(77, 18)
+        Me.Course_Label7.Size = New System.Drawing.Size(0, 18)
         Me.Course_Label7.TabIndex = 14
-        Me.Course_Label7.Text = "IT COMP"
         '
         'Course_Label6
         '
@@ -1408,9 +1406,8 @@ Partial Class Admin_Main
         Me.Course_Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Course_Label6.Location = New System.Drawing.Point(18, 234)
         Me.Course_Label6.Name = "Course_Label6"
-        Me.Course_Label6.Size = New System.Drawing.Size(77, 18)
+        Me.Course_Label6.Size = New System.Drawing.Size(0, 18)
         Me.Course_Label6.TabIndex = 13
-        Me.Course_Label6.Text = "IT COMP"
         '
         'Course_Label5
         '
@@ -1418,9 +1415,8 @@ Partial Class Admin_Main
         Me.Course_Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Course_Label5.Location = New System.Drawing.Point(18, 198)
         Me.Course_Label5.Name = "Course_Label5"
-        Me.Course_Label5.Size = New System.Drawing.Size(77, 18)
+        Me.Course_Label5.Size = New System.Drawing.Size(0, 18)
         Me.Course_Label5.TabIndex = 12
-        Me.Course_Label5.Text = "IT COMP"
         '
         'Course_Label4
         '
@@ -1428,9 +1424,8 @@ Partial Class Admin_Main
         Me.Course_Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Course_Label4.Location = New System.Drawing.Point(18, 162)
         Me.Course_Label4.Name = "Course_Label4"
-        Me.Course_Label4.Size = New System.Drawing.Size(77, 18)
+        Me.Course_Label4.Size = New System.Drawing.Size(0, 18)
         Me.Course_Label4.TabIndex = 11
-        Me.Course_Label4.Text = "IT COMP"
         '
         'Course_Label3
         '
@@ -1438,9 +1433,8 @@ Partial Class Admin_Main
         Me.Course_Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Course_Label3.Location = New System.Drawing.Point(18, 126)
         Me.Course_Label3.Name = "Course_Label3"
-        Me.Course_Label3.Size = New System.Drawing.Size(77, 18)
+        Me.Course_Label3.Size = New System.Drawing.Size(0, 18)
         Me.Course_Label3.TabIndex = 10
-        Me.Course_Label3.Text = "IT COMP"
         '
         'Course_Label2
         '
@@ -1448,9 +1442,8 @@ Partial Class Admin_Main
         Me.Course_Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Course_Label2.Location = New System.Drawing.Point(18, 90)
         Me.Course_Label2.Name = "Course_Label2"
-        Me.Course_Label2.Size = New System.Drawing.Size(77, 18)
+        Me.Course_Label2.Size = New System.Drawing.Size(0, 18)
         Me.Course_Label2.TabIndex = 9
-        Me.Course_Label2.Text = "IT COMP"
         '
         'Course_Label1
         '
@@ -1458,87 +1451,86 @@ Partial Class Admin_Main
         Me.Course_Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Course_Label1.Location = New System.Drawing.Point(18, 54)
         Me.Course_Label1.Name = "Course_Label1"
-        Me.Course_Label1.Size = New System.Drawing.Size(77, 18)
+        Me.Course_Label1.Size = New System.Drawing.Size(0, 18)
         Me.Course_Label1.TabIndex = 8
-        Me.Course_Label1.Text = "IT COMP"
         '
         'Grade_TB8
         '
-        Me.Grade_TB8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Grade_TB8.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.Grade_TB8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Grade_TB8.Location = New System.Drawing.Point(154, 301)
         Me.Grade_TB8.Name = "Grade_TB8"
-        Me.Grade_TB8.Size = New System.Drawing.Size(88, 30)
+        Me.Grade_TB8.Size = New System.Drawing.Size(88, 23)
         Me.Grade_TB8.TabIndex = 7
         Me.Grade_TB8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Grade_TB7
         '
-        Me.Grade_TB7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Grade_TB7.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.Grade_TB7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Grade_TB7.Location = New System.Drawing.Point(154, 265)
         Me.Grade_TB7.Name = "Grade_TB7"
-        Me.Grade_TB7.Size = New System.Drawing.Size(88, 30)
+        Me.Grade_TB7.Size = New System.Drawing.Size(88, 23)
         Me.Grade_TB7.TabIndex = 6
         Me.Grade_TB7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Grade_TB6
         '
-        Me.Grade_TB6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Grade_TB6.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.Grade_TB6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Grade_TB6.Location = New System.Drawing.Point(154, 229)
         Me.Grade_TB6.Name = "Grade_TB6"
-        Me.Grade_TB6.Size = New System.Drawing.Size(88, 30)
+        Me.Grade_TB6.Size = New System.Drawing.Size(88, 23)
         Me.Grade_TB6.TabIndex = 5
         Me.Grade_TB6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Grade_TB5
         '
-        Me.Grade_TB5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Grade_TB5.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.Grade_TB5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Grade_TB5.Location = New System.Drawing.Point(154, 193)
         Me.Grade_TB5.Name = "Grade_TB5"
-        Me.Grade_TB5.Size = New System.Drawing.Size(88, 30)
+        Me.Grade_TB5.Size = New System.Drawing.Size(88, 23)
         Me.Grade_TB5.TabIndex = 4
         Me.Grade_TB5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Grade_TB4
         '
-        Me.Grade_TB4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Grade_TB4.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.Grade_TB4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Grade_TB4.Location = New System.Drawing.Point(154, 157)
         Me.Grade_TB4.Name = "Grade_TB4"
-        Me.Grade_TB4.Size = New System.Drawing.Size(88, 30)
+        Me.Grade_TB4.Size = New System.Drawing.Size(88, 23)
         Me.Grade_TB4.TabIndex = 3
         Me.Grade_TB4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Grade_TB3
         '
-        Me.Grade_TB3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Grade_TB3.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.Grade_TB3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Grade_TB3.Location = New System.Drawing.Point(154, 121)
         Me.Grade_TB3.Name = "Grade_TB3"
-        Me.Grade_TB3.Size = New System.Drawing.Size(88, 30)
+        Me.Grade_TB3.Size = New System.Drawing.Size(88, 23)
         Me.Grade_TB3.TabIndex = 2
         Me.Grade_TB3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Grade_TB2
         '
-        Me.Grade_TB2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Grade_TB2.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.Grade_TB2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Grade_TB2.Location = New System.Drawing.Point(154, 85)
         Me.Grade_TB2.Name = "Grade_TB2"
-        Me.Grade_TB2.Size = New System.Drawing.Size(88, 30)
+        Me.Grade_TB2.Size = New System.Drawing.Size(88, 23)
         Me.Grade_TB2.TabIndex = 1
         Me.Grade_TB2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Grade_TB1
         '
-        Me.Grade_TB1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Grade_TB1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.Grade_TB1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Grade_TB1.Location = New System.Drawing.Point(154, 49)
         Me.Grade_TB1.Name = "Grade_TB1"
-        Me.Grade_TB1.Size = New System.Drawing.Size(88, 30)
+        Me.Grade_TB1.Size = New System.Drawing.Size(88, 23)
         Me.Grade_TB1.TabIndex = 0
         Me.Grade_TB1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '

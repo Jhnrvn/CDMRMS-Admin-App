@@ -1034,12 +1034,163 @@ Public Class Admin_Main
                                     If Year_CB.Text = "1st" And Sem_CB.Text = "1st" Then
 
                                         Course_Label1.Text = "Subject 1"
-
-
+                                        Course_Label2.Text = "Subject 2"
+                                        Course_Label3.Text = "Subject 3"
+                                        Course_Label4.Text = "Subject 4"
+                                        Course_Label5.Text = "Subject 5"
+                                        Course_Label6.Text = "Subject 6"
+                                        Course_Label7.Text = "PE 1"
+                                        Course_Label8.Text = "NSTP 1"
 
                                         Grade_TB1.Text = reader("SUBJECT 1").ToString()
+                                        Grade_TB2.Text = reader("SUBJECT 2").ToString()
+                                        Grade_TB3.Text = reader("SUBJECT 3").ToString()
+                                        Grade_TB4.Text = reader("SUBJECT 4").ToString()
+                                        Grade_TB5.Text = reader("SUBJECT 5").ToString()
+                                        Grade_TB6.Text = reader("SUBJECT 6").ToString()
+                                        Grade_TB7.Text = reader("PE 1").ToString()
+                                        Grade_TB8.Text = reader("NSTP 1").ToString()
 
-                                    Else
+                                    ElseIf Year_CB.Text = "1st" And Sem_CB.Text = "2nd" Then
+
+                                        Course_Label1.Text = "Subject 7"
+                                        Course_Label2.Text = "Subject 8"
+                                        Course_Label3.Text = "Subject 9"
+                                        Course_Label4.Text = "Subject 10"
+                                        Course_Label5.Text = "Subject 11"
+                                        Course_Label6.Text = "Subject 12"
+                                        Course_Label7.Text = "PE 2"
+                                        Course_Label8.Text = "NSTP 2"
+
+                                        Grade_TB1.Text = reader("SUBJECT 7").ToString()
+                                        Grade_TB2.Text = reader("SUBJECT 8").ToString()
+                                        Grade_TB3.Text = reader("SUBJECT 9").ToString()
+                                        Grade_TB4.Text = reader("SUBJECT 10").ToString()
+                                        Grade_TB5.Text = reader("SUBJECT 11").ToString()
+                                        Grade_TB6.Text = reader("SUBJECT 12").ToString()
+                                        Grade_TB7.Text = reader("PE 2").ToString()
+                                        Grade_TB8.Text = reader("NSTP 2").ToString()
+
+                                    ElseIf Year_CB.Text = "2nd" And Sem_CB.Text = "1st" Then
+
+                                        Course_Label1.Text = "Subject 13"
+                                        Course_Label2.Text = "Subject 14"
+                                        Course_Label3.Text = "Subject 15"
+                                        Course_Label4.Text = "Subject 16"
+                                        Course_Label5.Text = "Subject 17"
+                                        Course_Label6.Text = "Subject 18"
+                                        Course_Label7.Text = "Subject 19"
+                                        Course_Label8.Text = "PE 3"
+
+                                        Grade_TB1.Text = reader("SUBJECT 13").ToString()
+                                        Grade_TB2.Text = reader("SUBJECT 14").ToString()
+                                        Grade_TB3.Text = reader("SUBJECT 15").ToString()
+                                        Grade_TB4.Text = reader("SUBJECT 16").ToString()
+                                        Grade_TB5.Text = reader("SUBJECT 17").ToString()
+                                        Grade_TB6.Text = reader("SUBJECT 18").ToString()
+                                        Grade_TB7.Text = reader("SUBJECT 19").ToString()
+                                        Grade_TB8.Text = reader("PE 3").ToString()
+
+                                    ElseIf Year_CB.Text = "2nd" And Sem_CB.Text = "2nd" Then
+
+                                        Course_Label1.Text = "Subject 20"
+                                        Course_Label2.Text = "Subject 21"
+                                        Course_Label3.Text = "Subject 22"
+                                        Course_Label4.Text = "Subject 23"
+                                        Course_Label5.Text = "Subject 24"
+                                        Course_Label6.Text = "Subject 25"
+                                        Course_Label7.Text = "Subject 26"
+                                        Course_Label8.Text = "PE 4"
+
+                                        Grade_TB1.Text = reader("SUBJECT 20").ToString()
+                                        Grade_TB2.Text = reader("SUBJECT 21").ToString()
+                                        Grade_TB3.Text = reader("SUBJECT 22").ToString()
+                                        Grade_TB4.Text = reader("SUBJECT 23").ToString()
+                                        Grade_TB5.Text = reader("SUBJECT 24").ToString()
+                                        Grade_TB6.Text = reader("SUBJECT 25").ToString()
+                                        Grade_TB7.Text = reader("SUBJECT 26").ToString()
+                                        Grade_TB8.Text = reader("PE 4").ToString()
+
+
+                                    ElseIf Year_CB.Text = "3rd" And Sem_CB.Text = "1st" Then
+
+                                        Course_Label1.Text = "Subject 27"
+                                        Course_Label2.Text = "Subject 28"
+                                        Course_Label3.Text = "Subject 29"
+                                        Course_Label4.Text = "Subject 30"
+                                        Course_Label5.Text = "Subject 31"
+                                        Course_Label6.Text = "Subject 32"
+                                        Course_Label7.Text = "Subject 33"
+                                        Course_Label8.Text = "Subject 34"
+
+                                        Grade_TB1.Text = reader("SUBJECT 27").ToString()
+                                        Grade_TB2.Text = reader("SUBJECT 28").ToString()
+                                        Grade_TB3.Text = reader("SUBJECT 29").ToString()
+                                        Grade_TB4.Text = reader("SUBJECT 30").ToString()
+                                        Grade_TB5.Text = reader("SUBJECT 31").ToString()
+                                        Grade_TB6.Text = reader("SUBJECT 32").ToString()
+                                        Grade_TB7.Text = reader("SUBJECT 33").ToString()
+                                        Grade_TB8.Text = reader("SUBJECT 34").ToString()
+
+                                    ElseIf Year_CB.Text = "3rd" And Sem_CB.Text = "2nd" Then
+
+                                        Course_Label1.Text = "Subject 35"
+                                        Course_Label2.Text = "Subject 36"
+                                        Course_Label3.Text = "Subject 37"
+                                        Course_Label4.Text = "Subject 38"
+                                        Course_Label5.Text = "Subject 39"
+                                        Course_Label6.Text = "Subject 40"
+                                        Course_Label7.Text = "Subject 41"
+                                        Course_Label8.Text = "Subject 42"
+
+                                        Grade_TB1.Text = reader("SUBJECT 35").ToString()
+                                        Grade_TB2.Text = reader("SUBJECT 36").ToString()
+                                        Grade_TB3.Text = reader("SUBJECT 37").ToString()
+                                        Grade_TB4.Text = reader("SUBJECT 38").ToString()
+                                        Grade_TB5.Text = reader("SUBJECT 39").ToString()
+                                        Grade_TB6.Text = reader("SUBJECT 40").ToString()
+                                        Grade_TB7.Text = reader("SUBJECT 41").ToString()
+                                        Grade_TB8.Text = reader("SUBJECT 41").ToString()
+
+                                    ElseIf Year_CB.Text = "4th" And Sem_CB.Text = "1st" Then
+
+                                        Course_Label1.Text = "Subject 43"
+                                        Course_Label2.Text = "Subject 44"
+                                        Course_Label3.Text = "Subject 45"
+                                        Course_Label4.Text = "Subject 46"
+                                        Course_Label5.Text = "Subject 47"
+                                        Course_Label6.Text = "Subject 48"
+                                        Course_Label7.Text = "Subject 49"
+                                        Course_Label8.Text = "Subject 50"
+
+                                        Grade_TB1.Text = reader("SUBJECT 43").ToString()
+                                        Grade_TB2.Text = reader("SUBJECT 44").ToString()
+                                        Grade_TB3.Text = reader("SUBJECT 45").ToString()
+                                        Grade_TB4.Text = reader("SUBJECT 46").ToString()
+                                        Grade_TB5.Text = reader("SUBJECT 47").ToString()
+                                        Grade_TB6.Text = reader("SUBJECT 48").ToString()
+                                        Grade_TB7.Text = reader("SUBJECT 49").ToString()
+                                        Grade_TB8.Text = reader("SUBJECT 50").ToString()
+
+                                    ElseIf Year_CB.Text = "4th" And Sem_CB.Text = "2nd" Then
+
+                                        Course_Label1.Text = "Subject 51"
+                                        Course_Label2.Text = "Subject 52"
+                                        Course_Label3.Text = "Subject 53"
+                                        Course_Label4.Text = "Subject 54"
+                                        Course_Label5.Text = "Subject 55"
+                                        Course_Label6.Text = "Subject 56"
+                                        Course_Label7.Text = "Subject 57"
+                                        Course_Label8.Text = "Subject 58"
+
+                                        Grade_TB1.Text = reader("SUBJECT 51").ToString()
+                                        Grade_TB2.Text = reader("SUBJECT 52").ToString()
+                                        Grade_TB3.Text = reader("SUBJECT 53").ToString()
+                                        Grade_TB4.Text = reader("SUBJECT 54").ToString()
+                                        Grade_TB5.Text = reader("SUBJECT 55").ToString()
+                                        Grade_TB6.Text = reader("SUBJECT 56").ToString()
+                                        Grade_TB7.Text = reader("SUBJECT 57").ToString()
+                                        Grade_TB8.Text = reader("SUBJECT 58").ToString()
 
                                     End If
                                 End If
