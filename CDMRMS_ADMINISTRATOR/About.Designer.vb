@@ -119,7 +119,7 @@ Partial Class About
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.Black
-        Me.Label12.Location = New System.Drawing.Point(465, 307)
+        Me.Label12.Location = New System.Drawing.Point(296, 398)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(168, 22)
         Me.Label12.TabIndex = 95
@@ -130,7 +130,7 @@ Partial Class About
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.Black
-        Me.Label11.Location = New System.Drawing.Point(124, 307)
+        Me.Label11.Location = New System.Drawing.Point(294, 360)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(171, 22)
         Me.Label11.TabIndex = 94
@@ -141,7 +141,7 @@ Partial Class About
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.Black
-        Me.Label10.Location = New System.Drawing.Point(124, 274)
+        Me.Label10.Location = New System.Drawing.Point(293, 292)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(176, 22)
         Me.Label10.TabIndex = 93
@@ -152,7 +152,7 @@ Partial Class About
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.Black
-        Me.Label9.Location = New System.Drawing.Point(465, 274)
+        Me.Label9.Location = New System.Drawing.Point(283, 324)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(194, 22)
         Me.Label9.TabIndex = 92
@@ -163,7 +163,7 @@ Partial Class About
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Bernard MT Condensed", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.Black
-        Me.Label8.Location = New System.Drawing.Point(322, 237)
+        Me.Label8.Location = New System.Drawing.Point(322, 247)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(131, 24)
         Me.Label8.TabIndex = 91
