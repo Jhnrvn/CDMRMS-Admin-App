@@ -236,7 +236,7 @@ Public Class EvaluateStudentGrades
 
             ElseIf year = "3rd Year" Then
                 grade = Convert.ToDouble(row("3rd Year 1st Sem GWA"))
-                updatequery = "UPDATE bsit SET `2nd Year 1st Sem GWA` = @grade, `3rd Year 1st Sem Honor Status` = @honorStatus3 WHERE `Student ID` = @studentid"
+                updatequery = "UPDATE bsit SET `3rd Year 1st Sem GWA` = @grade, `3rd Year 1st Sem Honor Status` = @honorStatus3 WHERE `Student ID` = @studentid"
 
                 Dim updatecommand As New MySqlCommand(updatequery, connection)
 
@@ -258,7 +258,7 @@ Public Class EvaluateStudentGrades
 
             ElseIf year = "4th Year" Then
                 grade = Convert.ToDouble(row("4th Year 1st Sem GWA"))
-                updatequery = "UPDATE bsit SET `2nd Year 1st Sem GWA` = @grade, `4th Year 1st Sem Honor Status` = @honorStatus4 WHERE `Student ID` = @studentid"
+                updatequery = "UPDATE bsit SET `4th Year 1st Sem GWA` = @grade, `4th Year 1st Sem Honor Status` = @honorStatus4 WHERE `Student ID` = @studentid"
 
                 Dim updatecommand As New MySqlCommand(updatequery, connection)
 
@@ -616,10 +616,25 @@ Public Class EvaluateStudentGrades
             Dim year As String = Convert.ToString(row("Year"))
 
             Dim grade As Double
+
             Dim honorStatus1 As Boolean = Convert.ToBoolean(row("1st Year 2nd Sem Honor Status"))
             Dim honorStatus2 As Boolean = Convert.ToBoolean(row("2nd Year 2nd Sem Honor Status"))
             Dim honorStatus3 As Boolean = Convert.ToBoolean(row("3rd Year 2nd Sem Honor Status"))
             Dim honorStatus4 As Boolean = Convert.ToBoolean(row("4th Year 2nd Sem Honor Status"))
+            Dim honorStatus5 As Boolean = Convert.ToBoolean(row("1st Year 1st Sem Honor Status"))
+            Dim honorStatus6 As Boolean = Convert.ToBoolean(row("2nd Year 1st Sem Honor Status"))
+            Dim honorStatus7 As Boolean = Convert.ToBoolean(row("3rd Year 1st Sem Honor Status"))
+            Dim honorStatus8 As Boolean = Convert.ToBoolean(row("4th Year 1st Sem Honor Status"))
+
+            Dim grade1 As Double = Convert.ToDouble(row("1st Year 1st Sem GWA"))
+            Dim grade2 As Double = Convert.ToDouble(row("2nd Year 1st Sem GWA"))
+            Dim grade3 As Double = Convert.ToDouble(row("3rd Year 1st Sem GWA"))
+            Dim grade4 As Double = Convert.ToDouble(row("4th Year 1st Sem GWA"))
+            Dim grade5 As Double = Convert.ToDouble(row("1st Year 2nd Sem GWA"))
+            Dim grade6 As Double = Convert.ToDouble(row("2nd Year 2nd Sem GWA"))
+            Dim grade7 As Double = Convert.ToDouble(row("3rd Year 2nd Sem GWA"))
+            Dim grade8 As Double = Convert.ToDouble(row("4th Year 2nd Sem GWA"))
+
             Dim updatequery As String
 
             If year = "1st Year" Then
@@ -698,10 +713,15 @@ Public Class EvaluateStudentGrades
 
                 updatecommand.ExecuteNonQuery()
 
-                If honorStatus4 = True Then
+                If honorStatus1 = True And honorStatus2 = True And honorStatus3 = True And honorStatus4 = True And honorStatus5 = True And honorStatus6 = True And honorStatus7 = True And honorStatus8 = True Then
 
-                    Dim query As String = "INSERT INTO deanslist (`Student ID`, `Student Name`, `Program`,`Year`, `Section`, `GWA` ) SELECT `Student ID`, `Student Name`, `Program`, `Year`,`Section`,`4th Year 2nd Sem GWA` FROM bsit WHERE `Student ID` = @studentID"
+                    Dim finalgrade As Double = (grade1 + grade2 + grade3 + grade4 + grade5 + grade6 + grade7 + grade8) / 8
+
+                    Dim query As String = "INSERT INTO deanslist (`Student ID`, `Student Name`, `Program`, `Year`, `Section`, `GWA`) " &
+                     "SELECT `Student ID`, `Student Name`, `Program`, `Year`, `Section`, @finalgrade " &
+                     "FROM bsit WHERE `Student ID` = @studentID"
                     Dim insertcommand As New MySqlCommand(query, connection)
+                    insertcommand.Parameters.AddWithValue("@finalgrade", Math.Round(finalgrade, 2))
                     insertcommand.Parameters.AddWithValue("@studentID", studentID)
                     insertcommand.ExecuteNonQuery()
 

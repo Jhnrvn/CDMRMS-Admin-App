@@ -295,7 +295,7 @@ Public Class Admin_Main
             Try
                 connection.Open()
 
-                Dim query As String = "SELECT `Student ID`, `Student Name`, `Program`, `Year`, `Section`, `GWA` FROM deanslist WHERE `Student ID` LIKE @searchTerm OR `Student Name` LIKE @searchTerm OR `Program` LIKE @searchTerm OR `Year` LIKE @searchTerm  OR `Section` LIKE @searchTerm OR `GWA` LIKE @searchTerm"
+                Dim query As String = "SELECT `Student ID`, `Student Name`, `Program`, `Year`, `Section`, `GWA` FROM deanslist WHERE `Student ID` LIKE @searchTerm OR `Student Name` LIKE @searchTerm OR `Program` LIKE @searchTerm OR `Year` LIKE @searchTerm  OR `Section` LIKE @searchTerm OR `GWA` LIKE @searchTerm ORDER BY `GWA` ASC"
                 Dim command As New MySqlCommand(query, connection)
 
                 command.Parameters.AddWithValue("@searchTerm", "%" & searchTerm & "%")
@@ -875,6 +875,16 @@ Public Class Admin_Main
         Course_Label7.Text = ""
         Course_Label8.Text = ""
 
+        Grade_TB1.Clear()
+        Grade_TB2.Clear()
+        Grade_TB3.Clear()
+        Grade_TB4.Clear()
+        Grade_TB5.Clear()
+        Grade_TB6.Clear()
+        Grade_TB7.Clear()
+        Grade_TB8.Clear()
+        Grade_TB9.Clear()
+
         If e.RowIndex >= 0 Then
 
             Dim selectedRow As DataGridViewRow = StudentlistTable.Rows(e.RowIndex)
@@ -919,6 +929,7 @@ Public Class Admin_Main
                                         Grade_TB6.Text = reader("GE FIL 1").ToString()
                                         Grade_TB7.Text = reader("PE 1").ToString()
                                         Grade_TB8.Text = reader("NSTP 1").ToString()
+                                        Grade_TB9.Text = reader("1st Year 1st Sem GWA")
 
                                     ElseIf Year_CB.Text = "1st" And Sem_CB.Text = "2nd" Then
 
@@ -939,6 +950,7 @@ Public Class Admin_Main
                                         Grade_TB6.Text = reader("GEEL 2").ToString()
                                         Grade_TB7.Text = reader("PE 2").ToString()
                                         Grade_TB8.Text = reader("NSTP 2").ToString()
+                                        Grade_TB9.Text = reader("1st Year 2nd Sem GWA")
 
                                     ElseIf Year_CB.Text = "2nd" And Sem_CB.Text = "1st" Then
 
@@ -959,6 +971,7 @@ Public Class Admin_Main
                                         Grade_TB6.Text = reader("SP").ToString()
                                         Grade_TB7.Text = reader("GE SCI").ToString()
                                         Grade_TB8.Text = reader("PE 3").ToString()
+                                        Grade_TB9.Text = reader("2nd Year 1st Sem GWA")
 
                                     ElseIf Year_CB.Text = "2nd" And Sem_CB.Text = "2nd" Then
 
@@ -979,6 +992,7 @@ Public Class Admin_Main
                                         Grade_TB6.Text = reader("SSD").ToString()
                                         Grade_TB7.Text = reader("IPTECH").ToString()
                                         Grade_TB8.Text = reader("PE 4").ToString()
+                                        Grade_TB9.Text = reader("2nd Year 2nd Sem GWA")
 
                                     ElseIf Year_CB.Text = "3rd" And Sem_CB.Text = "1st" Then
 
@@ -999,6 +1013,7 @@ Public Class Admin_Main
                                         Grade_TB6.Text = reader("HCI").ToString()
                                         Grade_TB7.Text = reader("ADBS").ToString()
                                         Grade_TB8.Text = reader("ELECT 3").ToString()
+                                        Grade_TB9.Text = reader("3rd Year 1st Sem GWA")
 
                                     ElseIf Year_CB.Text = "3rd" And Sem_CB.Text = "2nd" Then
 
@@ -1017,18 +1032,20 @@ Public Class Admin_Main
                                         Grade_TB5.Text = reader("IAS 2").ToString()
                                         Grade_TB6.Text = reader("CAPSTONE 1").ToString()
                                         Grade_TB7.Text = reader("ELECT 4").ToString()
+                                        Grade_TB9.Text = reader("3rd Year 2nd Sem GWA")
 
                                     ElseIf Year_CB.Text = "4th" And Sem_CB.Text = "1st" Then
 
                                         Course_Label1.Text = "CAPSTONE 2"
 
                                         Grade_TB1.Text = reader("CAPSTONE 2").ToString()
+                                        Grade_TB9.Text = reader("4th Year 1st Sem GWA")
 
                                     ElseIf Year_CB.Text = "4th" And Sem_CB.Text = "2nd" Then
                                         Course_Label1.Text = " PRACTICUM"
 
                                         Grade_TB1.Text = reader("PRACTICUM").ToString()
-
+                                        Grade_TB9.Text = reader("4th Year 2nd Sem GWA")
                                     End If
                                 ElseIf program = "BSCPE" Then
                                     If Year_CB.Text = "1st" And Sem_CB.Text = "1st" Then
@@ -1050,6 +1067,7 @@ Public Class Admin_Main
                                         Grade_TB6.Text = reader("SUBJECT 6").ToString()
                                         Grade_TB7.Text = reader("PE 1").ToString()
                                         Grade_TB8.Text = reader("NSTP 1").ToString()
+                                        Grade_TB9.Text = reader("1st Year 1st Sem GWA")
 
                                     ElseIf Year_CB.Text = "1st" And Sem_CB.Text = "2nd" Then
 
@@ -1070,6 +1088,7 @@ Public Class Admin_Main
                                         Grade_TB6.Text = reader("SUBJECT 12").ToString()
                                         Grade_TB7.Text = reader("PE 2").ToString()
                                         Grade_TB8.Text = reader("NSTP 2").ToString()
+                                        Grade_TB9.Text = reader("1st Year 2nd Sem GWA")
 
                                     ElseIf Year_CB.Text = "2nd" And Sem_CB.Text = "1st" Then
 
@@ -1090,6 +1109,7 @@ Public Class Admin_Main
                                         Grade_TB6.Text = reader("SUBJECT 18").ToString()
                                         Grade_TB7.Text = reader("SUBJECT 19").ToString()
                                         Grade_TB8.Text = reader("PE 3").ToString()
+                                        Grade_TB9.Text = reader("2nd Year 1st Sem GWA")
 
                                     ElseIf Year_CB.Text = "2nd" And Sem_CB.Text = "2nd" Then
 
@@ -1110,6 +1130,7 @@ Public Class Admin_Main
                                         Grade_TB6.Text = reader("SUBJECT 25").ToString()
                                         Grade_TB7.Text = reader("SUBJECT 26").ToString()
                                         Grade_TB8.Text = reader("PE 4").ToString()
+                                        Grade_TB9.Text = reader("2nd Year 2nd Sem GWA")
 
 
                                     ElseIf Year_CB.Text = "3rd" And Sem_CB.Text = "1st" Then
@@ -1131,6 +1152,7 @@ Public Class Admin_Main
                                         Grade_TB6.Text = reader("SUBJECT 32").ToString()
                                         Grade_TB7.Text = reader("SUBJECT 33").ToString()
                                         Grade_TB8.Text = reader("SUBJECT 34").ToString()
+                                        Grade_TB9.Text = reader("3rd Year 1st Sem GWA")
 
                                     ElseIf Year_CB.Text = "3rd" And Sem_CB.Text = "2nd" Then
 
@@ -1151,6 +1173,7 @@ Public Class Admin_Main
                                         Grade_TB6.Text = reader("SUBJECT 40").ToString()
                                         Grade_TB7.Text = reader("SUBJECT 41").ToString()
                                         Grade_TB8.Text = reader("SUBJECT 41").ToString()
+                                        Grade_TB9.Text = reader("3rd Year 2nd Sem GWA")
 
                                     ElseIf Year_CB.Text = "4th" And Sem_CB.Text = "1st" Then
 
@@ -1171,6 +1194,7 @@ Public Class Admin_Main
                                         Grade_TB6.Text = reader("SUBJECT 48").ToString()
                                         Grade_TB7.Text = reader("SUBJECT 49").ToString()
                                         Grade_TB8.Text = reader("SUBJECT 50").ToString()
+                                        Grade_TB9.Text = reader("4th Year 1st Sem GWA")
 
                                     ElseIf Year_CB.Text = "4th" And Sem_CB.Text = "2nd" Then
 
@@ -1191,6 +1215,7 @@ Public Class Admin_Main
                                         Grade_TB6.Text = reader("SUBJECT 56").ToString()
                                         Grade_TB7.Text = reader("SUBJECT 57").ToString()
                                         Grade_TB8.Text = reader("SUBJECT 58").ToString()
+                                        Grade_TB9.Text = reader("4th Year 2nd Sem GWA")
 
                                     End If
                                 End If
@@ -1218,7 +1243,6 @@ Public Class Admin_Main
         About.Show()
 
     End Sub
-
 
     ' ABOUT PANEL - END
 
