@@ -29,7 +29,6 @@ Partial Class EvaluateStudentGrades
         Me.Evaluate_Label = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Evaluate_Btn = New System.Windows.Forms.Button()
@@ -38,12 +37,13 @@ Partial Class EvaluateStudentGrades
         Me.InstructorInstruction_1 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.SemesterSelector = New MetroFramework.Controls.MetroComboBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
         Me.Panel9.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -107,16 +107,6 @@ Partial Class EvaluateStudentGrades
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(781, 478)
         Me.Panel3.TabIndex = 70
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(515, 143)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(238, 224)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.PictureBox1.TabIndex = 77
-        Me.PictureBox1.TabStop = False
         '
         'Panel4
         '
@@ -214,6 +204,16 @@ Partial Class EvaluateStudentGrades
         Me.SemesterSelector.UseCustomForeColor = True
         Me.SemesterSelector.UseSelectable = True
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.CDMRMS_ADMINISTRATOR.My.Resources.Resources.CdM_Logo
+        Me.PictureBox1.Location = New System.Drawing.Point(515, 143)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(238, 224)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.PictureBox1.TabIndex = 77
+        Me.PictureBox1.TabStop = False
+        '
         'EvaluateStudentGrades
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -230,11 +230,11 @@ Partial Class EvaluateStudentGrades
         Me.Panel2.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
         Me.Panel9.ResumeLayout(False)
         Me.Panel9.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

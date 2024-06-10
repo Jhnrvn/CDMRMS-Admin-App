@@ -89,6 +89,8 @@ Public Class EvaluateStudentGrades
             Dim gemath As Double = Convert.ToDouble(row("GE MATH"))
             Dim ge1 As Double = Convert.ToDouble(row("GE 1"))
             Dim gefil1 As Double = Convert.ToDouble(row("GE FIL 1"))
+            Dim pe1 As Double = Convert.ToDouble(row("PE 1"))
+            Dim nstp1 As Double = Convert.ToDouble(row("NSTP 1"))
 
             ' 2nd Year 1st Semester Subjects/Courses
             Dim prog3 As Double = Convert.ToDouble(row("PROG 3"))
@@ -98,6 +100,7 @@ Public Class EvaluateStudentGrades
             Dim sia1 As Double = Convert.ToDouble(row("SIA 1"))
             Dim sp As Double = Convert.ToDouble(row("SP"))
             Dim gesci As Double = Convert.ToDouble(row("GE SCI"))
+            Dim pe3 As Double = Convert.ToDouble(row("PE 3"))
 
             '3rd Year 1st Semester Subjects/Courses
             Dim net2 As Double = Convert.ToDouble(row("NET 2"))
@@ -121,7 +124,7 @@ Public Class EvaluateStudentGrades
                 row("1st Year 1st Sem GWA") = grade
 
                 ' Deans lister Validation for 1st Year 1st Sem BSIT
-                If (prog1 > 2.0 Or prog1 < 1) Or (itcomp > 2.0 Or itcomp < 1) Or (ge2 > 2.0 Or ge2 < 1) Or (gemath > 2.0 Or gemath < 1) Or (ge1 > 2.0 Or ge1 < 1) Or (gefil1 > 2.0 Or gefil1 < 1) Then
+                If (prog1 > 2.0 Or prog1 < 1) Or (itcomp > 2.0 Or itcomp < 1) Or (ge2 > 2.0 Or ge2 < 1) Or (gemath > 2.0 Or gemath < 1) Or (ge1 > 2.0 Or ge1 < 1) Or (gefil1 > 2.0 Or gefil1 < 1) Or (pe1 > 2.0 Or pe1 < 1) Or (nstp1 > 2.0 Or nstp1 < 1) Then
                     row("1st Year 1st Sem Honor Status") = honorStatus = False
 
                 Else
@@ -135,7 +138,7 @@ Public Class EvaluateStudentGrades
                 row("2nd Year 1st Sem GWA") = grade
 
                 ' Deans Lister Validation For 2nd Year 1st Sem BSIT
-                If (prog3 > 2.0 Or prog3 < 1) Or (elect1 > 2.0 Or elect1 < 1) Or (ge4 > 2.0 Or ge4 < 1) Or (ge12 > 2.0 Or ge12 < 1) Or (sia1 > 2.0 Or sia1 < 1) Or (sp > 2.0 Or sp < 1) Or (gesci > 2.0 Or gesci < 1) Then
+                If (prog3 > 2.0 Or prog3 < 1) Or (elect1 > 2.0 Or elect1 < 1) Or (ge4 > 2.0 Or ge4 < 1) Or (ge12 > 2.0 Or ge12 < 1) Or (sia1 > 2.0 Or sia1 < 1) Or (sp > 2.0 Or sp < 1) Or (gesci > 2.0 Or gesci < 1) Or (pe3 > 2.0 Or pe3 < 1) Then
                     row("2nd Year 1st Sem Honor Status") = honorStatus = False
 
                 Else
@@ -312,6 +315,9 @@ Public Class EvaluateStudentGrades
             Dim subject4 As Double = Convert.ToDouble(row("SUBJECT 4"))
             Dim subject5 As Double = Convert.ToDouble(row("SUBJECT 5"))
             Dim subject6 As Double = Convert.ToDouble(row("SUBJECT 6"))
+            Dim pe1 As Double = Convert.ToDouble(row("PE 1"))
+            Dim nstp1 As Double = Convert.ToDouble(row("NSTP 1"))
+
 
             ' 2nd Year 1st Semester Subjects/Courses
             Dim subject13 As Double = Convert.ToDouble(row("SUBJECT 13"))
@@ -321,6 +327,7 @@ Public Class EvaluateStudentGrades
             Dim subject17 As Double = Convert.ToDouble(row("SUBJECT 17"))
             Dim subject18 As Double = Convert.ToDouble(row("SUBJECT 18"))
             Dim subject19 As Double = Convert.ToDouble(row("SUBJECT 19"))
+            Dim pe3 As Double = Convert.ToDouble(row("PE 3"))
 
             ' 3rd Year 1st Semester Subjects/Courses
             Dim subject27 As Double = Convert.ToDouble(row("SUBJECT 27"))
@@ -351,7 +358,7 @@ Public Class EvaluateStudentGrades
                 row("1st Year 1st Sem GWA") = grade
 
                 ' Deans Lister Validation For 1st Year 1st Sem BSCPE
-                If (subject1 > 2.0 Or subject1 < 1) Or (subject2 > 2.0 Or subject2 < 1) Or (subject3 > 2.0 Or subject3 < 1) Or (subject4 > 2.0 Or subject4 < 1) Or (subject5 > 2.0 Or subject5 < 1) Or (subject6 > 2.0 Or subject6 < 1) Then
+                If (subject1 > 2.0 Or subject1 < 1) Or (subject2 > 2.0 Or subject2 < 1) Or (subject3 > 2.0 Or subject3 < 1) Or (subject4 > 2.0 Or subject4 < 1) Or (subject5 > 2.0 Or subject5 < 1) Or (subject6 > 2.0 Or subject6 < 1) Or (pe1 > 2.0 Or pe1 < 1) Or (nstp1 > 2.0 Or nstp1 < 1) Then
                     row("1st Year 1st Sem Honor Status") = honorStatus = False
                 Else
                     row("1st Year 1st Sem Honor Status") = honorStatus
@@ -364,7 +371,7 @@ Public Class EvaluateStudentGrades
                 row("2nd Year 1st Sem GWA") = grade
 
                 ' Deans Lister Validation For 2nd Year 1st Sem BSCPE
-                If (subject13 > 2.0 Or subject13 < 1) Or (subject14 > 2.0 Or subject14 < 1) Or (subject15 > 2.0 Or subject15 < 1) Or (subject16 > 2.0 Or subject16 < 1) Or (subject17 > 2.0 Or subject17 < 1) Or (subject18 > 2.0 Or subject18 < 1) Or (subject19 > 2.0 Or subject19 < 1) Then
+                If (subject13 > 2.0 Or subject13 < 1) Or (subject14 > 2.0 Or subject14 < 1) Or (subject15 > 2.0 Or subject15 < 1) Or (subject16 > 2.0 Or subject16 < 1) Or (subject17 > 2.0 Or subject17 < 1) Or (subject18 > 2.0 Or subject18 < 1) Or (subject19 > 2.0 Or subject19 < 1) Or (pe3 > 2.0 Or pe3 < 1) Then
                     row("2nd Year 1st Sem Honor Status") = honorStatus = False
                 Else
                     row("2nd Year 1st Sem Honor Status") = honorStatus
@@ -531,6 +538,8 @@ Public Class EvaluateStudentGrades
             Dim hum As Double = Convert.ToDouble(row("HUM"))
             Dim geel2 As Double = Convert.ToDouble(row("GEEL 2"))
             Dim gefil2 As Double = Convert.ToDouble(row("GE FIL 2"))
+            Dim pe2 As Double = Convert.ToDouble(row("PE 2"))
+            Dim nstp2 As Double = Convert.ToDouble(row("NSTP 2"))
 
             ' 2nd Year 2nd Semester Subjects/Courses
             Dim acss As Double = Convert.ToDouble(row("ACSS"))
@@ -540,6 +549,7 @@ Public Class EvaluateStudentGrades
             Dim fudbs As Double = Convert.ToDouble(row("FUDBS"))
             Dim ssd As Double = Convert.ToDouble(row("SSD"))
             Dim ipt As Double = Convert.ToDouble(row("IPTECH"))
+            Dim pe4 As Double = Convert.ToDouble(row("PE 4"))
 
             '3rd Year 2nd Semester Subjects/Courses
             Dim gerizal As Double = Convert.ToDouble(row("GE RIZAL"))
@@ -561,7 +571,7 @@ Public Class EvaluateStudentGrades
                 grade = (discrete + prog2 + ge3 + hum + geel2 + gefil2) / 6
                 row("1st Year 2nd Sem GWA") = grade
 
-                If (discrete > 2.0 Or discrete < 1) Or (prog2 > 2.0 Or prog2 < 1) Or (ge3 > 2.0 Or ge3 < 1) Or (hum > 2.0 Or hum < 1) Or (geel2 > 2.0 Or geel2 < 1) Or (gefil2 > 2.0 Or gefil2 < 1) Then
+                If (discrete > 2.0 Or discrete < 1) Or (prog2 > 2.0 Or prog2 < 1) Or (ge3 > 2.0 Or ge3 < 1) Or (hum > 2.0 Or hum < 1) Or (geel2 > 2.0 Or geel2 < 1) Or (gefil2 > 2.0 Or gefil2 < 1) Or (pe2 > 2.0 Or pe2 < 1) Or (nstp2 > 2.0 Or nstp2 < 1) Then
                     row("1st Year 2nd Sem Honor Status") = honorStatus = False
 
                 Else
@@ -573,7 +583,7 @@ Public Class EvaluateStudentGrades
                 grade = (acss + elect2 + net1 + ge5 + fudbs + ssd + ipt) / 7
                 row("2nd Year 2nd Sem GWA") = grade
 
-                If (acss > 2.0 Or acss < 1) Or (elect2 > 2.0 Or elect2 < 1) Or (net1 > 2.0 Or net1 < 1) Or (ge5 > 2.0 Or ge5 < 1) Or (fudbs > 2.0 Or fudbs < 1) Or (ssd > 2.0 Or ssd < 1) Or (ipt > 2.0 Or ipt < 1) Then
+                If (acss > 2.0 Or acss < 1) Or (elect2 > 2.0 Or elect2 < 1) Or (net1 > 2.0 Or net1 < 1) Or (ge5 > 2.0 Or ge5 < 1) Or (fudbs > 2.0 Or fudbs < 1) Or (ssd > 2.0 Or ssd < 1) Or (ipt > 2.0 Or ipt < 1) Or (pe4 > 2.0 Or pe4 < 1) Then
                     row("2nd Year 2nd Sem Honor Status") = honorStatus = False
 
                 Else
@@ -762,6 +772,8 @@ Public Class EvaluateStudentGrades
             Dim subject10 As Double = Convert.ToDouble(row("SUBJECT 10"))
             Dim subject11 As Double = Convert.ToDouble(row("SUBJECT 11"))
             Dim subject12 As Double = Convert.ToDouble(row("SUBJECT 12"))
+            Dim pe2 As Double = Convert.ToDouble(row("PE 2"))
+            Dim nstp2 As Double = Convert.ToDouble(row("NSTP 2"))
 
             ' 2nd Year 2nd Semester Subjects/Courses
             Dim subject20 As Double = Convert.ToDouble(row("SUBJECT 20"))
@@ -771,6 +783,7 @@ Public Class EvaluateStudentGrades
             Dim subject24 As Double = Convert.ToDouble(row("SUBJECT 24"))
             Dim subject25 As Double = Convert.ToDouble(row("SUBJECT 25"))
             Dim subject26 As Double = Convert.ToDouble(row("SUBJECT 26"))
+            Dim pe4 As Double = Convert.ToDouble(row("PE 4"))
 
             ' 3rd Year 2nd Semester Subjects/Courses
             Dim subject35 As Double = Convert.ToDouble(row("SUBJECT 35"))
@@ -799,7 +812,7 @@ Public Class EvaluateStudentGrades
                 grade = (subject7 + subject8 + subject9 + subject10 + subject11 + subject12) / 6
                 row("1st Year 2nd Sem GWA") = grade
 
-                If (subject7 > 2.0 Or subject7 < 1) Or (subject8 > 2.0 Or subject8 < 1) Or (subject9 > 2.0 Or subject9 < 1) Or (subject10 > 2.0 Or subject10 < 1) Or (subject11 > 2.0 Or subject11 < 1) Or (subject12 > 2.0 Or subject12 < 1) Then
+                If (subject7 > 2.0 Or subject7 < 1) Or (subject8 > 2.0 Or subject8 < 1) Or (subject9 > 2.0 Or subject9 < 1) Or (subject10 > 2.0 Or subject10 < 1) Or (subject11 > 2.0 Or subject11 < 1) Or (subject12 > 2.0 Or subject12 < 1) Or (pe2 > 2.0 Or pe2 < 1) Or (nstp2 > 2.0 Or nstp2 < 1) Then
                     row("1st Year 2nd Sem Honor Status") = honorStatus = False
                 Else
                     row("1st Year 2nd Sem Honor Status") = honorStatus
@@ -810,7 +823,7 @@ Public Class EvaluateStudentGrades
                 grade = (subject20 + subject21 + subject22 + subject23 + subject24 + subject25 + subject26) / 7
                 row("2nd Year 2nd Sem GWA") = grade
 
-                If (subject20 > 2.0 Or subject20 < 1) Or (subject21 > 2.0 Or subject21 < 1) Or (subject22 > 2.0 Or subject22 < 1) Or (subject23 > 2.0 Or subject23 < 1) Or (subject24 > 2.0 Or subject24 < 1) Or (subject25 > 2.0 Or subject25 < 1) Or (subject26 > 2.0 Or subject26 < 1) Then
+                If (subject20 > 2.0 Or subject20 < 1) Or (subject21 > 2.0 Or subject21 < 1) Or (subject22 > 2.0 Or subject22 < 1) Or (subject23 > 2.0 Or subject23 < 1) Or (subject24 > 2.0 Or subject24 < 1) Or (subject25 > 2.0 Or subject25 < 1) Or (subject26 > 2.0 Or subject26 < 1) Or (pe4 > 2.0 Or pe4 < 1) Then
                     row("2nd Year 2nd Sem Honor Status") = honorStatus = False
                 Else
                     row("2nd Year 2nd Sem Honor Status") = honorStatus

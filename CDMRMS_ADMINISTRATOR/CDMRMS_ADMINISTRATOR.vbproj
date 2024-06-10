@@ -169,5 +169,86 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Arrow Down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Arrow Right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Notification Counter 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Notification Counter 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Notification Counter 3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Notification Counter 4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Notification Counter 5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Notification Counter 6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Notification Counter 8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Notification Counter 9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Notification Counter 9+.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Update Grade Button Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Notification Counter 7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dashboard BSCPE Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dashboard BSIT Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dashboard Instructor Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dashboard Students Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fff-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lock Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CdMRMS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Welcome BG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Admin_Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pin Lock Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Assigned Button Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Evaluate Button Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CdM Logo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

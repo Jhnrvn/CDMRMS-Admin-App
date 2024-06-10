@@ -48,7 +48,7 @@ Public Class Admin_Main
         If MenuCollapsed Then
 
             ' Change image of Menu button to Arrow Down
-            Menu_Btn.Image = Image.FromFile("D:\Development Projects\Visual Basic\CDM Registrar Management System\CDMRMS_ADMINISTRATOR\Assets\Main\Arrow Down.png")
+            Menu_Btn.Image = My.Resources.Arrow_Down
             Dropdown_Panel.Height += 10
             If Dropdown_Panel.Size = Dropdown_Panel.MaximumSize Then
 
@@ -76,7 +76,7 @@ Public Class Admin_Main
             AssignedSectionTable.Columns.Clear()
 
             ' Change image of Menu button to arrow right
-            Menu_Btn.Image = Image.FromFile("D:\Development Projects\Visual Basic\CDM Registrar Management System\CDMRMS_ADMINISTRATOR\Assets\Main\Arrow Right.png")
+            Menu_Btn.Image = My.Resources.Arrow_Right
 
             Dropdown_Panel.Height -= 10
             If Dropdown_Panel.Size = Dropdown_Panel.MinimumSize Then
@@ -527,27 +527,27 @@ Public Class Admin_Main
             Dim count As Integer = Convert.ToInt32(command.ExecuteScalar())
 
             If count = 0 Then
-                ChangeGradeReq_Btn.Image = Image.FromFile("D:\Development Projects\Visual Basic\CDM Registrar Management System\CDMRMS_ADMINISTRATOR\Assets\Main\Update Grade Button Icon.png")
+                ChangeGradeReq_Btn.Image = My.Resources.Update_Grade_Button_Icon
             ElseIf count = 1 Then
-                ChangeGradeReq_Btn.Image = Image.FromFile("D:\Development Projects\Visual Basic\CDM Registrar Management System\CDMRMS_ADMINISTRATOR\Assets\Main\Notification Counter\Notification Counter 1.png")
+                ChangeGradeReq_Btn.Image = My.Resources.Notification_Counter_1
             ElseIf count = 2 Then
-                ChangeGradeReq_Btn.Image = Image.FromFile("D:\Development Projects\Visual Basic\CDM Registrar Management System\CDMRMS_ADMINISTRATOR\Assets\Main\Notification Counter\Notification Counter 2.png")
+                ChangeGradeReq_Btn.Image = My.Resources.Notification_Counter_2
             ElseIf count = 3 Then
-                ChangeGradeReq_Btn.Image = Image.FromFile("D:\Development Projects\Visual Basic\CDM Registrar Management System\CDMRMS_ADMINISTRATOR\Assets\Main\Notification Counter\Notification Counter 3.png")
+                ChangeGradeReq_Btn.Image = My.Resources.Notification_Counter_3
             ElseIf count = 4 Then
-                ChangeGradeReq_Btn.Image = Image.FromFile("D:\Development Projects\Visual Basic\CDM Registrar Management System\CDMRMS_ADMINISTRATOR\Assets\Main\Notification Counter\Notification Counter 4.png")
+                ChangeGradeReq_Btn.Image = My.Resources.Notification_Counter_4
             ElseIf count = 5 Then
-                ChangeGradeReq_Btn.Image = Image.FromFile("D:\Development Projects\Visual Basic\CDM Registrar Management System\CDMRMS_ADMINISTRATOR\Assets\Main\Notification Counter\Notification Counter 5.png")
+                ChangeGradeReq_Btn.Image = My.Resources.Notification_Counter_5
             ElseIf count = 6 Then
-                ChangeGradeReq_Btn.Image = Image.FromFile("D:\Development Projects\Visual Basic\CDM Registrar Management System\CDMRMS_ADMINISTRATOR\Assets\Main\Notification Counter\Notification Counter 6.png")
+                ChangeGradeReq_Btn.Image = My.Resources.Notification_Counter_6
             ElseIf count = 7 Then
-                ChangeGradeReq_Btn.Image = Image.FromFile("D:\Development Projects\Visual Basic\CDM Registrar Management System\CDMRMS_ADMINISTRATOR\Assets\Main\Notification Counter\Notification Counter 7.png")
+                ChangeGradeReq_Btn.Image = My.Resources.Notification_Counter_7
             ElseIf count = 8 Then
-                ChangeGradeReq_Btn.Image = Image.FromFile("D:\Development Projects\Visual Basic\CDM Registrar Management System\CDMRMS_ADMINISTRATOR\Assets\Main\Notification Counter\Notification Counter 8.png")
+                ChangeGradeReq_Btn.Image = My.Resources.Notification_Counter_8
             ElseIf count = 9 Then
-                ChangeGradeReq_Btn.Image = Image.FromFile("D:\Development Projects\Visual Basic\CDM Registrar Management System\CDMRMS_ADMINISTRATOR\Assets\Main\Notification Counter\Notification Counter 9.png")
+                ChangeGradeReq_Btn.Image = My.Resources.Notification_Counter_9
             ElseIf count > 9 Then
-                ChangeGradeReq_Btn.Image = Image.FromFile("D:\Development Projects\Visual Basic\CDM Registrar Management System\CDMRMS_ADMINISTRATOR\Assets\Main\Notification Counter\Notification Counter 9+.png")
+                ChangeGradeReq_Btn.Image = My.Resources.Notification_Counter_9_
             End If
 
         End Using
@@ -612,6 +612,10 @@ Public Class Admin_Main
                 StudentlistTable.Columns("2nd Year 1st Sem Honor Status").Visible = False
                 StudentlistTable.Columns("3rd Year 1st Sem Honor Status").Visible = False
                 StudentlistTable.Columns("4th Year 1st Sem Honor Status").Visible = False
+                StudentlistTable.Columns("1st Year 2nd Sem Honor Status").Visible = False
+                StudentlistTable.Columns("2nd Year 2nd Sem Honor Status").Visible = False
+                StudentlistTable.Columns("3rd Year 2nd Sem Honor Status").Visible = False
+                StudentlistTable.Columns("4th Year 2nd Sem Honor Status").Visible = False
 
             Catch ex As Exception
                 MessageBox.Show("Error fetching data: " & ex.Message)
@@ -641,6 +645,10 @@ Public Class Admin_Main
                 StudentlistTable.Columns("2nd Year 1st Sem Honor Status").Visible = False
                 StudentlistTable.Columns("3rd Year 1st Sem Honor Status").Visible = False
                 StudentlistTable.Columns("4th Year 1st Sem Honor Status").Visible = False
+                StudentlistTable.Columns("1st Year 2nd Sem Honor Status").Visible = False
+                StudentlistTable.Columns("2nd Year 2nd Sem Honor Status").Visible = False
+                StudentlistTable.Columns("3rd Year 2nd Sem Honor Status").Visible = False
+                StudentlistTable.Columns("4th Year 2nd Sem Honor Status").Visible = False
 
                 Dim cmb As New DataGridViewComboBoxCell()
             Catch ex As Exception

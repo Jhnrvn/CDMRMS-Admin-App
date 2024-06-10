@@ -23,7 +23,6 @@ Partial Class Admin_Main
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Admin_Main))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -43,21 +42,16 @@ Partial Class Admin_Main
         Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Admin_Main))
         Me.GreenSide_Panel = New System.Windows.Forms.Panel()
         Me.Dropdown_Panel = New System.Windows.Forms.Panel()
         Me.About_Btn = New System.Windows.Forms.Button()
         Me.Student_Btn = New System.Windows.Forms.Button()
         Me.Instructor_Btn = New System.Windows.Forms.Button()
         Me.Dashboard_Btn = New System.Windows.Forms.Button()
-        Me.Menu_Btn = New System.Windows.Forms.Button()
-        Me.CMDRMS_PicBox = New System.Windows.Forms.PictureBox()
-        Me.CDM_Logo = New System.Windows.Forms.PictureBox()
         Me.GreenUpper_Panel = New System.Windows.Forms.Panel()
-        Me.Lock_Btn = New System.Windows.Forms.Button()
         Me.Instructor_Panel = New System.Windows.Forms.Panel()
         Me.ReqAndAssign_Panel = New System.Windows.Forms.Panel()
-        Me.AssignedCourse_Btn = New System.Windows.Forms.Button()
-        Me.ChangeGradeReq_Btn = New System.Windows.Forms.Button()
         Me.InstructorInfo_Panel = New System.Windows.Forms.Panel()
         Me.Panel22 = New System.Windows.Forms.Panel()
         Me.Panel20 = New System.Windows.Forms.Panel()
@@ -99,9 +93,9 @@ Partial Class Admin_Main
         Me.InstructorSearchBar = New MetroFramework.Controls.MetroTextBox()
         Me.CDMinstructors_Label = New System.Windows.Forms.Label()
         Me.DropdownTimer = New System.Windows.Forms.Timer(Me.components)
-        Me.Welcome_BG = New System.Windows.Forms.PictureBox()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Panel12 = New System.Windows.Forms.Panel()
+        Me.Label15 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.StudentSearchBar = New MetroFramework.Controls.MetroTextBox()
@@ -114,6 +108,9 @@ Partial Class Admin_Main
         Me.StudentGrade_Label = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.panel = New System.Windows.Forms.Panel()
+        Me.Course_Label9 = New System.Windows.Forms.Label()
+        Me.Grade_TB9 = New System.Windows.Forms.TextBox()
+        Me.Panel10 = New System.Windows.Forms.Panel()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Year_CB = New System.Windows.Forms.ComboBox()
@@ -141,7 +138,6 @@ Partial Class Admin_Main
         Me.Panel32 = New System.Windows.Forms.Panel()
         Me.Panel33 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.EvaluateGrade_Btn = New System.Windows.Forms.Button()
         Me.Student_Panel = New System.Windows.Forms.Panel()
         Me.PinLock_Panel = New System.Windows.Forms.Panel()
         Me.Label14 = New System.Windows.Forms.Label()
@@ -156,7 +152,6 @@ Partial Class Admin_Main
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Notification_Timer = New System.Windows.Forms.Timer(Me.components)
         Me.Dashboard_Panel = New System.Windows.Forms.Panel()
         Me.Panel11 = New System.Windows.Forms.Panel()
@@ -167,14 +162,12 @@ Partial Class Admin_Main
         Me.DeansList_Table = New System.Windows.Forms.DataGridView()
         Me.Panel14 = New System.Windows.Forms.Panel()
         Me.DBRed_Panel = New System.Windows.Forms.Panel()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.DeansList_Label = New System.Windows.Forms.Label()
         Me.DeansList_TB = New System.Windows.Forms.TextBox()
         Me.DBRed_Panel2 = New System.Windows.Forms.Panel()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Panel25 = New System.Windows.Forms.Panel()
         Me.DBOrange_Panel = New System.Windows.Forms.Panel()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.DBOrange_Panel3 = New System.Windows.Forms.Panel()
         Me.BSCPEStudents_Label = New System.Windows.Forms.Label()
         Me.BSCPEStudents_TB = New System.Windows.Forms.TextBox()
@@ -182,12 +175,10 @@ Partial Class Admin_Main
         Me.Panel28 = New System.Windows.Forms.Panel()
         Me.Panel27 = New System.Windows.Forms.Panel()
         Me.DBGreen_Panel = New System.Windows.Forms.Panel()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.BSITStudents_Label = New System.Windows.Forms.Label()
         Me.BSITStudents_TB = New System.Windows.Forms.TextBox()
         Me.DBGreen_Panel2 = New System.Windows.Forms.Panel()
         Me.DBBlue_Panel = New System.Windows.Forms.Panel()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.DBBlue_Panel2 = New System.Windows.Forms.Panel()
         Me.TotalStudent_Label = New System.Windows.Forms.Label()
         Me.TotalStudents_TB = New System.Windows.Forms.TextBox()
@@ -195,19 +186,26 @@ Partial Class Admin_Main
         Me.Panel16 = New System.Windows.Forms.Panel()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.DBDarkBlue_Panel = New System.Windows.Forms.Panel()
-        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.CDMInstrutors_TB = New System.Windows.Forms.TextBox()
         Me.DBDarkBlue_Panel2 = New System.Windows.Forms.Panel()
         Me.Dashboard_Timer = New System.Windows.Forms.Timer(Me.components)
-        Me.Panel10 = New System.Windows.Forms.Panel()
-        Me.Grade_TB9 = New System.Windows.Forms.TextBox()
-        Me.Course_Label9 = New System.Windows.Forms.Label()
-        Me.Label15 = New System.Windows.Forms.Label()
+        Me.EvaluateGrade_Btn = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
+        Me.AssignedCourse_Btn = New System.Windows.Forms.Button()
+        Me.ChangeGradeReq_Btn = New System.Windows.Forms.Button()
+        Me.Lock_Btn = New System.Windows.Forms.Button()
+        Me.Menu_Btn = New System.Windows.Forms.Button()
+        Me.CMDRMS_PicBox = New System.Windows.Forms.PictureBox()
+        Me.CDM_Logo = New System.Windows.Forms.PictureBox()
+        Me.Welcome_BG = New System.Windows.Forms.PictureBox()
         Me.GreenSide_Panel.SuspendLayout()
         Me.Dropdown_Panel.SuspendLayout()
-        CType(Me.CMDRMS_PicBox, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.CDM_Logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GreenUpper_Panel.SuspendLayout()
         Me.Instructor_Panel.SuspendLayout()
         Me.ReqAndAssign_Panel.SuspendLayout()
@@ -221,7 +219,6 @@ Partial Class Admin_Main
         Me.CDMinstructors_Panel.SuspendLayout()
         Me.Panel9.SuspendLayout()
         CType(Me.InstructorsDataTable, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Welcome_BG, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
         Me.Panel12.SuspendLayout()
         CType(Me.StudentlistTable, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -233,22 +230,25 @@ Partial Class Admin_Main
         Me.Panel6.SuspendLayout()
         Me.Panel8.SuspendLayout()
         Me.Panel7.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Dashboard_Panel.SuspendLayout()
         Me.Panel11.SuspendLayout()
         CType(Me.DeansList_Table, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel14.SuspendLayout()
         Me.DBRed_Panel.SuspendLayout()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.DBOrange_Panel.SuspendLayout()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.DBGreen_Panel.SuspendLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.DBBlue_Panel.SuspendLayout()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel16.SuspendLayout()
         Me.DBDarkBlue_Panel.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CMDRMS_PicBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CDM_Logo, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Welcome_BG, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GreenSide_Panel
@@ -345,48 +345,6 @@ Partial Class Admin_Main
         Me.Dashboard_Btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Dashboard_Btn.UseVisualStyleBackColor = False
         '
-        'Menu_Btn
-        '
-        Me.Menu_Btn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Menu_Btn.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Menu_Btn.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.Menu_Btn.FlatAppearance.BorderSize = 0
-        Me.Menu_Btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
-        Me.Menu_Btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
-        Me.Menu_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Menu_Btn.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Menu_Btn.Image = CType(resources.GetObject("Menu_Btn.Image"), System.Drawing.Image)
-        Me.Menu_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Menu_Btn.Location = New System.Drawing.Point(0, 0)
-        Me.Menu_Btn.Name = "Menu_Btn"
-        Me.Menu_Btn.Padding = New System.Windows.Forms.Padding(15, 0, 3, 0)
-        Me.Menu_Btn.Size = New System.Drawing.Size(216, 58)
-        Me.Menu_Btn.TabIndex = 1
-        Me.Menu_Btn.Text = "MENU"
-        Me.Menu_Btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Menu_Btn.UseVisualStyleBackColor = True
-        '
-        'CMDRMS_PicBox
-        '
-        Me.CMDRMS_PicBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.CMDRMS_PicBox.Image = CType(resources.GetObject("CMDRMS_PicBox.Image"), System.Drawing.Image)
-        Me.CMDRMS_PicBox.Location = New System.Drawing.Point(23, 682)
-        Me.CMDRMS_PicBox.Name = "CMDRMS_PicBox"
-        Me.CMDRMS_PicBox.Size = New System.Drawing.Size(164, 125)
-        Me.CMDRMS_PicBox.TabIndex = 52
-        Me.CMDRMS_PicBox.TabStop = False
-        '
-        'CDM_Logo
-        '
-        Me.CDM_Logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.CDM_Logo.Image = CType(resources.GetObject("CDM_Logo.Image"), System.Drawing.Image)
-        Me.CDM_Logo.Location = New System.Drawing.Point(21, 80)
-        Me.CDM_Logo.Name = "CDM_Logo"
-        Me.CDM_Logo.Size = New System.Drawing.Size(175, 606)
-        Me.CDM_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.CDM_Logo.TabIndex = 3
-        Me.CDM_Logo.TabStop = False
-        '
         'GreenUpper_Panel
         '
         Me.GreenUpper_Panel.BackColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(33, Byte), Integer))
@@ -395,27 +353,6 @@ Partial Class Admin_Main
         Me.GreenUpper_Panel.Name = "GreenUpper_Panel"
         Me.GreenUpper_Panel.Size = New System.Drawing.Size(1334, 60)
         Me.GreenUpper_Panel.TabIndex = 3
-        '
-        'Lock_Btn
-        '
-        Me.Lock_Btn.BackColor = System.Drawing.Color.Red
-        Me.Lock_Btn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Lock_Btn.FlatAppearance.BorderColor = System.Drawing.Color.Red
-        Me.Lock_Btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Lock_Btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Lock_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Lock_Btn.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lock_Btn.ForeColor = System.Drawing.Color.White
-        Me.Lock_Btn.Image = CType(resources.GetObject("Lock_Btn.Image"), System.Drawing.Image)
-        Me.Lock_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Lock_Btn.Location = New System.Drawing.Point(1204, 3)
-        Me.Lock_Btn.Name = "Lock_Btn"
-        Me.Lock_Btn.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.Lock_Btn.Size = New System.Drawing.Size(125, 54)
-        Me.Lock_Btn.TabIndex = 72
-        Me.Lock_Btn.Text = "Lock"
-        Me.Lock_Btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Lock_Btn.UseVisualStyleBackColor = False
         '
         'Instructor_Panel
         '
@@ -437,48 +374,6 @@ Partial Class Admin_Main
         Me.ReqAndAssign_Panel.Name = "ReqAndAssign_Panel"
         Me.ReqAndAssign_Panel.Size = New System.Drawing.Size(631, 181)
         Me.ReqAndAssign_Panel.TabIndex = 2
-        '
-        'AssignedCourse_Btn
-        '
-        Me.AssignedCourse_Btn.BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(63, Byte), Integer))
-        Me.AssignedCourse_Btn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.AssignedCourse_Btn.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.AssignedCourse_Btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(63, Byte), Integer))
-        Me.AssignedCourse_Btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(54, Byte), Integer))
-        Me.AssignedCourse_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.AssignedCourse_Btn.Font = New System.Drawing.Font("Bernard MT Condensed", 21.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.AssignedCourse_Btn.ForeColor = System.Drawing.Color.White
-        Me.AssignedCourse_Btn.Image = CType(resources.GetObject("AssignedCourse_Btn.Image"), System.Drawing.Image)
-        Me.AssignedCourse_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.AssignedCourse_Btn.Location = New System.Drawing.Point(317, 4)
-        Me.AssignedCourse_Btn.Name = "AssignedCourse_Btn"
-        Me.AssignedCourse_Btn.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.AssignedCourse_Btn.Size = New System.Drawing.Size(307, 174)
-        Me.AssignedCourse_Btn.TabIndex = 57
-        Me.AssignedCourse_Btn.Text = "Handled " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Courses && " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Sections"
-        Me.AssignedCourse_Btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.AssignedCourse_Btn.UseVisualStyleBackColor = False
-        '
-        'ChangeGradeReq_Btn
-        '
-        Me.ChangeGradeReq_Btn.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(234, Byte), Integer))
-        Me.ChangeGradeReq_Btn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.ChangeGradeReq_Btn.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.ChangeGradeReq_Btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(234, Byte), Integer))
-        Me.ChangeGradeReq_Btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue
-        Me.ChangeGradeReq_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ChangeGradeReq_Btn.Font = New System.Drawing.Font("Bernard MT Condensed", 21.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChangeGradeReq_Btn.ForeColor = System.Drawing.Color.White
-        Me.ChangeGradeReq_Btn.Image = CType(resources.GetObject("ChangeGradeReq_Btn.Image"), System.Drawing.Image)
-        Me.ChangeGradeReq_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ChangeGradeReq_Btn.Location = New System.Drawing.Point(5, 4)
-        Me.ChangeGradeReq_Btn.Name = "ChangeGradeReq_Btn"
-        Me.ChangeGradeReq_Btn.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.ChangeGradeReq_Btn.Size = New System.Drawing.Size(307, 174)
-        Me.ChangeGradeReq_Btn.TabIndex = 55
-        Me.ChangeGradeReq_Btn.Text = "Update " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Grades" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Request"
-        Me.ChangeGradeReq_Btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ChangeGradeReq_Btn.UseVisualStyleBackColor = False
         '
         'InstructorInfo_Panel
         '
@@ -1090,16 +985,6 @@ Partial Class Admin_Main
         '
         Me.DropdownTimer.Interval = 15
         '
-        'Welcome_BG
-        '
-        Me.Welcome_BG.Image = CType(resources.GetObject("Welcome_BG.Image"), System.Drawing.Image)
-        Me.Welcome_BG.Location = New System.Drawing.Point(267, 137)
-        Me.Welcome_BG.Name = "Welcome_BG"
-        Me.Welcome_BG.Size = New System.Drawing.Size(1225, 742)
-        Me.Welcome_BG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.Welcome_BG.TabIndex = 5
-        Me.Welcome_BG.TabStop = False
-        '
         'Panel5
         '
         Me.Panel5.BackColor = System.Drawing.SystemColors.Window
@@ -1127,6 +1012,18 @@ Partial Class Admin_Main
         Me.Panel12.Name = "Panel12"
         Me.Panel12.Size = New System.Drawing.Size(538, 162)
         Me.Panel12.TabIndex = 80
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.ForeColor = System.Drawing.Color.Black
+        Me.Label15.Location = New System.Drawing.Point(8, 67)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(449, 40)
+        Me.Label15.TabIndex = 3
+        Me.Label15.Text = "2. Select Year and Semester  from dropdown option then click " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "    row in student" &
+    " list table to view grades."
         '
         'Label10
         '
@@ -1360,6 +1257,34 @@ Partial Class Admin_Main
         Me.panel.Name = "panel"
         Me.panel.Size = New System.Drawing.Size(264, 482)
         Me.panel.TabIndex = 78
+        '
+        'Course_Label9
+        '
+        Me.Course_Label9.AutoSize = True
+        Me.Course_Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Course_Label9.Location = New System.Drawing.Point(18, 323)
+        Me.Course_Label9.Name = "Course_Label9"
+        Me.Course_Label9.Size = New System.Drawing.Size(52, 18)
+        Me.Course_Label9.TabIndex = 84
+        Me.Course_Label9.Text = "GWA:"
+        '
+        'Grade_TB9
+        '
+        Me.Grade_TB9.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Grade_TB9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Grade_TB9.Location = New System.Drawing.Point(153, 318)
+        Me.Grade_TB9.Name = "Grade_TB9"
+        Me.Grade_TB9.Size = New System.Drawing.Size(88, 23)
+        Me.Grade_TB9.TabIndex = 83
+        Me.Grade_TB9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Panel10
+        '
+        Me.Panel10.BackColor = System.Drawing.Color.DodgerBlue
+        Me.Panel10.Location = New System.Drawing.Point(3, 292)
+        Me.Panel10.Name = "Panel10"
+        Me.Panel10.Size = New System.Drawing.Size(256, 10)
+        Me.Panel10.TabIndex = 82
         '
         'Label24
         '
@@ -1627,27 +1552,6 @@ Partial Class Admin_Main
         Me.Panel3.Size = New System.Drawing.Size(328, 181)
         Me.Panel3.TabIndex = 2
         '
-        'EvaluateGrade_Btn
-        '
-        Me.EvaluateGrade_Btn.BackColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(110, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.EvaluateGrade_Btn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.EvaluateGrade_Btn.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.EvaluateGrade_Btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(110, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.EvaluateGrade_Btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.EvaluateGrade_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.EvaluateGrade_Btn.Font = New System.Drawing.Font("Bernard MT Condensed", 21.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.EvaluateGrade_Btn.ForeColor = System.Drawing.Color.White
-        Me.EvaluateGrade_Btn.Image = CType(resources.GetObject("EvaluateGrade_Btn.Image"), System.Drawing.Image)
-        Me.EvaluateGrade_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.EvaluateGrade_Btn.Location = New System.Drawing.Point(5, 4)
-        Me.EvaluateGrade_Btn.Name = "EvaluateGrade_Btn"
-        Me.EvaluateGrade_Btn.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.EvaluateGrade_Btn.Size = New System.Drawing.Size(318, 174)
-        Me.EvaluateGrade_Btn.TabIndex = 61
-        Me.EvaluateGrade_Btn.Text = "Evaluate" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Student" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Grades"
-        Me.EvaluateGrade_Btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.EvaluateGrade_Btn.UseVisualStyleBackColor = False
-        '
         'Student_Panel
         '
         Me.Student_Panel.BackColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(248, Byte), Integer))
@@ -1811,16 +1715,6 @@ Partial Class Admin_Main
         Me.Label6.Size = New System.Drawing.Size(383, 140)
         Me.Label6.TabIndex = 7
         Me.Label6.Text = "Admin!"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(4, 3)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(474, 323)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.PictureBox1.TabIndex = 4
-        Me.PictureBox1.TabStop = False
         '
         'Notification_Timer
         '
@@ -1998,16 +1892,6 @@ Partial Class Admin_Main
         Me.DBRed_Panel.Size = New System.Drawing.Size(296, 151)
         Me.DBRed_Panel.TabIndex = 4
         '
-        'PictureBox5
-        '
-        Me.PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), System.Drawing.Image)
-        Me.PictureBox5.Location = New System.Drawing.Point(203, 15)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(77, 90)
-        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.PictureBox5.TabIndex = 10
-        Me.PictureBox5.TabStop = False
-        '
         'DeansList_Label
         '
         Me.DeansList_Label.AutoSize = True
@@ -2069,16 +1953,6 @@ Partial Class Admin_Main
         Me.DBOrange_Panel.Name = "DBOrange_Panel"
         Me.DBOrange_Panel.Size = New System.Drawing.Size(296, 151)
         Me.DBOrange_Panel.TabIndex = 3
-        '
-        'PictureBox4
-        '
-        Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
-        Me.PictureBox4.Location = New System.Drawing.Point(203, 15)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(77, 90)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.PictureBox4.TabIndex = 8
-        Me.PictureBox4.TabStop = False
         '
         'DBOrange_Panel3
         '
@@ -2148,16 +2022,6 @@ Partial Class Admin_Main
         Me.DBGreen_Panel.Size = New System.Drawing.Size(296, 151)
         Me.DBGreen_Panel.TabIndex = 2
         '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(203, 15)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(77, 90)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.PictureBox2.TabIndex = 9
-        Me.PictureBox2.TabStop = False
-        '
         'BSITStudents_Label
         '
         Me.BSITStudents_Label.AutoSize = True
@@ -2201,16 +2065,6 @@ Partial Class Admin_Main
         Me.DBBlue_Panel.Name = "DBBlue_Panel"
         Me.DBBlue_Panel.Size = New System.Drawing.Size(296, 151)
         Me.DBBlue_Panel.TabIndex = 1
-        '
-        'PictureBox3
-        '
-        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
-        Me.PictureBox3.Location = New System.Drawing.Point(203, 15)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(77, 90)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.PictureBox3.TabIndex = 10
-        Me.PictureBox3.TabStop = False
         '
         'DBBlue_Panel2
         '
@@ -2284,16 +2138,6 @@ Partial Class Admin_Main
         Me.DBDarkBlue_Panel.Size = New System.Drawing.Size(296, 369)
         Me.DBDarkBlue_Panel.TabIndex = 7
         '
-        'PictureBox6
-        '
-        Me.PictureBox6.Image = CType(resources.GetObject("PictureBox6.Image"), System.Drawing.Image)
-        Me.PictureBox6.Location = New System.Drawing.Point(46, 27)
-        Me.PictureBox6.Name = "PictureBox6"
-        Me.PictureBox6.Size = New System.Drawing.Size(200, 160)
-        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.PictureBox6.TabIndex = 11
-        Me.PictureBox6.TabStop = False
-        '
         'Label9
         '
         Me.Label9.AutoSize = True
@@ -2329,55 +2173,211 @@ Partial Class Admin_Main
         'Dashboard_Timer
         '
         '
-        'Panel10
+        'EvaluateGrade_Btn
         '
-        Me.Panel10.BackColor = System.Drawing.Color.DodgerBlue
-        Me.Panel10.Location = New System.Drawing.Point(3, 292)
-        Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(256, 10)
-        Me.Panel10.TabIndex = 82
+        Me.EvaluateGrade_Btn.BackColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(110, Byte), Integer), CType(CType(33, Byte), Integer))
+        Me.EvaluateGrade_Btn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.EvaluateGrade_Btn.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.EvaluateGrade_Btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(110, Byte), Integer), CType(CType(33, Byte), Integer))
+        Me.EvaluateGrade_Btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(33, Byte), Integer))
+        Me.EvaluateGrade_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.EvaluateGrade_Btn.Font = New System.Drawing.Font("Bernard MT Condensed", 21.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EvaluateGrade_Btn.ForeColor = System.Drawing.Color.White
+        Me.EvaluateGrade_Btn.Image = Global.CDMRMS_ADMINISTRATOR.My.Resources.Resources.Evaluate_Button_Icon
+        Me.EvaluateGrade_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.EvaluateGrade_Btn.Location = New System.Drawing.Point(5, 4)
+        Me.EvaluateGrade_Btn.Name = "EvaluateGrade_Btn"
+        Me.EvaluateGrade_Btn.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.EvaluateGrade_Btn.Size = New System.Drawing.Size(318, 174)
+        Me.EvaluateGrade_Btn.TabIndex = 61
+        Me.EvaluateGrade_Btn.Text = "Evaluate" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Student" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Grades"
+        Me.EvaluateGrade_Btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.EvaluateGrade_Btn.UseVisualStyleBackColor = False
         '
-        'Grade_TB9
+        'PictureBox1
         '
-        Me.Grade_TB9.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.Grade_TB9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Grade_TB9.Location = New System.Drawing.Point(153, 318)
-        Me.Grade_TB9.Name = "Grade_TB9"
-        Me.Grade_TB9.Size = New System.Drawing.Size(88, 23)
-        Me.Grade_TB9.TabIndex = 83
-        Me.Grade_TB9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.PictureBox1.Image = Global.CDMRMS_ADMINISTRATOR.My.Resources.Resources.Pin_Lock_Image
+        Me.PictureBox1.Location = New System.Drawing.Point(4, 3)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(474, 323)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.PictureBox1.TabIndex = 4
+        Me.PictureBox1.TabStop = False
         '
-        'Course_Label9
+        'PictureBox5
         '
-        Me.Course_Label9.AutoSize = True
-        Me.Course_Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Course_Label9.Location = New System.Drawing.Point(18, 323)
-        Me.Course_Label9.Name = "Course_Label9"
-        Me.Course_Label9.Size = New System.Drawing.Size(52, 18)
-        Me.Course_Label9.TabIndex = 84
-        Me.Course_Label9.Text = "GWA:"
+        Me.PictureBox5.Image = Global.CDMRMS_ADMINISTRATOR.My.Resources.Resources.Dashboard_Honor__Icon
+        Me.PictureBox5.Location = New System.Drawing.Point(203, 15)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(77, 90)
+        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.PictureBox5.TabIndex = 10
+        Me.PictureBox5.TabStop = False
         '
-        'Label15
+        'PictureBox4
         '
-        Me.Label15.AutoSize = True
-        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.ForeColor = System.Drawing.Color.Black
-        Me.Label15.Location = New System.Drawing.Point(8, 67)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(449, 40)
-        Me.Label15.TabIndex = 3
-        Me.Label15.Text = "2. Select Year and Semester  from dropdown option then click " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "    row in student" &
-    " list table to view grades."
+        Me.PictureBox4.Image = Global.CDMRMS_ADMINISTRATOR.My.Resources.Resources.Dashboard_BSCPE_Icon
+        Me.PictureBox4.Location = New System.Drawing.Point(203, 15)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(77, 90)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.PictureBox4.TabIndex = 8
+        Me.PictureBox4.TabStop = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = Global.CDMRMS_ADMINISTRATOR.My.Resources.Resources.Dashboard_BSIT_Icon
+        Me.PictureBox2.Location = New System.Drawing.Point(203, 15)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(77, 90)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.PictureBox2.TabIndex = 9
+        Me.PictureBox2.TabStop = False
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Image = Global.CDMRMS_ADMINISTRATOR.My.Resources.Resources.Dashboard_Students_Icon
+        Me.PictureBox3.Location = New System.Drawing.Point(203, 15)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(77, 90)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.PictureBox3.TabIndex = 10
+        Me.PictureBox3.TabStop = False
+        '
+        'PictureBox6
+        '
+        Me.PictureBox6.Image = Global.CDMRMS_ADMINISTRATOR.My.Resources.Resources.Dashboard_Instructor_Icon
+        Me.PictureBox6.Location = New System.Drawing.Point(46, 27)
+        Me.PictureBox6.Name = "PictureBox6"
+        Me.PictureBox6.Size = New System.Drawing.Size(200, 160)
+        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.PictureBox6.TabIndex = 11
+        Me.PictureBox6.TabStop = False
+        '
+        'AssignedCourse_Btn
+        '
+        Me.AssignedCourse_Btn.BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(63, Byte), Integer))
+        Me.AssignedCourse_Btn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.AssignedCourse_Btn.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.AssignedCourse_Btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(63, Byte), Integer))
+        Me.AssignedCourse_Btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(54, Byte), Integer))
+        Me.AssignedCourse_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.AssignedCourse_Btn.Font = New System.Drawing.Font("Bernard MT Condensed", 21.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.AssignedCourse_Btn.ForeColor = System.Drawing.Color.White
+        Me.AssignedCourse_Btn.Image = Global.CDMRMS_ADMINISTRATOR.My.Resources.Resources.Assigned_Button_Icon
+        Me.AssignedCourse_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.AssignedCourse_Btn.Location = New System.Drawing.Point(317, 4)
+        Me.AssignedCourse_Btn.Name = "AssignedCourse_Btn"
+        Me.AssignedCourse_Btn.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.AssignedCourse_Btn.Size = New System.Drawing.Size(307, 174)
+        Me.AssignedCourse_Btn.TabIndex = 57
+        Me.AssignedCourse_Btn.Text = "Handled " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Courses && " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Sections"
+        Me.AssignedCourse_Btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.AssignedCourse_Btn.UseVisualStyleBackColor = False
+        '
+        'ChangeGradeReq_Btn
+        '
+        Me.ChangeGradeReq_Btn.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(234, Byte), Integer))
+        Me.ChangeGradeReq_Btn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ChangeGradeReq_Btn.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.ChangeGradeReq_Btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(234, Byte), Integer))
+        Me.ChangeGradeReq_Btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue
+        Me.ChangeGradeReq_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ChangeGradeReq_Btn.Font = New System.Drawing.Font("Bernard MT Condensed", 21.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChangeGradeReq_Btn.ForeColor = System.Drawing.Color.White
+        Me.ChangeGradeReq_Btn.Image = Global.CDMRMS_ADMINISTRATOR.My.Resources.Resources.Update_Grade_Button_Icon
+        Me.ChangeGradeReq_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ChangeGradeReq_Btn.Location = New System.Drawing.Point(5, 4)
+        Me.ChangeGradeReq_Btn.Name = "ChangeGradeReq_Btn"
+        Me.ChangeGradeReq_Btn.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.ChangeGradeReq_Btn.Size = New System.Drawing.Size(307, 174)
+        Me.ChangeGradeReq_Btn.TabIndex = 55
+        Me.ChangeGradeReq_Btn.Text = "Update " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Grades" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Request"
+        Me.ChangeGradeReq_Btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ChangeGradeReq_Btn.UseVisualStyleBackColor = False
+        '
+        'Lock_Btn
+        '
+        Me.Lock_Btn.BackColor = System.Drawing.Color.Red
+        Me.Lock_Btn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Lock_Btn.FlatAppearance.BorderColor = System.Drawing.Color.Red
+        Me.Lock_Btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Lock_Btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Lock_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Lock_Btn.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lock_Btn.ForeColor = System.Drawing.Color.White
+        Me.Lock_Btn.Image = Global.CDMRMS_ADMINISTRATOR.My.Resources.Resources.Lock_Icon
+        Me.Lock_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Lock_Btn.Location = New System.Drawing.Point(1204, 3)
+        Me.Lock_Btn.Name = "Lock_Btn"
+        Me.Lock_Btn.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.Lock_Btn.Size = New System.Drawing.Size(125, 54)
+        Me.Lock_Btn.TabIndex = 72
+        Me.Lock_Btn.Text = "Lock"
+        Me.Lock_Btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Lock_Btn.UseVisualStyleBackColor = False
+        '
+        'Menu_Btn
+        '
+        Me.Menu_Btn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Menu_Btn.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Menu_Btn.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.Menu_Btn.FlatAppearance.BorderSize = 0
+        Me.Menu_Btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.Menu_Btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.Menu_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Menu_Btn.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Menu_Btn.Image = Global.CDMRMS_ADMINISTRATOR.My.Resources.Resources.Arrow_Right
+        Me.Menu_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Menu_Btn.Location = New System.Drawing.Point(0, 0)
+        Me.Menu_Btn.Name = "Menu_Btn"
+        Me.Menu_Btn.Padding = New System.Windows.Forms.Padding(15, 0, 3, 0)
+        Me.Menu_Btn.Size = New System.Drawing.Size(216, 58)
+        Me.Menu_Btn.TabIndex = 1
+        Me.Menu_Btn.Text = "MENU"
+        Me.Menu_Btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Menu_Btn.UseVisualStyleBackColor = True
+        '
+        'CMDRMS_PicBox
+        '
+        Me.CMDRMS_PicBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.CMDRMS_PicBox.Image = Global.CDMRMS_ADMINISTRATOR.My.Resources.Resources.CdMRMS
+        Me.CMDRMS_PicBox.Location = New System.Drawing.Point(23, 682)
+        Me.CMDRMS_PicBox.Name = "CMDRMS_PicBox"
+        Me.CMDRMS_PicBox.Size = New System.Drawing.Size(164, 125)
+        Me.CMDRMS_PicBox.TabIndex = 52
+        Me.CMDRMS_PicBox.TabStop = False
+        '
+        'CDM_Logo
+        '
+        Me.CDM_Logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.CDM_Logo.Image = Global.CDMRMS_ADMINISTRATOR.My.Resources.Resources.new_logo
+        Me.CDM_Logo.Location = New System.Drawing.Point(21, 80)
+        Me.CDM_Logo.Name = "CDM_Logo"
+        Me.CDM_Logo.Size = New System.Drawing.Size(175, 606)
+        Me.CDM_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.CDM_Logo.TabIndex = 3
+        Me.CDM_Logo.TabStop = False
+        '
+        'Welcome_BG
+        '
+        Me.Welcome_BG.Image = Global.CDMRMS_ADMINISTRATOR.My.Resources.Resources.Welcome_BG
+        Me.Welcome_BG.Location = New System.Drawing.Point(267, 137)
+        Me.Welcome_BG.Name = "Welcome_BG"
+        Me.Welcome_BG.Size = New System.Drawing.Size(1225, 742)
+        Me.Welcome_BG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.Welcome_BG.TabIndex = 5
+        Me.Welcome_BG.TabStop = False
         '
         'Admin_Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1550, 870)
+        Me.Controls.Add(Me.Instructor_Panel)
         Me.Controls.Add(Me.Student_Panel)
         Me.Controls.Add(Me.PinLock_Panel)
         Me.Controls.Add(Me.Dashboard_Panel)
-        Me.Controls.Add(Me.Instructor_Panel)
         Me.Controls.Add(Me.GreenUpper_Panel)
         Me.Controls.Add(Me.GreenSide_Panel)
         Me.Controls.Add(Me.Welcome_BG)
@@ -2393,8 +2393,6 @@ Partial Class Admin_Main
         Me.Text = " "
         Me.GreenSide_Panel.ResumeLayout(False)
         Me.Dropdown_Panel.ResumeLayout(False)
-        CType(Me.CMDRMS_PicBox, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CDM_Logo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GreenUpper_Panel.ResumeLayout(False)
         Me.Instructor_Panel.ResumeLayout(False)
         Me.ReqAndAssign_Panel.ResumeLayout(False)
@@ -2414,7 +2412,6 @@ Partial Class Admin_Main
         Me.Panel9.ResumeLayout(False)
         Me.Panel9.PerformLayout()
         CType(Me.InstructorsDataTable, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Welcome_BG, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
         Me.Panel12.ResumeLayout(False)
@@ -2432,7 +2429,6 @@ Partial Class Admin_Main
         Me.Panel8.ResumeLayout(False)
         Me.Panel7.ResumeLayout(False)
         Me.Panel7.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Dashboard_Panel.ResumeLayout(False)
         Me.Panel11.ResumeLayout(False)
         Me.Panel11.PerformLayout()
@@ -2441,21 +2437,25 @@ Partial Class Admin_Main
         Me.Panel14.PerformLayout()
         Me.DBRed_Panel.ResumeLayout(False)
         Me.DBRed_Panel.PerformLayout()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.DBOrange_Panel.ResumeLayout(False)
         Me.DBOrange_Panel.PerformLayout()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.DBGreen_Panel.ResumeLayout(False)
         Me.DBGreen_Panel.PerformLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.DBBlue_Panel.ResumeLayout(False)
         Me.DBBlue_Panel.PerformLayout()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel16.ResumeLayout(False)
         Me.Panel16.PerformLayout()
         Me.DBDarkBlue_Panel.ResumeLayout(False)
         Me.DBDarkBlue_Panel.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CMDRMS_PicBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CDM_Logo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Welcome_BG, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
