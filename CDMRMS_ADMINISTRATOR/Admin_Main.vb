@@ -1,4 +1,5 @@
-﻿Imports System.Security.AccessControl
+﻿Imports System.Runtime.InteropServices
+Imports System.Security.AccessControl
 Imports MySql.Data.MySqlClient
 
 Public Class Admin_Main
@@ -10,9 +11,7 @@ Public Class Admin_Main
 
         PinLock_Panel.Show()
         Lock_Btn.Hide()
-        Menu_Btn.Enabled = False
 
-        Dropdown_Panel.Size = Dropdown_Panel.MinimumSize
         Instructor_Panel.Hide()
         Student_Panel.Hide()
         Dashboard_Panel.Hide()
@@ -45,52 +44,11 @@ Public Class Admin_Main
     ' DROP-DOWN MENU ANIMATION - START
     Dim MenuCollapsed As Boolean = True
     Private Sub Dropdown_Timer_Tick(sender As Object, e As EventArgs) Handles DropdownTimer.Tick
-        If MenuCollapsed Then
-
-            ' Change image of Menu button to Arrow Down
-            Menu_Btn.Image = My.Resources.Arrow_Down
-            Dropdown_Panel.Height += 10
-            If Dropdown_Panel.Size = Dropdown_Panel.MaximumSize Then
-
-                DropdownTimer.Stop()
-                MenuCollapsed = False
-
-            End If
-        Else
-            ' Hide Instructor Panel
-            Instructor_Panel.Hide()
-            Student_Panel.Hide()
-            Dashboard_Panel.Hide()
-            ' Clear textbox that display instructors information 
-            InstructorsID_TB.Clear()
-            FN_TB.Clear()
-            MN_TB.Clear()
-            LN_TB.Clear()
-            Sex_TB.Clear()
-            CN_TB.Clear()
-            Birthday_TB.Clear()
-            Email_TB.Clear()
-
-            ' Clear the table for assigned course and section
-            AssignedCourseTable.DataSource = Nothing
-            AssignedSectionTable.Columns.Clear()
-
-            ' Change image of Menu button to arrow right
-            Menu_Btn.Image = My.Resources.Arrow_Right
-
-            Dropdown_Panel.Height -= 10
-            If Dropdown_Panel.Size = Dropdown_Panel.MinimumSize Then
-
-                DropdownTimer.Stop()
-                MenuCollapsed = True
-
-            End If
-        End If
 
     End Sub
 
     ' Drop-down Menu button 
-    Private Sub Menu_Btn_Click(sender As Object, e As EventArgs) Handles Menu_Btn.Click
+    Private Sub Menu_Btn_Click(sender As Object, e As EventArgs)
         DropdownTimer.Start()
 
     End Sub
@@ -109,7 +67,6 @@ Public Class Admin_Main
             MessageBox.Show("PIN validation successful. Access granted.", "PIN Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information)
             PinLock_Panel.Hide()
             Lock_Btn.Show()
-            Menu_Btn.Enabled = True
             Student_Panel.Enabled = True
             Instructor_Panel.Enabled = True
 
@@ -155,31 +112,18 @@ Public Class Admin_Main
     Private Sub Lock_Btn_Click(sender As Object, e As EventArgs) Handles Lock_Btn.Click
         Dim choice As DialogResult = MessageBox.Show("Are you sure you want to proceed with locking the application?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
-        If choice = DialogResult.Yes Then
-            If Dropdown_Panel.Size = Dropdown_Panel.MaximumSize Then
-                Menu_Btn.PerformClick()
-            End If
 
-            PinLock_Panel.Show()
-            Menu_Btn.Enabled = False
-            Student_Panel.Enabled = False
+        PinLock_Panel.Show()
+
+        Student_Panel.Enabled = False
             Instructor_Panel.Enabled = False
             Lock_Btn.Hide()
-
-
-        End If
 
     End Sub
     ' ADMIN LOCK
 
 
     ' DASHBOARD PANEL - START
-    Private Sub Dashboard_Btn_Click(sender As Object, e As EventArgs) Handles Dashboard_Btn.Click
-        Dashboard_Panel.Show()
-        Student_Panel.Hide()
-        Instructor_Panel.Hide()
-
-    End Sub
 
     Public Sub DeansListTable()
 
@@ -327,13 +271,6 @@ Public Class Admin_Main
 
 
     ' INSTRUCTOR PANEL - START
-    Private Sub Instructor_Btn_Click(sender As Object, e As EventArgs) Handles Instructor_Btn.Click
-        Instructor_Panel.Show()
-        Student_Panel.Hide()
-        Dashboard_Panel.Hide()
-
-    End Sub
-
 
     ' Query to display Instructor Name and Instructor ID
     Private Sub InstructorData()
@@ -575,13 +512,6 @@ Public Class Admin_Main
     ' INSTRUCTOR PANEL - END
 
     ' STUDENT PANEL - START
-
-    Private Sub Student_Btn_Click(sender As Object, e As EventArgs) Handles Student_Btn.Click
-        Student_Panel.Show()
-        Instructor_Panel.Hide()
-        Dashboard_Panel.Hide()
-    End Sub
-
 
     Private adapter As New MySqlDataAdapter
     Private dataTable As New DataTable()
@@ -1246,13 +1176,54 @@ Public Class Admin_Main
     ' STUDENT PANEL - END
 
 
-    ' ABOUT PANEL - START
-    Private Sub About_Btn_Click(sender As Object, e As EventArgs) Handles About_Btn.Click
-        About.Show()
+    ' Navbar Links
+    Private Sub Home_link_MouseHover(sender As Object, e As EventArgs) Handles Home_link.MouseHover
+        Home_link.LinkColor = Color.FromArgb(255, 201, 48)
+    End Sub
+
+    Private Sub Dashboard_link_MouseHover(sender As Object, e As EventArgs) Handles Dashboard_Link.MouseHover
+        Dashboard_Link.LinkColor = Color.FromArgb(255, 201, 48)
+    End Sub
+
+    Private Sub Instructors_link_MouseHover(sender As Object, e As EventArgs) Handles Instructors_Link.MouseHover
+        Instructors_link.LinkColor = Color.FromArgb(255, 201, 48)
+    End Sub
+
+    Private Sub Students_link_MouseHover(sender As Object, e As EventArgs) Handles Students_Link.MouseHover
+        Students_Link.LinkColor = Color.FromArgb(255, 201, 48)
+    End Sub
+
+    Private Sub Home_link_MouseLeave(sender As Object, e As EventArgs) Handles Home_link.MouseLeave, Dashboard_Link.MouseLeave, Instructors_Link.MouseLeave, Students_link.MouseLeave
+
+        Home_link.LinkColor = Color.White
+        Dashboard_Link.LinkColor = Color.White
+        Instructors_Link.LinkColor = Color.White
+        Students_link.LinkColor = Color.White
 
     End Sub
 
-    ' ABOUT PANEL - END
+    Private Sub Home_link_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles Home_link.LinkClicked
+        Dashboard_Panel.Hide()
+        Instructor_Panel.Hide()
+        Student_Panel.Hide()
+    End Sub
 
+    Private Sub Dashboard_Link_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles Dashboard_Link.LinkClicked
+        Dashboard_Panel.Show()
+        Instructor_Panel.Hide()
+        Student_Panel.Hide()
+    End Sub
+
+    Private Sub Instructors_Link_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles Instructors_Link.LinkClicked
+        Instructor_Panel.Show()
+        Dashboard_Panel.Hide()
+        Student_Panel.Hide()
+    End Sub
+
+    Private Sub Students_link_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles Students_link.LinkClicked
+        Student_Panel.Show()
+        Dashboard_Panel.Hide()
+        Instructor_Panel.Hide()
+    End Sub
 
 End Class

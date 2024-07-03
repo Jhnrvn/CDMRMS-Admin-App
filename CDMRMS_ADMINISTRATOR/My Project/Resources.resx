@@ -187,6 +187,12 @@
   <data name="Notification_Counter_9_" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Notification Counter 9+.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="PIN_Image_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PIN Image 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PIN_Image_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PIN Image 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Pin_Lock_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Pin Lock Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

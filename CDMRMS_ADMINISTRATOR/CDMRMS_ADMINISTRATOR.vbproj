@@ -248,7 +248,13 @@
     <None Include="Resources\Evaluate Button Icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\CdM Logo.png" />
+    <None Include="Resources\CDM Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PIN Image 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PIN Image 2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
