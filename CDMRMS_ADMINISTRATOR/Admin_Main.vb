@@ -373,7 +373,10 @@ Public Class Admin_Main
 
 
                 InstructorsDataTable.DataSource = datatable
-                InstructorsDataTable.ColumnHeadersHeight = 200
+                InstructorsDataTable.Columns("firstname").Width = 128
+                InstructorsDataTable.Columns("middlename").Width = 120
+                InstructorsDataTable.Columns("lastname").Width = 128
+                InstructorsDataTable.Columns("instructorid").Width = 137
 
             End Using
 
@@ -481,6 +484,7 @@ Public Class Admin_Main
         End If
     End Sub
 
+    ' SUBJECT TO CHANGE
 
     ' Assigned Course Table on Instructors Information  
     Private Sub AssignedCourse(instructorid)
@@ -724,27 +728,27 @@ Public Class Admin_Main
         ElseIf CollegeProgramSelector.Text = "BSCPE" Then
 
             If searchTerm <> "" Then
-                    Try
-                        connection.Open()
+                Try
+                    connection.Open()
 
-                        Dim query As String = "SELECT * FROM bscpe WHERE `Student ID` LIKE @searchTerm OR `Student Name` LIKE @searchTerm OR `Year` LIKE @searchTerm OR `Section` LIKE @searchTerm"
-                        Dim command As New MySqlCommand(query, connection)
+                    Dim query As String = "SELECT * FROM bscpe WHERE `Student ID` LIKE @searchTerm OR `Student Name` LIKE @searchTerm OR `Year` LIKE @searchTerm OR `Section` LIKE @searchTerm"
+                    Dim command As New MySqlCommand(query, connection)
 
-                        command.Parameters.AddWithValue("@searchTerm", "%" & searchTerm & "%")
+                    command.Parameters.AddWithValue("@searchTerm", "%" & searchTerm & "%")
 
-                        Dim dataTable As New DataTable()
+                    Dim dataTable As New DataTable()
 
-                        Dim adapter As New MySqlDataAdapter(command)
-                        adapter.Fill(dataTable)
-                        StudentlistTable.DataSource = dataTable
-                    Catch ex As Exception
-                        MessageBox.Show("Error searching data: " & ex.Message)
-                    Finally
-                        connection.Close()
+                    Dim adapter As New MySqlDataAdapter(command)
+                    adapter.Fill(dataTable)
+                    StudentlistTable.DataSource = dataTable
+                Catch ex As Exception
+                    MessageBox.Show("Error searching data: " & ex.Message)
+                Finally
+                    connection.Close()
 
-                    End Try
-                End If
+                End Try
             End If
+        End If
 
         If String.IsNullOrEmpty(StudentSearchBar.Text.Trim()) Then
 
