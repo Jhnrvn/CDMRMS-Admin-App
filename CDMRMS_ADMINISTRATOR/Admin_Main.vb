@@ -10,7 +10,7 @@ Public Class Admin_Main
         Menu_Panel.Size = Menu_Panel.MinimumSize
 
         PinLock_Panel.Show()
-        NavLinks()
+        NavLinksHide()
         Menu_Btn.Hide()
 
         Instructor_Panel.Hide()
@@ -73,7 +73,7 @@ Public Class Admin_Main
 
 
     ' NAVIGATION BAR LINKS - START
-    Private Sub NavLinks()
+    Private Sub NavLinksHide()
         Home_link.Visible = False
         Dashboard_Link.Visible = False
         Instructors_Link.Visible = False
@@ -164,6 +164,8 @@ Public Class Admin_Main
                 Instructors_Link.Visible = True
                 Students_link.Visible = True
 
+                Lock_Btn.Enabled = True
+
                 Pin_1.Clear()
                 Pin_2.Clear()
                 Pin_3.Clear()
@@ -197,7 +199,9 @@ Public Class Admin_Main
             Dashboard_Panel.Hide()
             Instructor_Panel.Hide()
             Student_Panel.Hide()
+            Lock_Btn.Enabled = False
 
+            NavLinksHide()
         End If
 
     End Sub
@@ -714,33 +718,33 @@ Public Class Admin_Main
                     MessageBox.Show("Error searching data: " & ex.Message)
                 Finally
                     connection.Close()
-
                 End Try
             End If
 
         ElseIf CollegeProgramSelector.Text = "BSCPE" Then
+
             If searchTerm <> "" Then
-                Try
-                    connection.Open()
+                    Try
+                        connection.Open()
 
-                    Dim query As String = "SELECT * FROM bscpe WHERE `Student ID` LIKE @searchTerm OR `Student Name` LIKE @searchTerm OR `Year` LIKE @searchTerm OR `Section` LIKE @searchTerm"
-                    Dim command As New MySqlCommand(query, connection)
+                        Dim query As String = "SELECT * FROM bscpe WHERE `Student ID` LIKE @searchTerm OR `Student Name` LIKE @searchTerm OR `Year` LIKE @searchTerm OR `Section` LIKE @searchTerm"
+                        Dim command As New MySqlCommand(query, connection)
 
-                    command.Parameters.AddWithValue("@searchTerm", "%" & searchTerm & "%")
+                        command.Parameters.AddWithValue("@searchTerm", "%" & searchTerm & "%")
 
-                    Dim dataTable As New DataTable()
+                        Dim dataTable As New DataTable()
 
-                    Dim adapter As New MySqlDataAdapter(command)
-                    adapter.Fill(dataTable)
-                    StudentlistTable.DataSource = dataTable
-                Catch ex As Exception
-                    MessageBox.Show("Error searching data: " & ex.Message)
-                Finally
-                    connection.Close()
+                        Dim adapter As New MySqlDataAdapter(command)
+                        adapter.Fill(dataTable)
+                        StudentlistTable.DataSource = dataTable
+                    Catch ex As Exception
+                        MessageBox.Show("Error searching data: " & ex.Message)
+                    Finally
+                        connection.Close()
 
-                End Try
+                    End Try
+                End If
             End If
-        End If
 
         If String.IsNullOrEmpty(StudentSearchBar.Text.Trim()) Then
 
@@ -1251,6 +1255,8 @@ Public Class Admin_Main
 
         End If
     End Sub
+
+
 
     ' STUDENT PANEL - END
 
