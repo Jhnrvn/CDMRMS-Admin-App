@@ -83,8 +83,6 @@ Partial Class Admin_Main
         Me.AssignedSectionTable = New System.Windows.Forms.DataGridView()
         Me.AssignedCourseTable = New System.Windows.Forms.DataGridView()
         Me.CDMinstructors_Panel = New System.Windows.Forms.Panel()
-        Me.Panel9 = New System.Windows.Forms.Panel()
-        Me.InstructorInstruction_1 = New System.Windows.Forms.Label()
         Me.Clear_Btn = New System.Windows.Forms.Button()
         Me.InstructorsDataTable = New System.Windows.Forms.DataGridView()
         Me.Institute = New System.Windows.Forms.Label()
@@ -206,7 +204,6 @@ Partial Class Admin_Main
         CType(Me.AssignedSectionTable, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AssignedCourseTable, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.CDMinstructors_Panel.SuspendLayout()
-        Me.Panel9.SuspendLayout()
         CType(Me.InstructorsDataTable, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
         CType(Me.StudentlistTable, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -826,7 +823,6 @@ Partial Class Admin_Main
         'CDMinstructors_Panel
         '
         Me.CDMinstructors_Panel.BackColor = System.Drawing.SystemColors.Window
-        Me.CDMinstructors_Panel.Controls.Add(Me.Panel9)
         Me.CDMinstructors_Panel.Controls.Add(Me.Clear_Btn)
         Me.CDMinstructors_Panel.Controls.Add(Me.InstructorsDataTable)
         Me.CDMinstructors_Panel.Controls.Add(Me.Institute)
@@ -836,27 +832,6 @@ Partial Class Admin_Main
         Me.CDMinstructors_Panel.Name = "CDMinstructors_Panel"
         Me.CDMinstructors_Panel.Size = New System.Drawing.Size(774, 584)
         Me.CDMinstructors_Panel.TabIndex = 0
-        '
-        'Panel9
-        '
-        Me.Panel9.BackColor = System.Drawing.Color.FromArgb(CType(CType(223, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(216, Byte), Integer))
-        Me.Panel9.Controls.Add(Me.InstructorInstruction_1)
-        Me.Panel9.Location = New System.Drawing.Point(43, 388)
-        Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(538, 79)
-        Me.Panel9.TabIndex = 71
-        '
-        'InstructorInstruction_1
-        '
-        Me.InstructorInstruction_1.AutoSize = True
-        Me.InstructorInstruction_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.InstructorInstruction_1.ForeColor = System.Drawing.Color.Black
-        Me.InstructorInstruction_1.Location = New System.Drawing.Point(7, 10)
-        Me.InstructorInstruction_1.Name = "InstructorInstruction_1"
-        Me.InstructorInstruction_1.Size = New System.Drawing.Size(451, 60)
-        Me.InstructorInstruction_1.TabIndex = 0
-        Me.InstructorInstruction_1.Text = "1. Select cell in the table above to show instructor informations." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "2. Use the " &
-    "searchbar below to search instructor from the table."
         '
         'Clear_Btn
         '
@@ -918,7 +893,7 @@ Partial Class Admin_Main
         Me.InstructorsDataTable.RowTemplate.Height = 24
         Me.InstructorsDataTable.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.InstructorsDataTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.InstructorsDataTable.Size = New System.Drawing.Size(537, 303)
+        Me.InstructorsDataTable.Size = New System.Drawing.Size(687, 303)
         Me.InstructorsDataTable.TabIndex = 2
         '
         'Institute
@@ -2336,8 +2311,6 @@ Partial Class Admin_Main
         CType(Me.AssignedCourseTable, System.ComponentModel.ISupportInitialize).EndInit()
         Me.CDMinstructors_Panel.ResumeLayout(False)
         Me.CDMinstructors_Panel.PerformLayout()
-        Me.Panel9.ResumeLayout(False)
-        Me.Panel9.PerformLayout()
         CType(Me.InstructorsDataTable, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
@@ -2418,10 +2391,8 @@ Partial Class Admin_Main
     Friend WithEvents Panel6 As Panel
     Friend WithEvents Label7 As Label
     Friend WithEvents Panel8 As Panel
-    Friend WithEvents Panel9 As Panel
     Friend WithEvents panel As Panel
     Friend WithEvents Menu_Btn As Button
-    Friend WithEvents InstructorInstruction_1 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Notification_Timer As Timer
     Friend WithEvents Panel12 As Panel
