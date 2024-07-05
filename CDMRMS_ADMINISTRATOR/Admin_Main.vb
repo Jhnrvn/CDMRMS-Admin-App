@@ -1,5 +1,4 @@
-﻿Imports System.Collections.Specialized.BitVector32
-Imports MySql.Data.MySqlClient
+﻿Imports MySql.Data.MySqlClient
 
 Public Class Admin_Main
 
@@ -539,7 +538,7 @@ Public Class Admin_Main
     End Sub
 
     ' Changing Grade Request Button
-    Private Sub ChangeGradeReq_Btn_Click(sender As Object, e As EventArgs) Handles ChangeGradeReq_Btn.Click
+    Private Sub ChangeGradeReq_Btn_Click(sender As Object, e As EventArgs) Handles ReviewUserRequest_Btn.Click
 
         ChangingGradeRequest.Show()
         Me.Enabled = False
@@ -556,6 +555,11 @@ Public Class Admin_Main
             Dim command As New MySqlCommand(query, connection)
             Dim count As Integer = Convert.ToInt32(command.ExecuteScalar())
 
+            If count = 0 Then
+                ReviewUserRequest_Btn.Image = My.Resources.Review_User_Request_Icon
+            ElseIf count = 1 Then
+                ReviewUserRequest_Btn.Image = My.Resources._1_Notification
+            End If
 
         End Using
         connection.Close()

@@ -48,9 +48,20 @@ Partial Class Admin_Main
         Me.Instructor_Panel = New System.Windows.Forms.Panel()
         Me.InstructorInfo_Panel = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Section10 = New System.Windows.Forms.TextBox()
+        Me.Section9 = New System.Windows.Forms.TextBox()
+        Me.Section8 = New System.Windows.Forms.TextBox()
+        Me.Section7 = New System.Windows.Forms.TextBox()
+        Me.Section6 = New System.Windows.Forms.TextBox()
+        Me.Section5 = New System.Windows.Forms.TextBox()
+        Me.Section4 = New System.Windows.Forms.TextBox()
+        Me.Section3 = New System.Windows.Forms.TextBox()
+        Me.Section2 = New System.Windows.Forms.TextBox()
+        Me.Section1 = New System.Windows.Forms.TextBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label20 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.courses_label = New System.Windows.Forms.Label()
         Me.Instructor_Courses = New System.Windows.Forms.ComboBox()
         Me.InstructorID_Label = New System.Windows.Forms.Label()
@@ -70,9 +81,11 @@ Partial Class Admin_Main
         Me.InstructorsID_TB = New System.Windows.Forms.TextBox()
         Me.FN_TB = New System.Windows.Forms.TextBox()
         Me.CDMinstructors_Panel = New System.Windows.Forms.Panel()
+        Me.SaveGrade_Btn = New System.Windows.Forms.Button()
+        Me.Refresh_Btn = New System.Windows.Forms.Button()
         Me.AssignedCourse_Btn = New System.Windows.Forms.Button()
         Me.InstructorsDataTable = New System.Windows.Forms.DataGridView()
-        Me.ChangeGradeReq_Btn = New System.Windows.Forms.Button()
+        Me.ReviewUserRequest_Btn = New System.Windows.Forms.Button()
         Me.Clear_Btn = New System.Windows.Forms.Button()
         Me.Institute = New System.Windows.Forms.Label()
         Me.InstructorSearchBar = New MetroFramework.Controls.MetroTextBox()
@@ -182,23 +195,11 @@ Partial Class Admin_Main
         Me.Lock_Btn = New System.Windows.Forms.Button()
         Me.Welcome_BG = New System.Windows.Forms.PictureBox()
         Me.Panel13 = New System.Windows.Forms.Panel()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Section1 = New System.Windows.Forms.TextBox()
-        Me.Section2 = New System.Windows.Forms.TextBox()
-        Me.Section3 = New System.Windows.Forms.TextBox()
-        Me.Section4 = New System.Windows.Forms.TextBox()
-        Me.Section5 = New System.Windows.Forms.TextBox()
-        Me.Section6 = New System.Windows.Forms.TextBox()
-        Me.Section7 = New System.Windows.Forms.TextBox()
-        Me.Section8 = New System.Windows.Forms.TextBox()
-        Me.Section9 = New System.Windows.Forms.TextBox()
-        Me.Section10 = New System.Windows.Forms.TextBox()
-        Me.Refresh_Btn = New System.Windows.Forms.Button()
-        Me.SaveGrade_Btn = New System.Windows.Forms.Button()
         Me.GreenUpper_Panel.SuspendLayout()
         Me.Instructor_Panel.SuspendLayout()
         Me.InstructorInfo_Panel.SuspendLayout()
         Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.CDMinstructors_Panel.SuspendLayout()
         CType(Me.InstructorsDataTable, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -232,7 +233,6 @@ Partial Class Admin_Main
         Me.Menu_Panel.SuspendLayout()
         Me.Panel7.SuspendLayout()
         CType(Me.Welcome_BG, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'GreenUpper_Panel
@@ -395,6 +395,177 @@ Partial Class Admin_Main
         Me.Panel1.Size = New System.Drawing.Size(670, 476)
         Me.Panel1.TabIndex = 75
         '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.BackColor = System.Drawing.Color.Transparent
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(475, 178)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(79, 22)
+        Me.Label8.TabIndex = 103
+        Me.Label8.Text = "Sections"
+        '
+        'Panel2
+        '
+        Me.Panel2.AutoScroll = True
+        Me.Panel2.BackColor = System.Drawing.Color.White
+        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel2.Controls.Add(Me.Section10)
+        Me.Panel2.Controls.Add(Me.Section9)
+        Me.Panel2.Controls.Add(Me.Section8)
+        Me.Panel2.Controls.Add(Me.Section7)
+        Me.Panel2.Controls.Add(Me.Section6)
+        Me.Panel2.Controls.Add(Me.Section5)
+        Me.Panel2.Controls.Add(Me.Section4)
+        Me.Panel2.Controls.Add(Me.Section3)
+        Me.Panel2.Controls.Add(Me.Section2)
+        Me.Panel2.Controls.Add(Me.Section1)
+        Me.Panel2.Location = New System.Drawing.Point(483, 198)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(156, 239)
+        Me.Panel2.TabIndex = 105
+        '
+        'Section10
+        '
+        Me.Section10.BackColor = System.Drawing.Color.White
+        Me.Section10.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Section10.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Section10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Section10.ForeColor = System.Drawing.Color.Black
+        Me.Section10.Location = New System.Drawing.Point(0, 306)
+        Me.Section10.Multiline = True
+        Me.Section10.Name = "Section10"
+        Me.Section10.Size = New System.Drawing.Size(133, 34)
+        Me.Section10.TabIndex = 115
+        Me.Section10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Section9
+        '
+        Me.Section9.BackColor = System.Drawing.Color.White
+        Me.Section9.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Section9.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Section9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Section9.ForeColor = System.Drawing.Color.Black
+        Me.Section9.Location = New System.Drawing.Point(0, 272)
+        Me.Section9.Multiline = True
+        Me.Section9.Name = "Section9"
+        Me.Section9.Size = New System.Drawing.Size(133, 34)
+        Me.Section9.TabIndex = 114
+        Me.Section9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Section8
+        '
+        Me.Section8.BackColor = System.Drawing.Color.White
+        Me.Section8.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Section8.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Section8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Section8.ForeColor = System.Drawing.Color.Black
+        Me.Section8.Location = New System.Drawing.Point(0, 238)
+        Me.Section8.Multiline = True
+        Me.Section8.Name = "Section8"
+        Me.Section8.Size = New System.Drawing.Size(133, 34)
+        Me.Section8.TabIndex = 113
+        Me.Section8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Section7
+        '
+        Me.Section7.BackColor = System.Drawing.Color.White
+        Me.Section7.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Section7.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Section7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Section7.ForeColor = System.Drawing.Color.Black
+        Me.Section7.Location = New System.Drawing.Point(0, 204)
+        Me.Section7.Multiline = True
+        Me.Section7.Name = "Section7"
+        Me.Section7.Size = New System.Drawing.Size(133, 34)
+        Me.Section7.TabIndex = 112
+        Me.Section7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Section6
+        '
+        Me.Section6.BackColor = System.Drawing.Color.White
+        Me.Section6.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Section6.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Section6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Section6.ForeColor = System.Drawing.Color.Black
+        Me.Section6.Location = New System.Drawing.Point(0, 170)
+        Me.Section6.Multiline = True
+        Me.Section6.Name = "Section6"
+        Me.Section6.Size = New System.Drawing.Size(133, 34)
+        Me.Section6.TabIndex = 111
+        Me.Section6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Section5
+        '
+        Me.Section5.BackColor = System.Drawing.Color.White
+        Me.Section5.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Section5.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Section5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Section5.ForeColor = System.Drawing.Color.Black
+        Me.Section5.Location = New System.Drawing.Point(0, 136)
+        Me.Section5.Multiline = True
+        Me.Section5.Name = "Section5"
+        Me.Section5.Size = New System.Drawing.Size(133, 34)
+        Me.Section5.TabIndex = 110
+        Me.Section5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Section4
+        '
+        Me.Section4.BackColor = System.Drawing.Color.White
+        Me.Section4.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Section4.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Section4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Section4.ForeColor = System.Drawing.Color.Black
+        Me.Section4.Location = New System.Drawing.Point(0, 102)
+        Me.Section4.Multiline = True
+        Me.Section4.Name = "Section4"
+        Me.Section4.Size = New System.Drawing.Size(133, 34)
+        Me.Section4.TabIndex = 109
+        Me.Section4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Section3
+        '
+        Me.Section3.BackColor = System.Drawing.Color.White
+        Me.Section3.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Section3.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Section3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Section3.ForeColor = System.Drawing.Color.Black
+        Me.Section3.Location = New System.Drawing.Point(0, 68)
+        Me.Section3.Multiline = True
+        Me.Section3.Name = "Section3"
+        Me.Section3.Size = New System.Drawing.Size(133, 34)
+        Me.Section3.TabIndex = 108
+        Me.Section3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Section2
+        '
+        Me.Section2.BackColor = System.Drawing.Color.White
+        Me.Section2.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Section2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Section2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Section2.ForeColor = System.Drawing.Color.Black
+        Me.Section2.Location = New System.Drawing.Point(0, 34)
+        Me.Section2.Multiline = True
+        Me.Section2.Name = "Section2"
+        Me.Section2.Size = New System.Drawing.Size(133, 34)
+        Me.Section2.TabIndex = 107
+        Me.Section2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Section1
+        '
+        Me.Section1.BackColor = System.Drawing.Color.White
+        Me.Section1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Section1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Section1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Section1.ForeColor = System.Drawing.Color.Black
+        Me.Section1.Location = New System.Drawing.Point(0, 0)
+        Me.Section1.Multiline = True
+        Me.Section1.Name = "Section1"
+        Me.Section1.Size = New System.Drawing.Size(133, 34)
+        Me.Section1.TabIndex = 106
+        Me.Section1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(77, Byte), Integer), CType(CType(16, Byte), Integer))
@@ -416,17 +587,6 @@ Partial Class Admin_Main
         Me.Label20.Size = New System.Drawing.Size(259, 20)
         Me.Label20.TabIndex = 86
         Me.Label20.Text = "INSTRUCTOR INFORMATION"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.BackColor = System.Drawing.Color.Transparent
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(475, 178)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(79, 22)
-        Me.Label8.TabIndex = 103
-        Me.Label8.Text = "Sections"
         '
         'courses_label
         '
@@ -655,7 +815,7 @@ Partial Class Admin_Main
         Me.CDMinstructors_Panel.Controls.Add(Me.Refresh_Btn)
         Me.CDMinstructors_Panel.Controls.Add(Me.AssignedCourse_Btn)
         Me.CDMinstructors_Panel.Controls.Add(Me.InstructorsDataTable)
-        Me.CDMinstructors_Panel.Controls.Add(Me.ChangeGradeReq_Btn)
+        Me.CDMinstructors_Panel.Controls.Add(Me.ReviewUserRequest_Btn)
         Me.CDMinstructors_Panel.Controls.Add(Me.Clear_Btn)
         Me.CDMinstructors_Panel.Controls.Add(Me.Institute)
         Me.CDMinstructors_Panel.Controls.Add(Me.InstructorSearchBar)
@@ -664,6 +824,40 @@ Partial Class Admin_Main
         Me.CDMinstructors_Panel.Name = "CDMinstructors_Panel"
         Me.CDMinstructors_Panel.Size = New System.Drawing.Size(778, 768)
         Me.CDMinstructors_Panel.TabIndex = 0
+        '
+        'SaveGrade_Btn
+        '
+        Me.SaveGrade_Btn.BackColor = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.SaveGrade_Btn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.SaveGrade_Btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.SaveGrade_Btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.SaveGrade_Btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.SaveGrade_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.SaveGrade_Btn.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SaveGrade_Btn.ForeColor = System.Drawing.Color.Black
+        Me.SaveGrade_Btn.Location = New System.Drawing.Point(620, 494)
+        Me.SaveGrade_Btn.Name = "SaveGrade_Btn"
+        Me.SaveGrade_Btn.Size = New System.Drawing.Size(113, 42)
+        Me.SaveGrade_Btn.TabIndex = 81
+        Me.SaveGrade_Btn.Text = "Save"
+        Me.SaveGrade_Btn.UseVisualStyleBackColor = False
+        '
+        'Refresh_Btn
+        '
+        Me.Refresh_Btn.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(201, Byte), Integer), CType(CType(48, Byte), Integer))
+        Me.Refresh_Btn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Refresh_Btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(20, Byte), Integer))
+        Me.Refresh_Btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.Refresh_Btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(20, Byte), Integer))
+        Me.Refresh_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Refresh_Btn.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Refresh_Btn.ForeColor = System.Drawing.Color.Black
+        Me.Refresh_Btn.Location = New System.Drawing.Point(501, 494)
+        Me.Refresh_Btn.Name = "Refresh_Btn"
+        Me.Refresh_Btn.Size = New System.Drawing.Size(113, 42)
+        Me.Refresh_Btn.TabIndex = 76
+        Me.Refresh_Btn.Text = "Edit"
+        Me.Refresh_Btn.UseVisualStyleBackColor = False
         '
         'AssignedCourse_Btn
         '
@@ -675,6 +869,7 @@ Partial Class Admin_Main
         Me.AssignedCourse_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.AssignedCourse_Btn.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
         Me.AssignedCourse_Btn.ForeColor = System.Drawing.Color.Black
+        Me.AssignedCourse_Btn.Image = Global.CDMRMS_ADMINISTRATOR.My.Resources.Resources.Courses___Sections_Icon
         Me.AssignedCourse_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.AssignedCourse_Btn.Location = New System.Drawing.Point(391, 629)
         Me.AssignedCourse_Btn.Name = "AssignedCourse_Btn"
@@ -736,25 +931,26 @@ Partial Class Admin_Main
         Me.InstructorsDataTable.Size = New System.Drawing.Size(690, 383)
         Me.InstructorsDataTable.TabIndex = 66
         '
-        'ChangeGradeReq_Btn
+        'ReviewUserRequest_Btn
         '
-        Me.ChangeGradeReq_Btn.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
-        Me.ChangeGradeReq_Btn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.ChangeGradeReq_Btn.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.ChangeGradeReq_Btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver
-        Me.ChangeGradeReq_Btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
-        Me.ChangeGradeReq_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ChangeGradeReq_Btn.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
-        Me.ChangeGradeReq_Btn.ForeColor = System.Drawing.Color.Black
-        Me.ChangeGradeReq_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ChangeGradeReq_Btn.Location = New System.Drawing.Point(42, 629)
-        Me.ChangeGradeReq_Btn.Name = "ChangeGradeReq_Btn"
-        Me.ChangeGradeReq_Btn.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.ChangeGradeReq_Btn.Size = New System.Drawing.Size(342, 107)
-        Me.ChangeGradeReq_Btn.TabIndex = 55
-        Me.ChangeGradeReq_Btn.Text = "Review " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Report"
-        Me.ChangeGradeReq_Btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ChangeGradeReq_Btn.UseVisualStyleBackColor = False
+        Me.ReviewUserRequest_Btn.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
+        Me.ReviewUserRequest_Btn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ReviewUserRequest_Btn.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.ReviewUserRequest_Btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver
+        Me.ReviewUserRequest_Btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
+        Me.ReviewUserRequest_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ReviewUserRequest_Btn.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
+        Me.ReviewUserRequest_Btn.ForeColor = System.Drawing.Color.Black
+        Me.ReviewUserRequest_Btn.Image = Global.CDMRMS_ADMINISTRATOR.My.Resources.Resources.Review_User_Request_Icon
+        Me.ReviewUserRequest_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ReviewUserRequest_Btn.Location = New System.Drawing.Point(42, 629)
+        Me.ReviewUserRequest_Btn.Name = "ReviewUserRequest_Btn"
+        Me.ReviewUserRequest_Btn.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.ReviewUserRequest_Btn.Size = New System.Drawing.Size(342, 107)
+        Me.ReviewUserRequest_Btn.TabIndex = 55
+        Me.ReviewUserRequest_Btn.Text = "Review User " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Request"
+        Me.ReviewUserRequest_Btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ReviewUserRequest_Btn.UseVisualStyleBackColor = False
         '
         'Clear_Btn
         '
@@ -2149,200 +2345,6 @@ Partial Class Admin_Main
         Me.Panel13.Size = New System.Drawing.Size(46, 60)
         Me.Panel13.TabIndex = 89
         '
-        'Panel2
-        '
-        Me.Panel2.AutoScroll = True
-        Me.Panel2.BackColor = System.Drawing.Color.White
-        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel2.Controls.Add(Me.Section10)
-        Me.Panel2.Controls.Add(Me.Section9)
-        Me.Panel2.Controls.Add(Me.Section8)
-        Me.Panel2.Controls.Add(Me.Section7)
-        Me.Panel2.Controls.Add(Me.Section6)
-        Me.Panel2.Controls.Add(Me.Section5)
-        Me.Panel2.Controls.Add(Me.Section4)
-        Me.Panel2.Controls.Add(Me.Section3)
-        Me.Panel2.Controls.Add(Me.Section2)
-        Me.Panel2.Controls.Add(Me.Section1)
-        Me.Panel2.Location = New System.Drawing.Point(483, 198)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(156, 239)
-        Me.Panel2.TabIndex = 105
-        '
-        'Section1
-        '
-        Me.Section1.BackColor = System.Drawing.Color.White
-        Me.Section1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.Section1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Section1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Section1.ForeColor = System.Drawing.Color.Black
-        Me.Section1.Location = New System.Drawing.Point(0, 0)
-        Me.Section1.Multiline = True
-        Me.Section1.Name = "Section1"
-        Me.Section1.Size = New System.Drawing.Size(133, 34)
-        Me.Section1.TabIndex = 106
-        Me.Section1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Section2
-        '
-        Me.Section2.BackColor = System.Drawing.Color.White
-        Me.Section2.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.Section2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Section2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Section2.ForeColor = System.Drawing.Color.Black
-        Me.Section2.Location = New System.Drawing.Point(0, 34)
-        Me.Section2.Multiline = True
-        Me.Section2.Name = "Section2"
-        Me.Section2.Size = New System.Drawing.Size(133, 34)
-        Me.Section2.TabIndex = 107
-        Me.Section2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Section3
-        '
-        Me.Section3.BackColor = System.Drawing.Color.White
-        Me.Section3.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.Section3.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Section3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Section3.ForeColor = System.Drawing.Color.Black
-        Me.Section3.Location = New System.Drawing.Point(0, 68)
-        Me.Section3.Multiline = True
-        Me.Section3.Name = "Section3"
-        Me.Section3.Size = New System.Drawing.Size(133, 34)
-        Me.Section3.TabIndex = 108
-        Me.Section3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Section4
-        '
-        Me.Section4.BackColor = System.Drawing.Color.White
-        Me.Section4.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.Section4.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Section4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Section4.ForeColor = System.Drawing.Color.Black
-        Me.Section4.Location = New System.Drawing.Point(0, 102)
-        Me.Section4.Multiline = True
-        Me.Section4.Name = "Section4"
-        Me.Section4.Size = New System.Drawing.Size(133, 34)
-        Me.Section4.TabIndex = 109
-        Me.Section4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Section5
-        '
-        Me.Section5.BackColor = System.Drawing.Color.White
-        Me.Section5.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.Section5.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Section5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Section5.ForeColor = System.Drawing.Color.Black
-        Me.Section5.Location = New System.Drawing.Point(0, 136)
-        Me.Section5.Multiline = True
-        Me.Section5.Name = "Section5"
-        Me.Section5.Size = New System.Drawing.Size(133, 34)
-        Me.Section5.TabIndex = 110
-        Me.Section5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Section6
-        '
-        Me.Section6.BackColor = System.Drawing.Color.White
-        Me.Section6.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.Section6.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Section6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Section6.ForeColor = System.Drawing.Color.Black
-        Me.Section6.Location = New System.Drawing.Point(0, 170)
-        Me.Section6.Multiline = True
-        Me.Section6.Name = "Section6"
-        Me.Section6.Size = New System.Drawing.Size(133, 34)
-        Me.Section6.TabIndex = 111
-        Me.Section6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Section7
-        '
-        Me.Section7.BackColor = System.Drawing.Color.White
-        Me.Section7.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.Section7.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Section7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Section7.ForeColor = System.Drawing.Color.Black
-        Me.Section7.Location = New System.Drawing.Point(0, 204)
-        Me.Section7.Multiline = True
-        Me.Section7.Name = "Section7"
-        Me.Section7.Size = New System.Drawing.Size(133, 34)
-        Me.Section7.TabIndex = 112
-        Me.Section7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Section8
-        '
-        Me.Section8.BackColor = System.Drawing.Color.White
-        Me.Section8.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.Section8.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Section8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Section8.ForeColor = System.Drawing.Color.Black
-        Me.Section8.Location = New System.Drawing.Point(0, 238)
-        Me.Section8.Multiline = True
-        Me.Section8.Name = "Section8"
-        Me.Section8.Size = New System.Drawing.Size(133, 34)
-        Me.Section8.TabIndex = 113
-        Me.Section8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Section9
-        '
-        Me.Section9.BackColor = System.Drawing.Color.White
-        Me.Section9.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.Section9.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Section9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Section9.ForeColor = System.Drawing.Color.Black
-        Me.Section9.Location = New System.Drawing.Point(0, 272)
-        Me.Section9.Multiline = True
-        Me.Section9.Name = "Section9"
-        Me.Section9.Size = New System.Drawing.Size(133, 34)
-        Me.Section9.TabIndex = 114
-        Me.Section9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Section10
-        '
-        Me.Section10.BackColor = System.Drawing.Color.White
-        Me.Section10.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.Section10.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Section10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Section10.ForeColor = System.Drawing.Color.Black
-        Me.Section10.Location = New System.Drawing.Point(0, 306)
-        Me.Section10.Multiline = True
-        Me.Section10.Name = "Section10"
-        Me.Section10.Size = New System.Drawing.Size(133, 34)
-        Me.Section10.TabIndex = 115
-        Me.Section10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Refresh_Btn
-        '
-        Me.Refresh_Btn.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(201, Byte), Integer), CType(CType(48, Byte), Integer))
-        Me.Refresh_Btn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Refresh_Btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(20, Byte), Integer))
-        Me.Refresh_Btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
-        Me.Refresh_Btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(20, Byte), Integer))
-        Me.Refresh_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Refresh_Btn.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Refresh_Btn.ForeColor = System.Drawing.Color.Black
-        Me.Refresh_Btn.Location = New System.Drawing.Point(501, 494)
-        Me.Refresh_Btn.Name = "Refresh_Btn"
-        Me.Refresh_Btn.Size = New System.Drawing.Size(113, 42)
-        Me.Refresh_Btn.TabIndex = 76
-        Me.Refresh_Btn.Text = "Edit"
-        Me.Refresh_Btn.UseVisualStyleBackColor = False
-        '
-        'SaveGrade_Btn
-        '
-        Me.SaveGrade_Btn.BackColor = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.SaveGrade_Btn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.SaveGrade_Btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.SaveGrade_Btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
-        Me.SaveGrade_Btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.SaveGrade_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.SaveGrade_Btn.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SaveGrade_Btn.ForeColor = System.Drawing.Color.Black
-        Me.SaveGrade_Btn.Location = New System.Drawing.Point(620, 494)
-        Me.SaveGrade_Btn.Name = "SaveGrade_Btn"
-        Me.SaveGrade_Btn.Size = New System.Drawing.Size(113, 42)
-        Me.SaveGrade_Btn.TabIndex = 81
-        Me.SaveGrade_Btn.Text = "Save"
-        Me.SaveGrade_Btn.UseVisualStyleBackColor = False
-        '
         'Admin_Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -2372,6 +2374,8 @@ Partial Class Admin_Main
         Me.InstructorInfo_Panel.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         Me.CDMinstructors_Panel.ResumeLayout(False)
@@ -2421,8 +2425,6 @@ Partial Class Admin_Main
         Me.Menu_Panel.ResumeLayout(False)
         Me.Panel7.ResumeLayout(False)
         CType(Me.Welcome_BG, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -2432,7 +2434,7 @@ Partial Class Admin_Main
     Friend WithEvents CDMinstructors_Label As Label
     Friend WithEvents DropdownTimer As Timer
     Friend WithEvents Institute As Label
-    Friend WithEvents ChangeGradeReq_Btn As Button
+    Friend WithEvents ReviewUserRequest_Btn As Button
     Friend WithEvents Welcome_BG As PictureBox
     Friend WithEvents InstructorSearchBar As MetroFramework.Controls.MetroTextBox
     Friend WithEvents AssignedCourse_Btn As Button
