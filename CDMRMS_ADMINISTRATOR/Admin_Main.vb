@@ -1,4 +1,5 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.Collections.Specialized.BitVector32
+Imports MySql.Data.MySqlClient
 
 Public Class Admin_Main
 
@@ -376,7 +377,7 @@ Public Class Admin_Main
                 InstructorsDataTable.Columns("firstname").Width = 128
                 InstructorsDataTable.Columns("middlename").Width = 120
                 InstructorsDataTable.Columns("lastname").Width = 128
-                InstructorsDataTable.Columns("instructorid").Width = 137
+                InstructorsDataTable.Columns("instructorid").Width = 139
 
             End Using
 
@@ -484,9 +485,7 @@ Public Class Admin_Main
         End If
     End Sub
 
-    ' SUBJECT TO CHANGE
-
-    ' Assigned Course Table on Instructors Information  
+    ' Courses handled by instructor
     Private Sub AssignedCourse(instructorid)
 
         ' Display Assigned Course
@@ -496,43 +495,48 @@ Public Class Admin_Main
 
             Using CourseCommand As New MySqlCommand(CourseQuery, connection)
                 CourseCommand.Parameters.AddWithValue("@instructorid", instructorid)
-                Dim dataTable As New DataTable()
-                dataTable.Load(CourseCommand.ExecuteReader())
-                AssignedCourseTable.RowTemplate.Height = 30
-                AssignedCourseTable.DataSource = dataTable
+                Using reader As MySqlDataReader = CourseCommand.ExecuteReader()
+                    Instructor_Courses.Items.Clear()
 
-                AssignedCourseTable.Columns("course").Width = 295
+                    While reader.Read()
+                        Instructor_Courses.Items.Add(reader("course").ToString)
+                    End While
 
+                End Using
             End Using
-
         End Using
-
     End Sub
 
+    Private Sub Instructor_Courses_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Instructor_Courses.SelectedIndexChanged
+        Dim selectedCourse As String = Instructor_Courses.Text.Trim
+        Dim Instructor As String = instructorid
+        Try
+            connection.Open()
+            Dim SectionQuery As String = $"SELECT * FROM assignedcourse WHERE course = @selectedCourse AND instructor_id = @instructorId"
+            Dim command As New MySqlCommand(SectionQuery, connection)
+            command.Parameters.AddWithValue("@selectedCourse", selectedCourse)
+            command.Parameters.AddWithValue("@instructorId", Instructor)
+            Dim reader As MySqlDataReader = command.ExecuteReader()
 
-    ' Will show the section handled by the instructor when you click the course from the course table on the Instructor Information
-    Private Sub AssignedCourseTable_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles AssignedCourseTable.CellClick
-        If e.RowIndex >= 0 Then
+            While reader.Read()
+                Section1.Text = reader("section_1").ToString()
+                Section2.Text = reader("section_2").ToString()
+                Section3.Text = reader("section_3").ToString()
+                Section4.Text = reader("section_4").ToString()
+                Section5.Text = reader("section_5").ToString()
+                Section6.text = reader("section_6").ToString()
+                Section7.Text = reader("section_7").ToString()
+                Section8.Text = reader("section_8").ToString()
+                Section9.Text = reader("section_9").ToString()
+                Section10.text = reader("section_10").ToString()
+            End While
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        Finally
+            connection.Close()
+        End Try
 
-            Dim selectedRow As DataGridViewRow = AssignedCourseTable.Rows(e.RowIndex)
-            Dim course As String = selectedRow.Cells("course").Value.ToString()
-
-            Dim sectionQuery As String = "SELECT * FROM assignedcourse WHERE course = @course"
-            Dim sectionAdapter As New MySqlDataAdapter(sectionQuery, connection)
-            sectionAdapter.SelectCommand.Parameters.AddWithValue("@course", course)
-            Dim dataTable As New DataTable()
-            AssignedSectionTable.RowTemplate.Height = 60
-            sectionAdapter.Fill(dataTable)
-
-            AssignedSectionTable.DataSource = dataTable
-            AssignedSectionTable.Columns("id").Visible = False
-            AssignedSectionTable.Columns("instructor_id").Visible = False
-            AssignedSectionTable.Columns("Instructor").Visible = False
-            AssignedSectionTable.Columns("course").Visible = False
-            AssignedSectionTable.Columns("Program").Visible = False
-        End If
     End Sub
-
 
     ' Changing Grade Request Button
     Private Sub ChangeGradeReq_Btn_Click(sender As Object, e As EventArgs) Handles ChangeGradeReq_Btn.Click
@@ -552,29 +556,6 @@ Public Class Admin_Main
             Dim command As New MySqlCommand(query, connection)
             Dim count As Integer = Convert.ToInt32(command.ExecuteScalar())
 
-            If count = 0 Then
-                ChangeGradeReq_Btn.Image = My.Resources.Update_Grade_Button_Icon
-            ElseIf count = 1 Then
-                ChangeGradeReq_Btn.Image = My.Resources.Notification_Counter_1
-            ElseIf count = 2 Then
-                ChangeGradeReq_Btn.Image = My.Resources.Notification_Counter_2
-            ElseIf count = 3 Then
-                ChangeGradeReq_Btn.Image = My.Resources.Notification_Counter_3
-            ElseIf count = 4 Then
-                ChangeGradeReq_Btn.Image = My.Resources.Notification_Counter_4
-            ElseIf count = 5 Then
-                ChangeGradeReq_Btn.Image = My.Resources.Notification_Counter_5
-            ElseIf count = 6 Then
-                ChangeGradeReq_Btn.Image = My.Resources.Notification_Counter_6
-            ElseIf count = 7 Then
-                ChangeGradeReq_Btn.Image = My.Resources.Notification_Counter_7
-            ElseIf count = 8 Then
-                ChangeGradeReq_Btn.Image = My.Resources.Notification_Counter_8
-            ElseIf count = 9 Then
-                ChangeGradeReq_Btn.Image = My.Resources.Notification_Counter_9
-            ElseIf count > 9 Then
-                ChangeGradeReq_Btn.Image = My.Resources.Notification_Counter_9_
-            End If
 
         End Using
         connection.Close()
@@ -1259,7 +1240,6 @@ Public Class Admin_Main
 
         End If
     End Sub
-
 
 
     ' STUDENT PANEL - END
