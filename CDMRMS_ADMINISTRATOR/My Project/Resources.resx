@@ -169,6 +169,36 @@
   <data name="new_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\new logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Notification_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Notification 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Notification_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Notification 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Notification_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Notification 3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Notification_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Notification 4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Notification_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Notification 5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Notification_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Notification 6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Notification_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Notification 7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Notification_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Notification 8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Notification_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Notification 9.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Notification_9_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Notification 9+.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="PIN_Image_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PIN Image 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -186,35 +216,5 @@
   </data>
   <data name="Welcome_BG" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Welcome BG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_1_Notification" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1 Notification.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_2_Notification" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2 Notification.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_3_Notification" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3 Notification.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_4_Notification" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\4 Notification.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_5_Notification" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\5 Notification.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_6_Notification" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\6 Notification.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_7_Notification" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\7 Notification.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_8_Notification" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\8 Notification.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_9_Notification" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\9 Notification.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_9__Notification" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\9+ Notification.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

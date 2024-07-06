@@ -304,5 +304,35 @@
   <ItemGroup>
     <None Include="Resources\CDM Emblem.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Notification 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Notification 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Notification 3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Notification 4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Notification 5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Notification 6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Notification 7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Notification 8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Notification 9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Notification 9+.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

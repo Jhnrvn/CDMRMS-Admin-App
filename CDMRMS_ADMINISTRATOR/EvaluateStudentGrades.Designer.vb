@@ -67,7 +67,7 @@ Partial Class EvaluateStudentGrades
         Me.Close_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Close_Btn.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Close_Btn.ForeColor = System.Drawing.Color.White
-        Me.Close_Btn.Location = New System.Drawing.Point(797, 20)
+        Me.Close_Btn.Location = New System.Drawing.Point(805, 20)
         Me.Close_Btn.Name = "Close_Btn"
         Me.Close_Btn.Size = New System.Drawing.Size(42, 40)
         Me.Close_Btn.TabIndex = 57
@@ -193,9 +193,9 @@ Partial Class EvaluateStudentGrades
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 19.8!, System.Drawing.FontStyle.Bold)
         Me.Label1.Location = New System.Drawing.Point(14, 17)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(247, 38)
+        Me.Label1.Size = New System.Drawing.Size(237, 38)
         Me.Label1.TabIndex = 74
-        Me.Label1.Text = "Qualitfications:"
+        Me.Label1.Text = "Qualifications:"
         '
         'SemesterSelector
         '

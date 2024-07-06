@@ -107,17 +107,23 @@ Partial Class Admin_Main
         Me.CollegeProgramSelector = New MetroFramework.Controls.MetroComboBox()
         Me.StudentGrade_Label = New System.Windows.Forms.Label()
         Me.panel = New System.Windows.Forms.Panel()
+        Me.Panel9 = New System.Windows.Forms.Panel()
+        Me.Grade_TB1 = New System.Windows.Forms.TextBox()
+        Me.Grade_TB2 = New System.Windows.Forms.TextBox()
+        Me.Grade_TB4 = New System.Windows.Forms.TextBox()
+        Me.Grade_TB3 = New System.Windows.Forms.TextBox()
+        Me.Grade_TB5 = New System.Windows.Forms.TextBox()
+        Me.Grade_TB6 = New System.Windows.Forms.TextBox()
+        Me.Grade_TB7 = New System.Windows.Forms.TextBox()
+        Me.Grade_TB8 = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel10 = New System.Windows.Forms.Panel()
-        Me.Grade_TB4 = New System.Windows.Forms.TextBox()
         Me.Panel15 = New System.Windows.Forms.Panel()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Course_Label4 = New System.Windows.Forms.Label()
-        Me.Grade_TB3 = New System.Windows.Forms.TextBox()
         Me.Course_Label5 = New System.Windows.Forms.Label()
         Me.Course_Label6 = New System.Windows.Forms.Label()
-        Me.Grade_TB2 = New System.Windows.Forms.TextBox()
         Me.Course_Label9 = New System.Windows.Forms.Label()
         Me.Course_Label3 = New System.Windows.Forms.Label()
         Me.Course_Label2 = New System.Windows.Forms.Label()
@@ -125,11 +131,6 @@ Partial Class Admin_Main
         Me.Course_Label1 = New System.Windows.Forms.Label()
         Me.Course_Label8 = New System.Windows.Forms.Label()
         Me.Grade_TB9 = New System.Windows.Forms.TextBox()
-        Me.Grade_TB5 = New System.Windows.Forms.TextBox()
-        Me.Grade_TB7 = New System.Windows.Forms.TextBox()
-        Me.Grade_TB8 = New System.Windows.Forms.TextBox()
-        Me.Grade_TB6 = New System.Windows.Forms.TextBox()
-        Me.Grade_TB1 = New System.Windows.Forms.TextBox()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.EvaluateGrade_Btn = New System.Windows.Forms.Button()
@@ -195,7 +196,6 @@ Partial Class Admin_Main
         Me.Lock_Btn = New System.Windows.Forms.Button()
         Me.Welcome_BG = New System.Windows.Forms.PictureBox()
         Me.Panel13 = New System.Windows.Forms.Panel()
-        Me.Panel9 = New System.Windows.Forms.Panel()
         Me.GreenUpper_Panel.SuspendLayout()
         Me.Instructor_Panel.SuspendLayout()
         Me.InstructorInfo_Panel.SuspendLayout()
@@ -207,6 +207,7 @@ Partial Class Admin_Main
         Me.Panel5.SuspendLayout()
         CType(Me.StudentlistTable, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panel.SuspendLayout()
+        Me.Panel9.SuspendLayout()
         Me.Panel15.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Student_Panel.SuspendLayout()
@@ -234,7 +235,6 @@ Partial Class Admin_Main
         Me.Menu_Panel.SuspendLayout()
         Me.Panel7.SuspendLayout()
         CType(Me.Welcome_BG, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel9.SuspendLayout()
         Me.SuspendLayout()
         '
         'GreenUpper_Panel
@@ -875,7 +875,7 @@ Partial Class Admin_Main
         Me.AssignedCourse_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.AssignedCourse_Btn.Location = New System.Drawing.Point(391, 629)
         Me.AssignedCourse_Btn.Name = "AssignedCourse_Btn"
-        Me.AssignedCourse_Btn.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.AssignedCourse_Btn.Padding = New System.Windows.Forms.Padding(10, 0, 5, 0)
         Me.AssignedCourse_Btn.Size = New System.Drawing.Size(342, 107)
         Me.AssignedCourse_Btn.TabIndex = 57
         Me.AssignedCourse_Btn.Text = "Courses &&" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Sections"
@@ -947,7 +947,7 @@ Partial Class Admin_Main
         Me.ReviewUserRequest_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.ReviewUserRequest_Btn.Location = New System.Drawing.Point(42, 629)
         Me.ReviewUserRequest_Btn.Name = "ReviewUserRequest_Btn"
-        Me.ReviewUserRequest_Btn.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.ReviewUserRequest_Btn.Padding = New System.Windows.Forms.Padding(10, 0, 5, 0)
         Me.ReviewUserRequest_Btn.Size = New System.Drawing.Size(342, 107)
         Me.ReviewUserRequest_Btn.TabIndex = 55
         Me.ReviewUserRequest_Btn.Text = "Review User " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Request"
@@ -1326,6 +1326,118 @@ Partial Class Admin_Main
         Me.panel.Size = New System.Drawing.Size(397, 610)
         Me.panel.TabIndex = 78
         '
+        'Panel9
+        '
+        Me.Panel9.Controls.Add(Me.Grade_TB1)
+        Me.Panel9.Controls.Add(Me.Grade_TB2)
+        Me.Panel9.Controls.Add(Me.Grade_TB4)
+        Me.Panel9.Controls.Add(Me.Grade_TB3)
+        Me.Panel9.Controls.Add(Me.Grade_TB5)
+        Me.Panel9.Controls.Add(Me.Grade_TB6)
+        Me.Panel9.Controls.Add(Me.Grade_TB7)
+        Me.Panel9.Controls.Add(Me.Grade_TB8)
+        Me.Panel9.Location = New System.Drawing.Point(212, 107)
+        Me.Panel9.Name = "Panel9"
+        Me.Panel9.Size = New System.Drawing.Size(149, 275)
+        Me.Panel9.TabIndex = 87
+        '
+        'Grade_TB1
+        '
+        Me.Grade_TB1.BackColor = System.Drawing.Color.White
+        Me.Grade_TB1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Grade_TB1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Grade_TB1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Grade_TB1.Location = New System.Drawing.Point(0, 210)
+        Me.Grade_TB1.Name = "Grade_TB1"
+        Me.Grade_TB1.Size = New System.Drawing.Size(149, 30)
+        Me.Grade_TB1.TabIndex = 0
+        Me.Grade_TB1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Grade_TB2
+        '
+        Me.Grade_TB2.BackColor = System.Drawing.Color.White
+        Me.Grade_TB2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Grade_TB2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Grade_TB2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Grade_TB2.Location = New System.Drawing.Point(0, 180)
+        Me.Grade_TB2.Name = "Grade_TB2"
+        Me.Grade_TB2.Size = New System.Drawing.Size(149, 30)
+        Me.Grade_TB2.TabIndex = 1
+        Me.Grade_TB2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Grade_TB4
+        '
+        Me.Grade_TB4.BackColor = System.Drawing.Color.White
+        Me.Grade_TB4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Grade_TB4.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Grade_TB4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Grade_TB4.Location = New System.Drawing.Point(0, 150)
+        Me.Grade_TB4.Name = "Grade_TB4"
+        Me.Grade_TB4.Size = New System.Drawing.Size(149, 30)
+        Me.Grade_TB4.TabIndex = 3
+        Me.Grade_TB4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Grade_TB3
+        '
+        Me.Grade_TB3.BackColor = System.Drawing.Color.White
+        Me.Grade_TB3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Grade_TB3.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Grade_TB3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Grade_TB3.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.Grade_TB3.Location = New System.Drawing.Point(0, 120)
+        Me.Grade_TB3.Name = "Grade_TB3"
+        Me.Grade_TB3.Size = New System.Drawing.Size(149, 30)
+        Me.Grade_TB3.TabIndex = 2
+        Me.Grade_TB3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Grade_TB5
+        '
+        Me.Grade_TB5.BackColor = System.Drawing.Color.White
+        Me.Grade_TB5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Grade_TB5.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Grade_TB5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Grade_TB5.Location = New System.Drawing.Point(0, 90)
+        Me.Grade_TB5.Name = "Grade_TB5"
+        Me.Grade_TB5.Size = New System.Drawing.Size(149, 30)
+        Me.Grade_TB5.TabIndex = 4
+        Me.Grade_TB5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Grade_TB6
+        '
+        Me.Grade_TB6.BackColor = System.Drawing.Color.White
+        Me.Grade_TB6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Grade_TB6.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Grade_TB6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Grade_TB6.Location = New System.Drawing.Point(0, 60)
+        Me.Grade_TB6.Name = "Grade_TB6"
+        Me.Grade_TB6.Size = New System.Drawing.Size(149, 30)
+        Me.Grade_TB6.TabIndex = 5
+        Me.Grade_TB6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Grade_TB7
+        '
+        Me.Grade_TB7.BackColor = System.Drawing.Color.White
+        Me.Grade_TB7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Grade_TB7.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Grade_TB7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Grade_TB7.Location = New System.Drawing.Point(0, 30)
+        Me.Grade_TB7.Name = "Grade_TB7"
+        Me.Grade_TB7.Size = New System.Drawing.Size(149, 30)
+        Me.Grade_TB7.TabIndex = 6
+        Me.Grade_TB7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Grade_TB8
+        '
+        Me.Grade_TB8.BackColor = System.Drawing.Color.White
+        Me.Grade_TB8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Grade_TB8.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Grade_TB8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Grade_TB8.Location = New System.Drawing.Point(0, 0)
+        Me.Grade_TB8.Name = "Grade_TB8"
+        Me.Grade_TB8.Size = New System.Drawing.Size(149, 30)
+        Me.Grade_TB8.TabIndex = 7
+        Me.Grade_TB8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'Button1
         '
         Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(201, Byte), Integer), CType(CType(48, Byte), Integer))
@@ -1350,18 +1462,6 @@ Partial Class Admin_Main
         Me.Panel10.Name = "Panel10"
         Me.Panel10.Size = New System.Drawing.Size(360, 5)
         Me.Panel10.TabIndex = 85
-        '
-        'Grade_TB4
-        '
-        Me.Grade_TB4.BackColor = System.Drawing.Color.White
-        Me.Grade_TB4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Grade_TB4.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Grade_TB4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Grade_TB4.Location = New System.Drawing.Point(0, 150)
-        Me.Grade_TB4.Name = "Grade_TB4"
-        Me.Grade_TB4.Size = New System.Drawing.Size(149, 30)
-        Me.Grade_TB4.TabIndex = 3
-        Me.Grade_TB4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Panel15
         '
@@ -1407,19 +1507,6 @@ Partial Class Admin_Main
         Me.Course_Label4.Size = New System.Drawing.Size(0, 20)
         Me.Course_Label4.TabIndex = 11
         '
-        'Grade_TB3
-        '
-        Me.Grade_TB3.BackColor = System.Drawing.Color.White
-        Me.Grade_TB3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Grade_TB3.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Grade_TB3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Grade_TB3.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Grade_TB3.Location = New System.Drawing.Point(0, 120)
-        Me.Grade_TB3.Name = "Grade_TB3"
-        Me.Grade_TB3.Size = New System.Drawing.Size(149, 30)
-        Me.Grade_TB3.TabIndex = 2
-        Me.Grade_TB3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
         'Course_Label5
         '
         Me.Course_Label5.AutoSize = True
@@ -1439,18 +1526,6 @@ Partial Class Admin_Main
         Me.Course_Label6.Name = "Course_Label6"
         Me.Course_Label6.Size = New System.Drawing.Size(0, 20)
         Me.Course_Label6.TabIndex = 13
-        '
-        'Grade_TB2
-        '
-        Me.Grade_TB2.BackColor = System.Drawing.Color.White
-        Me.Grade_TB2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Grade_TB2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Grade_TB2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Grade_TB2.Location = New System.Drawing.Point(0, 180)
-        Me.Grade_TB2.Name = "Grade_TB2"
-        Me.Grade_TB2.Size = New System.Drawing.Size(149, 30)
-        Me.Grade_TB2.TabIndex = 1
-        Me.Grade_TB2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Course_Label9
         '
@@ -1522,66 +1597,6 @@ Partial Class Admin_Main
         Me.Grade_TB9.TabIndex = 83
         Me.Grade_TB9.Text = "43, 58"
         Me.Grade_TB9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Grade_TB5
-        '
-        Me.Grade_TB5.BackColor = System.Drawing.Color.White
-        Me.Grade_TB5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Grade_TB5.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Grade_TB5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Grade_TB5.Location = New System.Drawing.Point(0, 90)
-        Me.Grade_TB5.Name = "Grade_TB5"
-        Me.Grade_TB5.Size = New System.Drawing.Size(149, 30)
-        Me.Grade_TB5.TabIndex = 4
-        Me.Grade_TB5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Grade_TB7
-        '
-        Me.Grade_TB7.BackColor = System.Drawing.Color.White
-        Me.Grade_TB7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Grade_TB7.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Grade_TB7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Grade_TB7.Location = New System.Drawing.Point(0, 30)
-        Me.Grade_TB7.Name = "Grade_TB7"
-        Me.Grade_TB7.Size = New System.Drawing.Size(149, 30)
-        Me.Grade_TB7.TabIndex = 6
-        Me.Grade_TB7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Grade_TB8
-        '
-        Me.Grade_TB8.BackColor = System.Drawing.Color.White
-        Me.Grade_TB8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Grade_TB8.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Grade_TB8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Grade_TB8.Location = New System.Drawing.Point(0, 0)
-        Me.Grade_TB8.Name = "Grade_TB8"
-        Me.Grade_TB8.Size = New System.Drawing.Size(149, 30)
-        Me.Grade_TB8.TabIndex = 7
-        Me.Grade_TB8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Grade_TB6
-        '
-        Me.Grade_TB6.BackColor = System.Drawing.Color.White
-        Me.Grade_TB6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Grade_TB6.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Grade_TB6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Grade_TB6.Location = New System.Drawing.Point(0, 60)
-        Me.Grade_TB6.Name = "Grade_TB6"
-        Me.Grade_TB6.Size = New System.Drawing.Size(149, 30)
-        Me.Grade_TB6.TabIndex = 5
-        Me.Grade_TB6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Grade_TB1
-        '
-        Me.Grade_TB1.BackColor = System.Drawing.Color.White
-        Me.Grade_TB1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Grade_TB1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Grade_TB1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Grade_TB1.Location = New System.Drawing.Point(0, 210)
-        Me.Grade_TB1.Name = "Grade_TB1"
-        Me.Grade_TB1.Size = New System.Drawing.Size(149, 30)
-        Me.Grade_TB1.TabIndex = 0
-        Me.Grade_TB1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Panel4
         '
@@ -2357,21 +2372,6 @@ Partial Class Admin_Main
         Me.Panel13.Size = New System.Drawing.Size(46, 60)
         Me.Panel13.TabIndex = 89
         '
-        'Panel9
-        '
-        Me.Panel9.Controls.Add(Me.Grade_TB1)
-        Me.Panel9.Controls.Add(Me.Grade_TB2)
-        Me.Panel9.Controls.Add(Me.Grade_TB4)
-        Me.Panel9.Controls.Add(Me.Grade_TB3)
-        Me.Panel9.Controls.Add(Me.Grade_TB5)
-        Me.Panel9.Controls.Add(Me.Grade_TB6)
-        Me.Panel9.Controls.Add(Me.Grade_TB7)
-        Me.Panel9.Controls.Add(Me.Grade_TB8)
-        Me.Panel9.Location = New System.Drawing.Point(212, 107)
-        Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(149, 275)
-        Me.Panel9.TabIndex = 87
-        '
         'Admin_Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -2413,6 +2413,8 @@ Partial Class Admin_Main
         CType(Me.StudentlistTable, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panel.ResumeLayout(False)
         Me.panel.PerformLayout()
+        Me.Panel9.ResumeLayout(False)
+        Me.Panel9.PerformLayout()
         Me.Panel15.ResumeLayout(False)
         Me.Panel15.PerformLayout()
         Me.Panel4.ResumeLayout(False)
@@ -2452,8 +2454,6 @@ Partial Class Admin_Main
         Me.Menu_Panel.ResumeLayout(False)
         Me.Panel7.ResumeLayout(False)
         CType(Me.Welcome_BG, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel9.ResumeLayout(False)
-        Me.Panel9.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub

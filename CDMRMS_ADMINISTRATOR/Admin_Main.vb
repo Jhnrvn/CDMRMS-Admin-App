@@ -553,30 +553,31 @@ Public Class Admin_Main
 
             Dim query As String = "SELECT COUNT(*) FROM `request`"
             Dim command As New MySqlCommand(query, connection)
-            Dim count As Integer = Convert.ToInt32(command.ExecuteScalar())
+            Dim count1 As Integer = Convert.ToInt32(command.ExecuteScalar())
 
+            Dim count = 10
             If count = 0 Then
                 ReviewUserRequest_Btn.Image = My.Resources.Review_User_Request_Icon
             ElseIf count = 1 Then
-                ReviewUserRequest_Btn.Image = My.Resources._1_Notification
+                ReviewUserRequest_Btn.Image = My.Resources.Notification_1
             ElseIf count = 2 Then
-                ReviewUserRequest_Btn.Image = My.Resources._2_Notification
+                ReviewUserRequest_Btn.Image = My.Resources.Notification_2
             ElseIf count = 3 Then
-                ReviewUserRequest_Btn.Image = My.Resources._3_Notification
+                ReviewUserRequest_Btn.Image = My.Resources.Notification_3
             ElseIf count = 4 Then
-                ReviewUserRequest_Btn.Image = My.Resources._4_Notification
+                ReviewUserRequest_Btn.Image = My.Resources.Notification_4
             ElseIf count = 5 Then
-                ReviewUserRequest_Btn.Image = My.Resources._5_Notification
+                ReviewUserRequest_Btn.Image = My.Resources.Notification_5
             ElseIf count = 6 Then
-                ReviewUserRequest_Btn.Image = My.Resources._6_Notification
+                ReviewUserRequest_Btn.Image = My.Resources.Notification_6
             ElseIf count = 7 Then
-                ReviewUserRequest_Btn.Image = My.Resources._7_Notification
+                ReviewUserRequest_Btn.Image = My.Resources.Notification_7
             ElseIf count = 8 Then
-                ReviewUserRequest_Btn.Image = My.Resources._8_Notification
+                ReviewUserRequest_Btn.Image = My.Resources.Notification_8
             ElseIf count = 9 Then
-                ReviewUserRequest_Btn.Image = My.Resources._9_Notification
+                ReviewUserRequest_Btn.Image = My.Resources.Notification_9
             ElseIf count > 9 Then
-                ReviewUserRequest_Btn.Image = My.Resources._9__Notification
+                ReviewUserRequest_Btn.Image = My.Resources.Notification_9_
             End If
 
         End Using
