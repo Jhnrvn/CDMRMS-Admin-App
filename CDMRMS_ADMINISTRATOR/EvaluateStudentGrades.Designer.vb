@@ -26,9 +26,9 @@ Partial Class EvaluateStudentGrades
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(EvaluateStudentGrades))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Close_Btn = New System.Windows.Forms.Button()
-        Me.Evaluate_Label = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.CDMinstructors_Label = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -50,7 +50,6 @@ Partial Class EvaluateStudentGrades
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(77, Byte), Integer), CType(CType(16, Byte), Integer))
         Me.Panel1.Controls.Add(Me.Close_Btn)
-        Me.Panel1.Controls.Add(Me.Evaluate_Label)
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Location = New System.Drawing.Point(-2, -3)
         Me.Panel1.Name = "Panel1"
@@ -67,36 +66,26 @@ Partial Class EvaluateStudentGrades
         Me.Close_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Close_Btn.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Close_Btn.ForeColor = System.Drawing.Color.White
-        Me.Close_Btn.Location = New System.Drawing.Point(805, 20)
+        Me.Close_Btn.Location = New System.Drawing.Point(802, 3)
         Me.Close_Btn.Name = "Close_Btn"
-        Me.Close_Btn.Size = New System.Drawing.Size(42, 40)
+        Me.Close_Btn.Size = New System.Drawing.Size(50, 35)
         Me.Close_Btn.TabIndex = 57
         Me.Close_Btn.Text = "X"
         Me.Close_Btn.UseVisualStyleBackColor = False
-        '
-        'Evaluate_Label
-        '
-        Me.Evaluate_Label.AutoSize = True
-        Me.Evaluate_Label.Font = New System.Drawing.Font("Microsoft Sans Serif", 19.8!, System.Drawing.FontStyle.Bold)
-        Me.Evaluate_Label.ForeColor = System.Drawing.Color.White
-        Me.Evaluate_Label.Location = New System.Drawing.Point(140, 22)
-        Me.Evaluate_Label.Name = "Evaluate_Label"
-        Me.Evaluate_Label.Size = New System.Drawing.Size(526, 38)
-        Me.Evaluate_Label.TabIndex = 1
-        Me.Evaluate_Label.Text = "EVALUATE STUDENT GRADES"
         '
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(223, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(216, Byte), Integer))
         Me.Panel2.Controls.Add(Me.Panel3)
-        Me.Panel2.Location = New System.Drawing.Point(3, 63)
+        Me.Panel2.Location = New System.Drawing.Point(3, 37)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(849, 541)
+        Me.Panel2.Size = New System.Drawing.Size(849, 565)
         Me.Panel2.TabIndex = 2
         '
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.White
+        Me.Panel3.Controls.Add(Me.CDMinstructors_Label)
         Me.Panel3.Controls.Add(Me.PictureBox1)
         Me.Panel3.Controls.Add(Me.Panel4)
         Me.Panel3.Controls.Add(Me.Evaluate_Btn)
@@ -105,13 +94,23 @@ Partial Class EvaluateStudentGrades
         Me.Panel3.Controls.Add(Me.SemesterSelector)
         Me.Panel3.Location = New System.Drawing.Point(5, 5)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(840, 530)
+        Me.Panel3.Size = New System.Drawing.Size(840, 555)
         Me.Panel3.TabIndex = 70
+        '
+        'CDMinstructors_Label
+        '
+        Me.CDMinstructors_Label.AutoSize = True
+        Me.CDMinstructors_Label.Font = New System.Drawing.Font("Microsoft Sans Serif", 19.8!, System.Drawing.FontStyle.Bold)
+        Me.CDMinstructors_Label.Location = New System.Drawing.Point(211, 21)
+        Me.CDMinstructors_Label.Name = "CDMinstructors_Label"
+        Me.CDMinstructors_Label.Size = New System.Drawing.Size(393, 38)
+        Me.CDMinstructors_Label.TabIndex = 78
+        Me.CDMinstructors_Label.Text = "EVALUATE STUDENTS"
         '
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.CDMRMS_ADMINISTRATOR.My.Resources.Resources.CDM_Emblem
-        Me.PictureBox1.Location = New System.Drawing.Point(552, 163)
+        Me.PictureBox1.Location = New System.Drawing.Point(552, 208)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(238, 224)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
@@ -122,7 +121,7 @@ Partial Class EvaluateStudentGrades
         '
         Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
         Me.Panel4.Controls.Add(Me.Label2)
-        Me.Panel4.Location = New System.Drawing.Point(46, 37)
+        Me.Panel4.Location = New System.Drawing.Point(46, 82)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(462, 87)
         Me.Panel4.TabIndex = 76
@@ -149,9 +148,9 @@ Partial Class EvaluateStudentGrades
         Me.Evaluate_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Evaluate_Btn.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Evaluate_Btn.ForeColor = System.Drawing.Color.Black
-        Me.Evaluate_Btn.Location = New System.Drawing.Point(681, 424)
+        Me.Evaluate_Btn.Location = New System.Drawing.Point(683, 467)
         Me.Evaluate_Btn.Name = "Evaluate_Btn"
-        Me.Evaluate_Btn.Size = New System.Drawing.Size(107, 40)
+        Me.Evaluate_Btn.Size = New System.Drawing.Size(107, 42)
         Me.Evaluate_Btn.TabIndex = 69
         Me.Evaluate_Btn.Text = "Evaluate"
         Me.Evaluate_Btn.UseVisualStyleBackColor = False
@@ -160,7 +159,7 @@ Partial Class EvaluateStudentGrades
         '
         Me.InstructorInfo_Label.AutoSize = True
         Me.InstructorInfo_Label.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!)
-        Me.InstructorInfo_Label.Location = New System.Drawing.Point(548, 59)
+        Me.InstructorInfo_Label.Location = New System.Drawing.Point(548, 104)
         Me.InstructorInfo_Label.Name = "InstructorInfo_Label"
         Me.InstructorInfo_Label.Size = New System.Drawing.Size(86, 22)
         Me.InstructorInfo_Label.TabIndex = 73
@@ -171,7 +170,7 @@ Partial Class EvaluateStudentGrades
         Me.Panel9.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
         Me.Panel9.Controls.Add(Me.InstructorInstruction_1)
         Me.Panel9.Controls.Add(Me.Label1)
-        Me.Panel9.Location = New System.Drawing.Point(46, 163)
+        Me.Panel9.Location = New System.Drawing.Point(46, 208)
         Me.Panel9.Name = "Panel9"
         Me.Panel9.Size = New System.Drawing.Size(462, 301)
         Me.Panel9.TabIndex = 72
@@ -207,7 +206,7 @@ Partial Class EvaluateStudentGrades
         Me.SemesterSelector.FormattingEnabled = True
         Me.SemesterSelector.ItemHeight = 29
         Me.SemesterSelector.Items.AddRange(New Object() {"1st Semester", "2nd Semester"})
-        Me.SemesterSelector.Location = New System.Drawing.Point(552, 80)
+        Me.SemesterSelector.Location = New System.Drawing.Point(552, 125)
         Me.SemesterSelector.Name = "SemesterSelector"
         Me.SemesterSelector.Size = New System.Drawing.Size(236, 35)
         Me.SemesterSelector.TabIndex = 67
@@ -227,7 +226,6 @@ Partial Class EvaluateStudentGrades
         Me.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow
         Me.Style = MetroFramework.MetroColorStyle.White
         Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
@@ -242,7 +240,6 @@ Partial Class EvaluateStudentGrades
 
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Close_Btn As Button
-    Friend WithEvents Evaluate_Label As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Evaluate_Btn As Button
     Friend WithEvents Panel3 As Panel
@@ -254,4 +251,5 @@ Partial Class EvaluateStudentGrades
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Label2 As Label
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents CDMinstructors_Label As Label
 End Class

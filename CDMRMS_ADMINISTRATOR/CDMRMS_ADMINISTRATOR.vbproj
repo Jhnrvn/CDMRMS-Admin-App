@@ -150,6 +150,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="ReviewUserRequest.Designer.vb">
+      <DependentUpon>ReviewUserRequest.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReviewUserRequest.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="About.resx">
@@ -172,6 +178,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReviewUserRequest.resx">
+      <DependentUpon>ReviewUserRequest.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -270,36 +279,6 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1 Notification.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\2 Notification.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\3 Notification.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\4 Notification.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\5 Notification.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\6 Notification.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\7 Notification.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\8 Notification.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\9 Notification.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\9+ Notification.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\CDM Emblem.png" />

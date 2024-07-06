@@ -553,9 +553,8 @@ Public Class Admin_Main
 
             Dim query As String = "SELECT COUNT(*) FROM `request`"
             Dim command As New MySqlCommand(query, connection)
-            Dim count1 As Integer = Convert.ToInt32(command.ExecuteScalar())
+            Dim count As Integer = Convert.ToInt32(command.ExecuteScalar())
 
-            Dim count = 10
             If count = 0 Then
                 ReviewUserRequest_Btn.Image = My.Resources.Review_User_Request_Icon
             ElseIf count = 1 Then
@@ -886,8 +885,6 @@ Public Class Admin_Main
     Private Sub CollegeProgramSelector_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CollegeProgramSelector.SelectedIndexChanged
         StudentList()
     End Sub
-
-
 
     Private Sub EvaluateGrade_Btn_Click(sender As Object, e As EventArgs) Handles EvaluateGrade_Btn.Click
         EvaluateStudentGrades.Show()
@@ -1263,11 +1260,7 @@ Public Class Admin_Main
 
         End If
     End Sub
-
     ' STUDENT PANEL - END
-
-
-
 
 
 End Class
