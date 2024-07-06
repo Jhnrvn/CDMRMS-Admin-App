@@ -559,6 +559,24 @@ Public Class Admin_Main
                 ReviewUserRequest_Btn.Image = My.Resources.Review_User_Request_Icon
             ElseIf count = 1 Then
                 ReviewUserRequest_Btn.Image = My.Resources._1_Notification
+            ElseIf count = 2 Then
+                ReviewUserRequest_Btn.Image = My.Resources._2_Notification
+            ElseIf count = 3 Then
+                ReviewUserRequest_Btn.Image = My.Resources._3_Notification
+            ElseIf count = 4 Then
+                ReviewUserRequest_Btn.Image = My.Resources._4_Notification
+            ElseIf count = 5 Then
+                ReviewUserRequest_Btn.Image = My.Resources._5_Notification
+            ElseIf count = 6 Then
+                ReviewUserRequest_Btn.Image = My.Resources._6_Notification
+            ElseIf count = 7 Then
+                ReviewUserRequest_Btn.Image = My.Resources._7_Notification
+            ElseIf count = 8 Then
+                ReviewUserRequest_Btn.Image = My.Resources._8_Notification
+            ElseIf count = 9 Then
+                ReviewUserRequest_Btn.Image = My.Resources._9_Notification
+            ElseIf count > 9 Then
+                ReviewUserRequest_Btn.Image = My.Resources._9__Notification
             End If
 
         End Using
@@ -1244,7 +1262,6 @@ Public Class Admin_Main
 
         End If
     End Sub
-
 
     ' STUDENT PANEL - END
 

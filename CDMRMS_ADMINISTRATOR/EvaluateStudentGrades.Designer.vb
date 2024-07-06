@@ -29,6 +29,7 @@ Partial Class EvaluateStudentGrades
         Me.Evaluate_Label = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Evaluate_Btn = New System.Windows.Forms.Button()
@@ -37,18 +38,17 @@ Partial Class EvaluateStudentGrades
         Me.InstructorInstruction_1 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.SemesterSelector = New MetroFramework.Controls.MetroComboBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
         Me.Panel9.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(33, Byte), Integer))
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(77, Byte), Integer), CType(CType(16, Byte), Integer))
         Me.Panel1.Controls.Add(Me.Close_Btn)
         Me.Panel1.Controls.Add(Me.Evaluate_Label)
         Me.Panel1.Controls.Add(Me.Panel2)
@@ -77,21 +77,21 @@ Partial Class EvaluateStudentGrades
         'Evaluate_Label
         '
         Me.Evaluate_Label.AutoSize = True
-        Me.Evaluate_Label.Font = New System.Drawing.Font("Bernard MT Condensed", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Evaluate_Label.Font = New System.Drawing.Font("Microsoft Sans Serif", 19.8!, System.Drawing.FontStyle.Bold)
         Me.Evaluate_Label.ForeColor = System.Drawing.Color.White
-        Me.Evaluate_Label.Location = New System.Drawing.Point(17, 20)
+        Me.Evaluate_Label.Location = New System.Drawing.Point(140, 22)
         Me.Evaluate_Label.Name = "Evaluate_Label"
-        Me.Evaluate_Label.Size = New System.Drawing.Size(328, 40)
+        Me.Evaluate_Label.Size = New System.Drawing.Size(526, 38)
         Me.Evaluate_Label.TabIndex = 1
-        Me.Evaluate_Label.Text = "Evaluate Student Grades"
+        Me.Evaluate_Label.Text = "EVALUATE STUDENT GRADES"
         '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(248, Byte), Integer))
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(223, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(216, Byte), Integer))
         Me.Panel2.Controls.Add(Me.Panel3)
-        Me.Panel2.Location = New System.Drawing.Point(16, 63)
+        Me.Panel2.Location = New System.Drawing.Point(3, 63)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(823, 516)
+        Me.Panel2.Size = New System.Drawing.Size(849, 541)
         Me.Panel2.TabIndex = 2
         '
         'Panel3
@@ -103,16 +103,26 @@ Partial Class EvaluateStudentGrades
         Me.Panel3.Controls.Add(Me.InstructorInfo_Label)
         Me.Panel3.Controls.Add(Me.Panel9)
         Me.Panel3.Controls.Add(Me.SemesterSelector)
-        Me.Panel3.Location = New System.Drawing.Point(21, 16)
+        Me.Panel3.Location = New System.Drawing.Point(5, 5)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(781, 478)
+        Me.Panel3.Size = New System.Drawing.Size(840, 530)
         Me.Panel3.TabIndex = 70
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.CDMRMS_ADMINISTRATOR.My.Resources.Resources.CDM_Emblem
+        Me.PictureBox1.Location = New System.Drawing.Point(552, 163)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(238, 224)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.PictureBox1.TabIndex = 77
+        Me.PictureBox1.TabStop = False
         '
         'Panel4
         '
-        Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(223, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(216, Byte), Integer))
+        Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
         Me.Panel4.Controls.Add(Me.Label2)
-        Me.Panel4.Location = New System.Drawing.Point(30, 37)
+        Me.Panel4.Location = New System.Drawing.Point(46, 37)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(462, 87)
         Me.Panel4.TabIndex = 76
@@ -120,26 +130,26 @@ Partial Class EvaluateStudentGrades
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Black
         Me.Label2.Location = New System.Drawing.Point(17, 10)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(381, 66)
+        Me.Label2.Size = New System.Drawing.Size(386, 60)
         Me.Label2.TabIndex = 76
-        Me.Label2.Text = "Select the semester for evaluating all grades " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "across all courses/subjects offer" &
-    "ed during that " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "semester from 1st year to 4th year."
+        Me.Label2.Text = "     Please select the appropriate grade Semester " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "from the dropdown menu to eva" &
+    "luate the student's " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "performance."
         '
         'Evaluate_Btn
         '
-        Me.Evaluate_Btn.BackColor = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.Evaluate_Btn.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(201, Byte), Integer), CType(CType(48, Byte), Integer))
         Me.Evaluate_Btn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Evaluate_Btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.Evaluate_Btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
-        Me.Evaluate_Btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Evaluate_Btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(201, Byte), Integer), CType(CType(48, Byte), Integer))
+        Me.Evaluate_Btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(201, Byte), Integer), CType(CType(48, Byte), Integer))
+        Me.Evaluate_Btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(201, Byte), Integer), CType(CType(48, Byte), Integer))
         Me.Evaluate_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Evaluate_Btn.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Evaluate_Btn.ForeColor = System.Drawing.Color.Black
-        Me.Evaluate_Btn.Location = New System.Drawing.Point(644, 404)
+        Me.Evaluate_Btn.Location = New System.Drawing.Point(681, 424)
         Me.Evaluate_Btn.Name = "Evaluate_Btn"
         Me.Evaluate_Btn.Size = New System.Drawing.Size(107, 40)
         Me.Evaluate_Btn.TabIndex = 69
@@ -149,19 +159,19 @@ Partial Class EvaluateStudentGrades
         'InstructorInfo_Label
         '
         Me.InstructorInfo_Label.AutoSize = True
-        Me.InstructorInfo_Label.Font = New System.Drawing.Font("Bernard MT Condensed", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.InstructorInfo_Label.Location = New System.Drawing.Point(508, 37)
+        Me.InstructorInfo_Label.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!)
+        Me.InstructorInfo_Label.Location = New System.Drawing.Point(548, 59)
         Me.InstructorInfo_Label.Name = "InstructorInfo_Label"
-        Me.InstructorInfo_Label.Size = New System.Drawing.Size(132, 40)
+        Me.InstructorInfo_Label.Size = New System.Drawing.Size(86, 22)
         Me.InstructorInfo_Label.TabIndex = 73
         Me.InstructorInfo_Label.Text = "Semester"
         '
         'Panel9
         '
-        Me.Panel9.BackColor = System.Drawing.Color.FromArgb(CType(CType(223, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(216, Byte), Integer))
+        Me.Panel9.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
         Me.Panel9.Controls.Add(Me.InstructorInstruction_1)
         Me.Panel9.Controls.Add(Me.Label1)
-        Me.Panel9.Location = New System.Drawing.Point(30, 143)
+        Me.Panel9.Location = New System.Drawing.Point(46, 163)
         Me.Panel9.Name = "Panel9"
         Me.Panel9.Size = New System.Drawing.Size(462, 301)
         Me.Panel9.TabIndex = 72
@@ -169,21 +179,21 @@ Partial Class EvaluateStudentGrades
         'InstructorInstruction_1
         '
         Me.InstructorInstruction_1.AutoSize = True
-        Me.InstructorInstruction_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.InstructorInstruction_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.InstructorInstruction_1.ForeColor = System.Drawing.Color.Black
-        Me.InstructorInstruction_1.Location = New System.Drawing.Point(17, 70)
+        Me.InstructorInstruction_1.Location = New System.Drawing.Point(17, 78)
         Me.InstructorInstruction_1.Name = "InstructorInstruction_1"
-        Me.InstructorInstruction_1.Size = New System.Drawing.Size(379, 198)
+        Me.InstructorInstruction_1.Size = New System.Drawing.Size(355, 180)
         Me.InstructorInstruction_1.TabIndex = 75
         Me.InstructorInstruction_1.Text = resources.GetString("InstructorInstruction_1.Text")
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Bernard MT Condensed", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(14, 11)
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 19.8!, System.Drawing.FontStyle.Bold)
+        Me.Label1.Location = New System.Drawing.Point(14, 17)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(207, 40)
+        Me.Label1.Size = New System.Drawing.Size(247, 38)
         Me.Label1.TabIndex = 74
         Me.Label1.Text = "Qualitfications:"
         '
@@ -197,22 +207,12 @@ Partial Class EvaluateStudentGrades
         Me.SemesterSelector.FormattingEnabled = True
         Me.SemesterSelector.ItemHeight = 29
         Me.SemesterSelector.Items.AddRange(New Object() {"1st Semester", "2nd Semester"})
-        Me.SemesterSelector.Location = New System.Drawing.Point(515, 80)
+        Me.SemesterSelector.Location = New System.Drawing.Point(552, 80)
         Me.SemesterSelector.Name = "SemesterSelector"
         Me.SemesterSelector.Size = New System.Drawing.Size(236, 35)
         Me.SemesterSelector.TabIndex = 67
         Me.SemesterSelector.UseCustomForeColor = True
         Me.SemesterSelector.UseSelectable = True
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.CDMRMS_ADMINISTRATOR.My.Resources.Resources.CdM_Logo
-        Me.PictureBox1.Location = New System.Drawing.Point(515, 143)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(238, 224)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.PictureBox1.TabIndex = 77
-        Me.PictureBox1.TabStop = False
         '
         'EvaluateStudentGrades
         '
@@ -224,17 +224,18 @@ Partial Class EvaluateStudentGrades
         Me.MinimizeBox = False
         Me.Name = "EvaluateStudentGrades"
         Me.Resizable = False
+        Me.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow
         Me.Style = MetroFramework.MetroColorStyle.White
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
         Me.Panel9.ResumeLayout(False)
         Me.Panel9.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

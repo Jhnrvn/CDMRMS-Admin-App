@@ -133,6 +133,9 @@
   <data name="CdMRMS_Welcome_Background" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CdMRMS Welcome Background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="CDM_Emblem" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CDM Emblem.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="CdM_Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CdM Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -186,5 +189,32 @@
   </data>
   <data name="_1_Notification" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1 Notification.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_2_Notification" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\2 Notification.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_3_Notification" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\3 Notification.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_4_Notification" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\4 Notification.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_5_Notification" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\5 Notification.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_6_Notification" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\6 Notification.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_7_Notification" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\7 Notification.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_8_Notification" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\8 Notification.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_9_Notification" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\9 Notification.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_9__Notification" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\9+ Notification.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
