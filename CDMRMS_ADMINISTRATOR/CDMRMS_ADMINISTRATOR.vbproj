@@ -197,12 +197,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Arrow Down.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Arrow Right.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Update Grade Button Icon.png" />
   </ItemGroup>
   <ItemGroup>
