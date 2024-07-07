@@ -227,8 +227,10 @@ Public Class Admin_Main
 
                 DeansList_Table.DataSource = datatable
                 DeansList_Table.Columns("ID").Visible = False
-                DeansList_Table.Columns("Student Name").Width = 150
-                DeansList_Table.Columns("GWA").Width = 82
+                DeansList_Table.Columns("Student ID").Width = 150
+                DeansList_Table.Columns("Student Name").Width = 180
+                DeansList_Table.Columns("Section").Width = 110
+                DeansList_Table.Columns("GWA").Width = 100
 
             End Using
         Catch ex As Exception
@@ -1262,5 +1264,14 @@ Public Class Admin_Main
     End Sub
     ' STUDENT PANEL - END
 
+    Private Sub Admin_Main_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        Dim result As DialogResult = MessageBox.Show("Are you sure?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+
+        If result = DialogResult.Yes Then
+            Environment.Exit(0)
+        Else
+            e.Cancel = True
+        End If
+    End Sub
 
 End Class

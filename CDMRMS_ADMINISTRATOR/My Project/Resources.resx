@@ -121,6 +121,12 @@
   <data name="Assigned_Button_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Assigned Button Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="BSCPE_Dashboard_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BSCPE Dashboard Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BSIT_Dashboard_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BSIT Dashboard Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="CdMRMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CdMRMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -154,8 +160,14 @@
   <data name="Dashboard_Students_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Dashboard Students Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Dean_s_List_Dashboard_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dean's List Dashboard Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Evaluate_Button_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Evaluate Button Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Instructor_Dashboard_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Instructor Dashboard Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Lock_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Lock Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -207,6 +219,9 @@
   </data>
   <data name="Review_User_Request_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Review User Request Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Student_Dashboard_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Student Dashboard Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Update_Grade_Button_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Update Grade Button Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

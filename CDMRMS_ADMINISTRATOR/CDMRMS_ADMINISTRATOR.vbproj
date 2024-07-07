@@ -307,5 +307,20 @@
   <ItemGroup>
     <None Include="Resources\Notification 9+.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Instructor Dashboard Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BSCPE Dashboard Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BSIT Dashboard Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dean%27s List Dashboard Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Student Dashboard Icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

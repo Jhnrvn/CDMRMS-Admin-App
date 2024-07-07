@@ -143,8 +143,8 @@ Partial Class EvaluateStudentGrades
         Me.Evaluate_Btn.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(201, Byte), Integer), CType(CType(48, Byte), Integer))
         Me.Evaluate_Btn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Evaluate_Btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(201, Byte), Integer), CType(CType(48, Byte), Integer))
-        Me.Evaluate_Btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(201, Byte), Integer), CType(CType(48, Byte), Integer))
-        Me.Evaluate_Btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(201, Byte), Integer), CType(CType(48, Byte), Integer))
+        Me.Evaluate_Btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.Evaluate_Btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(20, Byte), Integer))
         Me.Evaluate_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Evaluate_Btn.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Evaluate_Btn.ForeColor = System.Drawing.Color.Black
