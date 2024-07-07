@@ -118,17 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Assigned_Button_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Assigned Button Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="BSCPE_Dashboard_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BSCPE Dashboard Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BSIT_Dashboard_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BSIT Dashboard Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CdMRMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CdMRMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="CdMRMS1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CdMRMS.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,35 +142,14 @@
   <data name="Dashboard_BSCPE_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Dashboard BSCPE Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Dashboard_BSIT_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Dashboard BSIT Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Dashboard_Honor._Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fff-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Dashboard_Instructor_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Dashboard Instructor Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Dashboard_Students_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Dashboard Students Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Dean_s_List_Dashboard_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Dean's List Dashboard Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Evaluate_Button_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Evaluate Button Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Instructor_Dashboard_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Instructor Dashboard Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Lock_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Lock Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Menu_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Menu Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="new_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\new logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Notification_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Notification 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -214,19 +187,10 @@
   <data name="PIN_Image_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PIN Image 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Pin_Lock_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Pin Lock Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Review_User_Request_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Review User Request Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Student_Dashboard_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Student Dashboard Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Update_Grade_Button_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Update Grade Button Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Welcome_BG" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Welcome BG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

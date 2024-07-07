@@ -221,9 +221,6 @@
     <None Include="Resources\new logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\CdMRMS.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Welcome BG.png" />
   </ItemGroup>
   <ItemGroup>
