@@ -1,1 +1,1 @@
-Colegio De Montalban Registrar Management System (CdMRMS) Admin Application
+Colegio de Montalban Registrar Management System (CdMRMS) Admin Client
